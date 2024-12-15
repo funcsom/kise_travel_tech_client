@@ -21,8 +21,8 @@ jobs:
           API_TOKEN_GITHUB: ${{ secrets.AUTO_PUSH }}
         with:
           source-directory: 'output'
-          destination-github-username: funcsom
-          destination-repository-name: kise-client
+          destination-github-username: 'funcsom'
+          destination-repository-name: 'kise-client'
           user-email: ${{ secrets.OFFICIAL_ACCOUNT_EMAIL }}
           commit-message: ${{ github.event.commits[0].message }}
           target-branch: main
