@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
-import LocalTripProduct from "./components/LocalTripProduct/LocalTripProduct";
-import RecommandedEvent from "./components/RecommandedEvent/RecommandedEvent";
-import PeroidicTourTrain from "./components/PeroidicTourTrain/PeroidicTourTrain";
+import LocalTripProduct from "./components/LocalTripProduct";
+import RecommandedEvent from "./components/RecommandedEvent";
+import PeroidicTourTrain from "./components/PeroidicTourTrain";
 
 import styles from "./LovingLocal.module.css";
 
