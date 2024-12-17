@@ -1,7 +1,7 @@
 import styles from "./Card.module.css";
 
-const Card = (props) => {
-  return <div className={styles.Card}></div>;
+const Card = ({ elems }) => {
+  return <div className={styles.carouselContainer}></div>;
 };
 
 export default Card;

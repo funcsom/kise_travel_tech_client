@@ -28,13 +28,12 @@ const Carousel = ({ elems }) => {
         })}
       </Swiper>
 
-      {/* 네비게이션 버튼 */}
-      <div className="swiper-button-prev" style={{ color: "#000" }}>
+      {/* <div className="swiper-button-prev" style={{ color: "#000" }}>
         ❮
       </div>
       <div className="swiper-button-next" style={{ color: "#000" }}>
         ❯
-      </div>
+      </div> */}
     </div>
   );
 };
