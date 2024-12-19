@@ -21,4 +21,6 @@
   align-items: center;
   justify-content: center;
   border: 1px solid var(--color-gray-100);
+  color: var(--color-gray-400);
+  font: var(--font-b1);
 }

@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 10px 8px 14px;
+  font: var(--font-h1);
 }
 
 .openButton {
@@ -16,8 +17,4 @@ button {
 
 .title > div {
   text-align: center;
-}
-
-span {
-  vertical-align: center;
 }
