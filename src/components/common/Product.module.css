@@ -1,0 +1,19 @@
+.title {
+  background-color: var(--color-gray-000);
+  padding: 11px 8px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+  background-color: var(--color-gray-100);
+  padding: 14px 10px;
+}
+
+.title > p:first-child {
+  font: var(--font-b3-sb);
+}
+
+.ProductBig span {
+  color: var(--color-red-01);
+}
