@@ -1,6 +1,5 @@
 import Button from "./Button";
 import styles from "./Header.module.css";
-import hamburgerIcon from "../assets/hamburger-icon.svg";
 
 const Header = ({ handleClickLeft, text, handleClickRight }) => {
   return (

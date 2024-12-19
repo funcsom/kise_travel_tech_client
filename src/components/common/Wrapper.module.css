@@ -1,0 +1,6 @@
+.Wrapper {
+  background-color: var(--color-white);
+  padding: 14px;
+  display: flex;
+  justify-content: space-between;
+}

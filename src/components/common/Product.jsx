@@ -1,0 +1,17 @@
+import styles from "./Product.module.css";
+
+const ProductBig = ({ title, children }) => {
+  return (
+    <div className={styles.ProductBig}>
+      <div className={styles.title}>
+        <p>{title}</p>
+        <p>
+          남은수량: <span>N</span>
+        </p>
+      </div>
+      {children && <div className={styles.content}>{children}</div>}
+    </div>
+  );
+};
+
+export default ProductBig;
