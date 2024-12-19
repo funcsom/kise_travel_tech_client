@@ -11,4 +11,32 @@
 body * {
   font-family: "Pretendard-Regular";
   max-width: 375px;
+  box-sizing: border-box;
+}
+
+:root {
+  --color-white: #fff;
+  --color-gray-000: #dbdbdb;
+  --color-gray-100: #eaeaea;
+  --color-gray-400: #747474;
+  --color-gray-500: #555555;
+  --color-light-blue-100: #cde0ee;
+  --color-light-blue-200: #0397d6;
+  --color-blue-02: #083b82;
+  --color-navy-01: #0c3c60;
+  --color-navy-02: #003366;
+  --color-red-01: #e77c74;
+  --color-red-02: #d8361b;
+
+  /* Typography Variables */
+  --font-h1: 500 16px/1.2 "Pretendard-Regular", sans-serif;
+  --font-t1: 500 19px/1.2 "Pretendard-Regular", sans-serif;
+  --font-t2: 500 12px/1.2 "Pretendard-Regular", sans-serif;
+  --font-b1: 500 16px/1.2 "Pretendard-Regular", sans-serif;
+  --font-b2: 300 15px/1.2 "Pretendard-Regular", sans-serif;
+  --font-b3-r: 400 14px/1.2 "Pretendard-Regular", sans-serif;
+  --font-b3-sb: 600 14px/1.2 "Pretendard-Regular", sans-serif;
+  --font-b3-l: 300 14px/1.2 "Pretendard-Regular", sans-serif;
+  --font-b4: 400 13px/1.2 "Pretendard-Regular", sans-serif;
+  --font-b4-el: 200 13px/1.2 "Pretendard-Regular", sans-serif;
 }
