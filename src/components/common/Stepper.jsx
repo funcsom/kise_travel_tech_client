@@ -9,7 +9,7 @@ const Stepper = ({ num }) => {
     <div className={styles.Stepper}>
       <button
         onClick={() => {
-          setCount((prev) => prev - 1);
+          if (count > 0) setCount((prev) => prev - 1);
         }}
       >
         <img src={minus} alt="minus button" />

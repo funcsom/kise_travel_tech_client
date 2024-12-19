@@ -1,13 +1,21 @@
+.ProductBig {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 .title {
   background-color: var(--color-gray-000);
   padding: 11px 8px;
   display: flex;
   justify-content: space-between;
+  font: var(--font-b2);
 }
 
 .content {
   background-color: var(--color-gray-100);
   padding: 14px 10px;
+  font: var(--font-b4);
 }
 
 .title > p:first-child {
@@ -16,4 +24,5 @@
 
 .ProductBig span {
   color: var(--color-red-01);
+  font: var(--font-b4-el);
 }

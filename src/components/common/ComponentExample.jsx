@@ -9,8 +9,7 @@ const Component = (props) => {
     <div style={{ width: "375px" }}>
       <Product title="KTX NNN" />
       <Product title="KTX NNN">content</Product>
-      <Progressbar text="여행상품선택" type="active" />
-      <Progressbar text="여행상품선택" type="unactive" />
+      <Progressbar nthChild={3} />
       <Stepper num={0} />
       <ToggleWrapper title="인원선택">
         <Wrapper>인원</Wrapper>

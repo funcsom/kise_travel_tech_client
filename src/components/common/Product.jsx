@@ -1,6 +1,6 @@
 import styles from "./Product.module.css";
 
-const ProductBig = ({ title, children }) => {
+const Product = ({ title, children }) => {
   return (
     <div className={styles.ProductBig}>
       <div className={styles.title}>
@@ -14,4 +14,4 @@ const ProductBig = ({ title, children }) => {
   );
 };
 
-export default ProductBig;
+export default Product;
