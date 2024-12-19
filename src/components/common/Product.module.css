@@ -13,7 +13,7 @@
 }
 
 .content {
-  background-color: var(--color-gray-100);
+  background-color: #eaeaea;
   padding: 14px 10px;
   font: var(--font-b4);
 }
