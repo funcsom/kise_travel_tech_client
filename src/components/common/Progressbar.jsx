@@ -10,7 +10,7 @@ const Progressbar = ({ nthChild }) => {
       <ProgressItem text="여행자 정보입력" type={nthChild === 4 && "active"} />
       <ProgressItem
         text="여행상품 예약완료"
-        type={nthChild === 5 && "active"}
+        type={nthChild === 5 && "activeLast"}
       />
     </div>
   );
