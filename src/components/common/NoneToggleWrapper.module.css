@@ -1,0 +1,20 @@
+.title {
+  background-color: var(--color-light-blue-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 10px 8px 14px;
+  font: var(--font-h1);
+}
+
+.openButton {
+  transform: rotate(180deg);
+}
+
+button {
+  background-color: transparent;
+}
+
+.title > div {
+  text-align: center;
+}
