@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import Header from "../../components/Header";
 import Body from "../../components/common/Body";
 import Progressbar from "../../components/common/Progressbar";
@@ -7,6 +9,12 @@ import Info from "./components/Info";
 import Button from "../../components/Button";
 
 const CompleteProduct = (props) => {
+  const navigate = useNavigate();
+
+  const handleNext = () => {
+    navigate("/");
+  };
+
   return (
     <div>
       <Header text="예약인원" />
@@ -18,8 +26,7 @@ const CompleteProduct = (props) => {
           </Wrapper>
         </div>
         <div style={{ display: "flex", gap: "7px" }}>
-          <Button text="예약취소" type="cart" />
-          <Button text="바로결제" type="cta" />
+          <Button text="예약확인" type="cta" handleclick={handleNext} />
         </div>
       </Body>
     </div>

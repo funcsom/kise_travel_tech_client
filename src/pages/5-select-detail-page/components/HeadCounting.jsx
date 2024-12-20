@@ -1,6 +1,23 @@
+import { useState } from "react";
 import Stepper from "../../../components/common/Stepper";
 
-const HeadCounting = (props) => {
+const HeadCounting = () => {
+  const [category, setCategory] = useState([
+    { type: "어른", num: 2 },
+    { type: "어린이", num: 0 },
+    { type: "중증장애인", num: 0 },
+    { type: "경증장애인", num: 0 },
+    { type: "경로", num: 0 },
+    { type: "동반유아", num: 0 },
+    { type: "장애보호", num: 0 },
+  ]);
+
+  const handleCountChange = (index, newCount) => {
+    const updateCategory = [...category];
+    updateCategory[index].num = newCount;
+    setCategory(updateCategory);
+  };
+
   return (
     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
       <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
@@ -21,21 +38,14 @@ const HeadCounting = (props) => {
           }}
         >
           <div style={{ flexShrink: "0" }}>{item.type}</div>
-          <Stepper num={item.num} />
+          <Stepper
+            count={item.num}
+            onCountChange={(newCount) => handleCountChange(index, newCount)}
+          />
         </div>
       ))}
     </div>
   );
 };
-
-const category = [
-  { type: "어른", num: "2" },
-  { type: "어린이", num: "0" },
-  { type: "중증장애인", num: "0" },
-  { type: "경증장애인", num: "0" },
-  { type: "경로", num: "0" },
-  { type: "동반유아", num: "0" },
-  { type: "장애보호", num: "0" },
-];
 
 export default HeadCounting;

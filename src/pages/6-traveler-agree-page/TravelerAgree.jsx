@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Body from "../../components/common/Body";
 import Progressbar from "../../components/common/Progressbar";
 import Header from "../../components/Header";
@@ -11,6 +12,7 @@ const TravelerAgree = (props) => {
   const [open, setOpen] = useState(false);
   const [haveSeen, setHaveSeen] = useState(false);
   const [checked, setChecked] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setOpen(!open);
@@ -23,6 +25,10 @@ const TravelerAgree = (props) => {
     } else {
       alert("[상세보기] 확인 후 동의 가능합니다");
     }
+  };
+
+  const handleNext = () => {
+    navigate("/travelerinfo");
   };
 
   return (
@@ -67,7 +73,7 @@ const TravelerAgree = (props) => {
             {open && <AgreeText />}
           </div>
         </Wrapper>
-        <Button text="다음" type="cta" />
+        <Button text="다음" type="cta" handleclick={handleNext} />
       </Body>
     </div>
   );

@@ -1,3 +1,6 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import Header from "../../components/Header";
 import Body from "../../components/common/Body";
 import ToggleWrapper from "../../components/common/ToggleWrapper";
@@ -9,10 +12,29 @@ import TrainInfo from "./components/TrainInfo";
 
 import styles from "./SelectProduct.module.css";
 import Progressbar from "../../components/common/Progressbar";
+
 const SelectProduct = (props) => {
+  const [count, setCount] = useState(0);
+  const navigate = useNavigate();
+
+  const handleCountChange = (newCount) => {
+    setCount(newCount);
+  };
+
+  const handleNext = () => {
+    navigate("/selectdetail");
+  };
+  const handlePrev = () => {
+    navigate("/");
+  };
   return (
     <div>
-      <Header text="상품선택" />
+      <Header
+        text="상품선택"
+        handleClickLeft={() => {
+          console.log("클릭됨");
+        }}
+      />
       <Body>
         <Progressbar nthChild={1} />
         <div>
@@ -28,7 +50,7 @@ const SelectProduct = (props) => {
                 }}
               >
                 <div>인원</div>
-                <Stepper num={0} />
+                <Stepper count={count} onCountChange={handleCountChange} />
               </div>
             </Wrapper>
           </ToggleWrapper>
@@ -36,7 +58,11 @@ const SelectProduct = (props) => {
             {trainToGo.map((train, index) => (
               <div key={index}>
                 <Wrapper styles={{ borderBottom: "1px solid black" }}>
-                  <input type="radio" />
+                  <input
+                    type="radio"
+                    name="traintogo"
+                    defaultChecked={index === 0}
+                  />
                   <Product title={train.name}>
                     <TrainInfo
                       selectedDate="2024년 12월 18일 (화)"
@@ -79,7 +105,11 @@ const SelectProduct = (props) => {
             {trainToCome.map((train, index) => (
               <div key={index}>
                 <Wrapper styles={{ borderBottom: "1px solid black" }}>
-                  <input type="radio" />
+                  <input
+                    type="radio"
+                    name="traintocome"
+                    defaultChecked={index === 0}
+                  />
                   <Product title={train.name}>
                     <TrainInfo
                       selectedDate="2024년 12월 18일 (화)"
@@ -92,7 +122,7 @@ const SelectProduct = (props) => {
             ))}
           </ToggleWrapper>
         </div>
-        <Button text="다음" type="cta" />
+        <Button text="다음" type="cta" handleclick={handleNext} />
       </Body>
     </div>
   );
