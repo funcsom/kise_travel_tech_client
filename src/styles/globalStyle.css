@@ -16,11 +16,11 @@ body * {
 
 :root {
   --color-white: #fff;
-  --color-gray-000: #dbdbdb;
   --color-gray-100: #dbdbdb;
   --color-gray-200: #c9c9c9;
   --color-gray-400: #747474;
   --color-gray-500: #555555;
+  --color-gray-600: #424242;
   --color-light-blue-100: #cde0ee;
   --color-light-blue-200: #0397d6;
   --color-blue-02: #083b82;
@@ -34,10 +34,13 @@ body * {
   --font-t1: 500 19px/1.2 "Pretendard-Regular", sans-serif;
   --font-t2: 500 12px/1.2 "Pretendard-Regular", sans-serif;
   --font-b1: 500 16px/1.2 "Pretendard-Regular", sans-serif;
+  --font-b1-b: 700 16px/1.2 "Pretendard-Regular", sans-serif;
   --font-b2: 300 15px/1.2 "Pretendard-Regular", sans-serif;
-  --font-b3-r: 400 14px/1.2 "Pretendard-Regular", sans-serif;
-  --font-b3-sb: 600 14px/1.2 "Pretendard-Regular", sans-serif;
   --font-b3-l: 300 14px/1.2 "Pretendard-Regular", sans-serif;
+  --font-b3-r: 400 14px/1.2 "Pretendard-Regular", sans-serif;
+  --font-b3-m: 500 14px/1.2 "Pretendard-Regular", sans-serif;
+  --font-b3-sb: 600 14px/1.2 "Pretendard-Regular", sans-serif;
+  --font-b3-b: 700 14px/1.2 "Pretendard-Regular", sans-serif;
   --font-b4: 400 13px/1.2 "Pretendard-Regular", sans-serif;
   --font-b4-el: 200 13px/1.2 "Pretendard-Regular", sans-serif;
 }
@@ -108,4 +111,16 @@ select {
 /* 선택된 텍스트 스타일 */
 select:focus {
   border: 1px solid var(--color-blue);
+}
+
+/* input[type="text"] 스타일 커스터마이징 */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"] {
+  height: 40px;
+  border: 1px solid var(--color-gray-200);
+  font: var(--font-b3-l);
+  padding-left: 12px;
+  margin: 0;
 }
