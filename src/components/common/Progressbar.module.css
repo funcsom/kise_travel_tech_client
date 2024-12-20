@@ -1,0 +1,13 @@
+.Progressbar {
+  display: flex;
+  justify-content: center;
+  border: 1px solid var(--color-blue-02);
+}
+
+.Progressbar > *:not(:last-child) {
+  border-right: 1px solid var(--color-blue-02);
+}
+
+.Progressbar > *:frist-child {
+  border-left: 1px solid var(--color-blue-02);
+}

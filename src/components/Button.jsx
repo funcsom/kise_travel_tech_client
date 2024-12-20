@@ -1,14 +1,14 @@
-import { useState } from "react";
+import styles from "./Button.module.css";
 
-const Button = ({ handleclick, image = "" }) => {
-  const [img, setImg] = useState(false);
-  image && setImg(true);
+const Button = ({ handleclick, text = "", image = "", type = "" }) => {
   return (
-    <div>
-      <button onClick={handleclick}>
-        {img && <img src={image} alt="icon" />}
-      </button>
-    </div>
+    <button
+      className={`${styles.Button} ${styles[type]}`}
+      onClick={handleclick}
+    >
+      {text && text}
+      {image && <img src={image} alt="icon" />}
+    </button>
   );
 };
 
