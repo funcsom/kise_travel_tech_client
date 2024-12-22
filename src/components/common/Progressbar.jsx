@@ -1,5 +1,5 @@
 import ProgressItem from "./ProgressItem";
-import styles from "./ProgressBar.module.css";
+import styles from "./Progressbar.module.css";
 
 const Progressbar = ({ nthChild }) => {
   return (
