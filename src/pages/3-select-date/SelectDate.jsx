@@ -1,6 +1,6 @@
 import Body from "../../components/common/Body";
 import Header from "../../components/Header";
-import Calendar from "./components/Calendar";
+import MyCalendar from "./components/Calendar";
 
 import styles from "./SelectDate.module.css";
 
@@ -18,7 +18,49 @@ const SelectDate = (props) => {
           flex: "1",
         }}
       >
-        <Calendar />
+        <MyCalendar />
+        <div
+          style={{
+            display: "flex",
+            gap: "16px",
+            justifyContent: "flex-end",
+          }}
+        >
+          <div
+            style={{
+              display: "flex",
+              gap: "4px",
+              font: "var(--font-b2)",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                width: "16px",
+                height: "16px",
+                backgroundColor: "var(--color-light-blue-200)",
+              }}
+            ></div>
+            <span>예약가능</span>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              gap: "4px",
+              font: "var(--font-b2)",
+              alignItems: "center",
+            }}
+          >
+            <div
+              style={{
+                width: "16px",
+                height: "16px",
+                backgroundColor: "var(--color-gray-300)",
+              }}
+            ></div>
+            <span>마감</span>
+          </div>
+        </div>
       </div>
     </div>
   );

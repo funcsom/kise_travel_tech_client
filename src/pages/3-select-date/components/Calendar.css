@@ -1,0 +1,66 @@
+.react-calendar {
+  border: none;
+  background-color: var(--color-light-blue-50);
+}
+
+/* 상단 네비게이션 바 */
+.react-calendar__navigation {
+  background-color: var(--color-light-blue-200);
+  font: var(--font-b2);
+  margin-bottom: 0;
+  height: 40px;
+}
+
+.react-calendar__navigation__label__labelText {
+  color: white;
+}
+
+.react-calendar__navigation__next-button {
+  background-image: url("../../../assets/icon/icon_button_next.svg");
+}
+
+/* 요일 나타내는 행 */
+.react-calendar__month-view__weekdays {
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-light-blue-50);
+  color: var(--color-light-blue-200);
+  font: var(--font-b2-b);
+  border-bottom: 1.5px solid var(--color-white);
+}
+
+abbr {
+  text-decoration: none;
+}
+
+/* 날짜 선택하는 부분 */
+.react-calendar__tile {
+  background-color: var(--color-light-blue-50);
+  font: var(--font-b2-b);
+  color: black;
+  height: 48px;
+}
+
+.react-calendar__tile.available {
+  background-color: var(--color-light-blue-200);
+  color: var(--color-white);
+  border-bottom: 1.5px solid white;
+}
+
+.react-calendar__tile[disabled] {
+  background-color: var(--color-light-blue-50);
+  color: black;
+  border-bottom: 1.5px solid white;
+}
+
+.react-calendar__tile.disavailable {
+  background-color: var(--color-gray-300);
+  color: black;
+  border-bottom: 1.5px solid white;
+}
+
+.react-calendar__tile.sunday {
+  color: var(--color-red-03);
+}
