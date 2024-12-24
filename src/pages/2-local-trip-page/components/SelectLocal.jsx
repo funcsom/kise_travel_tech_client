@@ -15,7 +15,15 @@ const SelectLocal = ({ currentLocal, onChange }) => {
   };
 
   return (
-    <div style={{ padding: " 1rem" }}>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        flex: "1",
+      }}
+    >
       <label htmlFor="selectLocal" style={{ marginRight: "3rem" }}>
         지역선택
       </label>
@@ -24,7 +32,7 @@ const SelectLocal = ({ currentLocal, onChange }) => {
         id="selectLocal"
         value={local}
         onChange={onChangeLocal}
-        style={{ padding: "8px" }}
+        style={{ padding: "8px", width: "246px" }}
       >
         <option value="capital">수도권</option>
         <option value="gangwon">강원권</option>

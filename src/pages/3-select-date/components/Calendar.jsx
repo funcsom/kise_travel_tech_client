@@ -1,98 +1,78 @@
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import { useNavigate } from "react-router-dom";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import "./Calendar.css";
+import dayjs from "dayjs";
 
-const Calendar = () => {
-  const [selectedDate, setSelectedDate] = useState(null);
+const MyCalendar = () => {
+  const navigate = useNavigate();
+  const [value, onChange] = useState(new Date()); // 초기값은 현재 날짜
 
-  // 예약 가능 날짜와 마감 날짜 설정
-  const reservableDates = [
-    new Date(2024, 11, 17),
-    new Date(2024, 11, 18),
-    new Date(2024, 11, 19),
-    new Date(2024, 11, 20),
-    new Date(2024, 11, 21),
-    new Date(2024, 11, 22),
-    new Date(2024, 11, 23),
-  ];
+  const handleDateChange = (date) => {
+    onChange(date); // 상태 업데이트
+    navigate("/selectproduct"); // 선택된 후 페이지 이동
+  };
 
-  const closedDates = [
-    new Date(2024, 11, 24),
-    new Date(2024, 11, 25),
-    new Date(2024, 11, 26),
-    new Date(2024, 11, 27),
-    new Date(2024, 11, 28),
-  ];
+  const tileClassName = ({ date }) => {
+    const currentDate = new Date();
+    const oneWeekLater = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      currentDate.getDate() + 7
+    );
+    const twoWeeksLater = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      currentDate.getDate() + 14
+    );
 
-  // 날짜 스타일링
-  const getDayInlineStyle = (date) => {
-    if (reservableDates.some((d) => d.toDateString() === date.toDateString())) {
-      return {
-        backgroundColor: "#0076C9", // 예약 가능 색상
-        color: "white",
-        borderRadius: "50%",
-      };
-    } else if (
-      closedDates.some((d) => d.toDateString() === date.toDateString())
-    ) {
-      return {
-        backgroundColor: "#9e9e9e", // 마감 색상
-        color: "white",
-        borderRadius: "50%",
-      };
+    // 오늘부터 7일 뒤에 해당하는 날짜에 클래스 추가
+    if (date >= currentDate && date < oneWeekLater) {
+      return "available"; // 원하는 커스텀 클래스
     }
-    return {}; // 기본 스타일
+
+    // 7일부터 14일 뒤에 해당하는 날짜에 클래스 추가
+    if (date >= oneWeekLater && date < twoWeeksLater) {
+      return "disavailable"; // 원하는 커스텀 클래스
+    }
+
+    // 일요일에 추가 클래스
+    if (date.getDay() === 0) {
+      return "sunday";
+    }
+
+    return "";
+  };
+
+  const tileDisabled = ({ date }) => {
+    const currentDate = new Date();
+    // 일주일 후의 날짜를 구합니다.
+    const oneWeekLater = new Date(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      currentDate.getDate() + 7
+    );
+
+    const disableDate = date <= currentDate || date >= oneWeekLater;
+    // 일주일 후부터의 날짜를 비활성화 처리합니다.
+    return disableDate;
   };
 
   return (
-    <div style={{ textAlign: "center", fontFamily: "Arial, sans-serif" }}>
-      <DatePicker
-        selected={selectedDate}
-        onChange={(date) => setSelectedDate(date)}
-        inline
-        dayClassName={(date) => ""}
-        renderDayContents={(day, date) => {
-          return (
-            <div style={{ ...getDayInlineStyle(date), padding: "5px" }}>
-              {day}
-            </div>
-          );
-        }}
-      />
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "1rem",
-          gap: "1rem",
-        }}
-      >
-        {/* 예약가능 마감 색상 노티 */}
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <div
-            style={{
-              width: "20px",
-              height: "20px",
-              backgroundColor: "#0076C9",
-              borderRadius: "50%",
-            }}
-          ></div>
-          <span style={{ marginLeft: "5px" }}>예약 가능</span>
-        </div>
-        <div style={{ display: "flex", alignItems: "center" }}>
-          <div
-            style={{
-              width: "20px",
-              height: "20px",
-              backgroundColor: "#9e9e9e",
-              borderRadius: "50%",
-            }}
-          ></div>
-          <span style={{ marginLeft: "5px" }}>마감</span>
-        </div>
-      </div>
-    </div>
+    <Calendar
+      value={value}
+      formatDay={(locale, date) => dayjs(date).format("D")}
+      tileClassName={tileClassName}
+      tileDisabled={tileDisabled}
+      onChange={handleDateChange}
+      calendarType="gregory"
+      next2Label={null}
+      prev2Label={null}
+      // 앞뒤 달의 이어지는 날짜 보여주기 여부
+      showNeighboringMonth={false}
+    />
   );
 };
 
-export default Calendar;
+export default MyCalendar;
