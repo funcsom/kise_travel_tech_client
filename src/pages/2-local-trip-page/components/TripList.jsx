@@ -1,6 +1,7 @@
-const TripList = ({ img, title, price }) => {
+const TripList = ({ img, title, price, onClickProduct }) => {
   return (
     <div
+      onClick={onClickProduct}
       style={{
         display: "flex",
         flexDirection: "column",
@@ -8,6 +9,7 @@ const TripList = ({ img, title, price }) => {
         backgroundColor: "white",
         padding: "8px",
         gap: " 6px",
+        cursor: "pointer",
       }}
     >
       {/* <img src="" alt="" /> */}

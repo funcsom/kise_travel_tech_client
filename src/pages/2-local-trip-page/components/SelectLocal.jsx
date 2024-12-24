@@ -7,12 +7,13 @@ const SelectLocal = ({ currentLocal, onChange }) => {
     setLocal(currentLocal);
   }, [currentLocal]);
 
+  // select 태그에서 변경이 일어날 때 option의 value를 현재 컴포넌트의 local 상태와 상위 컴포넌트의 local 상태 변경
   const onChangeLocal = (e) => {
     const selectedValue = e.target.value;
     setLocal(selectedValue);
     onChange(selectedValue);
-    console.log(local);
   };
+
   return (
     <div style={{ padding: " 1rem" }}>
       <label htmlFor="selectLocal" style={{ marginRight: "3rem" }}>

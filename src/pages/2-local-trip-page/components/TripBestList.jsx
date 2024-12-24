@@ -1,12 +1,14 @@
-const TripBestList = ({ title, price }) => {
+const TripBestList = ({ title, price, onClickProduct }) => {
   return (
     <div
+      onClick={onClickProduct}
       style={{
         display: "flex",
         alignItems: "flex-end",
         width: "350px",
         height: "350px",
         backgroundColor: "#CDE0EE",
+        cursor: "pointer",
       }}
     >
       <div

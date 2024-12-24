@@ -13,8 +13,8 @@ import TrainInfo from "./components/TrainInfo";
 import styles from "./SelectProduct.module.css";
 import Progressbar from "../../components/common/Progressbar";
 
-const SelectProduct = (props) => {
-  const [count, setCount] = useState(0);
+const SelectProduct = () => {
+  const [count, setCount] = useState(1);
   const navigate = useNavigate();
 
   const handleCountChange = (newCount) => {
@@ -50,7 +50,12 @@ const SelectProduct = (props) => {
                 }}
               >
                 <div>인원</div>
-                <Stepper count={count} onCountChange={handleCountChange} />
+                <Stepper
+                  count={count}
+                  onCountChange={handleCountChange}
+                  minHead={true}
+                  maxHead={true}
+                />
               </div>
             </Wrapper>
           </ToggleWrapper>

@@ -29,10 +29,10 @@ const TravelerForm = (props) => {
           }}
         >
           <label htmlFor="gender-man">
-            <input type="radio" id="gender-man" /> 남자
+            <input type="radio" id="gender-man" name="gender" /> 남자
           </label>
           <label htmlFor="gender-woman">
-            <input type="radio" id="gender_woman" /> 여자
+            <input type="radio" id="gender_woman" name="gender" /> 여자
           </label>
         </div>
       </div>

@@ -24,7 +24,7 @@ const HeadCounting = () => {
         <div style={{ flexShrink: "0" }}>객실등급</div>
         <select name="" id="">
           <option value="">일반실</option>
-          <option value="">고급실</option>
+          <option value="">특실/우등실</option>
         </select>
         <div style={{ flexShrink: "0" }}>재고 : 13</div>
       </div>

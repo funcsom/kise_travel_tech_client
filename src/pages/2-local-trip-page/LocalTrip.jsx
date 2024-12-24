@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Header from "../../components/Header";
 import SelectLocal from "./components/SelectLocal";
 import TripBestList from "./components/TripBestList";
@@ -6,25 +7,29 @@ import TripList from "./components/TripList";
 
 import styles from "./LocalTrip.module.css";
 
-const localIs = "gangwon";
+const LocalTrip = () => {
+  const params = useParams();
+  const navigate = useNavigate();
 
-const LocalTrip = (props) => {
-  const [local, setLocal] = useState(localIs);
-  const [products, setProducts] = useState([]); // 초기값을 빈 배열로 설정
-  const [selectedLocal, setSelectedLocal] = useState([]);
-  const [localBestProd, setLocalBestProd] = useState({});
-  const [localProds, setLocalProds] = useState([]);
+  const [selectedLocal, setSelectedLocal] = useState(params.local); // 선택한 지역 이름 저장
+  const [products, setProducts] = useState([]); // 받아온 전체 데이터 저장
+  const [localBestProd, setLocalBestProd] = useState({}); // 선택한 지역 관광명소 중 Best 여행지 저장
+  const [localProds, setLocalProds] = useState([]); // 선택한 지역 관광명소 저장
 
   const changeLocal = (props) => {
-    setLocal(props);
+    setSelectedLocal(props);
+  };
+
+  const onClickProduct = () => {
+    navigate("/selectproduct");
   };
 
   useEffect(() => {
     // 렌더링 시, local-trip.json 파일을 가져올 수 있도록 함
-    fetch("data/local-trip.json")
+    fetch("/data/local-trip.json")
       .then((res) => res.json())
       .then((data) => {
-        console.log("데이터 받아와짐?", data);
+        console.log("받아온 데이터 =>", data);
         setProducts(data);
       });
   }, []);
@@ -32,25 +37,18 @@ const LocalTrip = (props) => {
   useEffect(() => {
     // local 상태 변경시, products에서 다른 지역 뽑아와서 seletedLocal 변수에 삽입
     if (products.length > 0) {
-      const filteredProducts = products.filter((prod) => prod.local === local);
-      setSelectedLocal(filteredProducts);
+      const filteredProducts = products.filter(
+        (prod) => prod.local === selectedLocal
+      );
       setLocalBestProd(filteredProducts[0].Best);
       setLocalProds(filteredProducts[0].List);
     }
-  }, [local, products]);
-
-  const handleclick = (e) => {
-    console.log(e);
-  };
+  }, [selectedLocal, products]);
 
   return (
     <div className={styles.LocalTrip}>
-      <Header
-        handleClickLeft={handleclick}
-        text="지역별여행"
-        handleClickRight={handleclick}
-      />
-      <SelectLocal currentLocal={localIs} onChange={changeLocal} />
+      <Header text="지역별여행" />
+      <SelectLocal currentLocal={params.local} onChange={changeLocal} />
       <div
         style={{
           padding: "12px",
@@ -59,10 +57,19 @@ const LocalTrip = (props) => {
           gap: "1rem",
         }}
       >
-        <TripBestList title={localBestProd.title} price={localBestProd.price} />
+        <TripBestList
+          onClickProduct={onClickProduct}
+          title={localBestProd.title}
+          price={localBestProd.price}
+        />
         <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
           {localProds.map((prod) => (
-            <TripList key={prod.id} title={prod.title} price={prod.price} />
+            <TripList
+              onClickProduct={onClickProduct}
+              key={prod.id}
+              title={prod.title}
+              price={prod.price}
+            />
           ))}
         </div>
       </div>
