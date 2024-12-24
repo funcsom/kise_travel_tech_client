@@ -22,7 +22,7 @@ const LocalTrip = () => {
   };
 
   const onClickProduct = () => {
-    navigate("/selectproduct");
+    navigate("/selectdate");
   };
 
   useEffect(() => {

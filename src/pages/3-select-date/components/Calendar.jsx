@@ -1,11 +1,18 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import "./Calendar.css";
 import dayjs from "dayjs";
 
 const MyCalendar = () => {
+  const navigate = useNavigate();
   const [value, onChange] = useState(new Date()); // 초기값은 현재 날짜
+
+  const handleDateChange = (date) => {
+    onChange(date); // 상태 업데이트
+    navigate("/selectproduct"); // 선택된 후 페이지 이동
+  };
 
   const tileClassName = ({ date }) => {
     const currentDate = new Date();
@@ -58,6 +65,7 @@ const MyCalendar = () => {
       formatDay={(locale, date) => dayjs(date).format("D")}
       tileClassName={tileClassName}
       tileDisabled={tileDisabled}
+      onChange={handleDateChange}
       calendarType="gregory"
       next2Label={null}
       prev2Label={null}
