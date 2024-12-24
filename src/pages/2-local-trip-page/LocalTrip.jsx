@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../../components/Header";
 import SelectLocal from "./components/SelectLocal";
+import Body from "../../components/common/Body";
 import TripBestList from "./components/TripBestList";
 import TripList from "./components/TripList";
 
@@ -48,21 +49,31 @@ const LocalTrip = () => {
   return (
     <div className={styles.LocalTrip}>
       <Header text="지역별여행" />
-      <SelectLocal currentLocal={params.local} onChange={changeLocal} />
       <div
         style={{
-          padding: "12px",
           display: "flex",
-          flexDirection: "column",
-          gap: "1rem",
+          flexDirection: "row",
+          padding: "8px 12px",
+          backgroundColor: "white",
         }}
       >
+        <SelectLocal currentLocal={params.local} onChange={changeLocal} />
+      </div>
+      <Body>
+        <p style={{ font: "var(--font-b3-b)" }}>강원권 Best 여행지</p>
         <TripBestList
           onClickProduct={onClickProduct}
           title={localBestProd.title}
           price={localBestProd.price}
         />
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "8px" }}>
+        <div
+          style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: "13.5px",
+            marginTop: "9px",
+          }}
+        >
           {localProds.map((prod) => (
             <TripList
               onClickProduct={onClickProduct}
@@ -72,7 +83,7 @@ const LocalTrip = () => {
             />
           ))}
         </div>
-      </div>
+      </Body>
     </div>
   );
 };

@@ -32,7 +32,8 @@ body * {
   /* Typography Variables */
   --font-h1: 500 16px/1.2 "Pretendard-Regular", sans-serif;
   --font-t1: 500 19px/1.2 "Pretendard-Regular", sans-serif;
-  --font-t2: 500 12px/1.2 "Pretendard-Regular", sans-serif;
+  --font-t2: 700 12px/1.2 "Pretendard-Regular", sans-serif;
+  --font-t2-t: 500 12px/1.54 "Pretendard-Regular", sans-serif;
   --font-b1: 500 16px/1.2 "Pretendard-Regular", sans-serif;
   --font-b1-b: 700 16px/1.2 "Pretendard-Regular", sans-serif;
   --font-b2: 300 15px/1.2 "Pretendard-Regular", sans-serif;
