@@ -1,11 +1,4 @@
 .App {
-  max-width: 375px;
+  width: 100vw;
   min-height: 667px;
-}
-
-.App > main {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  background-color: #f0f0f0;
 }

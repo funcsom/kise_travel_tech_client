@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-const LocalTripButton = ({ img = "", text, linkTo }) => {
+const LocalTripButton = ({ img, text, linkTo }) => {
   const navigate = useNavigate();
 
   const handleGoLocal = () => {

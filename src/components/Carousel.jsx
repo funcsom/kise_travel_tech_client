@@ -21,7 +21,7 @@ const Carousel = ({ elems }) => {
               <img
                 src={elem}
                 alt={`carousel_${index}`}
-                style={{ width: "350px" }}
+                style={{ width: "100%" }}
               />
             </SwiperSlide>
           );
