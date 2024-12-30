@@ -1,4 +1,4 @@
-import bestproduct from "../../../assets/bestproduct.png";
+import bestproduct from "../../../assets/image/bestproduct.png";
 import iconcalendar from "../../../assets/icon/icon_calendar.svg";
 import iconprevious from "../../../assets/icon/icon_previous.svg";
 

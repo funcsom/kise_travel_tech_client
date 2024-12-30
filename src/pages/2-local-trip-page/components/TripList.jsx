@@ -1,4 +1,4 @@
-import product from "../../../assets/product.png";
+import product from "../../../assets/image/product.png";
 import iconcalendar from "../../../assets/icon/icon_calendar.svg";
 
 const TripList = ({ img, title, price, onClickProduct }) => {
