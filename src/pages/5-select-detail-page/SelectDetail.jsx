@@ -4,13 +4,13 @@ import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import Body from "../../components/common/Body";
 import Progressbar from "../../components/common/Progressbar";
-import ToggleWrapper from "../../components/common/ToggleWrapper";
 import NoneToggleWrapper from "../../components/common/NoneToggleWrapper";
 import Wrapper from "../../components/common/Wrapper";
 import Product from "../../components/common/Product";
 import TrainInfo from "./components/TrainInfo";
 import Button from "../../components/Button";
 
+import iconprev from "../../assets/icon/icon_previous.svg";
 import TrainSelectPlace from "./components/TrainSelectPlace";
 import HeadCounting from "./components/HeadCounting";
 import PackageCounting from "./components/PackageCounting";
@@ -29,9 +29,17 @@ const SelectDetail = () => {
   const handleNext = () => {
     navigate("/traveleragree");
   };
+
+  const handlePrev = () => {
+    navigate("../");
+  };
   return (
     <div>
-      <Header text="예약인원" />
+      <Header
+        text="예약인원"
+        imageLeft={iconprev}
+        handleClickLeft={handlePrev}
+      />
       <Body>
         <Progressbar nthChild={2} />
         <div>
@@ -118,7 +126,7 @@ const SelectDetail = () => {
             ))}
           </NoneToggleWrapper>
         </div>
-        <Button text="다음" type="cta" handleclick={handleNext} />
+        <Button text="다음" type="cta" handleClick={handleNext} />
       </Body>
     </div>
   );

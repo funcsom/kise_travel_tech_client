@@ -1,6 +1,7 @@
 .react-calendar {
   border: none;
   background-color: var(--color-light-blue-50);
+  width: 100%;
 }
 
 /* 상단 네비게이션 바 */
@@ -13,10 +14,6 @@
 
 .react-calendar__navigation__label__labelText {
   color: white;
-}
-
-.react-calendar__navigation__next-button {
-  background-image: url("../../../assets/icon/icon_button_next.svg");
 }
 
 /* 요일 나타내는 행 */
@@ -63,4 +60,10 @@ abbr {
 
 .react-calendar__tile.sunday {
   color: var(--color-red-03);
+}
+
+/* navigation label 클릭 비활성화 시키기
+https://github.com/react-component/calendar/issues/247 */
+.react-calendar__navigation__label {
+  pointer-events: none;
 }

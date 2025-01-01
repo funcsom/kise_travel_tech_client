@@ -8,14 +8,14 @@ const TripBestList = ({ title, price, onClickProduct }) => {
       onClick={onClickProduct}
       style={{
         display: "flex",
-        width: "343px",
+        width: "100%",
         alignItems: "flex-end",
         backgroundColor: "#CDE0EE",
         cursor: "pointer",
         position: "relative",
       }}
     >
-      <img src={bestproduct} alt="" />
+      <img src={bestproduct} alt="" style={{ width: "100%" }} />
       <img
         src={iconcalendar}
         alt=""

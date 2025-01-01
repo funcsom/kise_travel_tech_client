@@ -9,7 +9,7 @@ const TripList = ({ img, title, price, onClickProduct }) => {
         display: "flex",
         flexDirection: "column",
         justifyContent: "space-between",
-        width: "165px",
+        width: "100%",
         height: "191px",
         backgroundColor: "white",
         padding: "10px",
@@ -37,7 +37,7 @@ const TripList = ({ img, title, price, onClickProduct }) => {
             overflow: "hidden",
           }}
         >
-          <img src={product} alt="" />
+          <img src={product} alt="" style={{ width: "100%" }} />
         </div>
         <p style={{ font: "var(--font-t2-t)" }}>{title}</p>
       </div>

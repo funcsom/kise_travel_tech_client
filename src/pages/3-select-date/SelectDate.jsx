@@ -1,63 +1,31 @@
-import Body from "../../components/common/Body";
+import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import MyCalendar from "./components/Calendar";
 
+import iconprev from "../../assets/icon/icon_previous.svg";
 import styles from "./SelectDate.module.css";
 
-const SelectDate = (props) => {
+const SelectDate = () => {
+  const navigate = useNavigate();
+  const handlePrev = () => {
+    navigate("../");
+  };
   return (
     <div>
-      <Header text="날짜 선택" />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "15px",
-          backgroundColor: "white",
-          padding: "15px",
-          flex: "1",
-        }}
-      >
+      <Header
+        text="날짜 선택"
+        imageLeft={iconprev}
+        handleClickLeft={handlePrev}
+      />
+      <div className={styles.wrapper}>
         <MyCalendar />
-        <div
-          style={{
-            display: "flex",
-            gap: "16px",
-            justifyContent: "flex-end",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              gap: "4px",
-              font: "var(--font-b2)",
-              alignItems: "center",
-            }}
-          >
-            <div
-              style={{
-                width: "16px",
-                height: "16px",
-                backgroundColor: "var(--color-light-blue-200)",
-              }}
-            ></div>
+        <div className={styles.guide}>
+          <div className={styles.guidearea}>
+            <div className={styles.ablecolor}></div>
             <span>예약가능</span>
           </div>
-          <div
-            style={{
-              display: "flex",
-              gap: "4px",
-              font: "var(--font-b2)",
-              alignItems: "center",
-            }}
-          >
-            <div
-              style={{
-                width: "16px",
-                height: "16px",
-                backgroundColor: "var(--color-gray-300)",
-              }}
-            ></div>
+          <div className={styles.guidearea}>
+            <div className={styles.disablecolor}></div>
             <span>마감</span>
           </div>
         </div>

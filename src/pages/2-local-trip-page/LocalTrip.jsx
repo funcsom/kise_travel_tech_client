@@ -6,49 +6,51 @@ import Body from "../../components/common/Body";
 import TripBestList from "./components/TripBestList";
 import TripList from "./components/TripList";
 
+import iconprev from "../../assets/icon/icon_previous.svg";
 import styles from "./LocalTrip.module.css";
 
 const LocalTrip = () => {
   const params = useParams();
   const navigate = useNavigate();
 
-  const [selectedLocal, setSelectedLocal] = useState(params.local); // 선택한 지역 이름 저장
-  const [products, setProducts] = useState([]); // 받아온 전체 데이터 저장
-  const [localBestProd, setLocalBestProd] = useState({}); // 선택한 지역 관광명소 중 Best 여행지 저장
-  const [localProds, setLocalProds] = useState([]); // 선택한 지역 관광명소 저장
+  const [selectedLocal, setSelectedLocal] = useState(params.local); // selectedLocal state에 초기값 설정
+  const [localBestProd, setLocalBestProd] = useState({}); // 받아온 지역별 Best 상품을 저장하는 state
+  const [localProds, setLocalProds] = useState([]); // 받아온 지역별 상품을 저장하는 state
 
+  // 지역 선택 시, url param이 변경되며 selectedLocal state 변경으로 useEffect 실행되도록 함
   const changeLocal = (props) => {
+    navigate(`../../localtrip/${props}`);
     setSelectedLocal(props);
   };
 
+  // 상품 클릭 시 다음 페이지로 넘어가는 기능
   const onClickProduct = () => {
     navigate("/selectdate");
   };
 
+  // header 뒤로가기 버튼 클릭 시 이전 페이지로 넘어가는 기능
+  const handlePrev = () => {
+    navigate("../");
+  };
+
+  // selectedLocal state 변경 시, localBestProd, localProd 업데이트하는 기능
   useEffect(() => {
-    // 렌더링 시, local-trip.json 파일을 가져올 수 있도록 함
-    fetch("/data/local-trip.json")
+    fetch(`/data/${selectedLocal}-product.json`)
       .then((res) => res.json())
       .then((data) => {
         console.log("받아온 데이터 =>", data);
-        setProducts(data);
+        setLocalBestProd(data.Best);
+        setLocalProds(data.List);
       });
-  }, []);
-
-  useEffect(() => {
-    // local 상태 변경시, products에서 다른 지역 뽑아와서 seletedLocal 변수에 삽입
-    if (products.length > 0) {
-      const filteredProducts = products.filter(
-        (prod) => prod.local === selectedLocal
-      );
-      setLocalBestProd(filteredProducts[0].Best);
-      setLocalProds(filteredProducts[0].List);
-    }
-  }, [selectedLocal, products]);
+  }, [selectedLocal]);
 
   return (
     <div className={styles.LocalTrip}>
-      <Header text="지역별여행" />
+      <Header
+        text="지역별여행"
+        imageLeft={iconprev}
+        handleClickLeft={handlePrev}
+      />
       <div
         style={{
           display: "flex",
@@ -60,7 +62,9 @@ const LocalTrip = () => {
         <SelectLocal currentLocal={params.local} onChange={changeLocal} />
       </div>
       <Body>
-        <p style={{ font: "var(--font-b3-b)" }}>강원권 Best 여행지</p>
+        <p style={{ font: "var(--font-b3-b)" }}>
+          {`${enToKo[selectedLocal]}권 Best 여행지`}
+        </p>
         <TripBestList
           onClickProduct={onClickProduct}
           title={localBestProd.title}
@@ -68,8 +72,8 @@ const LocalTrip = () => {
         />
         <div
           style={{
-            display: "flex",
-            flexWrap: "wrap",
+            display: "grid",
+            gridTemplateColumns: "1fr 1fr",
             gap: "13.5px",
             marginTop: "9px",
           }}
@@ -89,3 +93,12 @@ const LocalTrip = () => {
 };
 
 export default LocalTrip;
+
+const enToKo = {
+  capital: "수도",
+  gangwon: "강원",
+  chungcheong: "충청",
+  gyeongsang: "경상",
+  jeolla: "전라",
+  jeju: "제주",
+};

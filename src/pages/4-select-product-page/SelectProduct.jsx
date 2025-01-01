@@ -10,6 +10,7 @@ import Product from "../../components/common/Product";
 import Button from "../../components/Button";
 import TrainInfo from "./components/TrainInfo";
 
+import iconprev from "../../assets/icon/icon_previous.svg";
 import styles from "./SelectProduct.module.css";
 import Progressbar from "../../components/common/Progressbar";
 
@@ -25,15 +26,14 @@ const SelectProduct = () => {
     navigate("/selectdetail");
   };
   const handlePrev = () => {
-    navigate("/");
+    navigate("../");
   };
   return (
     <div>
       <Header
         text="상품선택"
-        handleClickLeft={() => {
-          console.log("클릭됨");
-        }}
+        imageLeft={iconprev}
+        handleClickLeft={handlePrev}
       />
       <Body>
         <Progressbar nthChild={1} />
@@ -127,7 +127,7 @@ const SelectProduct = () => {
             ))}
           </ToggleWrapper>
         </div>
-        <Button text="다음" type="cta" handleclick={handleNext} />
+        <Button text="다음" type="cta" handleClick={handleNext} />
       </Body>
     </div>
   );
