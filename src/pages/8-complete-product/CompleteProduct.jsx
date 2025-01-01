@@ -8,6 +8,8 @@ import Wrapper from "../../components/common/Wrapper";
 import Info from "./components/Info";
 import Button from "../../components/Button";
 
+import iconprev from "../../assets/icon/icon_previous.svg";
+
 const CompleteProduct = (props) => {
   const navigate = useNavigate();
 
@@ -15,9 +17,17 @@ const CompleteProduct = (props) => {
     navigate("/");
   };
 
+  const handlePrev = () => {
+    navigate("../");
+  };
+
   return (
     <div>
-      <Header text="예약인원" />
+      <Header
+        text="예약인원"
+        imageLeft={iconprev}
+        handleClickLeft={handlePrev}
+      />
       <Body>
         <Progressbar nthChild={5} />
         <div>
@@ -26,7 +36,7 @@ const CompleteProduct = (props) => {
           </Wrapper>
         </div>
         <div style={{ display: "flex", gap: "7px" }}>
-          <Button text="예약확인" type="cta" handleclick={handleNext} />
+          <Button text="예약확인" type="cta" handleClick={handleNext} />
         </div>
       </Body>
     </div>
