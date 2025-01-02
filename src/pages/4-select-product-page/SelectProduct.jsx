@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { UserContext } from "../../App";
+import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/Header";
@@ -15,6 +16,7 @@ import styles from "./SelectProduct.module.css";
 import Progressbar from "../../components/common/Progressbar";
 
 const SelectProduct = () => {
+  const { info, setInfo } = useContext(UserContext);
   const [count, setCount] = useState(1);
   const navigate = useNavigate();
 
@@ -22,7 +24,12 @@ const SelectProduct = () => {
     setCount(newCount);
   };
 
+  useEffect(() => {
+    console.log("업데이트된 info:", info); // info 변경 시 출력
+  }, [info]);
+
   const handleNext = () => {
+    setInfo({ ...info, people: count });
     navigate("/selectdetail");
   };
   const handlePrev = () => {
@@ -70,7 +77,7 @@ const SelectProduct = () => {
                   />
                   <Product title={train.name}>
                     <TrainInfo
-                      selectedDate="2024년 12월 18일 (화)"
+                      selectedDate={`${info.date} ${info.day}`}
                       departTime={train.departTime}
                       arrivalTime={train.arrivalTime}
                     />

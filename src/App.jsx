@@ -17,7 +17,8 @@ function App() {
   const [info, setInfo] = useState({
     region: "",
     date: "",
-    people: "",
+    day: "",
+    people: 1,
     product: "",
     goTrain: {
       departstation: "",

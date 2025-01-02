@@ -14,7 +14,12 @@ const SelectDate = () => {
   const [selectedDate, setSelectedDate] = useState(new Date()); // 상위에서 날짜 상태 관리
 
   const handleDateChange = (date) => {
-    setInfo({ ...info, date: `${date}` });
+    console.log(date);
+    const dateformat = `${date.getFullYear()}년 ${
+      date.getMonth() + 1
+    }월 ${date.getDate()}일`;
+    const day = `${date.getDay()}`;
+    setInfo({ ...info, date: `${dateformat}`, day: `(${week[day]})` });
     setSelectedDate(date); // 선택된 날짜 업데이트
     navigate("/selectproduct");
   };
@@ -51,3 +56,5 @@ const SelectDate = () => {
 };
 
 export default SelectDate;
+
+const week = ["", "월", "화", "수", "목", "금", "토", "일"];
