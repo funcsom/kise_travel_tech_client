@@ -10,6 +10,8 @@ import ReservateForm from "./components/ReservateForm";
 import TravelerForm from "./components/TravelerForm";
 import Product from "../../components/common/Product";
 
+import iconprev from "../../assets/icon/icon_previous.svg";
+
 const TravelerInfo = (props) => {
   const navigate = useNavigate();
 
@@ -24,9 +26,17 @@ const TravelerInfo = (props) => {
     navigate("/completeproduct");
   };
 
+  const handlePrev = () => {
+    navigate(-1);
+  };
+
   return (
     <div>
-      <Header text="예약인원" />
+      <Header
+        text="예약인원"
+        imageLeft={iconprev}
+        handleClickLeft={handlePrev}
+      />
       <Body>
         <Progressbar nthChild={4} />
         <div>
@@ -43,7 +53,7 @@ const TravelerInfo = (props) => {
         </div>
         <div style={{ display: "flex", gap: "7px" }}>
           <Button text="장바구니" type="cart" handleclick={handleClick} />
-          <Button text="예약" type="cta" handleclick={handleClick} />
+          <Button text="예약" type="cta" handleClick={handleClick} />
         </div>
       </Body>
     </div>

@@ -5,6 +5,7 @@ import Progressbar from "../../components/common/Progressbar";
 import Header from "../../components/Header";
 import Wrapper from "../../components/common/Wrapper";
 
+import iconprev from "../../assets/icon/icon_previous.svg";
 import AgreeText from "./components/AgreeText";
 import Button from "../../components/Button";
 
@@ -31,9 +32,17 @@ const TravelerAgree = (props) => {
     navigate("/travelerinfo");
   };
 
+  const handlePrev = () => {
+    navigate(-1);
+  };
+
   return (
     <div>
-      <Header text="예약인원" />
+      <Header
+        text="예약인원"
+        imageLeft={iconprev}
+        handleClickLeft={handlePrev}
+      />
       <Body>
         <Progressbar nthChild={3} />
         <Wrapper>
@@ -73,7 +82,7 @@ const TravelerAgree = (props) => {
             {open && <AgreeText />}
           </div>
         </Wrapper>
-        <Button text="다음" type="cta" handleclick={handleNext} />
+        <Button text="다음" type="cta" handleClick={handleNext} />
       </Body>
     </div>
   );

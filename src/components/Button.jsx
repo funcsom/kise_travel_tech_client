@@ -1,10 +1,10 @@
 import styles from "./Button.module.css";
 
-const Button = ({ handleclick, text = "", image = "", type = "" }) => {
+const Button = ({ handleClick, text = "", image = "", type = "" }) => {
   return (
     <button
       className={`${styles.Button} ${styles[type]}`}
-      onClick={handleclick}
+      onClick={handleClick}
     >
       {text && text}
       {image && <img src={image} alt="icon" />}

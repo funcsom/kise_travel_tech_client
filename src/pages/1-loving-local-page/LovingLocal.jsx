@@ -5,7 +5,7 @@ import PeroidicTourTrain from "./components/PeroidicTourTrain";
 
 import styles from "./LovingLocal.module.css";
 
-const LovingLocal = (props) => {
+const LovingLocal = () => {
   return (
     <div className={styles.LovingLocal}>
       <Header text="지역사랑여행" />

@@ -5,15 +5,10 @@ import "react-calendar/dist/Calendar.css";
 import "./Calendar.css";
 import dayjs from "dayjs";
 
-const MyCalendar = () => {
-  const navigate = useNavigate();
-  const [value, onChange] = useState(new Date()); // 초기값은 현재 날짜
+import IconPrev from "./IconPrev";
+import IconNext from "./IconNext";
 
-  const handleDateChange = (date) => {
-    onChange(date); // 상태 업데이트
-    navigate("/selectproduct"); // 선택된 후 페이지 이동
-  };
-
+const MyCalendar = ({ value, onChangeDate }) => {
   const tileClassName = ({ date }) => {
     const currentDate = new Date();
     const oneWeekLater = new Date(
@@ -65,11 +60,27 @@ const MyCalendar = () => {
       formatDay={(locale, date) => dayjs(date).format("D")}
       tileClassName={tileClassName}
       tileDisabled={tileDisabled}
-      onChange={handleDateChange}
+      onChange={onChangeDate}
       calendarType="gregory"
+      // 상단 네비게이션 라벨 제어
+      navigationLabel={({ date, label, locale, view }) =>
+        // alert(
+        //   `Current view: ${view}, date: ${date.toLocaleDateString(
+        //     locale
+        //   )} label: ${label}`
+        // )
+        label
+      }
       next2Label={null}
       prev2Label={null}
       // 앞뒤 달의 이어지는 날짜 보여주기 여부
+      // 아래의 버튼들은 Calendar ts 보고 알아차림! 컴포넌트를 랜더링할 수 있구나~
+      prevLabel={<IconPrev />}
+      nextLabel={<IconNext />}
+      // 다음 테스크는 가운데 라벨 클릭이 안되는 것
+      // -> 해결 : ./Claendar.css에 있음
+      // 그 다음 테스크는 클릭시 색상이 변경되지 않는 것
+      // -> 미해결
       showNeighboringMonth={false}
     />
   );

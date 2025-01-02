@@ -1,0 +1,33 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: var(--color-white);
+  padding: 15px;
+  flex: 1;
+}
+
+.guide {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+}
+
+.guidearea {
+  display: flex;
+  gap: 4px;
+  font: var(--font-b2);
+  align-items: center;
+}
+
+.ablecolor {
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-light-blue-200);
+}
+
+.disablecolor {
+  width: 16px;
+  height: 16px;
+  background-color: var(--color-gray-300);
+}
