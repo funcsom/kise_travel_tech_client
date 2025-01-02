@@ -1,11 +1,11 @@
 import Section from "../../../components/Section";
 import LocalTripButton from "./LocalTripButton";
-import capital from "../../../assets/image/capital.jpeg";
-import gangwon from "../../../assets/image/gangwon.jpeg";
-import chungcheong from "../../../assets/image/chungcheong.jpeg";
-import gyeongsang from "../../../assets/image/gyeongsang.jpeg";
-import jeolla from "../../../assets/image/jeolla.jpeg";
-import jeju from "../../../assets/image/jeju.jpeg";
+import capital from "../../../assets/image/1-loving-local/capital.jpeg";
+import gangwon from "../../../assets/image/1-loving-local/gangwon.jpeg";
+import chungcheong from "../../../assets/image/1-loving-local/chungcheong.jpeg";
+import gyeongsang from "../../../assets/image/1-loving-local/gyeongsang.jpeg";
+import jeolla from "../../../assets/image/1-loving-local/jeolla.jpeg";
+import jeju from "../../../assets/image/1-loving-local/jeju.jpeg";
 
 const LocalTripProduct = () => {
   return (

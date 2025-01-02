@@ -1,11 +1,11 @@
 import Section from "../../../components/Section";
 import Carousel from "../../../components/Carousel";
-import train1 from "../../../assets/image/train1.png";
-import train2 from "../../../assets/image/train2.png";
-import train3 from "../../../assets/image/train3.png";
-import train4 from "../../../assets/image/train4.png";
-import train5 from "../../../assets/image/train5.png";
-import train6 from "../../../assets/image/train6.png";
+import train1 from "../../../assets/image/1-loving-local/train1.png";
+import train2 from "../../../assets/image/1-loving-local/train2.png";
+import train3 from "../../../assets/image/1-loving-local/train3.png";
+import train4 from "../../../assets/image/1-loving-local/train4.png";
+import train5 from "../../../assets/image/1-loving-local/train5.png";
+import train6 from "../../../assets/image/1-loving-local/train6.png";
 
 const train = [train1, train2, train3, train4, train5, train6];
 

@@ -1,7 +1,7 @@
 import Section from "../../../components/Section";
 import Carousel from "../../../components/Carousel";
-import slide1 from "../../../assets/image/slide1.png";
-import slide2 from "../../../assets/image/slide2.png";
+import slide1 from "../../../assets/image/1-loving-local/slide1.png";
+import slide2 from "../../../assets/image/1-loving-local/slide2.png";
 
 const RecommandedEvent = () => {
   return (
