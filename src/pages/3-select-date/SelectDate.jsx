@@ -1,5 +1,5 @@
 import { UserContext } from "../../App";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../components/Header";
 import MyCalendar from "./components/Calendar";
@@ -17,9 +17,11 @@ const SelectDate = () => {
     setInfo({ ...info, date: `${date}` });
     setSelectedDate(date); // 선택된 날짜 업데이트
     navigate("/selectproduct");
-    console.log("선택된 날짜:", date);
-    console.log(info);
   };
+
+  useEffect(() => {
+    console.log("업데이트된 info:", info); // info 변경 시 출력
+  }, [info]);
 
   const handlePrev = () => {
     navigate(-1);
