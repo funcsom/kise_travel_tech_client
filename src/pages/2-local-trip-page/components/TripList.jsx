@@ -1,4 +1,3 @@
-import product from "../../../assets/image/product.png";
 import iconcalendar from "../../../assets/icon/icon_calendar.svg";
 
 const TripList = ({ img, title, price, onClickProduct }) => {
@@ -37,7 +36,7 @@ const TripList = ({ img, title, price, onClickProduct }) => {
             overflow: "hidden",
           }}
         >
-          <img src={product} alt="" style={{ width: "100%" }} />
+          <img src={img} alt="" style={{ width: "100%" }} />
         </div>
         <p style={{ font: "var(--font-t2-t)" }}>{title}</p>
       </div>
