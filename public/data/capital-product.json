@@ -5,13 +5,13 @@
       "id": "0",
       "title": "(레일티켓) 한복입고 떠나는 경복궁-북촌 한옥마을 투어(당일)",
       "price": "43,600원 ~",
-      "img": "../../src/assets/image/2localtrip/capital/0.jpg"
+      "img": "../../src/assets/image/2localtrip/capital/0.jpeg"
     },
     {
       "id": "1",
       "title": "(레일티켓) 서울시티투어 순환형(경부선)",
       "price": "98,700원 ~",
-      "img": "../../src/assets/image/2localtrip/capital/1.jpg"
+      "img": "../../src/assets/image/2localtrip/capital/1.jpeg"
     }
   ],
   "List": [
@@ -19,19 +19,19 @@
       "id": "0",
       "title": "[착한여행] 강화 어디로 가볼까? 소창으로 소풍가자 (당일) (부산/목포/강릉출발)",
       "price": "81,800원 ~",
-      "img": "../../src/assets/image/2localtrip/capital/2.jpg"
+      "img": "../../src/assets/image/2localtrip/capital/2.jpeg"
     },
     {
       "id": "1",
       "title": "(레일티켓) 서울시티투어 순환형(경부선)",
       "price": "98,700원 ~",
-      "img": "../../src/assets/image/2localtrip/capital/1.jpg"
+      "img": "../../src/assets/image/2localtrip/capital/1.jpeg"
     },
     {
       "id": "2",
       "title": "(레일티켓) 한복입고 떠나는 경복궁-북촌 한옥마을 투어(당일)",
       "price": "43,600원 ~",
-      "img": "../../src/assets/image/2localtrip/capital/0.jpg"
+      "img": "../../src/assets/image/2localtrip/capital/0.jpeg"
     }
   ]
 }

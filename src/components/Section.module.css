@@ -7,16 +7,9 @@
 }
 
 .Section > h1 {
-  font-size: 1.2rem;
-  font-weight: 800;
+  font: var(--font-t1);
 }
 
 .Section > h2 {
-  font-size: medium;
-  font-weight: 200;
-}
-
-.Section > p {
-  font-size: medium;
-  font-weight: 600;
+  font: var(--font-b1);
 }

@@ -1,18 +1,12 @@
 @import url(./resetStyle.css);
-@import url(./font/font.css);
+
+@font-face {
+  font-family: "Pretendard";
+  src: url(./font/PretendardVariable.ttf);
+}
 
 body * {
-  /* font-family: "NotoSansKR-900";
-  font-family: "NotoSansKR-800";
-  font-family: "NotoSansKR-700";
-  font-family: "NotoSansKR-600";
-  font-family: "NotoSansKR-500";
-  font-family: "NotoSansKR-400";
-  font-family: "NotoSansKR-300";
-  font-family: "NotoSansKR-200";
-  font-family: "NotoSansKR-100"; */
-
-  font-family: "NotoSansKR";
+  font-family: "Pretendard";
   box-sizing: border-box;
 }
 
@@ -34,7 +28,7 @@ body * {
   --color-red-02: #d8361b;
   --color-red-03: #ed4f44;
 
-  --font-h1: 500 16px/1.2 "NotoSansKR", sans-serif;
+  /* --font-h1: 500 16px/1.2 "NotoSansKR", sans-serif;
   --font-t1: 500 19px/1.2 "NotoSansKR", sans-serif;
   --font-t2: 700 12px/1.2 "NotoSansKR", sans-serif;
   --font-t2-t: 500 12px/1.54 "NotoSansKR", sans-serif;
@@ -48,41 +42,25 @@ body * {
   --font-b3-sb: 600 14px/1.2 "NotoSansKR", sans-serif;
   --font-b3-b: 700 14px/1.2 "NotoSansKR", sans-serif;
   --font-b4: 400 13px/1.2 "NotoSansKR", sans-serif;
-  --font-b4-el: 200 13px/1.2 "NotoSansKR", sans-serif;
+  --font-b4-el: 200 13px/1.2 "NotoSansKR", sans-serif; */
 
   /* Typography Variables */
-  /* --font-h1: 500 16px/1.2 "NotoSansKR-500", sans-serif;
-  --font-t1: 500 19px/1.2 "NotoSansKR-500", sans-serif;
-  --font-t2: 700 12px/1.2 "NotoSansKR-700", sans-serif;
-  --font-t2-t: 500 12px/1.54 "NotoSansKR-500", sans-serif;
-  --font-b1: 500 16px/1.2 "NotoSansKR-500", sans-serif;
-  --font-b1-b: 700 16px/1.2 "NotoSansKR-700", sans-serif;
-  --font-b2: 300 15px/1.2 "NotoSansKR-300", sans-serif;
-  --font-b2-b: 700 15px/1.2 "NotoSansKR-700", sans-serif;
-  --font-b3-l: 300 14px/1.2 "NotoSansKR-300", sans-serif;
-  --font-b3-r: 400 14px/1.2 "NotoSansKR-400", sans-serif;
-  --font-b3-m: 500 14px/1.2 "NotoSansKR-500", sans-serif;
-  --font-b3-sb: 600 14px/1.2 "NotoSansKR-600", sans-serif;
-  --font-b3-b: 700 14px/1.2 "NotoSansKR-700", sans-serif;
-  --font-b4: 400 13px/1.2 "NotoSansKR-400", sans-serif;
-  --font-b4-el: 200 13px/1.2 "NotoSansKR-200", sans-serif; */
-
-  /* Typography Variables */
-  /* --font-h1: 500 16px/1.2 "Pretendard-Regular", sans-serif;
-  --font-t1: 500 19px/1.2 "Pretendard-Regular", sans-serif;
-  --font-t2: 700 12px/1.2 "Pretendard-Regular", sans-serif;
-  --font-t2-t: 500 12px/1.54 "Pretendard-Regular", sans-serif;
-  --font-b1: 500 16px/1.2 "Pretendard-Regular", sans-serif;
-  --font-b1-b: 700 16px/1.2 "Pretendard-Regular", sans-serif;
-  --font-b2: 300 15px/1.2 "Pretendard-Regular", sans-serif;
-  --font-b2-b: 700 15px/1.2 "Pretendard-Regular", sans-serif;
-  --font-b3-l: 300 14px/1.2 "Pretendard-Regular", sans-serif;
-  --font-b3-r: 400 14px/1.2 "Pretendard-Regular", sans-serif;
-  --font-b3-m: 500 14px/1.2 "Pretendard-Regular", sans-serif;
-  --font-b3-sb: 600 14px/1.2 "Pretendard-Regular", sans-serif;
-  --font-b3-b: 700 14px/1.2 "Pretendard-Regular", sans-serif;
-  --font-b4: 400 13px/1.2 "Pretendard-Regular", sans-serif;
-  --font-b4-el: 200 13px/1.2 "Pretendard-Regular", sans-serif; */
+  --font-h1: 500 16px/1.2 "Pretendard", sans-serif;
+  --font-t1: 500 19px/1.2 "Pretendard", sans-serif;
+  --font-t2: 500 12px/1.2 "Pretendard", sans-serif;
+  --font-t2-b: 700 12px/1.2 "Pretendard", sans-serif;
+  --font-t2-t: 500 12px/1.54 "Pretendard", sans-serif;
+  --font-b1: 500 16px/1.2 "Pretendard", sans-serif;
+  --font-b1-b: 700 16px/1.2 "Pretendard", sans-serif;
+  --font-b2: 300 15px/1.2 "Pretendard", sans-serif;
+  --font-b2-b: 700 15px/1.2 "Pretendard", sans-serif;
+  --font-b3-l: 300 14px/1.2 "Pretendard", sans-serif;
+  --font-b3-r: 400 14px/1.2 "Pretendard", sans-serif;
+  --font-b3-m: 500 14px/1.2 "Pretendard", sans-serif;
+  --font-b3-sb: 600 14px/1.2 "Pretendard", sans-serif;
+  --font-b3-b: 700 14px/1.2 "Pretendard", sans-serif;
+  --font-b4: 400 13px/1.2 "Pretendard", sans-serif;
+  --font-b4-el: 200 13px/1.2 "Pretendard", sans-serif;
 }
 
 /* input[type="radio"] default styling */
