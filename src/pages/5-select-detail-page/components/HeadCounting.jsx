@@ -1,9 +1,9 @@
 import { useState } from "react";
 import Stepper from "../../../components/common/Stepper";
 
-const HeadCounting = () => {
+const HeadCounting = ({ people }) => {
   const [category, setCategory] = useState([
-    { type: "어른", num: 2 },
+    { type: "어른", num: people },
     { type: "어린이", num: 0 },
     { type: "중증장애인", num: 0 },
     { type: "경증장애인", num: 0 },

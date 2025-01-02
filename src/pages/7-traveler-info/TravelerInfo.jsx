@@ -1,9 +1,11 @@
+import { UserContext } from "../../App";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/Header";
 import Body from "../../components/common/Body";
 import Progressbar from "../../components/common/Progressbar";
-import ToggleWrapper from "../../components/common/ToggleWrapper";
+import NoneToggleWrapper from "../../components/common/NoneToggleWrapper";
 import Wrapper from "../../components/common/Wrapper";
 import Button from "../../components/Button";
 import ReservateForm from "./components/ReservateForm";
@@ -12,8 +14,20 @@ import Product from "../../components/common/Product";
 
 import iconprev from "../../assets/icon/icon_previous.svg";
 
-const TravelerInfo = (props) => {
+const TravelerInfo = () => {
+  const { info, setInfo } = useContext(UserContext);
+  const [information, setInformaton] = useState({
+    name: "",
+    dob: "",
+    phone: "",
+    email: "",
+    gender: "m",
+  });
   const navigate = useNavigate();
+
+  useEffect(() => {
+    console.log("업데이트된 info:", info); // info 변경 시 출력
+  }, [info]);
 
   const handleClick = () => {
     const result = confirm(confirmText);
@@ -23,6 +37,14 @@ const TravelerInfo = (props) => {
   };
 
   const handleNext = () => {
+    setInfo({
+      ...info,
+      name: information.name,
+      dob: information.dob,
+      phone: information.phone,
+      email: information.email,
+      gender: information.gender,
+    });
     navigate("/completeproduct");
   };
 
@@ -40,16 +62,22 @@ const TravelerInfo = (props) => {
       <Body>
         <Progressbar nthChild={4} />
         <div>
-          <ToggleWrapper title="예약자">
+          <NoneToggleWrapper title="예약자">
             <Wrapper>
-              <ReservateForm />
+              <ReservateForm
+                information={information}
+                setInformation={setInformaton}
+              />
             </Wrapper>
-          </ToggleWrapper>
-          <ToggleWrapper title="여행자">
+          </NoneToggleWrapper>
+          <NoneToggleWrapper title="여행자">
             <Wrapper>
-              <TravelerForm />
+              <TravelerForm
+                information={information}
+                setInformation={setInformaton}
+              />
             </Wrapper>
-          </ToggleWrapper>
+          </NoneToggleWrapper>
         </div>
         <div style={{ display: "flex", gap: "7px" }}>
           <Button text="장바구니" type="cart" handleclick={handleClick} />

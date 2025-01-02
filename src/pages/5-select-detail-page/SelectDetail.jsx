@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { UserContext } from "../../App";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/Header";
@@ -16,10 +17,8 @@ import HeadCounting from "./components/HeadCounting";
 import PackageCounting from "./components/PackageCounting";
 
 const SelectDetail = () => {
-  const [packageName, setPackageName] = useState(
-    // 이전 프로세스에서 불러온 값
-    `관광택시6시간+4시간[2인]`
-  );
+  const { info, setInfo } = useContext(UserContext);
+  const [packageName, setPackageName] = useState(info.product);
   const navigate = useNavigate();
 
   const onChangePackage = (newPackage) => {
@@ -44,13 +43,12 @@ const SelectDetail = () => {
         <Progressbar nthChild={2} />
         <div>
           <NoneToggleWrapper title="가는열차">
-            {/* 수정 */}
             {trainToGo.map((train, index) => (
               <div key={index}>
                 <Wrapper styles={{ borderBottom: "1px solid black" }}>
-                  <Product title={train.name}>
+                  <Product title={info.goTrain.trainNo}>
                     <TrainInfo
-                      selectedDate="2024년 12월 18일 (화)"
+                      selectedDate={`${info.date} ${info.day}`}
                       departPlace={train.departPlace}
                       departTime={train.departTime}
                       arrivalPlace={train.arrivalPlace}
@@ -69,7 +67,7 @@ const SelectDetail = () => {
                         borderTop: "1px solid var(--color-white)",
                       }}
                     >
-                      <HeadCounting />
+                      <HeadCounting people={info.people} />
                     </div>
                   </Product>
                 </Wrapper>
@@ -85,9 +83,9 @@ const SelectDetail = () => {
                   }}
                 >
                   <PackageCounting
-                    date="2024년 12월 18일 (화)"
+                    date={`${info.date} ${info.day}`}
                     packageName={packageName}
-                    onChangePackage={onChangePackage}
+                    people={info.people}
                   />
                 </div>
               </Product>
@@ -97,9 +95,9 @@ const SelectDetail = () => {
             {trainToCome.map((train, index) => (
               <div key={index}>
                 <Wrapper styles={{ borderBottom: "1px solid black" }}>
-                  <Product title={train.name}>
+                  <Product title={info.comeTrain.trainNo}>
                     <TrainInfo
-                      selectedDate="2024년 12월 18일 (화)"
+                      selectedDate={`${info.date} ${info.day}`}
                       departPlace={train.departPlace}
                       departTime={train.departTime}
                       arrivalPlace={train.arrivalPlace}
@@ -118,7 +116,7 @@ const SelectDetail = () => {
                         borderTop: "1px solid var(--color-white)",
                       }}
                     >
-                      <HeadCounting />
+                      <HeadCounting people={info.people} />
                     </div>
                   </Product>
                 </Wrapper>

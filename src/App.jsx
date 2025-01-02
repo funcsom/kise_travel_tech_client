@@ -21,12 +21,14 @@ function App() {
     people: 1,
     product: "",
     goTrain: {
+      trainNo: "",
       departstation: "",
       departtime: "",
       arrivalstation: "",
       arrivaltime: "",
     },
     comeTrain: {
+      trainNo: "",
       departstation: "",
       departtime: "",
       arrivalstation: "",

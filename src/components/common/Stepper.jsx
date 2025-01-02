@@ -25,7 +25,7 @@ const Stepper = ({ count, onCountChange, minHead, maxHead }) => {
         alert("예약최대인원수입니다!");
       }
     } else {
-      if (count > 0) {
+      if (count >= 0) {
         onCountChange(count + 1);
       }
     }

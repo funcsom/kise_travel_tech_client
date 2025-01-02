@@ -1,4 +1,4 @@
-const ReservateForm = (props) => {
+const ReservateForm = ({ information, setInformation }) => {
   return (
     <div
       style={{
@@ -27,7 +27,14 @@ const ReservateForm = (props) => {
           <span style={{ display: "block", font: "var(--font-b3-m)" }}>
             이름
           </span>
-          <input type="text" style={{ width: "150px" }} />
+          <input
+            type="text"
+            style={{ width: "150px" }}
+            value={information.name}
+            onChange={(e) =>
+              setInformation({ ...information, name: e.target.value })
+            }
+          />
         </div>
         <div
           style={{
@@ -37,7 +44,14 @@ const ReservateForm = (props) => {
           }}
         >
           <span style={{ display: "block" }}>생년월일</span>
-          <input type="number" style={{ width: "150px" }} />
+          <input
+            type="number"
+            style={{ width: "150px" }}
+            value={information.dob}
+            onChange={(e) =>
+              setInformation({ ...information, dob: e.target.value })
+            }
+          />
           <div
             style={{
               display: "flex",
@@ -46,7 +60,14 @@ const ReservateForm = (props) => {
             }}
           >
             <span style={{ display: "block" }}>휴대폰번호</span>
-            <input type="tel" style={{ width: "150px" }} />
+            <input
+              type="tel"
+              style={{ width: "150px" }}
+              value={information.phone}
+              onChange={(e) =>
+                setInformation({ ...information, phone: e.target.value })
+              }
+            />
           </div>
           <div
             style={{
@@ -56,7 +77,14 @@ const ReservateForm = (props) => {
             }}
           >
             <span style={{ display: "block" }}>이메일주소</span>
-            <input type="email" style={{ width: "225px" }} />
+            <input
+              type="email"
+              style={{ width: "225px" }}
+              value={information.email}
+              onChange={(e) =>
+                setInformation({ ...information, email: e.target.value })
+              }
+            />
           </div>
         </div>
       </div>

@@ -47,10 +47,10 @@
 import { useState } from "react";
 import Stepper from "../../../components/common/Stepper";
 
-const PackageCounting = ({ date, packageName, onChangePackage }) => {
+const PackageCounting = ({ date, packageName, people }) => {
   const [category, setCategory] = useState([
-    { type: "이용수량", num: 2 },
-    { type: "이용인원", num: 0 },
+    { type: "이용수량", num: people },
+    { type: "이용인원", num: people },
   ]);
   const [selectedPackage, setSelectedPackage] = useState(packageName); // 초기값 설정
 
@@ -63,7 +63,6 @@ const PackageCounting = ({ date, packageName, onChangePackage }) => {
   const handlePackageChange = (event) => {
     const selectedValue = event.target.value;
     setSelectedPackage(selectedValue); // 상태 업데이트
-    onChangePackage(selectedValue); // 선택된 값 전달
   };
 
   return (
@@ -88,8 +87,7 @@ const PackageCounting = ({ date, packageName, onChangePackage }) => {
           value={selectedPackage} // 현재 선택된 패키지
           onChange={handlePackageChange} // 변경 핸들러
         >
-          <option value="관광택시6시간+4시간[2인]">{`관광택시6시간+4시간[2인]`}</option>
-          <option value="관광택시6시간+4시간[3인]">{`관광택시6시간+4시간[3인]`}</option>
+          <option value={packageName}>{packageName}</option>
         </select>
       </div>
       {category.map((item, index) => (

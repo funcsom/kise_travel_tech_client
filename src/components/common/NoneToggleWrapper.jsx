@@ -2,7 +2,7 @@ import styles from "./NoneToggleWrapper.module.css";
 
 const NoneToggleWrapper = ({ title, children }) => {
   return (
-    <div className={styles.ToggleWrapper}>
+    <div className={styles.NoneToggleWrapper}>
       <div className={styles.title}>
         <span>{title}</span>
       </div>
