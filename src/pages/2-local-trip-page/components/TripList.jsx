@@ -3,7 +3,7 @@ import iconcalendar from "../../../assets/icon/icon_calendar.svg";
 const TripList = ({ img, title, price, onClickProduct }) => {
   return (
     <div
-      onClick={onClickProduct}
+      onClick={() => onClickProduct(title)}
       style={{
         display: "flex",
         flexDirection: "column",
