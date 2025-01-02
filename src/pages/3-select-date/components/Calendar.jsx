@@ -8,15 +8,7 @@ import dayjs from "dayjs";
 import IconPrev from "./IconPrev";
 import IconNext from "./IconNext";
 
-const MyCalendar = () => {
-  const navigate = useNavigate();
-  const [value, onChange] = useState(new Date()); // 초기값은 현재 날짜
-
-  const handleDateChange = (date) => {
-    onChange(date); // 상태 업데이트
-    navigate("/selectproduct"); // 선택된 후 페이지 이동
-  };
-
+const MyCalendar = ({ value, onChangeDate }) => {
   const tileClassName = ({ date }) => {
     const currentDate = new Date();
     const oneWeekLater = new Date(
@@ -68,7 +60,7 @@ const MyCalendar = () => {
       formatDay={(locale, date) => dayjs(date).format("D")}
       tileClassName={tileClassName}
       tileDisabled={tileDisabled}
-      onChange={handleDateChange}
+      onChange={onChangeDate}
       calendarType="gregory"
       // 상단 네비게이션 라벨 제어
       navigationLabel={({ date, label, locale, view }) =>
