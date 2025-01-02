@@ -1,3 +1,4 @@
+import { createContext, useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import LovingLocal from "./pages/1-loving-local-page/LovingLocal";
 import LocalTrip from "./pages/2-local-trip-page/LocalTrip";
@@ -10,19 +11,49 @@ import TravelerInfo from "./pages/7-traveler-info/TravelerInfo";
 import CompleteProduct from "./pages/8-complete-product/CompleteProduct";
 import styles from "./App.module.css";
 
+export const UserContext = createContext();
+
 function App() {
+  const [info, setInfo] = useState({
+    region: "",
+    date: "",
+    people: "",
+    product: "",
+    goTrain: {
+      departstation: "",
+      departtime: "",
+      arrivalstation: "",
+      arrivaltime: "",
+    },
+    comeTrain: {
+      departstation: "",
+      departtime: "",
+      arrivalstation: "",
+      arrivaltime: "",
+    },
+    name: "",
+    dob: "",
+    phone: "",
+    email: "",
+    gender: "m",
+  });
+
+  const contextValue = { info, setInfo };
+
   return (
     <div className={styles.App}>
-      <Routes>
-        <Route path="/" element={<LovingLocal />} />
-        <Route path="/localtrip/:local" element={<LocalTrip />} />
-        <Route path="/selectdate" element={<SelectDate />} />
-        <Route path="/selectproduct" element={<SelectProduct />} />
-        <Route path="/selectdetail" element={<SelectDetail />} />
-        <Route path="/traveleragree" element={<TravelerAgree />} />
-        <Route path="/travelerinfo" element={<TravelerInfo />} />
-        <Route path="/completeproduct" element={<CompleteProduct />} />
-      </Routes>
+      <UserContext.Provider value={contextValue}>
+        <Routes>
+          <Route path="/" element={<LovingLocal />} />
+          <Route path="/localtrip/:local" element={<LocalTrip />} />
+          <Route path="/selectdate" element={<SelectDate />} />
+          <Route path="/selectproduct" element={<SelectProduct />} />
+          <Route path="/selectdetail" element={<SelectDetail />} />
+          <Route path="/traveleragree" element={<TravelerAgree />} />
+          <Route path="/travelerinfo" element={<TravelerInfo />} />
+          <Route path="/completeproduct" element={<CompleteProduct />} />
+        </Routes>
+      </UserContext.Provider>
     </div>
   );
 }

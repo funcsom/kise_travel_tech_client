@@ -27,7 +27,7 @@ const TravelerInfo = (props) => {
   };
 
   const handlePrev = () => {
-    navigate("../");
+    navigate(-1);
   };
 
   return (

@@ -8,7 +8,7 @@ import styles from "./SelectDate.module.css";
 const SelectDate = () => {
   const navigate = useNavigate();
   const handlePrev = () => {
-    navigate("../");
+    navigate(-1);
   };
   return (
     <div>

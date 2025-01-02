@@ -33,7 +33,7 @@ const TravelerAgree = (props) => {
   };
 
   const handlePrev = () => {
-    navigate("../");
+    navigate(-1);
   };
 
   return (

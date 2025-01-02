@@ -26,7 +26,7 @@ const SelectProduct = () => {
     navigate("/selectdetail");
   };
   const handlePrev = () => {
-    navigate("../");
+    navigate(-1);
   };
   return (
     <div>

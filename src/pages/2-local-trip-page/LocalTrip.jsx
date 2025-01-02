@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { UserContext } from "../../App";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import Header from "../../components/Header";
 import SelectLocal from "./components/SelectLocal";
@@ -10,6 +11,7 @@ import iconprev from "../../assets/icon/icon_previous.svg";
 import styles from "./LocalTrip.module.css";
 
 const LocalTrip = () => {
+  const { info, setInfo } = useContext(UserContext);
   const params = useParams();
   const navigate = useNavigate();
 
@@ -30,7 +32,7 @@ const LocalTrip = () => {
 
   // header 뒤로가기 버튼 클릭 시 이전 페이지로 넘어가는 기능
   const handlePrev = () => {
-    navigate("../");
+    navigate(-1);
   };
 
   // selectedLocal state 변경 시, localBestProd, localProd 업데이트하는 기능

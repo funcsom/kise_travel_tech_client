@@ -31,7 +31,7 @@ const SelectDetail = () => {
   };
 
   const handlePrev = () => {
-    navigate("../");
+    navigate(-1);
   };
   return (
     <div>
