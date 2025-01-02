@@ -9,7 +9,7 @@ import iconprev from "../../assets/icon/icon_previous.svg";
 import AgreeText from "./components/AgreeText";
 import Button from "../../components/Button";
 
-const TravelerAgree = (props) => {
+const TravelerAgree = () => {
   const [open, setOpen] = useState(false);
   const [haveSeen, setHaveSeen] = useState(false);
   const [checked, setChecked] = useState(false);

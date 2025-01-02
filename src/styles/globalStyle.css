@@ -71,6 +71,7 @@ input[type="radio"] {
   width: 18px;
   height: 18px;
   border: 1px solid #dbdbdb;
+  background-color: var(--color-white);
   border-radius: 50%;
   outline: none;
   margin: 0;

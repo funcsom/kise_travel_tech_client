@@ -1,29 +1,35 @@
-const Info = (props) => {
+import { UserContext } from "../../../App";
+import { useContext } from "react";
+
+const Info = () => {
+  const { info, setInfo } = useContext(UserContext);
+
   return (
     <div style={{ width: "100%" }}>
       <div style={styleWrapper}>
         <div style={styleTitle}>예약번호</div>
-        <div style={styleInfo}>202412209119</div>
+        <div style={styleInfo}>{Date()}</div>
       </div>
       <div style={styleWrapper}>
         <div style={styleTitle}>상품명</div>
-        <div style={styleInfo}>202412209119</div>
+        <div style={styleInfo}>{info.product.name}</div>
       </div>
       <div style={styleWrapper}>
         <div style={styleTitle}>예약인원</div>
-        <div style={styleInfo}>202412209119</div>
+        <div style={styleInfo}>{info.people}</div>
       </div>
       <div style={styleWrapper}>
         <div style={styleTitle}>예약자정보</div>
-        <div style={styleInfo}>202412209119</div>
+        <div style={styleInfo}>{info.name}</div>
+        <div style={styleInfo}>{info.email}</div>
       </div>
       <div style={styleWrapper}>
         <div style={styleTitle}>예약금액</div>
-        <div style={styleInfo}>202412209119</div>
+        <div style={styleInfo}>{info.product.price * info.people}</div>
       </div>
       <div style={styleWrapper}>
         <div style={styleTitle}>결제 기한일</div>
-        <div style={styleInfo}>202412209119</div>
+        <div style={styleInfo}>{Date()}</div>
       </div>
     </div>
   );

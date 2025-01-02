@@ -18,6 +18,12 @@ import Progressbar from "../../components/common/Progressbar";
 const SelectProduct = () => {
   const { info, setInfo } = useContext(UserContext);
   const [count, setCount] = useState(1);
+  const [selectedTrainToGo, setSelectedTrainToGo] = useState(trainToGo[0].name);
+  const [selectedTrainToCome, setSelectedTrainToCome] = useState(
+    trainToCome[0].name
+  );
+  const [selectedPackage, setSelectedPackage] = useState();
+
   const navigate = useNavigate();
 
   const handleCountChange = (newCount) => {
@@ -28,8 +34,22 @@ const SelectProduct = () => {
     console.log("업데이트된 info:", info); // info 변경 시 출력
   }, [info]);
 
+  const handlePackageChange = (packagename) => {
+    setSelectedPackage(packagename);
+  };
+
   const handleNext = () => {
-    setInfo({ ...info, people: count });
+    console.log(`${selectedTrainToCome}`);
+    setInfo({
+      ...info,
+      people: count,
+      goTrain: { ...info.goTrain, trainNo: `${selectedTrainToGo}` },
+      comeTrain: {
+        ...info.comeTrain,
+        trainNo: `${selectedTrainToCome}`,
+      },
+      package: `${selectedPackage}`,
+    });
     navigate("/selectdetail");
   };
   const handlePrev = () => {
@@ -73,7 +93,9 @@ const SelectProduct = () => {
                   <input
                     type="radio"
                     name="traintogo"
-                    defaultChecked={index === 0}
+                    value={train.name}
+                    checked={selectedTrainToGo === train.name}
+                    onChange={() => setSelectedTrainToGo(train.name)}
                   />
                   <Product title={train.name}>
                     <TrainInfo
@@ -96,7 +118,7 @@ const SelectProduct = () => {
                   flexGrow: "1",
                 }}
               >
-                {packageProduct.map((product, index) => (
+                {packageProduct.map((pkg, index) => (
                   <div
                     key={index}
                     style={{
@@ -106,8 +128,12 @@ const SelectProduct = () => {
                       alignItems: "center",
                     }}
                   >
-                    <input type="checkbox" />
-                    <Product title={product.name} />
+                    <input
+                      type="checkbox"
+                      checked={selectedPackage === pkg.name}
+                      onChange={() => handlePackageChange(pkg.name)}
+                    />
+                    <Product title={pkg.name} />
                   </div>
                 ))}
               </div>
@@ -120,11 +146,13 @@ const SelectProduct = () => {
                   <input
                     type="radio"
                     name="traintocome"
-                    defaultChecked={index === 0}
+                    value={train.name}
+                    checked={selectedTrainToCome === train.name}
+                    onChange={() => setSelectedTrainToCome(train.name)}
                   />
                   <Product title={train.name}>
                     <TrainInfo
-                      selectedDate="2024년 12월 18일 (화)"
+                      selectedDate={`${info.date} ${info.day}`}
                       departTime={train.departTime}
                       arrivalTime={train.arrivalTime}
                     />
@@ -153,13 +181,13 @@ const packageProduct = [
 ];
 
 const trainToGo = [
-  { name: "KTX NNN", departTime: "10:05", arrivalTime: "12:20" },
-  { name: "KTX NNN", departTime: "10:05", arrivalTime: "12:20" },
+  { name: "KTX 845", departTime: "07:01", arrivalTime: "10:02" },
+  { name: "KTX 848", departTime: "07:58", arrivalTime: "10:45" },
 ];
 
 const trainToCome = [
-  { name: "KTX NNN", departTime: "10:05", arrivalTime: "12:20" },
-  { name: "KTX NNN", departTime: "10:05", arrivalTime: "12:20" },
+  { name: "KTX 345", departTime: "18:33", arrivalTime: "21:24" },
+  { name: "KTX 348", departTime: "19:05", arrivalTime: "22:15" },
 ];
 
 export default SelectProduct;

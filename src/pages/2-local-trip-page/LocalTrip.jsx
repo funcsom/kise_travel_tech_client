@@ -32,7 +32,11 @@ const LocalTrip = () => {
   // 상품 클릭 시 다음 페이지로 넘어가는 기능
   const onClickProduct = (prod) => {
     navigate("/selectdate");
-    setInfo({ ...info, region: `${selectedLocal}`, product: `${prod}` });
+    setInfo({
+      ...info,
+      region: `${selectedLocal}`,
+      product: { name: prod[0], price: prod[1] },
+    });
     // console.log(info);
   };
 

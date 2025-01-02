@@ -1,4 +1,4 @@
-const TravelerForm = (props) => {
+const TravelerForm = ({ information, setInformation }) => {
   return (
     <div
       style={{
@@ -28,12 +28,26 @@ const TravelerForm = (props) => {
             justifyContent: "space-between",
           }}
         >
-          <label htmlFor="gender-man">
-            <input type="radio" id="gender-man" name="gender" /> 남자
-          </label>
-          <label htmlFor="gender-woman">
-            <input type="radio" id="gender_woman" name="gender" /> 여자
-          </label>
+          <div style={{ display: "flex", gap: "5px", alignContent: "center" }}>
+            <input
+              type="radio"
+              id="m"
+              name="gender"
+              checked={information.gender === "m"}
+              onChange={() => setInformation({ ...information, gender: "m" })}
+            />
+            <div style={{ position: "relative", top: "2px" }}>남자</div>
+          </div>
+          <div style={{ display: "flex", gap: "3px", alignContent: "center" }}>
+            <input
+              type="radio"
+              id="w"
+              name="gender"
+              checked={information.gender === "w"}
+              onChange={() => setInformation({ ...information, gender: "w" })}
+            />
+            <div style={{ position: "relative", top: "2px" }}>여자</div>
+          </div>
         </div>
       </div>
       <div
