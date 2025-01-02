@@ -1,0 +1,51 @@
+/* @font-face {
+  font-family: "NotoSansKR-900";
+  src: url(./font/NotoSansKR/NotoSansKR-Black.ttf);
+}
+@font-face {
+  font-family: "NotoSansKR-800";
+  src: url(./font/NotoSansKR/NotoSansKR-ExtraBold.ttf);
+}
+@font-face {
+  font-family: "NotoSansKR-700";
+  src: url(./font/NotoSansKR/NotoSansKR-Bold.ttf);
+}
+@font-face {
+  font-family: "NotoSansKR-600";
+  src: url(./font/NotoSansKR/NotoSansKR-SemiBold.ttf);
+}
+@font-face {
+  font-family: "NotoSansKR-500";
+  src: url(./font/NotoSansKR/NotoSansKR-Medium.ttf);
+}
+@font-face {
+  font-family: "NotoSansKR-400";
+  src: url(./font/NotoSansKR/NotoSansKR-Regular.ttf);
+}
+@font-face {
+  font-family: "NotoSansKR-300";
+  src: url(./font/NotoSansKR/NotoSansKR-Light.ttf);
+}
+@font-face {
+  font-family: "NotoSansKR-200";
+  src: url(./font/NotoSansKR/NotoSansKR-ExtraLight.ttf);
+}
+@font-face {
+  font-family: "NotoSansKR-100";
+  src: url(./font/NotoSansKR/NotoSansKR-Thin.ttf);
+} */
+
+@font-face {
+  font-family: "NotoSansKR";
+  src: url(./NotoSansKR-VariableFont_wght.ttf);
+}
+
+@font-face {
+  font-family: "Pretendard-Regular";
+  src: url(./font/PretendardVariable.ttf);
+  /* font-family: "Pretendard-Regular";
+  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff")
+    format("woff");
+  font-weight: 400;
+  font-style: normal; */
+}
