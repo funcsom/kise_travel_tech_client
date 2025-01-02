@@ -22,7 +22,7 @@ const SelectProduct = () => {
   const [selectedTrainToCome, setSelectedTrainToCome] = useState(
     trainToCome[0].name
   );
-  const [selectedProduct, setSelectedProduct] = useState();
+  const [selectedPackage, setSelectedPackage] = useState();
 
   const navigate = useNavigate();
 
@@ -34,8 +34,8 @@ const SelectProduct = () => {
     console.log("업데이트된 info:", info); // info 변경 시 출력
   }, [info]);
 
-  const handleProductChange = (productname) => {
-    setSelectedProduct(productname);
+  const handlePackageChange = (packagename) => {
+    setSelectedPackage(packagename);
   };
 
   const handleNext = () => {
@@ -48,7 +48,7 @@ const SelectProduct = () => {
         ...info.comeTrain,
         trainNo: `${selectedTrainToCome}`,
       },
-      product: `${selectedProduct}`,
+      package: `${selectedPackage}`,
     });
     navigate("/selectdetail");
   };
@@ -118,7 +118,7 @@ const SelectProduct = () => {
                   flexGrow: "1",
                 }}
               >
-                {packageProduct.map((product, index) => (
+                {packageProduct.map((pkg, index) => (
                   <div
                     key={index}
                     style={{
@@ -130,10 +130,10 @@ const SelectProduct = () => {
                   >
                     <input
                       type="checkbox"
-                      checked={selectedProduct === product.name}
-                      onChange={() => handleProductChange(product.name)}
+                      checked={selectedPackage === pkg.name}
+                      onChange={() => handlePackageChange(pkg.name)}
                     />
-                    <Product title={product.name} />
+                    <Product title={pkg.name} />
                   </div>
                 ))}
               </div>

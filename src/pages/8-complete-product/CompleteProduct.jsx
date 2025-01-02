@@ -35,6 +35,11 @@ const CompleteProduct = (props) => {
             <Info />
           </Wrapper>
         </div>
+        <ToggleWrapper title="가는열차">
+          <Wrapper>
+            <Info />
+          </Wrapper>
+        </ToggleWrapper>
         <div style={{ display: "flex", gap: "7px" }}>
           <Button text="예약확인" type="cta" handleClick={handleNext} />
         </div>

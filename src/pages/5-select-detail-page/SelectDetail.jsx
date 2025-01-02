@@ -17,21 +17,23 @@ import HeadCounting from "./components/HeadCounting";
 import PackageCounting from "./components/PackageCounting";
 
 const SelectDetail = () => {
+  const [valid, setValid] = useState(true);
   const { info, setInfo } = useContext(UserContext);
-  const [packageName, setPackageName] = useState(info.product);
   const navigate = useNavigate();
 
-  const onChangePackage = (newPackage) => {
-    setPackageName(newPackage);
-  };
-
   const handleNext = () => {
-    navigate("/traveleragree");
+    console.log(valid);
+    if (valid === false) {
+      alert(`3명이 아닙니다.`);
+    } else {
+      navigate("/traveleragree");
+    }
   };
 
   const handlePrev = () => {
     navigate(-1);
   };
+
   return (
     <div>
       <Header
@@ -67,7 +69,7 @@ const SelectDetail = () => {
                         borderTop: "1px solid var(--color-white)",
                       }}
                     >
-                      <HeadCounting people={info.people} />
+                      <HeadCounting people={info.people} setValid={setValid} />
                     </div>
                   </Product>
                 </Wrapper>
@@ -76,7 +78,7 @@ const SelectDetail = () => {
           </NoneToggleWrapper>
           <NoneToggleWrapper title="패키지">
             <Wrapper>
-              <Product title={packageName}>
+              <Product title={info.package}>
                 <div
                   style={{
                     padding: "16px 40px",
@@ -84,7 +86,7 @@ const SelectDetail = () => {
                 >
                   <PackageCounting
                     date={`${info.date} ${info.day}`}
-                    packageName={packageName}
+                    packageName={info.package}
                     people={info.people}
                   />
                 </div>
@@ -116,7 +118,7 @@ const SelectDetail = () => {
                         borderTop: "1px solid var(--color-white)",
                       }}
                     >
-                      <HeadCounting people={info.people} />
+                      <HeadCounting people={info.people} setValid={setValid} />
                     </div>
                   </Product>
                 </Wrapper>

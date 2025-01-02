@@ -28,17 +28,17 @@ const TravelerForm = ({ information, setInformation }) => {
             justifyContent: "space-between",
           }}
         >
-          <label htmlFor="gender-man">
+          <div style={{ display: "flex", gap: "5px", alignContent: "center" }}>
             <input
               type="radio"
               id="m"
               name="gender"
               checked={information.gender === "m"}
-              onChange={() => setInformation({ ...information, gender: "w" })}
+              onChange={() => setInformation({ ...information, gender: "m" })}
             />
-            남자
-          </label>
-          <label htmlFor="gender-woman">
+            <div style={{ position: "relative", top: "2px" }}>남자</div>
+          </div>
+          <div style={{ display: "flex", gap: "3px", alignContent: "center" }}>
             <input
               type="radio"
               id="w"
@@ -46,8 +46,8 @@ const TravelerForm = ({ information, setInformation }) => {
               checked={information.gender === "w"}
               onChange={() => setInformation({ ...information, gender: "w" })}
             />
-            여자
-          </label>
+            <div style={{ position: "relative", top: "2px" }}>여자</div>
+          </div>
         </div>
       </div>
       <div

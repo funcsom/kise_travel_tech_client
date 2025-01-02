@@ -19,9 +19,11 @@ function App() {
     date: "",
     day: "",
     people: 1,
-    product: "",
+    product: { name: "", price: 0 },
+    package: "",
     goTrain: {
       trainNo: "",
+      trainGrade: "ecomomy",
       departstation: "",
       departtime: "",
       arrivalstation: "",
@@ -29,6 +31,7 @@ function App() {
     },
     comeTrain: {
       trainNo: "",
+      trainGrade: "ecomomy",
       departstation: "",
       departtime: "",
       arrivalstation: "",

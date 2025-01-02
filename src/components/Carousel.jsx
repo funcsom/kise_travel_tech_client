@@ -55,7 +55,7 @@ export const CarouselProd = ({ elems, onClickProduct }) => {
                 onClick={() => {
                   console.log(elem.title);
 
-                  onClickProduct(elem.title);
+                  onClickProduct([elem.title, elem.price]);
                 }}
                 style={{
                   display: "flex",
