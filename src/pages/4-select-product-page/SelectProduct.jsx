@@ -3,6 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/Header";
+import Footer from "../../components/common/Footer";
 import Body from "../../components/common/Body";
 import ToggleWrapper from "../../components/common/ToggleWrapper";
 import Wrapper from "../../components/common/Wrapper";
@@ -60,7 +61,13 @@ const SelectProduct = () => {
     navigate(-1);
   };
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh", // 뷰포트 높이로 설정
+        display: "flex", // Flexbox로 내부 요소 정렬
+        flexDirection: "column", // 자식 요소를 세로 방향으로 정렬
+      }}
+    >
       <Header
         text="상품선택"
         imageLeft={iconprev}
@@ -169,7 +176,9 @@ const SelectProduct = () => {
             ))}
           </ToggleWrapper>
         </div>
-        <Button text="다음" type="cta" handleClick={handleNext} />
+        <Footer>
+          <Button text="다음" type="cta" handleClick={handleNext} />
+        </Footer>
       </Body>
     </div>
   );

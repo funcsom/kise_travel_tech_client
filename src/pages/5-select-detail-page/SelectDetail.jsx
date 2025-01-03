@@ -15,6 +15,7 @@ import iconprev from "../../assets/icon/icon_previous.svg";
 import TrainSelectPlace from "./components/TrainSelectPlace";
 import HeadCounting from "./components/HeadCounting";
 import PackageCounting from "./components/PackageCounting";
+import Footer from "../../components/common/Footer";
 
 const SelectDetail = () => {
   const [valid, setValid] = useState(true);
@@ -59,7 +60,13 @@ const SelectDetail = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh", // 뷰포트 높이로 설정
+        display: "flex", // Flexbox로 내부 요소 정렬
+        flexDirection: "column", // 자식 요소를 세로 방향으로 정렬
+      }}
+    >
       <Header
         text="예약인원"
         imageLeft={iconprev}
@@ -154,7 +161,9 @@ const SelectDetail = () => {
             </Wrapper>
           </NoneToggleWrapper>
         </div>
-        <Button text="다음" type="cta" handleClick={handleNext} />
+        <Footer>
+          <Button text="다음" type="cta" handleClick={handleNext} />
+        </Footer>
       </Body>
     </div>
   );
