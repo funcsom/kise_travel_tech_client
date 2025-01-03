@@ -31,9 +31,9 @@ const SelectDetail = () => {
       });
   }, []);
 
-  // useEffect(() => {
-  //   console.log(trainInfo);
-  // }, [trainInfo]);
+  useEffect(() => {
+    console.log(info);
+  }, [info]);
 
   const trainGo = trainInfo.filter(
     (train) => train.name === info.goTrain.trainNo
@@ -83,7 +83,14 @@ const SelectDetail = () => {
                     padding: "14px 24px",
                   }}
                 >
-                  <TrainSelectPlace />
+                  <TrainSelectPlace
+                    info={info}
+                    setInfo={setInfo}
+                    trainGoStation={trainToGo?.stations}
+                    trainComeStation=""
+                    // 내가 여태껏 어떻게 했길래 자꾸 station이 없다는 결과가 나왔지?
+                    // 여기서도 있으면 해라가되어서 그런감?
+                  />
                 </div>
                 <div
                   style={{
@@ -128,7 +135,12 @@ const SelectDetail = () => {
                     padding: "14px 24px",
                   }}
                 >
-                  <TrainSelectPlace />
+                  <TrainSelectPlace
+                    info={info}
+                    setInfo={setInfo}
+                    trainComeStation={trainToCome?.stations}
+                    trainGoStation=""
+                  />
                 </div>
                 <div
                   style={{
