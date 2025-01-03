@@ -16,6 +16,7 @@ import styles from "./SelectProduct.module.css";
 import Progressbar from "../../components/common/Progressbar";
 
 const SelectProduct = () => {
+  const [isPackageSelected, setIsPackageSelected] = useState(false);
   const { info, setInfo } = useContext(UserContext);
   const [count, setCount] = useState(1);
   const [selectedTrainToGo, setSelectedTrainToGo] = useState(trainToGo[0].name);
@@ -39,18 +40,21 @@ const SelectProduct = () => {
   };
 
   const handleNext = () => {
-    console.log(`${selectedTrainToCome}`);
-    setInfo({
-      ...info,
-      people: count,
-      goTrain: { ...info.goTrain, trainNo: `${selectedTrainToGo}` },
-      comeTrain: {
-        ...info.comeTrain,
-        trainNo: `${selectedTrainToCome}`,
-      },
-      package: `${selectedPackage}`,
-    });
-    navigate("/selectdetail");
+    if (isPackageSelected) {
+      setInfo({
+        ...info,
+        people: count,
+        goTrain: { ...info.goTrain, trainNo: `${selectedTrainToGo}` },
+        comeTrain: {
+          ...info.comeTrain,
+          trainNo: `${selectedTrainToCome}`,
+        },
+        package: `${selectedPackage}`,
+      });
+      navigate("/selectdetail");
+    } else {
+      alert("패키지은(는) 선택 필수입니다. 상품을 선택하세요.");
+    }
   };
   const handlePrev = () => {
     navigate(-1);
@@ -131,7 +135,10 @@ const SelectProduct = () => {
                     <input
                       type="checkbox"
                       checked={selectedPackage === pkg.name}
-                      onChange={() => handlePackageChange(pkg.name)}
+                      onChange={() => {
+                        handlePackageChange(pkg.name);
+                        setIsPackageSelected(true);
+                      }}
                     />
                     <Product title={pkg.name} />
                   </div>
