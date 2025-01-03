@@ -12,17 +12,15 @@ import Button from "../../components/Button";
 
 const TravelerAgree = () => {
   const [open, setOpen] = useState(false);
-  const [haveSeen, setHaveSeen] = useState(false);
   const [checked, setChecked] = useState(false);
   const navigate = useNavigate();
 
   const handleClick = () => {
     setOpen(!open);
-    setHaveSeen(true);
   };
 
   const handleCheckboxChange = () => {
-    if (haveSeen) {
+    if (open) {
       setChecked(!checked);
     } else {
       alert("[상세보기] 확인 후 동의 가능합니다");
