@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Body from "../../components/common/Body";
 import Progressbar from "../../components/common/Progressbar";
 import Header from "../../components/Header";
+import Footer from "../../components/common/Footer";
 import Wrapper from "../../components/common/Wrapper";
 
 import iconprev from "../../assets/icon/icon_previous.svg";
@@ -11,17 +12,15 @@ import Button from "../../components/Button";
 
 const TravelerAgree = () => {
   const [open, setOpen] = useState(false);
-  const [haveSeen, setHaveSeen] = useState(false);
   const [checked, setChecked] = useState(false);
   const navigate = useNavigate();
 
   const handleClick = () => {
     setOpen(!open);
-    setHaveSeen(true);
   };
 
   const handleCheckboxChange = () => {
-    if (haveSeen) {
+    if (open) {
       setChecked(!checked);
     } else {
       alert("[상세보기] 확인 후 동의 가능합니다");
@@ -29,7 +28,11 @@ const TravelerAgree = () => {
   };
 
   const handleNext = () => {
-    navigate("/travelerinfo");
+    if (checked) {
+      navigate("/travelerinfo");
+    } else {
+      alert("개인정보의 제3자 제공 동의 약관에 동의하셔야합니다.");
+    }
   };
 
   const handlePrev = () => {
@@ -37,7 +40,13 @@ const TravelerAgree = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        minHeight: "100vh", // 뷰포트 높이로 설정
+        display: "flex", // Flexbox로 내부 요소 정렬
+        flexDirection: "column", // 자식 요소를 세로 방향으로 정렬
+      }}
+    >
       <Header
         text="예약인원"
         imageLeft={iconprev}
@@ -82,7 +91,11 @@ const TravelerAgree = () => {
             {open && <AgreeText />}
           </div>
         </Wrapper>
-        <Button text="다음" type="cta" handleClick={handleNext} />
+        <Footer>
+          <div style={{ display: "flex", gap: "7px" }}>
+            <Button text="다음" type="cta" handleClick={handleNext} />
+          </div>
+        </Footer>
       </Body>
     </div>
   );

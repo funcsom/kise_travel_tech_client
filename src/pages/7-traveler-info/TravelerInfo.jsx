@@ -3,6 +3,7 @@ import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/Header";
+import Footer from "../../components/common/Footer";
 import Body from "../../components/common/Body";
 import Progressbar from "../../components/common/Progressbar";
 import NoneToggleWrapper from "../../components/common/NoneToggleWrapper";
@@ -15,9 +16,11 @@ import Product from "../../components/common/Product";
 import iconprev from "../../assets/icon/icon_previous.svg";
 
 const TravelerInfo = () => {
+  const [checkedIsSame, setCheckedIsSame] = useState(false);
   const { info, setInfo } = useContext(UserContext);
   const [information, setInformaton] = useState({
-    name: "",
+    reserveName: "",
+    travelerName: "",
     dob: "",
     phone: "",
     email: "",
@@ -30,16 +33,27 @@ const TravelerInfo = () => {
   }, [info]);
 
   const handleClick = () => {
-    const result = confirm(confirmText);
-    if (result) {
-      handleNext();
+    if (
+      information.reserveName &&
+      information.travelerName &&
+      information.dob &&
+      information.phone &&
+      information.email
+    ) {
+      const result = confirm(confirmText);
+      if (result) {
+        handleNext();
+      }
+    } else {
+      alert("예약자 및 여행자 정보를 입력해주세요.");
     }
   };
 
   const handleNext = () => {
     setInfo({
       ...info,
-      name: information.name,
+      reserveName: information.reserveName,
+      travelerName: information.travelerName,
       dob: information.dob,
       phone: information.phone,
       email: information.email,
@@ -53,7 +67,13 @@ const TravelerInfo = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh", // 뷰포트 높이로 설정
+        display: "flex", // Flexbox로 내부 요소 정렬
+        flexDirection: "column", // 자식 요소를 세로 방향으로 정렬
+      }}
+    >
       <Header
         text="예약인원"
         imageLeft={iconprev}
@@ -70,19 +90,27 @@ const TravelerInfo = () => {
               />
             </Wrapper>
           </NoneToggleWrapper>
-          <NoneToggleWrapper title="여행자">
+          <NoneToggleWrapper
+            title="여행자"
+            checkbox={true}
+            checkedIsSame={checkedIsSame}
+            setCheckedIsSame={setCheckedIsSame}
+          >
             <Wrapper>
               <TravelerForm
                 information={information}
                 setInformation={setInformaton}
+                checkedIsSame={checkedIsSame}
               />
             </Wrapper>
           </NoneToggleWrapper>
         </div>
-        <div style={{ display: "flex", gap: "7px" }}>
-          <Button text="장바구니" type="cart" handleclick={handleClick} />
-          <Button text="예약" type="cta" handleClick={handleClick} />
-        </div>
+        <Footer>
+          <div style={{ display: "flex", gap: "7px" }}>
+            <Button text="장바구니" type="cart" handleclick={handleClick} />
+            <Button text="예약" type="cta" handleClick={handleClick} />
+          </div>
+        </Footer>
       </Body>
     </div>
   );

@@ -3,6 +3,7 @@ import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/Header";
+import Footer from "../../components/common/Footer";
 import Body from "../../components/common/Body";
 import ToggleWrapper from "../../components/common/ToggleWrapper";
 import Wrapper from "../../components/common/Wrapper";
@@ -16,6 +17,7 @@ import styles from "./SelectProduct.module.css";
 import Progressbar from "../../components/common/Progressbar";
 
 const SelectProduct = () => {
+  const [isPackageSelected, setIsPackageSelected] = useState(false);
   const { info, setInfo } = useContext(UserContext);
   const [count, setCount] = useState(1);
   const [selectedTrainToGo, setSelectedTrainToGo] = useState(trainToGo[0].name);
@@ -39,24 +41,33 @@ const SelectProduct = () => {
   };
 
   const handleNext = () => {
-    console.log(`${selectedTrainToCome}`);
-    setInfo({
-      ...info,
-      people: count,
-      goTrain: { ...info.goTrain, trainNo: `${selectedTrainToGo}` },
-      comeTrain: {
-        ...info.comeTrain,
-        trainNo: `${selectedTrainToCome}`,
-      },
-      package: `${selectedPackage}`,
-    });
-    navigate("/selectdetail");
+    if (isPackageSelected) {
+      setInfo({
+        ...info,
+        people: count,
+        goTrain: { ...info.goTrain, trainNo: `${selectedTrainToGo}` },
+        comeTrain: {
+          ...info.comeTrain,
+          trainNo: `${selectedTrainToCome}`,
+        },
+        package: `${selectedPackage}`,
+      });
+      navigate("/selectdetail");
+    } else {
+      alert("패키지은(는) 선택 필수입니다. 상품을 선택하세요.");
+    }
   };
   const handlePrev = () => {
     navigate(-1);
   };
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh", // 뷰포트 높이로 설정
+        display: "flex", // Flexbox로 내부 요소 정렬
+        flexDirection: "column", // 자식 요소를 세로 방향으로 정렬
+      }}
+    >
       <Header
         text="상품선택"
         imageLeft={iconprev}
@@ -131,7 +142,10 @@ const SelectProduct = () => {
                     <input
                       type="checkbox"
                       checked={selectedPackage === pkg.name}
-                      onChange={() => handlePackageChange(pkg.name)}
+                      onChange={() => {
+                        handlePackageChange(pkg.name);
+                        setIsPackageSelected(true);
+                      }}
                     />
                     <Product title={pkg.name} />
                   </div>
@@ -162,7 +176,9 @@ const SelectProduct = () => {
             ))}
           </ToggleWrapper>
         </div>
-        <Button text="다음" type="cta" handleClick={handleNext} />
+        <Footer>
+          <Button text="다음" type="cta" handleClick={handleNext} />
+        </Footer>
       </Body>
     </div>
   );

@@ -1,4 +1,21 @@
-const TravelerForm = ({ information, setInformation }) => {
+import { useEffect } from "react";
+
+const TravelerForm = ({ information, setInformation, checkedIsSame }) => {
+  // checkedIsSame이 true일 때 travelerName 업데이트
+  useEffect(() => {
+    if (checkedIsSame) {
+      setInformation((prevInfo) => ({
+        ...prevInfo,
+        travelerName: prevInfo.reserveName, // reserveName 값을 travelerName에 복사
+      }));
+    } else {
+      setInformation((prevInfo) => ({
+        ...prevInfo,
+        travelerName: "", // travelerName을 빈 문자열로 설정
+      }));
+    }
+  }, [checkedIsSame, setInformation]);
+
   return (
     <div
       style={{
@@ -12,6 +29,7 @@ const TravelerForm = ({ information, setInformation }) => {
         flex: "1",
       }}
     >
+      {/* 성별 선택 */}
       <div
         style={{
           width: "100%",
@@ -50,6 +68,8 @@ const TravelerForm = ({ information, setInformation }) => {
           </div>
         </div>
       </div>
+
+      {/* 이름 입력 */}
       <div
         style={{
           width: "100%",
@@ -60,7 +80,14 @@ const TravelerForm = ({ information, setInformation }) => {
       >
         <span style={{ display: "block" }}>이름</span>
         <div>
-          <input type="text" style={{ width: "130px" }} />
+          <input
+            type="text"
+            style={{ width: "130px" }}
+            value={information.travelerName || ""} // 값이 없을 경우 빈 문자열로 설정
+            onChange={(e) =>
+              setInformation({ ...information, travelerName: e.target.value })
+            }
+          />
         </div>
       </div>
     </div>

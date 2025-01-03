@@ -1,5 +1,5 @@
 import { UserContext } from "../../App";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../components/Header";
@@ -15,11 +15,36 @@ import iconprev from "../../assets/icon/icon_previous.svg";
 import TrainSelectPlace from "./components/TrainSelectPlace";
 import HeadCounting from "./components/HeadCounting";
 import PackageCounting from "./components/PackageCounting";
+import Footer from "../../components/common/Footer";
 
 const SelectDetail = () => {
   const [valid, setValid] = useState(true);
+  const [trainInfo, setTrainInfo] = useState([]);
   const { info, setInfo } = useContext(UserContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    fetch(`data/${info.region}-product.json`)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("받아온 데이터 =>", data);
+        setTrainInfo(data.TrainInformation);
+      });
+  }, []);
+
+  useEffect(() => {
+    console.log(info);
+  }, [info]);
+
+  const trainGo = trainInfo.filter(
+    (train) => train.name === info.goTrain.trainNo
+  );
+  const trainCome = trainInfo.filter(
+    (train) => train.name === info.comeTrain.trainNo
+  );
+
+  const [trainToGo] = trainGo;
+  const [trainToCome] = trainCome;
 
   const handleNext = () => {
     console.log(valid);
@@ -35,7 +60,13 @@ const SelectDetail = () => {
   };
 
   return (
-    <div>
+    <div
+      style={{
+        height: "100vh", // 뷰포트 높이로 설정
+        display: "flex", // Flexbox로 내부 요소 정렬
+        flexDirection: "column", // 자식 요소를 세로 방향으로 정렬
+      }}
+    >
       <Header
         text="예약인원"
         imageLeft={iconprev}
@@ -45,36 +76,39 @@ const SelectDetail = () => {
         <Progressbar nthChild={2} />
         <div>
           <NoneToggleWrapper title="가는열차">
-            {trainToGo.map((train, index) => (
-              <div key={index}>
-                <Wrapper styles={{ borderBottom: "1px solid black" }}>
-                  <Product title={info.goTrain.trainNo}>
-                    <TrainInfo
-                      selectedDate={`${info.date} ${info.day}`}
-                      departPlace={train.departPlace}
-                      departTime={train.departTime}
-                      arrivalPlace={train.arrivalPlace}
-                      arrivalTime={train.arrivalTime}
-                    />
-                    <div
-                      style={{
-                        padding: "14px 24px",
-                      }}
-                    >
-                      <TrainSelectPlace />
-                    </div>
-                    <div
-                      style={{
-                        padding: "16px 40px",
-                        borderTop: "1px solid var(--color-white)",
-                      }}
-                    >
-                      <HeadCounting people={info.people} setValid={setValid} />
-                    </div>
-                  </Product>
-                </Wrapper>
-              </div>
-            ))}
+            <Wrapper styles={{ borderBottom: "1px solid black" }}>
+              <Product title={trainToGo?.name}>
+                <TrainInfo
+                  selectedDate={`${info.date} ${info.day}`}
+                  departPlace={trainToGo?.startpoint}
+                  departTime={trainToGo?.starttime}
+                  arrivalPlace={trainToGo?.endpoint}
+                  arrivalTime={trainToGo?.endtime}
+                />
+                <div
+                  style={{
+                    padding: "14px 24px",
+                  }}
+                >
+                  <TrainSelectPlace
+                    info={info}
+                    setInfo={setInfo}
+                    trainGoStation={trainToGo?.stations}
+                    trainComeStation=""
+                    // 내가 여태껏 어떻게 했길래 자꾸 station이 없다는 결과가 나왔지?
+                    // 여기서도 있으면 해라가되어서 그런감?
+                  />
+                </div>
+                <div
+                  style={{
+                    padding: "16px 40px",
+                    borderTop: "1px solid var(--color-white)",
+                  }}
+                >
+                  <HeadCounting people={info.people} setValid={setValid} />
+                </div>
+              </Product>
+            </Wrapper>
           </NoneToggleWrapper>
           <NoneToggleWrapper title="패키지">
             <Wrapper>
@@ -94,62 +128,45 @@ const SelectDetail = () => {
             </Wrapper>
           </NoneToggleWrapper>
           <NoneToggleWrapper title="오는열차">
-            {trainToCome.map((train, index) => (
-              <div key={index}>
-                <Wrapper styles={{ borderBottom: "1px solid black" }}>
-                  <Product title={info.comeTrain.trainNo}>
-                    <TrainInfo
-                      selectedDate={`${info.date} ${info.day}`}
-                      departPlace={train.departPlace}
-                      departTime={train.departTime}
-                      arrivalPlace={train.arrivalPlace}
-                      arrivalTime={train.arrivalTime}
-                    />
-                    <div
-                      style={{
-                        padding: "14px 24px",
-                      }}
-                    >
-                      <TrainSelectPlace />
-                    </div>
-                    <div
-                      style={{
-                        padding: "16px 40px",
-                        borderTop: "1px solid var(--color-white)",
-                      }}
-                    >
-                      <HeadCounting people={info.people} setValid={setValid} />
-                    </div>
-                  </Product>
-                </Wrapper>
-              </div>
-            ))}
+            <Wrapper styles={{ borderBottom: "1px solid black" }}>
+              <Product title={trainToCome?.name}>
+                <TrainInfo
+                  selectedDate={`${info.date} ${info.day}`}
+                  departPlace={trainToCome?.startpoint}
+                  departTime={trainToCome?.starttime}
+                  arrivalPlace={trainToCome?.endpoint}
+                  arrivalTime={trainToCome?.endtime}
+                />
+                <div
+                  style={{
+                    padding: "14px 24px",
+                  }}
+                >
+                  <TrainSelectPlace
+                    info={info}
+                    setInfo={setInfo}
+                    trainComeStation={trainToCome?.stations}
+                    trainGoStation=""
+                  />
+                </div>
+                <div
+                  style={{
+                    padding: "16px 40px",
+                    borderTop: "1px solid var(--color-white)",
+                  }}
+                >
+                  <HeadCounting people={info.people} setValid={setValid} />
+                </div>
+              </Product>
+            </Wrapper>
           </NoneToggleWrapper>
         </div>
-        <Button text="다음" type="cta" handleClick={handleNext} />
+        <Footer>
+          <Button text="다음" type="cta" handleClick={handleNext} />
+        </Footer>
       </Body>
     </div>
   );
 };
-
-const trainToGo = [
-  {
-    name: "KTX NNN",
-    departPlace: "청량리",
-    departTime: "10:05",
-    arrivalPlace: "동해",
-    arrivalTime: "12:20",
-  },
-];
-
-const trainToCome = [
-  {
-    name: "KTX NNN",
-    departPlace: "청량리",
-    departTime: "10:05",
-    arrivalPlace: "동해",
-    arrivalTime: "12:20",
-  },
-];
 
 export default SelectDetail;

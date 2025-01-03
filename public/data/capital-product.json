@@ -5,13 +5,13 @@
       "id": "0",
       "title": "(레일티켓) 한복입고 떠나는 경복궁-북촌 한옥마을 투어(당일)",
       "price": "43600",
-      "img": "../../src/assets/image/2localtrip/capital/0.jpeg"
+      "img": "/assets/capital/capital-0.jpeg"
     },
     {
       "id": "1",
       "title": "(레일티켓) 서울시티투어 순환형(경부선)",
       "price": "98700",
-      "img": "../../src/assets/image/2localtrip/capital/1.jpeg"
+      "img": "/assets/capital/capital-1.jpeg"
     }
   ],
   "List": [
@@ -19,19 +19,93 @@
       "id": "0",
       "title": "[착한여행] 강화 어디로 가볼까? 소창으로 소풍가자 (당일) (부산/목포/강릉출발)",
       "price": "81800",
-      "img": "../../src/assets/image/2localtrip/capital/2.jpeg"
+      "img": "/assets/capital/capital-2.jpeg"
     },
     {
       "id": "1",
       "title": "(레일티켓) 서울시티투어 순환형(경부선)",
       "price": "98700",
-      "img": "../../src/assets/image/2localtrip/capital/1.jpeg"
+      "img": "/assets/capital/capital-1.jpeg"
     },
     {
       "id": "2",
       "title": "(레일티켓) 한복입고 떠나는 경복궁-북촌 한옥마을 투어(당일)",
       "price": "43600",
-      "img": "../../src/assets/image/2localtrip/capital/0.jpeg"
+      "img": "/assets/capital/capital-0.jpeg"
+    }
+  ],
+  "TrainInformation": [
+    {
+      "name": "KTX 845",
+      "startpoint": "부산",
+      "starttime": "07:01",
+      "endpoint": "서울",
+      "endtime": "10:02",
+      "stations": {
+        "destination": [
+          { "station": "부산", "time": "07:01" },
+          { "station": "울산", "time": "07:23" },
+          { "station": "동대구", "time": "07:48" },
+          { "station": "김천구미", "time": "08:11" },
+          { "station": "대전", "time": "08:35" },
+          { "station": "오송", "time": "08:53" }
+        ],
+        "origin": [{ "station": "서울", "time": "10:02" }]
+      }
+    },
+    {
+      "name": "KTX 848",
+      "startpoint": "부산",
+      "starttime": "07:58",
+      "endpoint": "서울",
+      "endtime": "10:45",
+      "stations": {
+        "destination": [
+          { "station": "부산", "time": "07:58" },
+          { "station": "울산", "time": "08:20" },
+          { "station": "동대구", "time": "08:45" },
+          { "station": "김천구미", "time": "09:08" },
+          { "station": "대전", "time": "09:32" },
+          { "station": "오송", "time": "09:50" }
+        ],
+        "origin": [{ "station": "서울", "time": "10:45" }]
+      }
+    },
+    {
+      "name": "KTX 345",
+      "startpoint": "서울",
+      "starttime": "18:33",
+      "endpoint": "부산",
+      "endtime": "21:24",
+      "stations": {
+        "destination": [
+          { "station": "부산", "time": "21:24" },
+          { "station": "울산", "time": "21:00" },
+          { "station": "동대구", "time": "20:38" },
+          { "station": "김천구미", "time": "20:15" },
+          { "station": "대전", "time": "19:53" },
+          { "station": "오송", "time": "19:30" }
+        ],
+        "origin": [{ "station": "서울", "time": "18:33" }]
+      }
+    },
+    {
+      "name": "KTX 348",
+      "startpoint": "서울",
+      "starttime": "19:05",
+      "endpoint": "부산",
+      "endtime": "22:15",
+      "stations": {
+        "destination": [
+          { "station": "부산", "time": "22:15" },
+          { "station": "울산", "time": "21:50" },
+          { "station": "동대구", "time": "21:28" },
+          { "station": "김천구미", "time": "21:05" },
+          { "station": "대전", "time": "20:43" },
+          { "station": "오송", "time": "20:20" }
+        ],
+        "origin": [{ "station": "서울", "time": "19:05" }]
+      }
     }
   ]
 }
