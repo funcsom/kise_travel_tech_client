@@ -7,11 +7,12 @@ import Progressbar from "../../components/common/Progressbar";
 import ToggleWrapper from "../../components/common/ToggleWrapper";
 import Wrapper from "../../components/common/Wrapper";
 import Info from "./components/Info";
+import InfoTrain from "./components/InfoTrain";
 import Button from "../../components/Button";
 
 import iconprev from "../../assets/icon/icon_previous.svg";
 
-const CompleteProduct = (props) => {
+const CompleteProduct = () => {
   const navigate = useNavigate();
 
   const handleNext = () => {
@@ -44,7 +45,7 @@ const CompleteProduct = (props) => {
         </div>
         <ToggleWrapper title="가는열차">
           <Wrapper>
-            <Info />
+            <InfoTrain />
           </Wrapper>
         </ToggleWrapper>
         <Footer>

@@ -61,7 +61,7 @@ const ReservateForm = ({ information, setInformation }) => {
           >
             <span style={{ display: "block" }}>휴대폰번호</span>
             <input
-              type="tel"
+              type="number"
               style={{ width: "150px" }}
               value={information.phone}
               onChange={(e) =>
