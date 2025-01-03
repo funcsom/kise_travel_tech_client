@@ -9,7 +9,6 @@
 }
 
 .cta {
-  flex: 1;
   background-color: var(--color-red-02);
   padding: 12px 16px;
   color: var(--color-white);
