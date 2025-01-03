@@ -16,9 +16,11 @@ import Product from "../../components/common/Product";
 import iconprev from "../../assets/icon/icon_previous.svg";
 
 const TravelerInfo = () => {
+  const [checkedIsSame, setCheckedIsSame] = useState(false);
   const { info, setInfo } = useContext(UserContext);
   const [information, setInformaton] = useState({
-    name: "",
+    reserveName: "",
+    travelerName: "",
     dob: "",
     phone: "",
     email: "",
@@ -31,16 +33,27 @@ const TravelerInfo = () => {
   }, [info]);
 
   const handleClick = () => {
-    const result = confirm(confirmText);
-    if (result) {
-      handleNext();
+    if (
+      information.reserveName &&
+      information.travelerName &&
+      information.dob &&
+      information.phone &&
+      information.email
+    ) {
+      const result = confirm(confirmText);
+      if (result) {
+        handleNext();
+      }
+    } else {
+      alert("예약자 및 여행자 정보를 입력해주세요.");
     }
   };
 
   const handleNext = () => {
     setInfo({
       ...info,
-      name: information.name,
+      reserveName: information.reserveName,
+      travelerName: information.travelerName,
       dob: information.dob,
       phone: information.phone,
       email: information.email,
@@ -77,11 +90,17 @@ const TravelerInfo = () => {
               />
             </Wrapper>
           </NoneToggleWrapper>
-          <NoneToggleWrapper title="여행자">
+          <NoneToggleWrapper
+            title="여행자"
+            checkbox={true}
+            checkedIsSame={checkedIsSame}
+            setCheckedIsSame={setCheckedIsSame}
+          >
             <Wrapper>
               <TravelerForm
                 information={information}
                 setInformation={setInformaton}
+                checkedIsSame={checkedIsSame}
               />
             </Wrapper>
           </NoneToggleWrapper>

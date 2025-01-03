@@ -30,9 +30,9 @@ const ReservateForm = ({ information, setInformation }) => {
           <input
             type="text"
             style={{ width: "150px" }}
-            value={information.name}
+            value={information.reserveName}
             onChange={(e) =>
-              setInformation({ ...information, name: e.target.value })
+              setInformation({ ...information, reserveName: e.target.value })
             }
           />
         </div>
