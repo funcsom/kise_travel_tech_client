@@ -49,9 +49,9 @@ body * {
 }
 
 /* IMPROVMENT PAGE TOKEN */
-/* $$$ PRIMITIVE VARIABLES $$$ */
+/* $$$ PRIMITIVE VARIABLES COLOR $$$ */
 :root {
-  /* Colors => usage for semantic */
+  /* usage for semantic */
   /* Common */
   --common-0: #000;
   --common-100: #fff;
@@ -133,21 +133,94 @@ body * {
   --red-90: #f9ccc8;
   --red-95: #fce1df;
   --red-99: #fef2f1;
-
-  /* Font Sizes */
-
-  /* Spacing */
-  --spacing-30: 30px;
-  --spacing-20: 20px;
-  --spacing-18: 18px;
-  --spacing-16: 16px;
-  --spacing-14: 14px;
-  --spacing-12: 12px;
-  --spacing-10: 10px;
 }
 
-/* $$$ SEMANTIC VARIABLES (Colors) $$$ */
+/* $$$ PRIMITIVE VARIABLES FONT $$$ */
 :root {
+  /* Font */
+  /* Heading1 */
+  --font-h1-sb: 600 var(--sizing-20) / 1.2 "Pretendard", sans-serif;
+
+  /* Display1 */
+  --font-d1-sb: 600 var(--sizing-30) / 1.2 "Pretendard", sans-serif;
+
+  /* Title1 */
+  --font-t1-b: 700 var(--sizing-18) / 1.2 "Pretendard", sans-serif;
+  --font-t1-sb: 600 var(--sizing-18) / 1.2 "Pretendard", sans-serif;
+
+  /* Title2 */
+  --font-t2-b: 700 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
+
+  /* Title3 */
+  --font-t3-b: 700 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+  --font-t3-sb: 600 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+  --font-t3-m: 500 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+  --font-t3-r: 400 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+  --font-t3-r: 400 var(--sizing-12) / 1.2 "Pretendard", sans-serif;
+  --font-t3-b: 700 var(--sizing-12) / 1.2 "Pretendard", sans-serif;
+
+  /* Body1 */
+  --font-b1-no-m: 500 var(--sizing-18) / 1.2 "Pretendard", sans-serif;
+  --font-b1-no-r: 400 var(--sizing-18) / 1.2 "Pretendard", sans-serif;
+
+  /* Body2 */
+  --font-b2-no-b: 700 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
+  --font-b2-no-m: 500 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
+  --font-b2-re-sb: 600 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
+  --font-b2-re-r-120: 400 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
+
+  /* Body3 */
+  --font-b3-no-b: 700 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+  --font-b3-no-sb: 600 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+  --font-b3-no-m: 500 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+  --font-b3-no-r: 400 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+  --font-b3-no-l: 300 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+  --font-b3-re-r-160: 400 var(--sizing-14) / 1.6 "Pretendard", sans-serif;
+  --font-b3-re-r-120: 400 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+
+  /* Body4 */
+  --font-b4-no-b: 700 var(--sizing-12) / 1.2 "Pretendard", sans-serif;
+  --font-b4-no-sb: 600 var(--sizing-12) / 1.2 "Pretendard", sans-serif;
+  --font-b4-no-m: 500 var(--sizing-12) / 1.2 "Pretendard", sans-serif;
+  --font-b4-re-r-130: 400 var(--sizing-12) / 1.3 "Pretendard", sans-serif;
+
+  /* Label1 */
+  --font-l1-sb: 600 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
+  --font-l1-r: 400 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
+
+  /* Label2 */
+  --font-l2-r: 400 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+
+  /* Label3 */
+  --font-l3-r: 400 var(--sizing-12) / 1.2 "Pretendard", sans-serif;
+
+  /* Figure */
+  --font-f1-r: 400 var(--sizing-18) / 1.2 "Pretendard", sans-serif;
+  --font-f2-r: 400 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
+  --font-f3-m: 500 var(--sizing-10) / 1.2 "Pretendard", sans-serif;
+
+  /* Caption1 */
+  --font-c1-r: 400 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+
+  /* Caption2 */
+  --font-c2-m: 500 var(--sizing-12) / 1.2 "Pretendard", sans-serif;
+}
+
+/* $$$ PRIMITIVE VARIABLES SIZING $$$ */
+:root {
+  /* Sizing */
+  --sizing-30: 30px;
+  --sizing-20: 20px;
+  --sizing-18: 18px;
+  --sizing-16: 16px;
+  --sizing-14: 14px;
+  --sizing-12: 12px;
+  --sizing-10: 10px;
+}
+
+/* $$$ SEMANTIC VARIABLES COLOR $$$ */
+:root {
+  /* notyet */
 }
 
 /* input[type="radio"] default styling */
