@@ -45,7 +45,7 @@ const ReservateForm = ({ information, setInformation }) => {
         >
           <span style={{ display: "block" }}>생년월일</span>
           <input
-            type="number"
+            type="text"
             style={{ width: "150px" }}
             value={information.dob}
             onChange={(e) =>
@@ -61,7 +61,7 @@ const ReservateForm = ({ information, setInformation }) => {
           >
             <span style={{ display: "block" }}>휴대폰번호</span>
             <input
-              type="number"
+              type="text"
               style={{ width: "150px" }}
               value={information.phone}
               onChange={(e) =>
