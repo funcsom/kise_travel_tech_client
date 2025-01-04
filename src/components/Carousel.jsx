@@ -1,10 +1,14 @@
+import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Autoplay, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import iconcalendar from "../assets/icon/icon_calendar.svg";
 import iconprevious from "../assets/icon/icon_previous.svg";
+
+import "./Carousel.css";
 
 const Carousel = ({ elems }) => {
   return (
@@ -13,10 +17,7 @@ const Carousel = ({ elems }) => {
         modules={[Navigation]}
         spaceBetween={20}
         slidesPerView={1}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
+        navigation={true}
       >
         {elems.map((elem, index) => {
           return (
@@ -37,18 +38,37 @@ const Carousel = ({ elems }) => {
 export default Carousel;
 
 export const CarouselProd = ({ elems, onClickProduct }) => {
+  // const paginationRef = useRef(null);
+
+  // const pagination = {
+  //   el: paginationRef.current,
+  //   clickable: true,
+  //   renderBullet: function (index, className) {
+  //     return '<span class="' + className + '">' + (index + 1) + "</span>";
+  //   },
+  // };
+
+  const pagination = {
+    clickable: true,
+    renderBullet: function (index, className) {
+      return '<div class="' + className + '"></div>';
+    },
+  };
+
   return (
     <div>
       <Swiper
-        modules={[Navigation]}
+        modules={[Autoplay, Pagination]}
         spaceBetween={20}
         slidesPerView={1}
-        navigation={{
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        }}
+        autoplay={{ delay: 3000 }}
+        pagination={pagination}
+        // pagination={pagination}
       >
         {elems.map((elem, index) => {
+          const formattedNumber = new Intl.NumberFormat("ko-KR").format(
+            elem.price
+          );
           return (
             <SwiperSlide key={index}>
               <div
@@ -91,7 +111,7 @@ export const CarouselProd = ({ elems, onClickProduct }) => {
                 >
                   <div style={{ font: "var(--font-b4)", color: "white" }}>
                     <p>{elem.title}</p>
-                    <p>{elem.price}</p>
+                    <p>{formattedNumber}원 ~</p>
                   </div>
                   <img
                     src={iconprevious}

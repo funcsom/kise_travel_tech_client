@@ -1,6 +1,8 @@
 import iconcalendar from "../../../assets/icon/icon_calendar.svg";
 
 const TripList = ({ img, title, price, onClickProduct }) => {
+  const formattedNumber = new Intl.NumberFormat("ko-KR").format(price);
+
   return (
     <div
       onClick={() => onClickProduct([title, price])}
@@ -47,7 +49,7 @@ const TripList = ({ img, title, price, onClickProduct }) => {
           color: "var(--color-light-blue-200)",
         }}
       >
-        {price}
+        {formattedNumber}원 ~
       </p>
     </div>
   );
