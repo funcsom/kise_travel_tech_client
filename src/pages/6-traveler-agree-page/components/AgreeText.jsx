@@ -2,7 +2,7 @@ const AgreeText = (props) => {
   return (
     <div
       style={{
-        font: "var(--font-b1)",
+        font: "var(--font-orig-b1)",
         color: "var(--color-gray-400)",
         padding: "16px 14px",
       }}

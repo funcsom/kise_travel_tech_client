@@ -40,12 +40,12 @@ const TripList = ({ img, title, price, onClickProduct }) => {
         >
           <img src={img} alt="" style={{ width: "100%" }} />
         </div>
-        <p style={{ font: "var(--font-t2-t)" }}>{title}</p>
+        <p style={{ font: "var(--font-orig-t2-t)" }}>{title}</p>
       </div>
 
       <p
         style={{
-          font: "var(--font-t2-b)",
+          font: "var(--font-orig-t2-b)",
           color: "var(--color-light-blue-200)",
         }}
       >

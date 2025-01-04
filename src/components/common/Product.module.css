@@ -9,20 +9,20 @@
   padding: 11px 8px;
   display: flex;
   justify-content: space-between;
-  font: var(--font-b2);
+  font: var(--font-orig-b2);
 }
 
 .content {
   background-color: #eaeaea;
   padding: 14px 10px;
-  font: var(--font-b4);
+  font: var(--font-orig-b4);
 }
 
 .title > p:first-child {
-  font: var(--font-b3-sb);
+  font: var(--font-orig-b3-sb);
 }
 
 .ProductBig span {
   color: var(--color-red-01);
-  font: var(--font-b4-el);
+  font: var(--font-orig-b4-el);
 }

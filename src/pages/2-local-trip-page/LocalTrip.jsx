@@ -74,7 +74,7 @@ const LocalTrip = () => {
         <SelectLocal currentLocal={params.local} onChange={changeLocal} />
       </div>
       <Body>
-        <p style={{ font: "var(--font-b3-b)" }}>
+        <p style={{ font: "var(--font-orig-b3-b)" }}>
           {`${enToKo[selectedLocal]}권 Best 여행지`}
         </p>
         <TripBestList onClickProduct={onClickProduct} prods={localBestProd} />

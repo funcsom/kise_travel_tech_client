@@ -20,7 +20,7 @@
   padding: 11.5px 28px;
   color: var(--color-white);
   flex-shrink: 0;
-  font: var(--font-b3-r);
+  font: var(--font-orig-b3-r);
 }
 
 .cart {

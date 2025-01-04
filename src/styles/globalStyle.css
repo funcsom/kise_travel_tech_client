@@ -10,6 +10,7 @@ body * {
   box-sizing: border-box;
 }
 
+/* ORIGINAL PAGE TOKEN */
 :root {
   --color-white: #fff;
   --color-gray-100: #dbdbdb;
@@ -28,39 +29,125 @@ body * {
   --color-red-02: #d8361b;
   --color-red-03: #ed4f44;
 
-  /* --font-h1: 500 16px/1.2 "NotoSansKR", sans-serif;
-  --font-t1: 500 19px/1.2 "NotoSansKR", sans-serif;
-  --font-t2: 700 12px/1.2 "NotoSansKR", sans-serif;
-  --font-t2-t: 500 12px/1.54 "NotoSansKR", sans-serif;
-  --font-b1: 500 16px/1.2 "NotoSansKR", sans-serif;
-  --font-b1-b: 700 16px/1.2 "NotoSansKR", sans-serif;
-  --font-b2: 300 15px/1.2 "NotoSansKR", sans-serif;
-  --font-b2-b: 700 15px/1.2 "NotoSansKR", sans-serif;
-  --font-b3-l: 300 14px/1.2 "NotoSansKR", sans-serif;
-  --font-b3-r: 400 14px/1.2 "NotoSansKR", sans-serif;
-  --font-b3-m: 500 14px/1.2 "NotoSansKR", sans-serif;
-  --font-b3-sb: 600 14px/1.2 "NotoSansKR", sans-serif;
-  --font-b3-b: 700 14px/1.2 "NotoSansKR", sans-serif;
-  --font-b4: 400 13px/1.2 "NotoSansKR", sans-serif;
-  --font-b4-el: 200 13px/1.2 "NotoSansKR", sans-serif; */
-
   /* Typography Variables */
-  --font-h1: 500 16px/1.2 "Pretendard", sans-serif;
-  --font-t1: 500 19px/1.2 "Pretendard", sans-serif;
-  --font-t2: 500 12px/1.2 "Pretendard", sans-serif;
-  --font-t2-b: 700 12px/1.2 "Pretendard", sans-serif;
-  --font-t2-t: 500 12px/1.54 "Pretendard", sans-serif;
-  --font-b1: 500 16px/1.2 "Pretendard", sans-serif;
-  --font-b1-b: 700 16px/1.2 "Pretendard", sans-serif;
-  --font-b2: 300 15px/1.2 "Pretendard", sans-serif;
-  --font-b2-b: 700 15px/1.2 "Pretendard", sans-serif;
-  --font-b3-l: 300 14px/1.2 "Pretendard", sans-serif;
-  --font-b3-r: 400 14px/1.2 "Pretendard", sans-serif;
-  --font-b3-m: 500 14px/1.2 "Pretendard", sans-serif;
-  --font-b3-sb: 600 14px/1.2 "Pretendard", sans-serif;
-  --font-b3-b: 700 14px/1.2 "Pretendard", sans-serif;
-  --font-b4: 400 13px/1.2 "Pretendard", sans-serif;
-  --font-b4-el: 200 13px/1.2 "Pretendard", sans-serif;
+  --font-orig-h1: 500 16px/1.2 "Pretendard", sans-serif;
+  --font-orig-t1: 500 19px/1.2 "Pretendard", sans-serif;
+  --font-orig-t2: 500 12px/1.2 "Pretendard", sans-serif;
+  --font-orig-t2-b: 700 12px/1.2 "Pretendard", sans-serif;
+  --font-orig-t2-t: 500 12px/1.54 "Pretendard", sans-serif;
+  --font-orig-b1: 500 16px/1.2 "Pretendard", sans-serif;
+  --font-orig-b1-b: 700 16px/1.2 "Pretendard", sans-serif;
+  --font-orig-b2: 300 15px/1.2 "Pretendard", sans-serif;
+  --font-orig-b2-b: 700 15px/1.2 "Pretendard", sans-serif;
+  --font-orig-b3-l: 300 14px/1.2 "Pretendard", sans-serif;
+  --font-orig-b3-r: 400 14px/1.2 "Pretendard", sans-serif;
+  --font-orig-b3-m: 500 14px/1.2 "Pretendard", sans-serif;
+  --font-orig-b3-sb: 600 14px/1.2 "Pretendard", sans-serif;
+  --font-orig-b3-b: 700 14px/1.2 "Pretendard", sans-serif;
+  --font-orig-b4: 400 13px/1.2 "Pretendard", sans-serif;
+  --font-orig-b4-el: 200 13px/1.2 "Pretendard", sans-serif;
+}
+
+/* IMPROVMENT PAGE TOKEN */
+/* $$$ PRIMITIVE VARIABLES $$$ */
+:root {
+  /* Colors => usage for semantic */
+  /* Common */
+  --common-0: #000;
+  --common-100: #fff;
+
+  /* Gray */
+  --gray-10: #222;
+  --gray-20: #4a4a4a;
+  --gray-30: #666;
+  --gray-40: #727272;
+  --gray-50: #9c9c9c;
+  --gray-60: #bcbcbc;
+  --gray-70: #c9c9c9;
+  --gray-80: #dfdfdf;
+  --gray-90: #eaeaea;
+  --gray-95: #f0f0f0;
+  --gray-99: #f7f7f7;
+
+  /* Violet */
+  --violet-10: #393a47;
+  --violet-20: #4c4e5f;
+  --violet-30: #71748f;
+  --violet-40: #979bbe;
+  --violet-50: #bdc2ee;
+  --violet-60: #c8ccf1;
+  --violet-70: #d3d6f4;
+  --violet-80: #dee1f7;
+  --violet-90: #e9ebf9;
+  --violet-95: #f0f2fb;
+  --violet-99: #f8f9fd;
+
+  /* Gray Blue */
+  --grayblue-10: #1e2930;
+  --grayblue-20: #26333c;
+  --grayblue-30: #2d3d48;
+  --grayblue-40: #505d67;
+  --grayblue-50: #596a76;
+  --grayblue-60: #78848d;
+  --grayblue-70: #99a4ac;
+  --grayblue-80: #bbc4cb;
+  --grayblue-90: #d6dee3;
+  --grayblue-95: #e1e8ed;
+  --grayblue-99: #f0f4f6;
+
+  /* Sky Blue */
+  --skyblue-10: #033246;
+  --skyblue-20: #044b69;
+  --skyblue-30: #05648b;
+  --skyblue-40: #077dae;
+  --skyblue-50: #0896d1;
+  --skyblue-60: #31a8d9;
+  --skyblue-70: #5ab9e0;
+  --skyblue-80: #84cbe8;
+  --skyblue-90: #addcf0;
+  --skyblue-95: #e6f4fa;
+  --skyblue-99: #f3fafd;
+
+  /* Blue */
+  --blue-10: #031421;
+  --blue-20: #052742;
+  --blue-30: #083b63;
+  --blue-40: #0a4e84;
+  --blue-50: #0d62a5;
+  --blue-60: #3d81b7;
+  --blue-70: #6ea1c9;
+  --blue-80: #9ec0db;
+  --blue-90: #cfe0ed;
+  --blue-95: #e7eff6;
+  --blue-99: #eef4f9;
+
+  /* Red */
+  --red-10: #5c0900;
+  --red-20: #a81505;
+  --red-30: #dc2b17;
+  --red-40: #e9412f;
+  --red-50: #ed6354;
+  --red-60: #f18074;
+  --red-70: #f39187;
+  --red-80: #f5a79e;
+  --red-90: #f9ccc8;
+  --red-95: #fce1df;
+  --red-99: #fef2f1;
+
+  /* Font Sizes */
+
+  /* Spacing */
+  --spacing-30: 30px;
+  --spacing-20: 20px;
+  --spacing-18: 18px;
+  --spacing-16: 16px;
+  --spacing-14: 14px;
+  --spacing-12: 12px;
+  --spacing-10: 10px;
+}
+
+/* $$$ SEMANTIC VARIABLES (Colors) $$$ */
+:root {
 }
 
 /* input[type="radio"] default styling */
@@ -113,7 +200,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  font: var(--font-b3-l);
+  font: var(--font-orig-b3-l);
   border: 1px solid var(--color-gray-400);
   background-color: var(--color-white);
   color: var(--color-gray-800);

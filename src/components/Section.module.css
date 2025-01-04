@@ -7,9 +7,9 @@
 }
 
 .Section > h1 {
-  font: var(--font-t1);
+  font: var(--font-orig-t1);
 }
 
 .Section > h2 {
-  font: var(--font-b1);
+  font: var(--font-orig-b1);
 }

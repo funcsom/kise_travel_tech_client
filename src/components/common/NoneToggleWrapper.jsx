@@ -12,7 +12,9 @@ const NoneToggleWrapper = ({
       <div className={styles.title}>
         <span>{title}</span>
         {checkbox && (
-          <div style={{ color: "var(--color-white)", font: "var(--font-b2)" }}>
+          <div
+            style={{ color: "var(--color-white)", font: "var(--font-orig-b2)" }}
+          >
             <input
               id="isequal"
               type="checkbox"

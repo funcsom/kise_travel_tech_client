@@ -5,7 +5,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 8px 10px 8px 14px;
-  font: var(--font-h1);
+  font: var(--font-orig-h1);
 }
 
 .title > div {

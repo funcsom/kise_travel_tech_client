@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem;
-  font: var(--font-t1);
+  font: var(--font-orig-t1);
   position: sticky;
   top: 0px;
   z-index: 2;

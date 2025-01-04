@@ -33,7 +33,7 @@ const TrainInfo = ({
             alignItems: "center",
           }}
         >
-          <div style={{ font: "var(--font-b3-sb)" }}>{departPlace}</div>
+          <div style={{ font: "var(--font-orig-b3-sb)" }}>{departPlace}</div>
           <div>{departTime}</div>
         </div>
         <img style={{ width: "16px" }} src={arrowto} alt="arrow to" />
@@ -44,7 +44,7 @@ const TrainInfo = ({
             alignItems: "center",
           }}
         >
-          <div style={{ font: "var(--font-b3-sb)" }}>{arrivalPlace}</div>
+          <div style={{ font: "var(--font-orig-b3-sb)" }}>{arrivalPlace}</div>
           <div>{arrivalTime}</div>
         </div>
       </div>

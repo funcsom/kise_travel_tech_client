@@ -16,7 +16,7 @@
 .guidearea {
   display: flex;
   gap: 4px;
-  font: var(--font-b2);
+  font: var(--font-orig-b2);
   align-items: center;
 }
 

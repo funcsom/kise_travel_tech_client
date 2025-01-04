@@ -4,7 +4,7 @@
   padding: 8px 12px;
   position: relative;
 
-  font: var(--font-t2);
+  font: var(--font-orig-t2);
   text-align: center;
   background-color: var(--color-white);
   color: var(--color-gray-400);

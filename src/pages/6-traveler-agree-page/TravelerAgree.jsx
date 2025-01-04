@@ -58,7 +58,7 @@ const TravelerAgree = () => {
           <div style={{ display: "flex", flexDirection: "column", flex: "1" }}>
             <div
               style={{
-                font: "var(--font-b3-r)",
+                font: "var(--font-orig-b3-r)",
                 display: "flex",
                 flexDirection: "row",
                 alignItems: "center",

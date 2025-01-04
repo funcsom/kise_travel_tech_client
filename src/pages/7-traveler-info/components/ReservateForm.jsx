@@ -7,7 +7,7 @@ const ReservateForm = ({ information, setInformation }) => {
         gap: "22px",
       }}
     >
-      <span style={{ font: "var(--font-b4)" }}>
+      <span style={{ font: "var(--font-orig-b4)" }}>
         변경이 필요한 부분을 선택해 수정하실 수 있습니다
       </span>
       <div
@@ -24,7 +24,7 @@ const ReservateForm = ({ information, setInformation }) => {
             gap: "11px",
           }}
         >
-          <span style={{ display: "block", font: "var(--font-b3-m)" }}>
+          <span style={{ display: "block", font: "var(--font-orig-b3-m)" }}>
             이름
           </span>
           <input

@@ -109,7 +109,7 @@ export const CarouselProd = ({ elems, onClickProduct }) => {
                     padding: "8px 10px",
                   }}
                 >
-                  <div style={{ font: "var(--font-b4)", color: "white" }}>
+                  <div style={{ font: "var(--font-orig-b4)", color: "white" }}>
                     <p>{elem.title}</p>
                     <p>{formattedNumber}원 ~</p>
                   </div>

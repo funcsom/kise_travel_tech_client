@@ -7,7 +7,7 @@
 /* 상단 네비게이션 바 */
 .react-calendar__navigation {
   background-color: var(--color-light-blue-200);
-  font: var(--font-b2);
+  font: var(--font-orig-b2);
   margin-bottom: 0;
   height: 40px;
 }
@@ -24,7 +24,7 @@
   align-items: center;
   background-color: var(--color-light-blue-50);
   color: var(--color-light-blue-200);
-  font: var(--font-b2-b);
+  font: var(--font-orig-b2-b);
   border-bottom: 1.5px solid var(--color-white);
 }
 
@@ -35,7 +35,7 @@ abbr {
 /* 날짜 선택하는 부분 */
 .react-calendar__tile {
   background-color: var(--color-light-blue-50);
-  font: var(--font-b2-b);
+  font: var(--font-orig-b2-b);
   color: black;
   height: 48px;
 }
