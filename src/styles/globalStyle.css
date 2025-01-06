@@ -157,10 +157,6 @@ body * {
   --font-t3-m: 500 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
   --font-t3-r: 400 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
 
-  /* Title4 */
-  --font-t4-b: 700 var(--sizing-12) / 1.2 "Pretendard", sans-serif;
-  --font-t4-r: 400 var(--sizing-12) / 1.2 "Pretendard", sans-serif;
-
   /* Body1 */
   --font-b1-no-m: 500 var(--sizing-18) / 1.2 "Pretendard", sans-serif;
   --font-b1-no-r: 400 var(--sizing-18) / 1.2 "Pretendard", sans-serif;

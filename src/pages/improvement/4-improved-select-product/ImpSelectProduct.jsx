@@ -2,13 +2,11 @@ import { ImpUserContext } from "../../../App";
 import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../../components/Header";
-import TrainListItem from "./components/TrainListItem";
-import ListItemWrapper from "./components/ListItemWrapper";
-import SelectedItem from "./components/SelectedItem";
-import { GoTrainGuide, ComeTrainGuide, PackageGuide } from "./components/Guide";
+
+import EditPage from "./pages/EditPage";
+import PrgrPage from "./pages/PrgrPage";
 
 import iconprev from "../../../assets/icon/icon_previous.svg";
-import PackageListItem from "./components/PackageListItem";
 
 const ImpSelectProduct = () => {
   const navigate = useNavigate();
@@ -33,64 +31,40 @@ const ImpSelectProduct = () => {
   }, [editImpInfo, step]);
 
   return (
-    <div>
+    <div style={{ height: "100vh", position: "relative" }}>
       <Header
         text="상품선택"
         imageLeft={iconprev}
         handleClickLeft={handlePrev}
       />
       {current === "prgr" ? (
-        <PrgrPage step={step} onClickChangeBtn={onClickChangeBtn} />
+        <PrgrPage
+          step={step}
+          setStep={setStep}
+          onClickChangeBtn={onClickChangeBtn}
+        />
       ) : (
-        <EditPage editImpInfo={editImpInfo} />
+        <EditPage setStep={setStep} editImpInfo={editImpInfo} />
       )}
+      <div
+        className="footer"
+        style={{
+          padding: "20px 16px",
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+          backgroundColor: "#22222280",
+          position: "absolute",
+          bottom: "0",
+          font: "var(--font-b2-no-m)",
+          color: "var(--common-100)",
+        }}
+      >
+        <span>{`선택한 상품 총 ${step - 1}개`}</span>
+        <span>59,800원</span>
+      </div>
     </div>
   );
 };
 
 export default ImpSelectProduct;
-
-// Edit 페이지
-const EditPage = ({ editImpInfo }) => {
-  return (
-    <div>
-      {editImpInfo === "goTrain" && <GoTrainGuide />}
-      {editImpInfo === "comeTrain" && <ComeTrainGuide />}
-      {editImpInfo === "package" && <PackageGuide />}
-    </div>
-  );
-};
-
-// Progress 페이지
-const PrgrPage = ({ step, onClickChangeBtn }) => {
-  return (
-    <div>
-      <div
-        className="selectedzone"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          padding: "10px 10px",
-          gap: "10px",
-        }}
-      >
-        {/* 데이터가 있는 것들은 여기서 동적으로 불러올 수 있도록 하기 */}
-        <SelectedItem onClickChangeBtn={onClickChangeBtn} info="goTrain" />
-        <SelectedItem onClickChangeBtn={onClickChangeBtn} info="comeTrain" />
-        <SelectedItem onClickChangeBtn={onClickChangeBtn} info="package" />
-      </div>
-      {/* step state에 따라서 선택할 정보 고르기 */}
-      {step === 1 && <GoTrainGuide />}
-      {step === 2 && <ComeTrainGuide />}
-      {step === 3 && <PackageGuide />}
-      {step === 4 && console.log("마지막 확인 페이지입니다.")}
-      {/* <PackageGuide />
-      <ListItemWrapper>
-        <TrainListItem />
-      </ListItemWrapper>
-      <ListItemWrapper>
-        <PackageListItem />
-      </ListItemWrapper> */}
-    </div>
-  );
-};

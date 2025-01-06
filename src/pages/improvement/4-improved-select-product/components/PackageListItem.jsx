@@ -1,6 +1,6 @@
 import InfoItem from "./InfoItem";
 
-const PackageListItem = () => {
+const PackageListItem = ({ name, reccommandedhead }) => {
   return (
     <div
       style={{
@@ -9,9 +9,16 @@ const PackageListItem = () => {
         alignItems: "flex-start",
       }}
     >
-      <div>
-        <div>관광택시 4시간 (중형 차량 1대)</div>
-        <div>1 ~ 3인 추천</div>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "flex-start",
+          gap: "10px",
+        }}
+      >
+        <span style={{ font: "var(--font-b3-no-b)" }}>{name}</span>
+        <span style={{ font: "var(--font-b4-no-m)" }}>{reccommandedhead}</span>
       </div>
       <InfoItem>20개 남음</InfoItem>
     </div>

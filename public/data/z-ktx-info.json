@@ -1,5 +1,6 @@
 [
   {
+    "id": "0",
     "name": "KTX 845",
     "stations": [
       { "station": "부산", "time": "07:01" },
@@ -11,6 +12,7 @@
     ]
   },
   {
+    "id": "1",
     "name": "KTX 848",
     "stations": [
       { "station": "부산", "time": "07:58" },
@@ -22,25 +24,27 @@
     ]
   },
   {
+    "id": "2",
     "name": "KTX 835",
     "stations": [
-      { "station": "부산", "time": "21:24" },
-      { "station": "울산", "time": "21:00" },
-      { "station": "동대구", "time": "20:38" },
-      { "station": "김천구미", "time": "20:15" },
+      { "station": "오송", "time": "19:30" },
       { "station": "대전", "time": "19:53" },
-      { "station": "오송", "time": "19:30" }
+      { "station": "김천구미", "time": "20:15" },
+      { "station": "동대구", "time": "20:38" },
+      { "station": "울산", "time": "21:00" },
+      { "station": "부산", "time": "21:24" }
     ]
   },
   {
+    "id": "3",
     "name": "KTX 348",
     "stations": [
-      { "station": "부산", "time": "22:15" },
-      { "station": "울산", "time": "21:50" },
-      { "station": "동대구", "time": "21:28" },
-      { "station": "김천구미", "time": "21:05" },
+      { "station": "오송", "time": "20:20" },
       { "station": "대전", "time": "20:43" },
-      { "station": "오송", "time": "20:20" }
+      { "station": "김천구미", "time": "21:05" },
+      { "station": "동대구", "time": "21:28" },
+      { "station": "울산", "time": "21:50" },
+      { "station": "부산", "time": "22:15" }
     ]
   }
 ]
