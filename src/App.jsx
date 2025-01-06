@@ -22,6 +22,7 @@ import ImpCompleteProd from "./pages/improvement/7-improved-complete-product/Imp
 import styles from "./App.module.css";
 
 export const UserContext = createContext();
+export const ImpUserContext = createContext();
 
 function App() {
   const [info, setInfo] = useState({
@@ -86,13 +87,10 @@ function App() {
     gender: "m",
   });
 
-  const contextValue = { info, setInfo };
-  const impContextValue = { impInfo, setImpInfo };
-
   return (
     <div className={styles.App}>
-      <UserContext.Provider value={contextValue}>
-        <UserContext.Provider value={impContextValue}>
+      <UserContext.Provider value={{ info, setInfo }}>
+        <ImpUserContext.Provider value={{ impInfo, setImpInfo }}>
           <Routes>
             <Route path="/" element={<LovingLocal />} />
             <Route path="/localtrip/:local" element={<LocalTrip />} />
@@ -112,7 +110,7 @@ function App() {
               <Route path="completeproduct" element={<ImpCompleteProd />} />
             </Route>
           </Routes>
-        </UserContext.Provider>
+        </ImpUserContext.Provider>
       </UserContext.Provider>
     </div>
   );

@@ -1,4 +1,4 @@
-import { UserContext } from "../../../App";
+import { ImpUserContext } from "../../../App";
 import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../../components/Header";
@@ -12,7 +12,7 @@ import PackageListItem from "./components/PackageListItem";
 
 const ImpSelectProduct = () => {
   const navigate = useNavigate();
-  const { impInfo, setImpInfo } = useContext(UserContext);
+  const { impInfo, setImpInfo } = useContext(ImpUserContext);
 
   const [current, setCurrent] = useState("prgr"); // "edit" || "prgr"
   const [step, setStep] = useState(1); // 1 || 2 || 3 || 4
