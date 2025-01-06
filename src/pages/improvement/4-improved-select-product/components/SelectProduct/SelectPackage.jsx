@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import ListItemWrapper from "../ListItemWrapper";
 import PackageListItem from "../PackageListItem";
 
-const SelectPackage = ({ setStep, selectPackage }) => {
+const SelectPackage = ({ setStep, selectPackage, onClickChangeBtn }) => {
   console.log("페키지를 수정하는 페이지입니다.");
   const [packageList, setPackageList] = useState([]);
 
@@ -44,6 +44,9 @@ const SelectPackage = ({ setStep, selectPackage }) => {
           <button
             key={index}
             onClick={() => {
+              {
+                onClickChangeBtn && onClickChangeBtn();
+              }
               setStep((prev) => prev + 1);
               selectPackage([item.name, item.price]);
             }}

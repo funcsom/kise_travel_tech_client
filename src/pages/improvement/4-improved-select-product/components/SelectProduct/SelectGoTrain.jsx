@@ -100,6 +100,9 @@ const SelectGoTrain = ({
           <button
             key={index}
             onClick={() => {
+              {
+                onClickChangeBtn && onClickChangeBtn();
+              }
               selectGoTrain([
                 item.name,
                 item.stations[0].time,

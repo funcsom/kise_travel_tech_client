@@ -35,8 +35,20 @@ const ImpSelectProduct = () => {
     console.log(editImpInfo, step);
   }, [editImpInfo, step]);
 
+  const people = impInfo.people;
+  const goTrainPrice = impInfo.goTrain.price * people;
+  const comeTrainPrice = impInfo.comeTrain.price * people;
+  const packagePrice = impInfo.package.price * people;
+
   return (
-    <div style={{ height: "100vh", position: "relative" }}>
+    <div
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        position: "relative",
+      }}
+    >
       <Header
         text="상품선택"
         imageLeft={iconprev}
@@ -56,21 +68,31 @@ const ImpSelectProduct = () => {
         />
       )}
       <div
-        className="footer"
         style={{
-          padding: "20px 16px",
-          width: "100%",
+          flex: "1",
           display: "flex",
-          justifyContent: "space-between",
-          backgroundColor: "#22222280",
-          position: "absolute",
+          flexDirection: "column",
+          justifyContent: "flex-end",
+          position: "sticky",
           bottom: "0",
-          font: "var(--font-b2-no-m)",
-          color: "var(--common-100)",
         }}
       >
-        <span>{`선택한 상품 총 ${step - 1}개`}</span>
-        <span>59,800원</span>
+        <div
+          className="footer"
+          style={{
+            padding: "20px 16px",
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+            backgroundColor: "#22222280",
+
+            font: "var(--font-b2-no-m)",
+            color: "var(--common-100)",
+          }}
+        >
+          <span>{`선택한 상품 총 ${step - 1}개`}</span>
+          <span>{`${goTrainPrice + comeTrainPrice + packagePrice}원`}</span>
+        </div>
       </div>
     </div>
   );

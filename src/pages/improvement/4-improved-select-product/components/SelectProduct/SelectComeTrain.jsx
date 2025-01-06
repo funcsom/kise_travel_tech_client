@@ -97,6 +97,9 @@ const SelectComeTrain = ({
           <button
             key={index}
             onClick={() => {
+              {
+                onClickChangeBtn && onClickChangeBtn();
+              }
               selectComeTrain([
                 item.name,
                 item.stations[0].time,

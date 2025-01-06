@@ -84,7 +84,11 @@ const EditPage = ({ editImpInfo, setStep, onClickChangeBtn }) => {
         />
       )}
       {editImpInfo === "package" && (
-        <SelectPackage setStep={setStep} selectPackage={selectPackage} />
+        <SelectPackage
+          setStep={setStep}
+          selectPackage={selectPackage}
+          onClickChangeBtn={onClickChangeBtn}
+        />
       )}
     </div>
   );
