@@ -93,6 +93,23 @@ const ImpSelectProduct = () => {
           <span>{`선택한 상품 총 ${step - 1}개`}</span>
           <span>{`${goTrainPrice + comeTrainPrice + packagePrice}원`}</span>
         </div>
+        {step === 4 && (
+          <div
+            style={{
+              padding: "10px",
+              width: "100%",
+              display: "flex",
+              justifyContent: "center",
+              // backgroundColor: "var(--gray-50)",
+              backgroundColor: "var(--common-0)",
+
+              font: "var(--font-h1-sb)",
+              color: "var(--common-100)",
+            }}
+          >
+            상품예약
+          </div>
+        )}
       </div>
     </div>
   );

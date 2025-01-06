@@ -17,17 +17,17 @@ const AgreeText = (props) => {
       <br />
       1. 철도회원정보, 예약자 및 여행자 정보
       <br />
-      <strong style={{ fontWeight: "900" }}>
+      <strong style={{ fontWeight: "700" }}>
         - 제공받는 자 : 상품운영여행사
       </strong>
       <br />
-      <strong style={{ fontWeight: "900" }}>
+      <strong style={{ fontWeight: "700" }}>
         - 제공목적 : 예약 당해 상품 제공
       </strong>
       <br />- 제공근거 : 정보주체의 동의
       <br />- 제공항목 : 이름, 성별, 휴대전화, 생년월일, 이메일
       <br />
-      <strong style={{ fontWeight: "900" }}>
+      <strong style={{ fontWeight: "700" }}>
         - 제공받는 자의 이용기간 : 정보주체의 당해 상품 이용 종료 시점까지
       </strong>
       <br />- 수집 동의 거부 및 불이익 : 개인정보의 제 3자 제공에 동의하지 않을
