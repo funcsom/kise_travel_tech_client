@@ -16,10 +16,15 @@ const ImpSelectProduct = () => {
   const [step, setStep] = useState(1); // 1 || 2 || 3 || 4
   const [editImpInfo, setEditImpInfo] = useState(""); // "goTrain", "comeTrain", "package"
 
-  const onClickChangeBtn = (props) => {
+  const onClickChangeBtntoEdit = (props) => {
     console.log(`${props} Edit 페이지로 변경합니다.`);
     setCurrent("edit");
     setEditImpInfo(props);
+  };
+
+  const onClickChangeBtntoPrgr = () => {
+    console.log("Prgr 페이지로 변경합니다.");
+    setCurrent("prgr");
   };
 
   const handlePrev = () => {
@@ -41,10 +46,14 @@ const ImpSelectProduct = () => {
         <PrgrPage
           step={step}
           setStep={setStep}
-          onClickChangeBtn={onClickChangeBtn}
+          onClickChangeBtn={onClickChangeBtntoEdit}
         />
       ) : (
-        <EditPage setStep={setStep} editImpInfo={editImpInfo} />
+        <EditPage
+          setStep={setStep}
+          editImpInfo={editImpInfo}
+          onClickChangeBtn={onClickChangeBtntoPrgr}
+        />
       )}
       <div
         className="footer"

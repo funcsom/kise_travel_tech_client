@@ -11,6 +11,7 @@ const SelectComeTrain = ({
   setStep,
   onChangeComeTrainGrade,
   selectComeTrain,
+  onClickChangeBtn,
 }) => {
   const [myTrainList, setMyTrainList] = useState([]);
 
@@ -100,8 +101,8 @@ const SelectComeTrain = ({
                 item.name,
                 item.stations[0].time,
                 item.stations[1].time,
-              ]),
-                setStep((prev) => prev + 1);
+              ]);
+              setStep((prev) => prev + 1);
             }}
           >
             <ListItemWrapper>

@@ -1,4 +1,14 @@
-const TotalPrice = (props) => {
+import { ImpUserContext } from "../../../../App";
+import { useContext } from "react";
+
+const TotalPrice = () => {
+  const { impInfo, setImpInfo } = useContext(ImpUserContext);
+
+  const people = impInfo.people;
+  const goTrainPrice = impInfo.goTrain.price * people;
+  const comeTrainPrice = impInfo.comeTrain.price * people;
+  const packagePrice = impInfo.package.price * people;
+
   return (
     <div
       style={{
@@ -24,7 +34,7 @@ const TotalPrice = (props) => {
           }}
         >
           <span>가는편</span>
-          <span>얼마?</span>
+          <span>{`${goTrainPrice}원`}</span>
         </div>
         <div
           style={{
@@ -35,7 +45,7 @@ const TotalPrice = (props) => {
           }}
         >
           <span>오는편</span>
-          <span>얼마?</span>
+          <span>{`${comeTrainPrice}원`}</span>
         </div>
         <div
           style={{
@@ -46,7 +56,7 @@ const TotalPrice = (props) => {
           }}
         >
           <span>패키지</span>
-          <span>얼마?</span>
+          <span>{`${packagePrice}원`}</span>
         </div>
       </div>
       <div
@@ -57,7 +67,7 @@ const TotalPrice = (props) => {
         }}
       >
         <span>결제 금액</span>
-        <span>209.800원</span>
+        <span>{`${goTrainPrice + comeTrainPrice + packagePrice}원`}</span>
       </div>
     </div>
   );
