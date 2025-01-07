@@ -1,0 +1,8 @@
+.verticalwrap {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.verticalwrap::-webkit-scrollbar {
+  display: none;
+}

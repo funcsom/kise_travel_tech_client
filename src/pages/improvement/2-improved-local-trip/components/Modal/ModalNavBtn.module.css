@@ -1,0 +1,11 @@
+.ModalNavBtn {
+  padding: 16px;
+  background-color: var(--gray-95);
+}
+
+.selected {
+  padding: 16px;
+  padding-left: 24px;
+  background-color: var(--gray-99);
+  background-image: url("/src/assets/icon/icon_previous.svg");
+}

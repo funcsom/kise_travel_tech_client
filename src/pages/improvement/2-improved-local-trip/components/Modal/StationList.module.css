@@ -1,0 +1,10 @@
+.StationList {
+  padding: 12px;
+}
+
+.selected {
+  padding: 16px;
+  padding-left: 24px;
+  background-color: var(--gray-99);
+  background-image: url("/src/assets/icon/icon_previous.svg");
+}

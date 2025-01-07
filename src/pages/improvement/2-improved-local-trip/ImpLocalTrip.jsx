@@ -8,9 +8,12 @@ import iconprev from "../../../assets/icon/icon_previous.svg";
 import carouselitem from "../../../assets/image/carousel-item.png";
 import carouselitem2 from "../../../assets/image/carousel-item2.png";
 import MyCarousel from "./components/MyCarousel";
+import BottomModal from "./components/Modal/BottomModal";
 
 const ImpLocalTrip = () => {
   const [selectedLocal, setSelectedLocal] = useState("수도권");
+  const [isOpenModal, setIsOpenModal] = useState(1);
+
   const navigate = useNavigate();
   const handlePrev = () => {
     navigate(-1);
@@ -26,6 +29,7 @@ const ImpLocalTrip = () => {
       <MyCarousel
         elems={[carouselitem, carouselitem2, carouselitem, carouselitem2]}
       />
+      {isOpenModal && <BottomModal />}
     </div>
   );
 };
