@@ -122,17 +122,17 @@ body * {
   --blue-99: #eef4f9;
 
   /* Red */
-  --red-10: #5c0900;
-  --red-20: #a81505;
-  --red-30: #dc2b17;
-  --red-40: #e9412f;
-  --red-50: #ed6354;
-  --red-60: #f18074;
-  --red-70: #f39187;
-  --red-80: #f5a79e;
-  --red-90: #f9ccc8;
-  --red-95: #fce1df;
-  --red-99: #fef2f1;
+  --red-10: #6b0000;
+  --red-20: #8c0000;
+  --red-30: #b50000;
+  --red-40: #e80000;
+  --red-50: #ff0000;
+  --red-60: #f93628;
+  --red-70: #f5504e;
+  --red-80: #ff8a8a;
+  --red-90: #ffb0b0;
+  --red-95: #ffe6e6;
+  --red-99: #fff2f2;
 
   /* Orange */
   --orange-10: #882700;

@@ -9,7 +9,6 @@ const SelectPackage = ({
   onClickChangeBtn,
   preselectedInfo,
 }) => {
-  console.log("페키지를 수정하는 페이지입니다.");
   const [packageList, setPackageList] = useState([]);
 
   useEffect(() => {

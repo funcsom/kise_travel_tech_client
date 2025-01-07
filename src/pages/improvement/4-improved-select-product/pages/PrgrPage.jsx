@@ -105,6 +105,7 @@ const PrgrPage = ({ step, setStep, onClickChangeBtn }) => {
           currentTrainGrade={impInfo.goTrain.trainGrade}
           onChangeGoTrainPrice={onChangeGoTrainPrice}
           selectGoTrain={selectGoTrain}
+          preselectedInfo={impInfo.goTrain.trainNo}
         />
       )}
       {step === 2 && (
@@ -116,6 +117,7 @@ const PrgrPage = ({ step, setStep, onClickChangeBtn }) => {
           currentTrainGrade={impInfo.comeTrain.trainGrade}
           onChangeComeTrainPrice={onChangeComeTrainPrice}
           selectComeTrain={selectComeTrain}
+          preselectedInfo={impInfo.comeTrain.trainNo}
         />
       )}
       {step === 3 && (

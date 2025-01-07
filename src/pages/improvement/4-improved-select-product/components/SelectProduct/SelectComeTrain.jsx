@@ -26,6 +26,10 @@ const SelectComeTrain = ({
         // console.log("받아온 데이터 =>", data);
         setMyTrainList(filterMyTrainList(data, departStation, arrivalStation));
       });
+    if (currentTrainGrade === "economy" && preselectedInfo)
+      onChangeComeTrainPrice(59800);
+    else if (currentTrainGrade === "business" && preselectedInfo)
+      onChangeComeTrainPrice(68300);
   }, []);
 
   return (

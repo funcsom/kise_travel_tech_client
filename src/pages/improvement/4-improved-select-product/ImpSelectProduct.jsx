@@ -19,13 +19,11 @@ const ImpSelectProduct = () => {
   const [editImpInfo, setEditImpInfo] = useState(""); // "goTrain", "comeTrain", "package"
 
   const onClickChangeBtntoEdit = (props) => {
-    console.log(`${props} Edit 페이지로 변경합니다.`);
     setCurrent("edit");
     setEditImpInfo(props);
   };
 
   const onClickChangeBtntoPrgr = () => {
-    console.log("Prgr 페이지로 변경합니다.");
     setCurrent("prgr");
   };
 
@@ -34,8 +32,8 @@ const ImpSelectProduct = () => {
   };
 
   useEffect(() => {
-    console.log(editImpInfo, step);
-  }, [editImpInfo, step]);
+    console.log(impInfo.goTrain.price, impInfo.comeTrain.price);
+  }, [impInfo]);
 
   const people = impInfo.people;
   const goTrainPrice = impInfo.goTrain.price * people;

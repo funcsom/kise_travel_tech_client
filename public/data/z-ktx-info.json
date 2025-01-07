@@ -25,7 +25,7 @@
   },
   {
     "id": "2",
-    "name": "KTX 835",
+    "name": "KTX 345",
     "stations": [
       { "station": "오송", "time": "19:30" },
       { "station": "대전", "time": "19:53" },
