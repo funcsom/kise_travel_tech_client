@@ -3,7 +3,12 @@ import { useEffect, useState } from "react";
 import ListItemWrapper from "../ListItemWrapper";
 import PackageListItem from "../PackageListItem";
 
-const SelectPackage = ({ setStep, selectPackage, onClickChangeBtn }) => {
+const SelectPackage = ({
+  setStep,
+  selectPackage,
+  onClickChangeBtn,
+  preselectedInfo,
+}) => {
   console.log("페키지를 수정하는 페이지입니다.");
   const [packageList, setPackageList] = useState([]);
 
@@ -51,19 +56,21 @@ const SelectPackage = ({ setStep, selectPackage, onClickChangeBtn }) => {
               selectPackage([item.name, item.price]);
             }}
           >
-            {/* <button
-            key={index}
-            onClick={() => {
-              setStep((prev) => prev + 1);
-              selectPackage([item.name, item.price]),
-            }}
-          > */}
-            <ListItemWrapper>
-              <PackageListItem
-                name={item.name}
-                reccommandedhead={item.reccommandedhead}
-              />
-            </ListItemWrapper>
+            {preselectedInfo === item.name ? (
+              <ListItemWrapper type="selected">
+                <PackageListItem
+                  name={item.name}
+                  reccommandedhead={item.reccommandedhead}
+                />
+              </ListItemWrapper>
+            ) : (
+              <ListItemWrapper type="default">
+                <PackageListItem
+                  name={item.name}
+                  reccommandedhead={item.reccommandedhead}
+                />
+              </ListItemWrapper>
+            )}
           </button>
         ))}
       </div>

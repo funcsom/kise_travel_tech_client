@@ -1,0 +1,8 @@
+.wrapper {
+  padding: 20px 16px;
+  background-color: var(--common-100);
+}
+
+.selected {
+  border: 1px solid black;
+}

@@ -34,7 +34,7 @@ function App() {
     package: "",
     goTrain: {
       trainNo: "",
-      trainGrade: "ecomomy",
+      trainGrade: "economy",
       departstation: "",
       departtime: "",
       arrivalstation: "",
@@ -42,7 +42,7 @@ function App() {
     },
     comeTrain: {
       trainNo: "",
-      trainGrade: "ecomomy",
+      trainGrade: "economy",
       departstation: "",
       departtime: "",
       arrivalstation: "",
@@ -65,7 +65,7 @@ function App() {
     package: { name: "", price: 0 },
     goTrain: {
       trainNo: "",
-      trainGrade: "ecomomy",
+      trainGrade: "economy",
       departstation: "부산",
       departtime: "",
       arrivalstation: "오송",
@@ -74,7 +74,7 @@ function App() {
     },
     comeTrain: {
       trainNo: "",
-      trainGrade: "ecomomy",
+      trainGrade: "economy",
       departstation: "오송",
       departtime: "",
       arrivalstation: "부산",

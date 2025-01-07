@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import ListItemWrapper from "../ListItemWrapper";
 import TrainListItem from "../TrainListItem";
+import TrainGradeBtn from "./TrainGradeBtn";
 
 import { filterMyTrainList } from "../func/filterMyTrainList";
 
@@ -10,8 +11,11 @@ const SelectGoTrain = ({
   arrivalStation,
   setStep,
   onChangeGoTrainGrade,
+  currentTrainGrade,
+  onChangeGoTrainPrice,
   selectGoTrain,
   onClickChangeBtn,
+  preselectedInfo,
 }) => {
   const [myTrainList, setMyTrainList] = useState([]);
 
@@ -23,10 +27,6 @@ const SelectGoTrain = ({
         setMyTrainList(filterMyTrainList(data, departStation, arrivalStation));
       });
   }, []);
-
-  // useEffect(() => {
-  //   console.log(myTrainList);
-  // }, [myTrainList]);
 
   return (
     <div>
@@ -53,37 +53,60 @@ const SelectGoTrain = ({
             justifyContent: "space-between",
           }}
         >
-          <button
-            style={{
-              flex: "1",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              padding: "10px",
-              gap: "6px",
-              border: "1px solid var(--common-0)",
-              backgroundColor: "var(--gray-95)",
-            }}
-            onClick={() => onChangeGoTrainGrade("economy")}
-          >
-            <span style={{ font: "var(--font-b2-no-b)" }}>일반실</span>
-            <span style={{ font: "var(--font-b4-no-b)" }}>59,800원</span>
-          </button>
-          <button
-            style={{
-              flex: "1",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              padding: "10px",
-              gap: "6px",
-              border: "1px solid var(--common-0)",
-            }}
-            onClick={() => onChangeGoTrainGrade("economy")}
-          >
-            <span style={{ font: "var(--font-b2-no-b)" }}>특실</span>
-            <span style={{ font: "var(--font-b4-no-b)" }}>59,800원</span>
-          </button>
+          {currentTrainGrade === "economy" ? (
+            <TrainGradeBtn
+              type="selected"
+              onClickBtn={() => {
+                onChangeGoTrainGrade("economy");
+              }}
+            >
+              <span style={{ font: "var(--font-b2-no-b)" }}>일반실</span>
+              <span style={{ font: "var(--font-b4-no-b)" }}>
+                59,800원
+                <span style={{ font: "var(--font-b4-no-m)" }}> / 1명당</span>
+              </span>
+            </TrainGradeBtn>
+          ) : (
+            <TrainGradeBtn
+              type="default"
+              onClickBtn={() => {
+                onChangeGoTrainGrade("economy");
+              }}
+            >
+              <span style={{ font: "var(--font-b2-no-b)" }}>일반실</span>
+              <span style={{ font: "var(--font-b4-no-b)" }}>
+                59,800원
+                <span style={{ font: "var(--font-b4-no-m)" }}> / 1명당</span>
+              </span>
+            </TrainGradeBtn>
+          )}
+          {currentTrainGrade === "business" ? (
+            <TrainGradeBtn
+              type="selected"
+              onClickBtn={() => {
+                onChangeGoTrainGrade("business");
+              }}
+            >
+              <span style={{ font: "var(--font-b2-no-b)" }}>특실</span>
+              <span style={{ font: "var(--font-b4-no-b)" }}>
+                68,000원
+                <span style={{ font: "var(--font-b4-no-m)" }}> / 1명당</span>
+              </span>
+            </TrainGradeBtn>
+          ) : (
+            <TrainGradeBtn
+              type="default"
+              onClickBtn={() => {
+                onChangeGoTrainGrade("business");
+              }}
+            >
+              <span style={{ font: "var(--font-b2-no-b)" }}>특실</span>
+              <span style={{ font: "var(--font-b4-no-b)" }}>
+                68,000원
+                <span style={{ font: "var(--font-b4-no-m)" }}> / 1명당</span>
+              </span>
+            </TrainGradeBtn>
+          )}
         </div>
       </div>
       <div
@@ -111,9 +134,15 @@ const SelectGoTrain = ({
               setStep((prev) => prev + 1);
             }}
           >
-            <ListItemWrapper>
-              <TrainListItem trainNo={item.name} trainInfo={item.stations} />
-            </ListItemWrapper>
+            {preselectedInfo === item.name ? (
+              <ListItemWrapper type="selected">
+                <TrainListItem trainNo={item.name} trainInfo={item.stations} />
+              </ListItemWrapper>
+            ) : (
+              <ListItemWrapper type="default">
+                <TrainListItem trainNo={item.name} trainInfo={item.stations} />
+              </ListItemWrapper>
+            )}
           </button>
         ))}
       </div>

@@ -9,6 +9,8 @@ import PrgrPage from "./pages/PrgrPage";
 import iconprev from "../../../assets/icon/icon_previous.svg";
 
 const ImpSelectProduct = () => {
+  const formatPrice = (price) => price.toLocaleString("ko-KR");
+
   const navigate = useNavigate();
   const { impInfo, setImpInfo } = useContext(ImpUserContext);
 
@@ -91,7 +93,9 @@ const ImpSelectProduct = () => {
           }}
         >
           <span>{`선택한 상품 총 ${step - 1}개`}</span>
-          <span>{`${goTrainPrice + comeTrainPrice + packagePrice}원`}</span>
+          <span>{`${formatPrice(
+            goTrainPrice + comeTrainPrice + packagePrice
+          )}원`}</span>
         </div>
         {step === 4 && (
           <div

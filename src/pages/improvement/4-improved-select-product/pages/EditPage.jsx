@@ -19,7 +19,21 @@ const EditPage = ({ editImpInfo, setStep, onClickChangeBtn }) => {
   const onChangeComeTrainGrade = (grade) => {
     setImpInfo({
       ...impInfo,
-      goTrain: { ...impInfo.goTrain, trainGrade: grade },
+      comeTrain: { ...impInfo.comeTrain, trainGrade: grade },
+    });
+  };
+
+  const onChangeGoTrainPrice = (price) => {
+    setImpInfo({
+      ...impInfo,
+      goTrain: { ...impInfo.goTrain, price: price },
+    });
+  };
+
+  const onChangeComeTrainPrice = (price) => {
+    setImpInfo({
+      ...impInfo,
+      comeTrain: { ...impInfo.comeTrain, price: price },
     });
   };
 
@@ -69,8 +83,11 @@ const EditPage = ({ editImpInfo, setStep, onClickChangeBtn }) => {
           arrivalStation={impInfo.goTrain.arrivalstation}
           setStep={setStep}
           onChangeGoTrainGrade={onChangeGoTrainGrade}
+          currentTrainGrade={impInfo.goTrain.trainGrade}
+          onChangeGoTrainPrice={onChangeGoTrainPrice}
           selectGoTrain={selectGoTrain}
           onClickChangeBtn={onClickChangeBtn}
+          preselectedInfo={impInfo.goTrain.trainNo}
         />
       )}
       {editImpInfo === "comeTrain" && (
@@ -79,8 +96,11 @@ const EditPage = ({ editImpInfo, setStep, onClickChangeBtn }) => {
           arrivalStation={impInfo.comeTrain.arrivalstation}
           setStep={setStep}
           onChangeComeTrainGrade={onChangeComeTrainGrade}
+          currentTrainGrade={impInfo.comeTrain.trainGrade}
+          onChangeComeTrainPrice={onChangeComeTrainPrice}
           selectComeTrain={selectComeTrain}
           onClickChangeBtn={onClickChangeBtn}
+          preselectedInfo={impInfo.comeTrain.trainNo}
         />
       )}
       {editImpInfo === "package" && (
@@ -88,6 +108,7 @@ const EditPage = ({ editImpInfo, setStep, onClickChangeBtn }) => {
           setStep={setStep}
           selectPackage={selectPackage}
           onClickChangeBtn={onClickChangeBtn}
+          preselectedInfo={impInfo.package.name}
         />
       )}
     </div>

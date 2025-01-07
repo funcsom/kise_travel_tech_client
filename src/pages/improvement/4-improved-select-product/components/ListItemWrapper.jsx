@@ -1,14 +1,7 @@
-const ListItemWrapper = ({ children }) => {
-  return (
-    <div
-      style={{
-        padding: "20px 16px",
-        backgroundColor: "var(--common-100)",
-      }}
-    >
-      {children}
-    </div>
-  );
+import styles from "./ListItemWrapper.module.css";
+
+const ListItemWrapper = ({ type, children }) => {
+  return <div className={`${styles.wrapper} ${styles[type]}`}>{children}</div>;
 };
 
 export default ListItemWrapper;

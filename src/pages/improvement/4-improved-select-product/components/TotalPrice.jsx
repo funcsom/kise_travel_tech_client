@@ -9,6 +9,8 @@ const TotalPrice = () => {
   const comeTrainPrice = impInfo.comeTrain.price * people;
   const packagePrice = impInfo.package.price * people;
 
+  const formatPrice = (price) => price.toLocaleString("ko-KR");
+
   return (
     <div
       style={{
@@ -34,7 +36,7 @@ const TotalPrice = () => {
           }}
         >
           <span>가는편</span>
-          <span>{`${goTrainPrice}원`}</span>
+          <span>{`${formatPrice(goTrainPrice)}원`}</span>
         </div>
         <div
           style={{
@@ -45,7 +47,7 @@ const TotalPrice = () => {
           }}
         >
           <span>오는편</span>
-          <span>{`${comeTrainPrice}원`}</span>
+          <span>{`${formatPrice(comeTrainPrice)}원`}</span>
         </div>
         <div
           style={{
@@ -56,7 +58,7 @@ const TotalPrice = () => {
           }}
         >
           <span>패키지</span>
-          <span>{`${packagePrice}원`}</span>
+          <span>{`${formatPrice(packagePrice)}원`}</span>
         </div>
       </div>
       <div
@@ -67,7 +69,9 @@ const TotalPrice = () => {
         }}
       >
         <span>결제 금액</span>
-        <span>{`${goTrainPrice + comeTrainPrice + packagePrice}원`}</span>
+        <span>{`${formatPrice(
+          goTrainPrice + comeTrainPrice + packagePrice
+        )}원`}</span>
       </div>
     </div>
   );

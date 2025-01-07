@@ -258,10 +258,17 @@ body * {
 /* $$$ SEMANTIC VARIABLES COLOR $$$ */
 :root {
   /* Primary */
+  --color-primary-normal: var(--blue-50);
+  --color-primary-strong: var(--blue-30);
 
   /* Secondary */
+  --color-secondary-normal: var(--blue-90);
+  --color-secondary-alternative: var(--blue-95);
+  --color-secondary-strong: var(--blue-80);
 
   /* Tertiary */
+  --color-tertiary-normal: var(--skyblue-60);
+  --color-tertiary-alternative: var(--skyblue-90);
 
   /* Static */
   --color-static-white: var(--common-100);
