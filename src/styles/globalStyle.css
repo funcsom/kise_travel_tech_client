@@ -213,7 +213,7 @@ body * {
   --font-b3-no-r: 400 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
   --font-b3-no-l: 300 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
   --font-b3-re-r-160: 400 var(--sizing-14) / 1.6 "Pretendard", sans-serif;
-  --font-b3-re-r-120: 400 var(--sizing-14) / 1.2 "Pretendard", sans-serif;
+  --font-b3-re-r-140: 400 var(--sizing-14) / 1.4 "Pretendard", sans-serif;
 
   /* Body4 */
   --font-b4-no-b: 700 var(--sizing-12) / 1.2 "Pretendard", sans-serif;
@@ -233,7 +233,7 @@ body * {
 
   /* Figure */
   --font-f1-r: 400 var(--sizing-18) / 1.2 "Pretendard", sans-serif;
-  --font-f2-r: 400 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
+  --font-f2-m: 500 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
   --font-f3-m: 500 var(--sizing-10) / 1.2 "Pretendard", sans-serif;
 
   /* Caption1 */

@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 // original pages
 import LovingLocal from "./pages/1-loving-local-page/LovingLocal";
 import LocalTrip from "./pages/2-local-trip-page/LocalTrip";
+import SeeDetail from "./pages/2-see-detail-page/SeeDetail";
 import SelectDate from "./pages/3-select-date/SelectDate";
 import SelectProduct from "./pages/4-select-product-page/SelectProduct";
 import SelectDetail from "./pages/5-select-detail-page/SelectDetail";
@@ -96,6 +97,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LovingLocal />} />
             <Route path="/localtrip/:local" element={<LocalTrip />} />
+            <Route path="/seedetail" element={<SeeDetail />} />
             <Route path="/selectdate" element={<SelectDate />} />
             <Route path="/selectproduct" element={<SelectProduct />} />
             <Route path="/selectdetail" element={<SelectDetail />} />

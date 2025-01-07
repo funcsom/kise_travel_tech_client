@@ -63,9 +63,10 @@ const SelectProduct = () => {
   return (
     <div
       style={{
-        height: "100vh", // 뷰포트 높이로 설정
-        display: "flex", // Flexbox로 내부 요소 정렬
-        flexDirection: "column", // 자식 요소를 세로 방향으로 정렬
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        position: "relative",
       }}
     >
       <Header
@@ -176,10 +177,10 @@ const SelectProduct = () => {
             ))}
           </ToggleWrapper>
         </div>
-        <Footer>
-          <Button text="다음" type="cta" handleClick={handleNext} />
-        </Footer>
       </Body>
+      <Footer>
+        <Button text="다음" type="cta" handleClick={handleNext} />
+      </Footer>
     </div>
   );
 };
