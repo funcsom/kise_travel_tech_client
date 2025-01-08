@@ -1,0 +1,14 @@
+.CustomInput[type="text"],
+.CustomInput[type="email"],
+.CustomInput[type="tel"],
+.CustomInput[type="number"] {
+  width: 252px;
+  height: 48px;
+  border: 1px solid var(--color-line-normal);
+  border-radius: 4px;
+  font: var(--font-b3-no-m);
+  padding-left: 10px;
+  margin: 0;
+}
+
+/* border: 2px solid var(--color-secondary-normal); */

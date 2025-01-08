@@ -1,0 +1,13 @@
+.GenderButton {
+  flex: 1;
+  height: 39px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-background-normal-assistive);
+}
+
+.selected {
+  background-color: var(--color-secondary-normal);
+  border: 1px solid var(--color-secondary-strong);
+}

@@ -1,10 +1,18 @@
+import { useEffect } from "react";
 import Button from "../../../../improved/Button";
 import styles from "./Modal.module.css";
 
 const Modal = ({ openNoti }) => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   return (
-    <div className={styles.Modal}>
-      <div className={styles.alert}>
+    <div className={styles.Modal} onClick={openNoti}>
+      <div className={styles.alert} onClick={(e) => e.stopPropagation()}>
         <div className={styles.textwrapper}>
           <div className={styles.header}>이용 안내</div>
           <div className={styles.titlewrapper}>

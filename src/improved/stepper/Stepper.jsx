@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Counter from "./Counter";
 import styles from "./Stepper.module.css";
 
@@ -11,6 +11,7 @@ const Stepper = ({
   discription2,
   state,
   init,
+  handlepeople,
   minHead = 1,
   maxHead = 9,
 }) => {

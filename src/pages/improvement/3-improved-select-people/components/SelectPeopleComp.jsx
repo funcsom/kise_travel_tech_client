@@ -2,7 +2,7 @@ import { useState } from "react";
 import Stepper from "../../../../improved/stepper/Stepper";
 import styles from "./SelectPeopleComp.module.css";
 
-const SelectPeopleComp = () => {
+const SelectPeopleComp = ({ people, handlepeople }) => {
   return (
     <div className={styles.SelectPeopleComp}>
       <div className={styles.section}>
@@ -10,7 +10,8 @@ const SelectPeopleComp = () => {
           title="어른"
           subtitle="만 13세 이상"
           state="default"
-          init={0}
+          init={people}
+          handlepeople={handlepeople}
         />
         <Stepper
           title="어린이"

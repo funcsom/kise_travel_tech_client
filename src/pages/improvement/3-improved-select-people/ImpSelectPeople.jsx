@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { ImpUserContext } from "../../../App";
+import { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../../components/Header";
@@ -13,7 +14,8 @@ import SelectPeopleComp from "./components/SelectPeopleComp";
 import Notification from "./components/Notification";
 import SelectDepartStation from "./components/SelectDepartStation";
 
-const ImpSelectPeople = (props) => {
+const ImpSelectPeople = () => {
+  const { impInfo, setImpInfo } = useContext(ImpUserContext);
   const navigate = useNavigate();
   const [isNotiOpen, setIsNotiOpen] = useState(false);
 
@@ -22,11 +24,18 @@ const ImpSelectPeople = (props) => {
   };
 
   const handleNext = () => {
-    navigate("./");
+    navigate("/imp/selectdate");
   };
 
   const handlePrev = () => {
     navigate(-1);
+  };
+
+  const handlepeople = (count) => {
+    setImpInfo((prevInfo) => ({
+      ...prevInfo,
+      people: count,
+    }));
   };
 
   return (
@@ -39,11 +48,11 @@ const ImpSelectPeople = (props) => {
       <main>
         <SelectDepartStation />
         <Notification openNoti={openNoti} />
-        <SelectPeopleComp />
+        <SelectPeopleComp people={impInfo.people} handlepeople={handlepeople} />
       </main>
       <Footer>
         <div style={{ display: "flex" }}>
-          <DimmedBox lefttext="인원" righttext="어른 2명" />
+          <DimmedBox lefttext="인원" righttext={`어른 ${impInfo.people}명`} />
         </div>
         <div style={{ display: "flex" }}>
           <Button
@@ -52,6 +61,7 @@ const ImpSelectPeople = (props) => {
             size="large"
             shape="box"
             rate="r1"
+            onClickButton={handleNext}
           >
             다음
           </Button>
