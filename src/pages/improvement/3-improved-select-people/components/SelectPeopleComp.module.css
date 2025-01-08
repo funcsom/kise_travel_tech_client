@@ -1,0 +1,17 @@
+/* 페이지 패딩값 조절 */
+.SelectPeopleComp {
+  padding: 30px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.divider {
+  border-bottom: 1px solid var(--color-line-normal);
+}

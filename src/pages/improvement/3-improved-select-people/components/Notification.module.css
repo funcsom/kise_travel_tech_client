@@ -1,0 +1,15 @@
+.Notification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 11px 14px;
+  background-color: var(--color-background-normal-assistive);
+  font: var(--font-b2-no-b);
+  color: var(--color-tertiary-normal);
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  right: 14px;
+}

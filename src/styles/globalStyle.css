@@ -203,7 +203,7 @@ body * {
   /* Body2 */
   --font-b2-no-b: 700 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
   --font-b2-no-m: 500 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
-  --font-b2-re-sb: 600 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
+  --font-b2-re-sb-120: 600 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
   --font-b2-re-r-120: 400 var(--sizing-16) / 1.2 "Pretendard", sans-serif;
 
   /* Body3 */

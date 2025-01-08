@@ -1,0 +1,12 @@
+.Counter {
+  width: 96px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+}
+
+.number {
+  font: var(--font-b2-no-b);
+}

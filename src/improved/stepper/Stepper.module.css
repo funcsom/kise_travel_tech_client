@@ -1,0 +1,34 @@
+.Stepper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.textwrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.titlewrapper {
+  display: flex;
+  gap: 4px;
+}
+
+.title {
+  font: var(--font-b2-no-b);
+}
+
+.subtitle {
+  font: var(--font-b3-re-r-140);
+  color: var(--color-label-alternative);
+}
+
+.discriptionwrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.discription {
+  font: var(--font-b4-no-m);
+  color: var(--color-label-alternative);
+}

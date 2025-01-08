@@ -1,0 +1,87 @@
+.Button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+/* rate */
+.Button.r1 {
+  flex: 1;
+}
+.Button.r2 {
+  flex: 0.4;
+}
+.Button.r3 {
+  flex: 0.6;
+}
+
+/* Primary Button */
+.primary.large {
+  padding: 16px 20px;
+  font: var(--font-b1-no-m);
+}
+.primary.small {
+  padding: 12px 16px;
+  font: var(--font-b3-no-sb);
+}
+
+.primary.default {
+  color: var(--color-primary-strong);
+  background-color: var(--color-secondary-normal);
+}
+.primary.disabled {
+  color: var(--color-label-disable);
+  background-color: var(--color-fill-disable);
+}
+.primary.pressed {
+  color: var(--color-static-white);
+  background-color: var(--color-secondary-strong);
+}
+
+/* Secondary Button */
+.secondary.large {
+  padding: 16px 20px;
+  font: var(--font-b1-no-m);
+}
+.secondary.medium {
+  padding: 12px 40px;
+  font: var(--font-b2-no-m);
+}
+
+/* 비효율적인 부분... */
+.secondary.large.default {
+  color: var(--color-label-alternative);
+  background-color: var(--color-secondary-alternative);
+}
+.secondary.large.disabled {
+  color: var(--color-label-disable);
+  background-color: var(--color-fill-disable);
+}
+.secondar.medium.pressed {
+  color: var(--color-static-white);
+  background-color: var(--color-secondary-strong);
+}
+
+.secondary.medium.default {
+  color: var(--color-label-alternative);
+  background-color: var(--color-background-normal-normal);
+}
+.secondary.medium.disabled {
+  color: var(--color-label-disable);
+  background-color: var(--color-background-normal-normal);
+}
+
+/* Tertiary Button */
+.tertiary.medium {
+  padding: 12px 40px;
+  font: var(--font-b2-no-m);
+  border: 1px solid var(--color-line-strong);
+  border-radius: 6px;
+}
+.tertiary.small {
+  padding: 6px 10px;
+  font: var(--font-b3-no-sb);
+  border: 1px solid var(--color-primary-normal);
+  border-radius: 999px;
+}

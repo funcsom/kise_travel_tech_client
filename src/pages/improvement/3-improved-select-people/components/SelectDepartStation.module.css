@@ -1,0 +1,19 @@
+.SelectDepartStation {
+  padding: 14px 46px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-background-normal-alternative);
+}
+
+.stationwrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+}
+
+.arrow {
+  position: relative;
+  top: 30px;
+}

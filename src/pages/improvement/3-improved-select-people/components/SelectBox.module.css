@@ -1,0 +1,26 @@
+.SelectBox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  font: var(--font-d1-sb);
+  border: none;
+  background-color: transparent;
+  color: var(--color-primary-strong);
+  cursor: pointer;
+  background-image: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 36px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 115px;
+  text-align-last: center;
+  text-align: center;
+}
+
+.SelectBox:focus {
+  border: none;
+  outline: none;
+}

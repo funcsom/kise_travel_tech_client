@@ -1,6 +1,8 @@
+// rating library 사용하기
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../../components/Header";
+import Progressbar from "../../../improved/progressbar/Progressbar";
 import Contents from "../../../components/common/Contents";
 
 import iconprev from "../../../assets/icon/icon_previous.svg";
@@ -23,6 +25,7 @@ const ImpRating = (props) => {
         imageLeft={iconprev}
         handleClickLeft={handlePrev}
       />
+      <Progressbar nthChild={5} />
     </Contents>
   );
 };

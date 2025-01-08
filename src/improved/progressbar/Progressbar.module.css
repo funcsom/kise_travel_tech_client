@@ -1,0 +1,12 @@
+.wrapper {
+  display: flex;
+  padding: 16px;
+}
+
+.Progressbar {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  border: 1px sold var(--color-blue-02);
+  gap: 4px;
+}
