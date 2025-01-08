@@ -2,6 +2,7 @@ import { ImpUserContext } from "../../../App";
 import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../../../components/Header";
+import Contents from "../../../components/common/Contents";
 
 import EditPage from "./pages/EditPage";
 import PrgrPage from "./pages/PrgrPage";
@@ -41,14 +42,7 @@ const ImpSelectProduct = () => {
   const packagePrice = impInfo.package.price * people;
 
   return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        position: "relative",
-      }}
-    >
+    <Contents>
       <Header
         text="상품선택"
         imageLeft={iconprev}
@@ -113,7 +107,7 @@ const ImpSelectProduct = () => {
           </div>
         )}
       </div>
-    </div>
+    </Contents>
   );
 };
 

@@ -13,12 +13,16 @@ import TravelerInfo from "./pages/7-traveler-info/TravelerInfo";
 import CompleteProduct from "./pages/8-complete-product/CompleteProduct";
 
 // improvment pages
-import ImpLocalTrip from "./pages/improvement/2-improved-local-trip/ImpLocalTrip";
-import ImpSelectDate from "./pages/improvement/3-improved-select-date/ImpSelectDate";
-import ImpSelectProduct from "./pages/improvement/4-improved-select-product/ImpSelectProduct";
-import ImpTravelerAgree from "./pages/improvement/5-improved-traveler-agree/ImpTravelerAgree";
-import ImpTravelerInfo from "./pages/improvement/6-improved-traveler-info/ImpTravelerInfo";
-import ImpCompleteProd from "./pages/improvement/7-improved-complete-product/ImpCompleteProd";
+import ImpLovingLocal from "./pages/improvement/1-improved-loving-local/ImpLovingLocal";
+import ImpLocalTrip from "./pages/improvement/2-1-improved-local-trip/ImpLocalTrip";
+import ImpSeeDetail from "./pages/improvement/2-2-improved-see-detail/ImpSeeDetail";
+import ImpSelectPeople from "./pages/improvement/3-improved-select-people/ImpSelectPeople";
+import ImpSelectDate from "./pages/improvement/4-1-improved-select-date/ImpSelectDate";
+import ImpSelectProduct from "./pages/improvement/4-2-improved-select-product/ImpSelectProduct";
+import ImpTravelerAgree from "./pages/improvement/4-3-improved-traveler-agree/ImpTravelerAgree";
+import ImpTravelerInfo from "./pages/improvement/4-4-improved-traveler-info/ImpTravelerInfo";
+import ImpRating from "./pages/improvement/4-5-1-improved-rating/ImpRating";
+import ImpCompleteProd from "./pages/improvement/4-5-2-improved-complete-product/ImpCompleteProd";
 
 import styles from "./App.module.css";
 
@@ -106,11 +110,15 @@ function App() {
             <Route path="/completeproduct" element={<CompleteProduct />} />
 
             <Route path="/imp">
+              <Route path="lovinglocal" element={<ImpLovingLocal />} />
               <Route path="localtrip" element={<ImpLocalTrip />} />
+              <Route path="seedetail" element={<ImpSeeDetail />} />
+              <Route path="selectpeople" element={<ImpSelectPeople />} />
               <Route path="selectdate" element={<ImpSelectDate />} />
               <Route path="selectproduct" element={<ImpSelectProduct />} />
               <Route path="traveleragree" element={<ImpTravelerAgree />} />
               <Route path="travelerinfo" element={<ImpTravelerInfo />} />
+              <Route path="rating" element={<ImpRating />} />
               <Route path="completeproduct" element={<ImpCompleteProd />} />
             </Route>
           </Routes>
