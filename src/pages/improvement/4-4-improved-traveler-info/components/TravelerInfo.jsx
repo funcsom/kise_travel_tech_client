@@ -1,5 +1,5 @@
 import CustomInput from "./CustomInput";
-import CustomCheckbox from "./CustomCheckbox";
+import CustomCheckbox from "../../../../improved/CustomCheckbox";
 import GenderButton from "./GenderButton";
 
 import styles from "./TravelerInfo.module.css";

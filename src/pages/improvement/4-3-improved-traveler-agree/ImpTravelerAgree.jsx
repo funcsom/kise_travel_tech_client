@@ -4,15 +4,17 @@ import Header from "../../../components/Header";
 import Progressbar from "../../../improved/progressbar/Progressbar";
 import Contents from "../../../components/common/Contents";
 import Footer from "../../../improved/Footer";
+import AgreeButton from "./components/AgreeButton";
 
 import iconprev from "../../../assets/icon/icon_previous.svg";
 import Button from "../../../improved/Button";
+import Text from "./components/Text";
 
 const ImpTravelerAgree = (props) => {
   const navigate = useNavigate();
 
   const handleNext = () => {
-    navigate("./");
+    navigate("/imp/travelerinfo");
   };
 
   const handlePrev = () => {
@@ -27,7 +29,12 @@ const ImpTravelerAgree = (props) => {
         handleClickLeft={handlePrev}
       />
       <Progressbar nthChild={3} />
-      <main style={{ padding: "16px" }}></main>
+      <main style={{ padding: "16px" }}>
+        <Text />
+      </main>
+      <main style={{ padding: "16px" }}>
+        <AgreeButton />
+      </main>
       <Footer>
         <div style={{ display: "flex" }}>
           <Button
@@ -45,6 +52,7 @@ const ImpTravelerAgree = (props) => {
             size="large"
             shape="box"
             rate="r3"
+            onClickButton={handleNext}
           >
             다음
           </Button>

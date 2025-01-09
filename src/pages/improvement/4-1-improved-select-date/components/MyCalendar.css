@@ -1,0 +1,112 @@
+.react-calendar {
+  border: none;
+  background-color: transparent;
+  width: 100%;
+}
+
+/* 상단 네비게이션 바 */
+.react-calendar__navigation {
+  background-color: transparent;
+  font: var(--font-h1-sb);
+  margin-bottom: 0;
+  height: 40px;
+}
+
+.react-calendar__navigation__label__labelText {
+  color: var(--color-label-strong);
+}
+
+/* 요일 나타내는 행 */
+.react-calendar__month-view__weekdays {
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  color: var(--color-light-blue-200);
+  font: var(--font-orig-b2-b);
+  border-bottom: 1.5px solid var(--color-white);
+}
+
+abbr {
+  text-decoration: none;
+}
+
+/* 날짜 선택하는 부분 */
+.react-calendar__tile {
+  background-color: transparent;
+  font: var(--font-f2-m);
+  color: var(--color-label-normal);
+  height: 48px;
+}
+
+/* .react-calendar__tile.available {
+  background-color: var(--color-light-blue-200);
+  color: var(--color-white);
+  border-bottom: 1.5px solid white;
+}
+
+.react-calendar__tile[disabled] {
+  background-color: var(--color-light-blue-50);
+  color: black;
+  border-bottom: 1.5px solid white;
+}
+
+.react-calendar__tile.disavailable {
+  background-color: var(--color-gray-300);
+  color: black;
+  border-bottom: 1.5px solid white;
+} */
+
+.react-calendar__tile.react-calendar__tile--now {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.react-calendar__tile.react-calendar__tile--now::after {
+  position: absolute;
+  bottom: 0px;
+  content: "오늘";
+  font: var(--font-c2-m);
+  color: var(--color-tertiary-normal);
+}
+
+.react-calendar__tile.react-calendar__tile--now::before {
+  position: absolute;
+  top: -12px;
+  content: "·";
+  font: var(--font-d1-sb);
+  color: var(--color-tertiary-normal);
+}
+
+.react-calendar__tile.saturday {
+  color: var(--color-status-positive);
+}
+
+.react-calendar__tile.sunday {
+  color: var(--color-status-notice);
+}
+
+.react-calendar__tile[disabled] {
+  background-color: transparent;
+  color: var(--color-label-disable);
+}
+
+.react-calendar__tile.today {
+  color: var(--color-red-03);
+}
+
+/* navigation label 클릭 비활성화 시키기
+https://github.com/react-component/calendar/issues/247 */
+.react-calendar__navigation__label {
+  pointer-events: none;
+}
+
+.react-calendar__tile.react-calendar__tile--active.react-calendar__tile--range.react-calendar__tile--rangeStart.react-calendar__tile--rangeEnd.react-calendar__tile--rangeBothEnds.react-calendar__month-view__days__day {
+  color: var(--color-static-white);
+  background-color: var(--color-primary-normal);
+  border-radius: 6px;
+}

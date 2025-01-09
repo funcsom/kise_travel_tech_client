@@ -1,0 +1,9 @@
+.AgreeButton {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-background-normal-emphasis);
+  display: flex;
+  justify-content: flex-start;
+  gap: 6px;
+  font: var(--font-b2-no-m);
+}

@@ -1,0 +1,21 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.Text {
+  font: var(--font-b3-re-r-140);
+  color: var(--color-label-alternative);
+}
+
+.Textwrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.Bold {
+  font: var(--font-b3-no-b);
+  color: var(--color-label-alternative);
+}
