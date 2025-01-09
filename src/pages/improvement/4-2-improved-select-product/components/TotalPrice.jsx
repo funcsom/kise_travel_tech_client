@@ -1,3 +1,5 @@
+import styles from "./TotalPrice.module.css";
+
 import { ImpUserContext } from "../../../../App";
 import { useContext } from "react";
 
@@ -12,51 +14,17 @@ const TotalPrice = () => {
   const formatPrice = (price) => price.toLocaleString("ko-KR");
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "30px",
-        padding: "20px 16px",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          borderBottom: "1px solid var(--common-0)",
-        }}
-      >
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            font: "var(--font-b3-no-m)",
-            padding: "10px 0",
-          }}
-        >
+    <div className={styles.wrapper}>
+      <div className={styles.detailwrapper}>
+        <div className={styles.itemwrapper}>
           <span>가는편</span>
           <span>{`${formatPrice(goTrainPrice)}원`}</span>
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            font: "var(--font-b3-no-m)",
-            padding: "10px 0",
-          }}
-        >
+        <div className={styles.itemwrapper}>
           <span>오는편</span>
           <span>{`${formatPrice(comeTrainPrice)}원`}</span>
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            font: "var(--font-b3-no-m)",
-            padding: "10px 0 20px 0",
-          }}
-        >
+        <div className={styles.itemwrapper}>
           <span>패키지</span>
           <span>{`${formatPrice(packagePrice)}원`}</span>
         </div>
@@ -69,7 +37,7 @@ const TotalPrice = () => {
         }}
       >
         <span>결제 금액</span>
-        <span>{`${formatPrice(
+        <span className={styles.price}>{`${formatPrice(
           goTrainPrice + comeTrainPrice + packagePrice
         )}원`}</span>
       </div>
