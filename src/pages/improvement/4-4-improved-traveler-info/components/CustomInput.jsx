@@ -1,12 +1,25 @@
 import styles from "./CustomInput.module.css";
 
-const CustomInput = ({ placeholder }) => {
+const CustomInput = ({
+  type = "text",
+  inputRef,
+  placeholder,
+  value,
+  onChangeInput,
+  disabled,
+}) => {
   return (
-    <input
-      type="text"
-      className={styles.CustomInput}
-      placeholder={placeholder}
-    />
+    <form>
+      <input
+        type={type}
+        ref={inputRef} // ref 속성에 inputRef 전달
+        className={styles.CustomInput}
+        placeholder={placeholder}
+        value={value}
+        onChange={onChangeInput}
+        disabled={disabled}
+      />
+    </form>
   );
 };
 

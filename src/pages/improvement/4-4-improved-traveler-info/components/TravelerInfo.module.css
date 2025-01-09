@@ -16,8 +16,11 @@
   color: var(--color-primary-strong);
 }
 
-.radio {
+.checkbox {
   font: var(--font-b3-no-m);
+  display: flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .radiowrapper {

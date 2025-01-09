@@ -1,7 +1,7 @@
-.CustomInput[type="text"],
-.CustomInput[type="email"],
-.CustomInput[type="tel"],
-.CustomInput[type="number"] {
+input[type="text"].CustomInput,
+input[type="email"].CustomInput,
+input[type="tel"].CustomInput,
+input[type="number"].CustomInput {
   width: 252px;
   height: 48px;
   border: 1px solid var(--color-line-normal);
@@ -9,6 +9,28 @@
   font: var(--font-b3-no-m);
   padding-left: 10px;
   margin: 0;
+  color: var(--color-label-alternative);
 }
 
-/* border: 2px solid var(--color-secondary-normal); */
+input[type="text"].CustomInput:focus,
+input[type="email"].CustomInput:focus,
+input[type="tel"].CustomInput:focus,
+input[type="number"].CustomInput:focus {
+  outline: 2px solid var(--color-secondary-strong);
+  border: none;
+}
+
+input[type="text"].CustomInput:disabled,
+input[type="email"].CustomInput:disabled,
+input[type="tel"].CustomInput:disabled,
+input[type="number"].CustomInput:disabled {
+  border: 1px solid var(--color-line-normal);
+  background-color: var(--color-background-normal-normal);
+}
+
+input[type="text"].CustomInput::placeholder,
+input[type="email"].CustomInput::placeholder,
+input[type="tel"].CustomInput::placeholder,
+input[type="number"].CustomInput::placeholder {
+  color: var(--color-label-disable);
+}

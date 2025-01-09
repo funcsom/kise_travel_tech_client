@@ -5,6 +5,8 @@
   justify-content: center;
   align-items: center;
   background-color: var(--color-background-normal-assistive);
+  border-radius: 4px;
+  font: var(--font-b3-no-b);
 }
 
 .selected {

@@ -6,4 +6,6 @@
   justify-content: flex-start;
   gap: 6px;
   font: var(--font-b2-no-m);
+  border-radius: 4px;
+  align-items: center;
 }

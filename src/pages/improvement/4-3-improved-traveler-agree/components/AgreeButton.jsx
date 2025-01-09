@@ -1,8 +1,15 @@
 import styles from "./AgreeButton.module.css";
+import CustomCheckbox from "../../../../improved/CustomCheckbox";
 
-const AgreeButton = (props) => {
+const AgreeButton = ({ isClickAgree, isClickCheckbox }) => {
   return (
-    <button className={styles.AgreeButton}>개인정보의 제3자 제공 동의</button>
+    <button className={styles.AgreeButton}>
+      <CustomCheckbox
+        isClickAgree={isClickAgree}
+        isClickCheckbox={isClickCheckbox}
+      />
+      <span>개인정보의 제3자 제공 동의</span>
+    </button>
   );
 };
 
