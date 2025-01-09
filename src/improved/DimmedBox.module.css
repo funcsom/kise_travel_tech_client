@@ -1,9 +1,14 @@
 .DimmedBox {
-  padding: 19px 26px;
+  padding: 20px 16px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex: 1;
   background-color: var(--color-material-overlay);
   color: var(--color-static-white);
+  font: var(--font-b2-no-b);
+}
+
+.label {
+  color: var(--lightviolet-70);
 }
