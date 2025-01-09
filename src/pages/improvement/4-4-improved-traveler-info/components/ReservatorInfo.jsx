@@ -39,7 +39,7 @@ const ReservatorInfo = ({
         <div className={styles.inputWrapper}>
           <div className={styles.label}>휴대폰번호</div>
           <CustomInput
-            type="number"
+            type="tel"
             inputRef={phoneRef} // inputRef로 전달
             value={information.phone}
             onChangeInput={(e) =>

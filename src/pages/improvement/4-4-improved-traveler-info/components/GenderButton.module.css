@@ -7,9 +7,11 @@
   background-color: var(--color-background-normal-assistive);
   border-radius: 4px;
   font: var(--font-b3-no-b);
+  color: var(--color-label-assistive);
 }
 
 .selected {
   background-color: var(--color-secondary-normal);
   border: 1px solid var(--color-secondary-strong);
+  color: var(--color-primary-normal);
 }

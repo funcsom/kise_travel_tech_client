@@ -1,0 +1,48 @@
+.ProductInfo {
+  padding: 0 16px;
+}
+
+.item {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--color-line-normal);
+}
+
+.itemlast {
+  border: none;
+  margin-bottom: 16px;
+}
+
+/* 비효율 */
+.itemsmall {
+  gap: 8px;
+}
+
+.itemsmall {
+  gap: 16px;
+}
+
+.title {
+  font: var(--font-b2-no-b);
+}
+
+.text {
+  font: var(--font-b3-no-r);
+}
+
+.header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.headertext {
+  font: var(--font-b2-no-m);
+}
+
+.infogap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}

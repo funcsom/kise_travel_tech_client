@@ -1,0 +1,19 @@
+.ReserveInfo {
+  padding: 0 16px;
+}
+
+.item {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+  border: none;
+  margin-bottom: 16px;
+  font: var(--font-b3-no-r);
+  color: var(--color-label-alternative);
+  gap: 12px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}

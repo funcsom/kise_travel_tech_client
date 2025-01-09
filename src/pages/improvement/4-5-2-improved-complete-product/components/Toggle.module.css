@@ -1,0 +1,15 @@
+.Toggle {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  padding: 14px 0;
+  display: flex;
+  justify-content: space-between;
+  font: var(--font-t2-b);
+}
+
+.opened {
+  transform: rotate(180deg);
+}
