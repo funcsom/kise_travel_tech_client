@@ -1,3 +1,5 @@
+import styles from "./SelectGoTrain.module.css";
+
 import { useEffect, useState } from "react";
 
 import ListItemWrapper from "../ListItemWrapper";
@@ -29,30 +31,13 @@ const SelectGoTrain = ({
   }, []);
 
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "16px",
-          padding: "10px 10px 20px 10px",
-        }}
-      >
+    <div className={styles.wrapper}>
+      <div className={styles.SelectGoTrain}>
         <div>
-          <div style={{ font: "var(--font-t1-sb)" }}>
-            가는편을 선택해주세요.
-          </div>
-          <div style={{ font: "var(--font-b3-n)", color: "var(--gray-50)" }}>
-            1. 25(토), 성인 2인 편도요금
-          </div>
+          <div className={styles.title}>가는편을 선택해주세요.</div>
+          <div className={styles.subtitle}>1. 25(토), 성인 2인 편도요금</div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            gap: "10px",
-            justifyContent: "space-between",
-          }}
-        >
+        <div className={styles.traingradebtnwrapper}>
           {currentTrainGrade === "economy" ? (
             <TrainGradeBtn
               type="selected"
@@ -60,10 +45,23 @@ const SelectGoTrain = ({
                 onChangeGoTrainGrade("economy");
               }}
             >
-              <span style={{ font: "var(--font-b2-no-b)" }}>일반실</span>
-              <span style={{ font: "var(--font-b4-no-b)" }}>
+              <span>일반실</span>
+              <span
+                style={{
+                  font: "var(--font-b4-no-b)",
+                  color: "var(--color-label-normal)",
+                }}
+              >
                 59,800원
-                <span style={{ font: "var(--font-b4-no-m)" }}> / 1명당</span>
+                <span
+                  style={{
+                    font: "var(--font-b4-no-m)",
+                    color: "var(--color-label-alternative)",
+                  }}
+                >
+                  {" "}
+                  / 1명당
+                </span>
               </span>
             </TrainGradeBtn>
           ) : (
@@ -73,10 +71,23 @@ const SelectGoTrain = ({
                 onChangeGoTrainGrade("economy");
               }}
             >
-              <span style={{ font: "var(--font-b2-no-b)" }}>일반실</span>
-              <span style={{ font: "var(--font-b4-no-b)" }}>
+              <span>일반실</span>
+              <span
+                style={{
+                  font: "var(--font-b4-no-b)",
+                  color: "var(--color-label-normal)",
+                }}
+              >
                 59,800원
-                <span style={{ font: "var(--font-b4-no-m)" }}> / 1명당</span>
+                <span
+                  style={{
+                    font: "var(--font-b4-no-m)",
+                    color: "var(--color-label-alternative)",
+                  }}
+                >
+                  {" "}
+                  / 1명당
+                </span>{" "}
               </span>
             </TrainGradeBtn>
           )}
@@ -87,10 +98,23 @@ const SelectGoTrain = ({
                 onChangeGoTrainGrade("business");
               }}
             >
-              <span style={{ font: "var(--font-b2-no-b)" }}>특실</span>
-              <span style={{ font: "var(--font-b4-no-b)" }}>
+              <span>특실</span>
+              <span
+                style={{
+                  font: "var(--font-b4-no-b)",
+                  color: "var(--color-label-normal)",
+                }}
+              >
                 68,000원
-                <span style={{ font: "var(--font-b4-no-m)" }}> / 1명당</span>
+                <span
+                  style={{
+                    font: "var(--font-b4-no-m)",
+                    color: "var(--color-label-alternative)",
+                  }}
+                >
+                  {" "}
+                  / 1명당
+                </span>{" "}
               </span>
             </TrainGradeBtn>
           ) : (
@@ -100,25 +124,29 @@ const SelectGoTrain = ({
                 onChangeGoTrainGrade("business");
               }}
             >
-              <span style={{ font: "var(--font-b2-no-b)" }}>특실</span>
-              <span style={{ font: "var(--font-b4-no-b)" }}>
+              <span>특실</span>
+              <span
+                style={{
+                  font: "var(--font-b4-no-b)",
+                  color: "var(--color-label-normal)",
+                }}
+              >
                 68,000원
-                <span style={{ font: "var(--font-b4-no-m)" }}> / 1명당</span>
+                <span
+                  style={{
+                    font: "var(--font-b4-no-m)",
+                    color: "var(--color-label-alternative)",
+                  }}
+                >
+                  {" "}
+                  / 1명당
+                </span>{" "}
               </span>
             </TrainGradeBtn>
           )}
         </div>
       </div>
-      <div
-        className="ListsWrapper"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          padding: "24px 16px",
-          backgroundColor: "var(--gray-99)",
-          gap: "10px",
-        }}
-      >
+      <div className={styles.listwrapper}>
         {myTrainList.map((item, index) => (
           <button
             key={index}

@@ -1,0 +1,29 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.SelectPackage {
+  padding: 10px 16px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.title {
+  font: var(--font-t1-sb);
+  color: var(--color-label-normal);
+}
+
+.subtitle {
+  font: var(--font-b3-no-r);
+  color: var(--color-label-alternative);
+}
+
+.packagelistwrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+  background-color: var(--color-background-normal-neutral);
+  gap: 10px;
+}

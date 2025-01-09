@@ -1,26 +1,15 @@
+import styles from "./PackageListItem.module.css";
+
 import InfoItem from "./InfoItem";
 
 const PackageListItem = ({ name, reccommandedhead }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "flex-start",
-      }}
-    >
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "flex-start",
-          gap: "10px",
-        }}
-      >
-        <span style={{ font: "var(--font-b3-no-b)" }}>{name}</span>
-        <span style={{ font: "var(--font-b4-no-m)" }}>{reccommandedhead}</span>
+    <div className={styles.PackageListItem}>
+      <div className={styles.infowrapper}>
+        <span className={styles.title}>{name}</span>
+        <span className={styles.subtitle}>{reccommandedhead}</span>
       </div>
-      <InfoItem>20개 남음</InfoItem>
+      <InfoItem type="package">20개 남음</InfoItem>
     </div>
   );
 };

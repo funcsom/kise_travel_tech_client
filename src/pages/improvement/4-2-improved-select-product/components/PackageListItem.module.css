@@ -1,0 +1,22 @@
+.PackageListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.infowrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.title {
+  font: var(--font-b3-no-b);
+  color: var(--color-label-normal);
+}
+
+.subtitle {
+  font: var(--font-b4-no-m);
+  color: var(--color-label-assistive);
+}

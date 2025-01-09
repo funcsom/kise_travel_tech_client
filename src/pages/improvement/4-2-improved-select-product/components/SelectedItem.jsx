@@ -1,21 +1,14 @@
+import styles from "./SelectedItem.module.css";
+
 import { ImpUserContext } from "../../../../App";
 import { useContext } from "react";
 
 const SelectedItem = ({ onClickChangeBtn, info }) => {
   const { impInfo, setImpInfo } = useContext(ImpUserContext);
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "space-between",
-        padding: "10px 16px",
-        gap: "21px",
-        backgroundColor: "var(--gray-95)",
-      }}
-    >
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <span style={{ font: "var(--font-t3-b)" }}>
+    <div className={styles.SelectedItem}>
+      <div className={styles.titlewrapper}>
+        <span className={styles.title}>
           {`선택한 ${
             info === "goTrain"
               ? "가는편"
@@ -25,21 +18,21 @@ const SelectedItem = ({ onClickChangeBtn, info }) => {
           }`}
         </span>
         <button
-          style={{ font: "var(--font-b4-no-m)", color: "var(--gray-40)" }}
+          className={styles.changebtn}
           onClick={() => onClickChangeBtn(info)}
         >
           변경
         </button>
       </div>
       <div>
-        <div style={{ font: "var(--font-b3-no-b)" }}>
+        <div className={styles.timeinfo}>
           {info === "goTrain"
             ? `${impInfo.goTrain.departtime} - ${impInfo.goTrain.arrivaltime}`
             : info === "comeTrain"
             ? `${impInfo.comeTrain.departtime} - ${impInfo.comeTrain.arrivaltime}`
             : `${impInfo.package.name}`}
         </div>
-        <div style={{ font: "var(--font-c2-m)", color: "var(--gray-30)" }}>
+        <div className={styles.stationinfo}>
           {info === "goTrain"
             ? `${impInfo.goTrain.departstation} - ${impInfo.goTrain.arrivalstation}, ${impInfo.goTrain.trainNo}`
             : info === "comeTrain"

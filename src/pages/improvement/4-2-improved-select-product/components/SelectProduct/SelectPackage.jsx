@@ -1,3 +1,5 @@
+import styles from "./SelectPackage.module.css";
+
 import { useEffect, useState } from "react";
 
 import ListItemWrapper from "../ListItemWrapper";
@@ -20,30 +22,12 @@ const SelectPackage = ({
       });
   }, []);
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          gap: "16px",
-          padding: "10px 10px 20px 10px",
-        }}
-      >
-        <div>
-          <div style={{ font: "var(--font-t1-sb)" }}>패키지를 선택해주세요</div>
-          <div>1. 25(토), 2인 이용</div>
-        </div>
+    <div className={styles.wrapper}>
+      <div className={styles.SelectPackage}>
+        <div className={styles.title}>패키지를 선택해주세요</div>
+        <div className={styles.subtitle}>1. 25(토), 2인 이용</div>
       </div>
-      <div
-        className="ListsWrapper"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          padding: "24px 16px",
-          backgroundColor: "var(--gray-99)",
-          gap: "10px",
-        }}
-      >
+      <div className={styles.packagelistwrapper}>
         {packageList.map((item, index) => (
           <button
             key={index}

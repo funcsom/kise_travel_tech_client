@@ -1,0 +1,35 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.SelectGoTrain {
+  padding: 20px 16px;
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font: var(--font-t1-sb);
+  color: var(--color-label-normal);
+}
+
+.subtitle {
+  font: var(--font-b3-no-r);
+  color: var(--color-label-alternative);
+}
+
+.traingradebtnwrapper {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.listwrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px 40px 16px;
+  background-color: var(--color-background-normal-neutral);
+  gap: 10px;
+}

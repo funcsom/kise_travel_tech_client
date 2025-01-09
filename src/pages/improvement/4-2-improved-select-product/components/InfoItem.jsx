@@ -7,12 +7,14 @@ const InfoItem = ({ children, type }) => {
         alignItems: "center",
         backgroundColor:
           type === "logo"
-            ? "var(--gray-60)"
+            ? ""
             : type === "num"
-            ? "var(--gray-90)"
+            ? "var(--color-fill-alternative)"
             : type === "sub"
-            ? "var(--common-100)"
-            : "var(--gray-95)",
+            ? ""
+            : type === "package"
+            ? "var(--color-background-normal-emphasis)"
+            : "var(--color-primary-strong)",
         padding: "4px 8px",
         font:
           type === "num" || type === "sub"
@@ -20,8 +22,10 @@ const InfoItem = ({ children, type }) => {
             : "var(--font-f3-m)",
         color:
           type === "num" || type === "sub"
-            ? "var(--gray-40)"
-            : "var(--common-0)",
+            ? "var(--color-primary-normal)"
+            : type === "package"
+            ? "var(--color-static-black)"
+            : "var(--color-static-white)",
       }}
     >
       {children}

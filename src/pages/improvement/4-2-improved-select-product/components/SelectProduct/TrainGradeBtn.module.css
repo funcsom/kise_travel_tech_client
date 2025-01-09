@@ -5,10 +5,14 @@
   align-items: center;
   padding: 10px;
   gap: 6px;
-  border: 1px solid var(--common-0);
-  display: "flex";
+  border: 1px solid var(--color-line-normal);
+  background-color: var(--color-background-normal-normal);
+  border-radius: 10px;
+  font: var(--font-b2-no-b);
+  color: var(--color-label-normal);
 }
 
 .selected {
-  background-color: var(--gray-95);
+  background-color: var(--color-secondary-alternative);
+  border: 1px solid var(--color-secondary-strong);
 }

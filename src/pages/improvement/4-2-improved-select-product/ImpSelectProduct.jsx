@@ -1,8 +1,12 @@
 import { ImpUserContext } from "../../../App";
 import { useState, useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import Header from "../../../components/Header";
 import Contents from "../../../components/common/Contents";
+import Footer from "../../../improved/Footer";
+import Button from "../../../improved/Button";
+import DimmedBox from "../../../improved/DimmedBox";
 
 import EditPage from "./pages/EditPage";
 import PrgrPage from "./pages/PrgrPage";
@@ -28,6 +32,10 @@ const ImpSelectProduct = () => {
     setCurrent("prgr");
   };
 
+  const handleNext = () => {
+    navigate("/imp/traveleragree");
+  };
+
   const handlePrev = () => {
     navigate(-1);
   };
@@ -48,65 +56,44 @@ const ImpSelectProduct = () => {
         imageLeft={iconprev}
         handleClickLeft={handlePrev}
       />
-      {current === "prgr" ? (
-        <PrgrPage
-          step={step}
-          setStep={setStep}
-          onClickChangeBtn={onClickChangeBtntoEdit}
-        />
-      ) : (
-        <EditPage
-          setStep={setStep}
-          editImpInfo={editImpInfo}
-          onClickChangeBtn={onClickChangeBtntoPrgr}
-        />
-      )}
-      <div
-        style={{
-          flex: "1",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "flex-end",
-          position: "sticky",
-          bottom: "0",
-        }}
-      >
-        <div
-          className="footer"
-          style={{
-            padding: "20px 16px",
-            width: "100%",
-            display: "flex",
-            justifyContent: "space-between",
-            backgroundColor: "#22222280",
+      <main>
+        {current === "prgr" ? (
+          <PrgrPage
+            step={step}
+            setStep={setStep}
+            onClickChangeBtn={onClickChangeBtntoEdit}
+          />
+        ) : (
+          <EditPage
+            setStep={setStep}
+            editImpInfo={editImpInfo}
+            onClickChangeBtn={onClickChangeBtntoPrgr}
+          />
+        )}
+      </main>
 
-            font: "var(--font-b2-no-m)",
-            color: "var(--common-100)",
-          }}
-        >
-          <span>{`선택한 상품 총 ${step - 1}개`}</span>
-          <span>{`${formatPrice(
-            goTrainPrice + comeTrainPrice + packagePrice
-          )}원`}</span>
+      <Footer>
+        <div style={{ display: "flex" }}>
+          <DimmedBox
+            lefttext={`선택한 상품 총 ${step - 1}개`}
+            righttext={`${formatPrice(
+              goTrainPrice + comeTrainPrice + packagePrice
+            )}원`}
+          />
         </div>
-        {step === 4 && (
-          <div
-            style={{
-              padding: "10px",
-              width: "100%",
-              display: "flex",
-              justifyContent: "center",
-              // backgroundColor: "var(--gray-50)",
-              backgroundColor: "var(--common-0)",
-
-              font: "var(--font-h1-sb)",
-              color: "var(--common-100)",
-            }}
+        <div style={{ display: "flex" }}>
+          <Button
+            type="primary"
+            state="default"
+            size="large"
+            shape="box"
+            rate="r1"
+            onClickButton={handleNext}
           >
             상품예약
-          </div>
-        )}
-      </div>
+          </Button>
+        </div>
+      </Footer>
     </Contents>
   );
 };

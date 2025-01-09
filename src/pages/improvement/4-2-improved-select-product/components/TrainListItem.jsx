@@ -1,3 +1,5 @@
+import styles from "./TrainListItem.module.css";
+
 import InfoItem from "./InfoItem";
 import iconarrowtrain from "../../../../assets/icon/icon_arrow_train.svg";
 
@@ -23,28 +25,28 @@ function getTimeDifference(time1, time2) {
 
 const TrainListItem = ({ trainNo, Num = "001", trainInfo }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "16px",
-      }}
-    >
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div style={{ display: "flex" }}>
+    <div className={styles.wrapper}>
+      <div className={styles.head}>
+        <div className={styles.trainnoinfo}>
           <InfoItem type="logo">Logo</InfoItem>
           <InfoItem type="num">{trainNo}</InfoItem>
           <InfoItem type="sub">{Num}</InfoItem>
         </div>
         <InfoItem>20석 남음</InfoItem>
       </div>
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
-        <div>
-          {`${trainInfo[0].time} ${trainInfo[0].station}`}
-          <img src={iconarrowtrain} alt="" />{" "}
-          {`${trainInfo[1].time} ${trainInfo[1].station}`}
+      <div className={styles.traintimewrapper}>
+        <div className={styles.traintime}>
+          <div className={styles.timewrapper}>
+            <span className={styles.time}>{`${trainInfo[0].time}`}</span>
+            <span className={styles.station}>{`${trainInfo[0].station}`}</span>
+          </div>
+          <img className={styles.arrow} src={iconarrowtrain} alt="" />{" "}
+          <div className={styles.timewrapper}>
+            <span className={styles.time}>{`${trainInfo[1].time}`}</span>
+            <span className={styles.station}>{`${trainInfo[1].station}`}</span>
+          </div>
         </div>
-        <span style={{ font: "var(--font-b4-no-m)" }}>
+        <span className={styles.trainhowlong}>
           {getTimeDifference(trainInfo[0].time, trainInfo[1].time)}
         </span>
       </div>

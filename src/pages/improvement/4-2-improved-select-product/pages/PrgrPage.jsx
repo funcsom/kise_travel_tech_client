@@ -80,7 +80,7 @@ const PrgrPage = ({ step, setStep, onClickChangeBtn }) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          padding: "10px 10px",
+          padding: "20px 16px 10px 16px",
           gap: "10px",
         }}
       >

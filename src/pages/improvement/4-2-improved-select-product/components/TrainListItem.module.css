@@ -1,0 +1,51 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+}
+
+.trainnoinfo {
+  display: flex;
+}
+
+.traintimewrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.traintime {
+  display: flex;
+  flex-direction: row;
+  gap: 14px;
+}
+
+.trainhowlong {
+  font: var(--font-b4-no-m);
+  color: var(--color-primary-strong);
+}
+
+.arrow {
+  fill: var(--color-primary-normal);
+}
+
+.timewrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 4px;
+  align-items: flex-end;
+}
+
+.time {
+  font: var(--font-b3-no-b);
+  color: var(--color-label-normal);
+}
+
+.station {
+  font: var(--font-c2-m);
+  color: var(--color-label-assistive);
+}
