@@ -1,0 +1,16 @@
+.wrapper {
+  display: flex;
+  padding: 10px 16px;
+}
+
+.emptywrapper {
+  justify-content: center;
+  font: var(--font-b2-no-m);
+  color: var(--color-label-assistive);
+}
+
+.detailwrapper {
+  justify-content: space-between;
+  font: var(--font-b2-no-m);
+  color: var(--color-label-alternative);
+}

@@ -110,7 +110,7 @@ function App() {
 
             <Route path="/imp">
               <Route path="lovinglocal" element={<ImpLovingLocal />} />
-              <Route path="localtrip" element={<ImpLocalTrip />} />
+              <Route path="localtrip/:local" element={<ImpLocalTrip />} />
               <Route path="seedetail" element={<ImpSeeDetail />} />
               <Route path="selectpeople" element={<ImpSelectPeople />} />
               <Route path="selectdate" element={<ImpSelectDate />} />

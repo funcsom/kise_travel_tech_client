@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 
 import Header from "../../../components/Header";
 import Tab from "./components/Tab";
@@ -13,8 +13,26 @@ import BottomModal from "./components/Modal/BottomModal";
 const ImpLocalTrip = () => {
   const [selectedLocal, setSelectedLocal] = useState("수도권");
   const [isOpenModal, setIsOpenModal] = useState(1);
+  const [packages, setPackages] = useState([]);
 
   const navigate = useNavigate();
+  const params = useParams();
+
+  const changeLocal = (props) => {
+    navigate(`/imp/localtrip/${props}`);
+  };
+
+  useEffect(() => {
+    fetch("/data/improved/packages.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const [filtereditem] = data.filter(
+          (item) => item.local === params.local
+        );
+        console.log(filtereditem);
+      });
+  }, [selectedLocal]);
+
   const handlePrev = () => {
     navigate(-1);
   };
@@ -25,11 +43,11 @@ const ImpLocalTrip = () => {
         imageLeft={iconprev}
         handleClickLeft={handlePrev}
       />
-      <Tab />
+      <Tab changeLocal={changeLocal} selectedLocal={params.local} />
       <MyCarousel
         elems={[carouselitem, carouselitem2, carouselitem, carouselitem2]}
       />
-      {isOpenModal && <BottomModal />}
+      {/* {isOpenModal && <BottomModal />} */}
     </div>
   );
 };

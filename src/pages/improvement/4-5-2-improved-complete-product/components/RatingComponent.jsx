@@ -6,9 +6,11 @@ import BigStars from "./BigStars";
 import SmallStars from "./SmallStars";
 
 import iconhandle from "../../../../assets/icon/improved/icon_handle.svg";
+import SmallStarsWrapper from "./SmallStarsWrapper";
 
 const RatingComponent = ({ openNoti }) => {
   const [isClicked, setIsClicked] = useState(false);
+  const [complete, setComplete] = useState(false);
 
   const clicked = () => {
     setIsClicked(true);
@@ -35,37 +37,15 @@ const RatingComponent = ({ openNoti }) => {
             <BigStars clicked={clicked} />
           </div>
         </div>
-        <div className={styles.smallwrapper}>
-          {isClicked ? (
-            <div>
-              <div className={`${styles.wrapper} ${styles.detailwrapper}`}>
-                <span>Label</span>
-                <SmallStars />
-              </div>
-              <div className={`${styles.wrapper} ${styles.detailwrapper}`}>
-                <span>Label</span>
-                <SmallStars />
-              </div>
-              <div className={`${styles.wrapper} ${styles.detailwrapper}`}>
-                <span>Label</span>
-                <SmallStars />
-              </div>
-              <div className={`${styles.wrapper} ${styles.detailwrapper}`}>
-                <span>Label</span>
-                <SmallStars />
-              </div>{" "}
-            </div>
-          ) : (
-            <div className={`${styles.wrapper} ${styles.emptywrapper}`}>
-              별점을 선택해주세요
-            </div>
-          )}
-        </div>
+        <SmallStarsWrapper
+          isClicked={isClicked}
+          setComplete={() => setComplete(true)}
+        />
       </div>
       <div className={styles.buttonwrapper}>
         <Button
           type="primary"
-          state="default"
+          state={complete ? "default" : "disabled"}
           size="large"
           shape="box"
           rate="r1"

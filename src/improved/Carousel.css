@@ -1,3 +1,58 @@
-.carouselitem {
-  width: 375px;
+.swiper {
+  position: relative;
+  overflow: visible;
+}
+
+.swiper-pagination {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -50px;
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: var(--color-gray-400);
+  opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+  width: 12px;
+  height: 12px;
+  color: #fff;
+  background: var(--color-light-blue-200);
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  top: 110px;
+  width: 47px;
+  height: 47px;
+  background-color: var(--color-white);
+  border-radius: 100%;
+  color: var(--color-gray-600);
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 15px;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: -10px;
+  left: auto;
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: -10px;
+  right: auto;
+}
+
+.swiper-button-disabled {
+  display: none;
 }

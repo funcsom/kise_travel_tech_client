@@ -1,0 +1,176 @@
+[
+  {
+    "local": "capital",
+    "list": [
+      {
+        "id": "0",
+        "position": "list1",
+        "title": "한복입고 떠나는 경복궁 북촌 한옥마을 투어",
+        "subtitle": "레일티켓",
+        "price": "43600",
+        "img": "capital-0"
+      },
+      {
+        "id": "1",
+        "position": "list1",
+        "title": "서울 시티투어 순환형",
+        "subtitle": "레일티켓",
+        "price": "98700",
+        "img": "capital-1"
+      },
+      {
+        "id": "2",
+        "position": "list1",
+        "title": "KTX+더캡슐 레일텔",
+        "subtitle": "레일텔+캡슐호텔",
+        "price": "55600",
+        "img": "capital-2"
+      }
+    ]
+  },
+  {
+    "local": "gangwon",
+    "list": [
+      {
+        "id": "3",
+        "position": "list1",
+        "title": "2024 동트는 택시",
+        "subtitle": "KTX+동해관광택시",
+        "price": "43600",
+        "img": "capital-0"
+      },
+      {
+        "id": "4",
+        "position": "list1",
+        "title": "2025 동트는 택시",
+        "subtitle": "KTX+동해관광택시",
+        "price": "98700",
+        "img": "capital-1"
+      },
+      {
+        "id": "5",
+        "position": "list1",
+        "title": "2025 동해 시티투어버스",
+        "subtitle": "KTX+동해관광택시",
+        "price": "55600",
+        "img": "capital-2"
+      }
+    ]
+  },
+  {
+    "local": "chungcheong",
+    "list": [
+      {
+        "id": "3",
+        "position": "list1",
+        "title": "2024 동트는 택시",
+        "subtitle": "KTX+동해관광택시",
+        "price": "43600",
+        "img": "capital-0"
+      },
+      {
+        "id": "4",
+        "position": "list1",
+        "title": "2025 동트는 택시",
+        "subtitle": "KTX+동해관광택시",
+        "price": "98700",
+        "img": "capital-1"
+      },
+      {
+        "id": "5",
+        "position": "list1",
+        "title": "2025 동해 시티투어버스",
+        "subtitle": "KTX+동해관광택시",
+        "price": "55600",
+        "img": "capital-2"
+      }
+    ]
+  },
+  {
+    "local": "gyeongsang",
+    "list": [
+      {
+        "id": "3",
+        "position": "list1",
+        "title": "2024 동트는 택시",
+        "subtitle": "KTX+동해관광택시",
+        "price": "43600",
+        "img": "capital-0"
+      },
+      {
+        "id": "4",
+        "position": "list1",
+        "title": "2025 동트는 택시",
+        "subtitle": "KTX+동해관광택시",
+        "price": "98700",
+        "img": "capital-1"
+      },
+      {
+        "id": "5",
+        "position": "list1",
+        "title": "2025 동해 시티투어버스",
+        "subtitle": "KTX+동해관광택시",
+        "price": "55600",
+        "img": "capital-2"
+      }
+    ]
+  },
+  {
+    "local": "jeolla",
+    "list": [
+      {
+        "id": "3",
+        "position": "list1",
+        "title": "2024 동트는 택시",
+        "subtitle": "KTX+동해관광택시",
+        "price": "43600",
+        "img": "capital-0"
+      },
+      {
+        "id": "4",
+        "position": "list1",
+        "title": "2025 동트는 택시",
+        "subtitle": "KTX+동해관광택시",
+        "price": "98700",
+        "img": "capital-1"
+      },
+      {
+        "id": "5",
+        "position": "list1",
+        "title": "2025 동해 시티투어버스",
+        "subtitle": "KTX+동해관광택시",
+        "price": "55600",
+        "img": "capital-2"
+      }
+    ]
+  },
+  {
+    "local": "jeju",
+    "list": [
+      {
+        "id": "3",
+        "position": "list1",
+        "title": "2024 동트는 택시",
+        "subtitle": "KTX+동해관광택시",
+        "price": "43600",
+        "img": "capital-0"
+      },
+      {
+        "id": "4",
+        "position": "list1",
+        "title": "2025 동트는 택시",
+        "subtitle": "KTX+동해관광택시",
+        "price": "98700",
+        "img": "capital-1"
+      },
+      {
+        "id": "5",
+        "position": "list1",
+        "title": "2025 동해 시티투어버스",
+        "subtitle": "KTX+동해관광택시",
+        "price": "55600",
+        "img": "capital-2"
+      }
+    ]
+  }
+]

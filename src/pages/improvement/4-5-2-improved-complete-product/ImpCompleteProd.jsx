@@ -20,6 +20,10 @@ const ImpCompleteProd = (props) => {
   const [isOpenRating, setIsOpenRating] = useState(true);
   const navigate = useNavigate();
 
+  const OpenRating = () => {
+    setIsOpenRating(false);
+  };
+
   const handleNext = () => {
     navigate("./");
   };
@@ -46,7 +50,7 @@ const ImpCompleteProd = (props) => {
 
   return (
     <Contents>
-      {isOpenRating && <RatingComponent />}
+      {isOpenRating && <RatingComponent openNoti={OpenRating} />}
       <Header
         text="예약인원"
         imageLeft={iconprev}

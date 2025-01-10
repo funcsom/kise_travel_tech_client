@@ -1,0 +1,11 @@
+.Tabitem {
+  padding: 30px 16px 10px 16px;
+  font: var(--font-b2-no-m);
+  color: var(--color-label-assistive);
+}
+
+.active {
+  font: var(--font-b2-no-b);
+  color: var(--color-label-normal);
+  border-bottom: 1px solid var(--color-label-normal);
+}

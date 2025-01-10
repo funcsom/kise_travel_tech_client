@@ -1,22 +1,40 @@
+import styles from "./Tab.module.css";
+
 import TabItem from "./TabItem";
 
-const Tab = () => {
+const Tab = ({ changeLocal, selectedLocal }) => {
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-around",
-        margin: "0 16px",
-        font: "var(--font-b2-no-m)",
-        color: "var(--gray-50)",
-      }}
-    >
-      <TabItem text="수도권" />
-      <TabItem text="강원권" />
-      <TabItem text="충청권" />
-      <TabItem text="경상권" />
-      <TabItem text="전라권" />
-      <TabItem text="제주권" />
+    <div className={styles.Tab}>
+      <TabItem
+        text="수도권"
+        onClickTabItem={() => changeLocal("capital")}
+        type={selectedLocal === "capital" && "active"}
+      />
+      <TabItem
+        text="강원권"
+        onClickTabItem={() => changeLocal("gangwon")}
+        type={selectedLocal === "gangwon" && "active"}
+      />
+      <TabItem
+        text="충청권"
+        onClickTabItem={() => changeLocal("chungcheong")}
+        type={selectedLocal === "chungcheong" && "active"}
+      />
+      <TabItem
+        text="경상권"
+        onClickTabItem={() => changeLocal("gyeongsang")}
+        type={selectedLocal === "gyeongsang" && "active"}
+      />
+      <TabItem
+        text="전라권"
+        onClickTabItem={() => changeLocal("jeolla")}
+        type={selectedLocal === "jeolla" && "active"}
+      />
+      <TabItem
+        text="제주권"
+        onClickTabItem={() => changeLocal("jeju")}
+        type={selectedLocal === "jeju" && "active"}
+      />
     </div>
   );
 };
