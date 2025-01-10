@@ -21,7 +21,7 @@ import ImpSelectDate from "./pages/improvement/4-1-improved-select-date/ImpSelec
 import ImpSelectProduct from "./pages/improvement/4-2-improved-select-product/ImpSelectProduct";
 import ImpTravelerAgree from "./pages/improvement/4-3-improved-traveler-agree/ImpTravelerAgree";
 import ImpTravelerInfo from "./pages/improvement/4-4-improved-traveler-info/ImpTravelerInfo";
-import ImpCompleteProd from "./pages/improvement/4-5-2-improved-complete-product/ImpCompleteProd";
+import ImpCompleteProd from "./pages/improvement/4-5-improved-complete-product/ImpCompleteProd";
 
 import styles from "./App.module.css";
 

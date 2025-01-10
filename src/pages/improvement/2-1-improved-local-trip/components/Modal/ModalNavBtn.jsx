@@ -1,4 +1,5 @@
 import styles from "./ModalNavBtn.module.css";
+import selectedlocal from "../../../../../assets/icon/improved/selected_local.svg";
 
 const ModalNavBtn = ({ text, type, onClickBtn }) => {
   return (
@@ -6,7 +7,8 @@ const ModalNavBtn = ({ text, type, onClickBtn }) => {
       className={`${styles.ModalNavBtn} ${styles[type]}`}
       onClick={onClickBtn}
     >
-      {text}
+      <span>{text}</span>
+      {type === "selected" && <img src={selectedlocal} alt="" />}
     </div>
   );
 };

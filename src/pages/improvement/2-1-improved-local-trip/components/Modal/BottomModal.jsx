@@ -3,17 +3,22 @@ import iconprev from "../../../../../assets/icon/icon_previous.svg";
 import { useEffect, useState } from "react";
 import StationList from "./StationList";
 import Clip from "./Clip";
+import Button from "../../../../../improved/Button";
 
 import styles from "./BottomModal.module.css";
+import xbutton from "../../../../../assets/icon/improved/x_button.svg";
+import resetbutton from "../../../../../assets/icon/improved/reset_button.svg";
 
 const serviceKey = import.meta.env.VITE_ENCODING;
 
-const BottomModal = () => {
+const BottomModal = ({
+  selectedStation,
+  setSelectedStation,
+  setIsOpenModal,
+}) => {
   const [cityCodeList, setCityCodeList] = useState();
   const [selectedCityCode, setSelectedCityCode] = useState(11);
   const [stationList, setStationList] = useState([]);
-
-  const [selectedStation, setSelectedStation] = useState(["서울전체"]);
 
   // 도시 코드 목록 가져오기
   useEffect(() => {
@@ -61,84 +66,67 @@ const BottomModal = () => {
   };
 
   return (
-    <div
-      className="wrapper"
-      style={{
-        display: "flex",
-        width: "100%",
-        flexDirection: "column",
-        height: "500px",
-      }}
-    >
-      <header
-        style={{
-          display: "flex",
-          width: "100%",
-          backgroundColor: "gray",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "10px",
-          borderRadius: "20px 20px 0 0",
-        }}
-      >
-        <img src={iconprev} alt="" />
-        <span>지역</span>
-        <img src={iconprev} alt="" />
-      </header>
-      <div
-        style={{
-          // 스크롤 가능화 영역 height
-          height: "300px",
-          width: "100%",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "flex-start",
-        }}
-      >
-        <aside
-          className="local"
-          style={{
-            width: "40%",
-            height: "100%",
-            overflowY: "auto",
-          }}
-        >
-          {cityCodeList?.map((item, index) => (
-            <ModalNavBtn
-              key={index}
-              text={item.cityname}
-              type={selectedCityCode === item.citycode ? "selected" : "default"}
-              onClickBtn={() => changeCity(item.citycode)}
-            />
-          ))}
-        </aside>
+    <div className={styles.Modal}>
+      <div className={styles.alert}>
+        <header className={styles.header}>
+          {/* 리셋 버튼 */}
+          <button onClick={() => setSelectedStation([])}>
+            <img src={resetbutton} alt="" />
+          </button>
+          <span>지역</span>
 
-        <main
-          className="localstation"
-          style={{
-            width: "60%",
-            height: "100%",
-            overflowY: "auto",
-          }}
-        >
-          {stationList?.map((station, index) => (
-            <StationList
-              key={index}
-              text={station.nodename}
-              addStation={addStation}
-            />
-          ))}
-        </main>
-      </div>
-      <div className={styles.verticalwrap}>
-        {selectedStation.map(
-          (node, index) => (
-            <Clip key={index} deleteStation={deleteStation}>
-              {node}
-            </Clip>
-          ),
-          [selectedStation]
-        )}
+          {/* x 버튼 */}
+          <button onClick={() => setIsOpenModal(false)}>
+            <img src={xbutton} alt="" />
+          </button>
+        </header>
+        <div className={styles.selectionswrapper}>
+          <aside className={styles.local}>
+            {cityCodeList?.map((item, index) => (
+              <ModalNavBtn
+                key={index}
+                text={item.cityname}
+                type={
+                  selectedCityCode === item.citycode ? "selected" : "default"
+                }
+                onClickBtn={() => changeCity(item.citycode)}
+              />
+            ))}
+          </aside>
+
+          <main className={styles.node}>
+            {stationList?.map((station, index) => (
+              <StationList
+                key={index}
+                text={station.nodename}
+                addStation={addStation}
+                type={selectedStation.includes(station.nodename) && "selected"}
+              />
+            ))}
+          </main>
+        </div>
+
+        {/* 선택한 출발역 리스트 나열 (좌우스크롤) */}
+        <div className={styles.selectedlist}>
+          <div className={styles.selectedlistheader}>선택한 출발역</div>
+          <div className={styles.selectedlistlist}>
+            {selectedStation.map(
+              (node, index) => (
+                <Clip key={index} deleteStation={deleteStation}>
+                  {node}
+                </Clip>
+              ),
+              [selectedStation]
+            )}
+          </div>
+        </div>
+
+        {/* 선택완료 버튼 */}
+        <div style={{ display: "flex" }}>
+          <Button type="primary" state="default" size="large" shape="box">
+            선택완료
+          </Button>
+        </div>
       </div>
     </div>
   );

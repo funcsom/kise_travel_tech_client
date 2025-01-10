@@ -2,4 +2,8 @@
   background-color: var(--gray-40);
   padding: 4px 8px 4px 14px;
   border-radius: 50px;
+  font: var(--font-b3-no-m);
+  background-color: var(--color-secondary-alternative);
+  display: flex;
+  gap: 8px;
 }
