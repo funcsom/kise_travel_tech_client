@@ -82,16 +82,18 @@ const ImpSelectProduct = () => {
           />
         </div>
         <div style={{ display: "flex" }}>
-          <Button
-            type="primary"
-            state="default"
-            size="large"
-            shape="box"
-            rate="r1"
-            onClickButton={handleNext}
-          >
-            상품예약
-          </Button>
+          {step === 4 && (
+            <Button
+              type="primary"
+              state="default"
+              size="large"
+              shape="box"
+              rate="r1"
+              onClickButton={handleNext}
+            >
+              상품예약
+            </Button>
+          )}
         </div>
       </Footer>
     </Contents>

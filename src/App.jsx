@@ -21,7 +21,6 @@ import ImpSelectDate from "./pages/improvement/4-1-improved-select-date/ImpSelec
 import ImpSelectProduct from "./pages/improvement/4-2-improved-select-product/ImpSelectProduct";
 import ImpTravelerAgree from "./pages/improvement/4-3-improved-traveler-agree/ImpTravelerAgree";
 import ImpTravelerInfo from "./pages/improvement/4-4-improved-traveler-info/ImpTravelerInfo";
-import ImpRating from "./pages/improvement/4-5-1-improved-rating/ImpRating";
 import ImpCompleteProd from "./pages/improvement/4-5-2-improved-complete-product/ImpCompleteProd";
 
 import styles from "./App.module.css";
@@ -118,7 +117,6 @@ function App() {
               <Route path="selectproduct" element={<ImpSelectProduct />} />
               <Route path="traveleragree" element={<ImpTravelerAgree />} />
               <Route path="travelerinfo" element={<ImpTravelerInfo />} />
-              <Route path="rating" element={<ImpRating />} />
               <Route path="completeproduct" element={<ImpCompleteProd />} />
             </Route>
           </Routes>

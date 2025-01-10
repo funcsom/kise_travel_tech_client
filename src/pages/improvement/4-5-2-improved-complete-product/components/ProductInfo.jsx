@@ -61,7 +61,7 @@ const ProductInfo = ({ impInfo }) => {
             <span>{`${impInfo.date}(${impInfo.day})`}</span>
           </div>
           <div className={styles.infogap}>
-            <span className={styles.title}>{impInfo.product.name}</span>
+            <span className={styles.title}>{impInfo.package.name}</span>
             <span className={styles.text}>{`${impInfo.people}인 이용`}</span>
           </div>
         </div>

@@ -7,9 +7,15 @@
   padding: 14px 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font: var(--font-t2-b);
 }
 
 .opened {
   transform: rotate(180deg);
+}
+
+.buttonwrapper {
+  width: 24px;
+  height: 24px;
 }

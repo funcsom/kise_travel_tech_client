@@ -18,4 +18,5 @@
 
 .fill {
   background-color: var(--color-line-normal);
+  color: var(--color-label-disable);
 }

@@ -1,0 +1,22 @@
+.RecommandEvent {
+  padding: 28px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.textwrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.title {
+  font: var(--font-t1-b);
+  color: var(--color-primary-strong);
+}
+
+.subtitle {
+  font: var(--font-b3-re-r-160);
+  color: var(--color-label-assistive);
+}

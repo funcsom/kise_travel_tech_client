@@ -1,5 +1,5 @@
 import { ImpUserContext } from "../../../App";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../../components/Header";
@@ -7,6 +7,7 @@ import Progressbar from "../../../improved/progressbar/Progressbar";
 import Contents from "../../../components/common/Contents";
 import Footer from "../../../improved/Footer";
 import Button from "../../../improved/Button";
+import RatingComponent from "./components/RatingComponent";
 
 import ProductInfo from "./components/ProductInfo";
 import ReserveInfo from "./components/ReserveInfo";
@@ -16,6 +17,7 @@ import TotalPrice from "../4-2-improved-select-product/components/TotalPrice";
 
 const ImpCompleteProd = (props) => {
   const { impInfo, setImpInfo } = useContext(ImpUserContext);
+  const [isOpenRating, setIsOpenRating] = useState(true);
   const navigate = useNavigate();
 
   const handleNext = () => {
@@ -44,6 +46,7 @@ const ImpCompleteProd = (props) => {
 
   return (
     <Contents>
+      {isOpenRating && <RatingComponent />}
       <Header
         text="예약인원"
         imageLeft={iconprev}

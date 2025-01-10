@@ -8,7 +8,10 @@ const Toggle = ({ title, children }) => {
     <div className={styles.Toggle}>
       <div className={styles.title}>
         <span>{title}</span>
-        <button onClick={() => setIsOpen((prev) => !prev)}>
+        <button
+          className={styles.buttonwrapper}
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
           {isOpen ? (
             <img className={styles.opened} src={togglebutton} />
           ) : (

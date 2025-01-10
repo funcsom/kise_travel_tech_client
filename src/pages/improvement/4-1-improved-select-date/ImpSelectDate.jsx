@@ -17,7 +17,7 @@ const week = ["일", "월", "화", "수", "목", "금", "토"];
 const ImpSelectDate = () => {
   const { impInfo, setImpInfo } = useContext(ImpUserContext);
   const navigate = useNavigate();
-  const [selectedDate, setSelectedDate] = useState(new Date());
+  const [selectedDate, setSelectedDate] = useState();
 
   const handleNext = () => {
     navigate("/imp/selectproduct");
@@ -29,11 +29,9 @@ const ImpSelectDate = () => {
 
   const handleDateChange = (date) => {
     console.log(date);
-    const dateformat = `${date.getFullYear()}년 ${
-      date.getMonth() + 1
-    }월 ${date.getDate()}일`;
+    const dateformat = `${date.getMonth() + 1}.${date.getDate()}`;
     const day = `${date.getDay()}`;
-    setImpInfo({ ...impInfo, date: `${dateformat}`, day: `(${week[day]})` });
+    setImpInfo({ ...impInfo, date: `${dateformat}`, day: `${week[day]}` });
     setSelectedDate(date);
   };
 
@@ -58,7 +56,7 @@ const ImpSelectDate = () => {
             onClickButton={handleNext}
           >
             {impInfo.date
-              ? `${impInfo.date}${impInfo.day}`
+              ? `${impInfo.date}(${impInfo.day}) 선택`
               : "날짜를 선택해주세요"}
           </Button>
         </div>

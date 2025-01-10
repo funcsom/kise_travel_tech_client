@@ -2,8 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import Header from "../../../components/Header";
 import Contents from "../../../components/common/Contents";
-
-import iconprev from "../../../assets/icon/icon_previous.svg";
+import RecommandEvent from "./components/RecommandEvent";
 
 const ImpLovingLocal = () => {
   const navigate = useNavigate();
@@ -18,11 +17,10 @@ const ImpLovingLocal = () => {
 
   return (
     <Contents>
-      <Header
-        text="지역사랑여행"
-        imageLeft={iconprev}
-        handleClickLeft={handlePrev}
-      />
+      <Header text="지역사랑여행" handleClickLeft={handlePrev} />
+      <main>
+        <RecommandEvent />
+      </main>
     </Contents>
   );
 };
