@@ -51,7 +51,7 @@ const RatingComponent = ({ openNoti }) => {
   });
 
   return (
-    <div className={styles.Modal} onClick={openNoti}>
+    <div className={styles.Modal}>
       <div className={styles.alert} onClick={(e) => e.stopPropagation()}>
         <div className={styles.headerwrapper}>
           <div className={styles.header}>

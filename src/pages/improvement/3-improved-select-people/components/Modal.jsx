@@ -11,7 +11,7 @@ const Modal = ({ openNoti }) => {
   }, []);
 
   return (
-    <div className={styles.Modal} onClick={openNoti}>
+    <div className={styles.Modal}>
       <div className={styles.alert} onClick={(e) => e.stopPropagation()}>
         <div className={styles.textwrapper}>
           <div className={styles.header}>이용 안내</div>
