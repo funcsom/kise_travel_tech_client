@@ -10,10 +10,10 @@ import iconprevious from "../assets/icon/icon_previous.svg";
 
 import "./Carousel.css";
 
-const Carousel = ({ elems }) => {
+const ImgCarousel = ({ elems }) => {
   return (
     <div>
-      <Swiper modules={[Navigation]} spaceBetween={20} slidesPerView={1.05}>
+      <Swiper spaceBetween={20} slidesPerView={1.05}>
         {elems.map((elem, index) => {
           return (
             <SwiperSlide key={index}>
@@ -30,4 +30,36 @@ const Carousel = ({ elems }) => {
   );
 };
 
-export default Carousel;
+export default ImgCarousel;
+
+export const Carousel = ({ elems }) => {
+  return (
+    <div>
+      <Swiper spaceBetween={20} slidesPerView={1.05}>
+        {elems.map((elem, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <div>{elem}</div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+    </div>
+  );
+};
+
+export const SmallCarousel = ({ elems }) => {
+  return (
+    <div>
+      <Swiper spaceBetween={8} slidesPerView={2.025}>
+        {elems.map((elem, index) => {
+          return (
+            <SwiperSlide key={index}>
+              <div>{elem}</div>
+            </SwiperSlide>
+          );
+        })}
+      </Swiper>
+    </div>
+  );
+};

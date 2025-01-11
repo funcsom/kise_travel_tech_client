@@ -9,7 +9,8 @@ const PackagePreview = ({ selectedLocal }) => {
   const [packages, setPackages] = useState([]);
 
   const onClickButton = () => {
-    navigate(`/imp/localtrip/${selectedLocal}`);
+    // navigate(`/imp/localtrip/${selectedLocal}`);
+    navigate("/imp/localtrip/gangwon");
   };
 
   const onClickPackage = () => {
@@ -27,6 +28,8 @@ const PackagePreview = ({ selectedLocal }) => {
       });
   }, [selectedLocal]);
 
+  const formatPrice = (price) => price.toLocaleString("ko-KR");
+
   return (
     <div className={styles.PackagePreview}>
       <div className={styles.header}>
@@ -42,10 +45,21 @@ const PackagePreview = ({ selectedLocal }) => {
             className={styles.listwrapper}
             onClick={onClickPackage}
           >
-            <div className={styles.imagewrapper}></div>
+            <div className={styles.imagewrapper}>
+              <img src={p.img} alt="" className={styles.image} />
+            </div>
             <div className={styles.textwrapper}>
-              <div className={styles.listtitle}>{p.title}</div>
-              <span className={styles.listsubtitle}>{p.subtitle}</span>
+              <div className={styles.titlewrapper}>
+                <div className={styles.listtitle}>{p.title}</div>
+                <span className={styles.listsubtitle}>{p.subtitle}</span>
+              </div>
+
+              <div className={styles.info}>
+                <div className={styles.tag}>당일</div>
+                <span className={styles.price}>
+                  {`${formatPrice(Number(p.price))}원~`}
+                </span>
+              </div>
             </div>
           </div>
         ))}

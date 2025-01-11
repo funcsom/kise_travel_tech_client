@@ -1,9 +1,23 @@
 .Clip {
   background-color: var(--gray-40);
-  padding: 4px 8px 4px 14px;
+  padding: 7.5px 8px 7.5px 14px;
   border-radius: 50px;
   font: var(--font-b3-no-m);
   background-color: var(--color-secondary-alternative);
   display: flex;
-  gap: 8px;
+  gap: 2px;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+.default {
+  padding: 7.5px 14px;
+}
+
+.text {
+  flex-shrink: 0;
+}
+
+.button {
+  flex-shrink: 0;
 }

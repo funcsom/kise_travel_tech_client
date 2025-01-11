@@ -8,7 +8,7 @@
         "title": "한복입고 떠나는 경복궁 북촌 한옥마을 투어",
         "subtitle": "레일티켓",
         "price": "43600",
-        "img": "capital-0"
+        "img": "/assets/improved/packages/capital/image/capital-0.png"
       },
       {
         "id": "1",
@@ -16,7 +16,7 @@
         "title": "서울 시티투어 순환형",
         "subtitle": "레일티켓",
         "price": "98700",
-        "img": "capital-1"
+        "img": "/assets/improved/packages/capital/image/capital-1.png"
       },
       {
         "id": "2",
@@ -24,7 +24,7 @@
         "title": "KTX+더캡슐 레일텔",
         "subtitle": "레일텔+캡슐호텔",
         "price": "55600",
-        "img": "capital-2"
+        "img": "/assets/improved/packages/capital/image/capital-2.png"
       }
     ]
   },

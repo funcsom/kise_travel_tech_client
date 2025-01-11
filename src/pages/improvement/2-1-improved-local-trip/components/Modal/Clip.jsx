@@ -1,12 +1,19 @@
 import styles from "./Clip.module.css";
 import xbutton from "../../../../../assets/icon/improved/small_x_button.svg";
 
-const Clip = ({ deleteStation, children }) => {
+const Clip = ({ deleteStation, children, type }) => {
   return (
-    <span onClick={() => deleteStation(children)} className={styles.Clip}>
-      <span>{children}</span>
-      <img src={xbutton} alt="" />
-    </span>
+    <div className={`${styles.Clip} ${styles[type]}`}>
+      <div className={styles.text}>{children}</div>
+      {type !== "default" && (
+        <img
+          onClick={() => deleteStation(children)}
+          className={styles.button}
+          src={xbutton}
+          alt=""
+        />
+      )}
+    </div>
   );
 };
 

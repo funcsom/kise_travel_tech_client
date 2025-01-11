@@ -1,4 +1,4 @@
-import Carousel from "../../../../improved/Carousel";
+import ImgCarousel from "../../../../improved/Carousel";
 import styles from "./PeriodicTourTrain.module.css";
 
 import carouselitem0 from "../../../../assets/image/improved/lovinglocal/bottom-carousel/carousel-item-0.jpg";
@@ -14,8 +14,10 @@ const PeriodicTourTrain = () => {
           동해 · 협곡 · 남도 · 아리랑 · 서해금빛열차
         </div>
       </div>
-      <Carousel elems={[carouselitem0, carouselitem1, carouselitem2]} />
-      <button className={styles.button}>정기관광열차 여행상품</button>
+      <ImgCarousel elems={[carouselitem0, carouselitem1, carouselitem2]} />
+      <div className={styles.buttonwrapper}>
+        <button className={styles.button}>정기관광열차 여행상품</button>
+      </div>
     </div>
   );
 };

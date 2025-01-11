@@ -1,11 +1,10 @@
 .RecommandEvent {
-  padding: 28px 16px;
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 .textwrapper {
+  padding: 28px 16px 16px 16px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -19,4 +18,8 @@
 .subtitle {
   font: var(--font-b3-re-r-160);
   color: var(--color-label-assistive);
+}
+
+.carouslewrapper {
+  padding-bottom: 16px;
 }

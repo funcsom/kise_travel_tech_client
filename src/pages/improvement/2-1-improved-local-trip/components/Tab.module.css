@@ -1,4 +1,10 @@
 .Tab {
   display: flex;
   border-bottom: 1px solid var(--color-label-assistive);
+  padding: 0 0 0 16px;
+  overflow-x: auto;
+}
+
+.Tab::-webkit-scrollbar {
+  display: none;
 }

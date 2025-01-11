@@ -26,6 +26,7 @@
   color: var(--color-light-blue-200);
   font: var(--font-orig-b2-b);
   border-bottom: 1.5px solid var(--color-white);
+  display: none;
 }
 
 abbr {

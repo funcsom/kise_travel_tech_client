@@ -73,10 +73,20 @@
   font: var(--font-t3-b);
   color: var(--color-label-normal);
   border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 6px;
 }
 
 .selectedlistlist {
+  width: 100%;
   padding: 10px;
   display: flex;
   gap: 10px;
+  overflow-x: auto;
+}
+
+.selectedlistlist::-webkit-scrollbar {
+  display: none;
 }

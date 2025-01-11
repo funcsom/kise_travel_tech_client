@@ -1,20 +1,18 @@
 .LocalTripProduct {
-  padding: 28px 16px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
 }
 
 .topwrapper {
   display: flex;
   flex-direction: column;
-  gap: 16px;
 }
 
 .textwrapper {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  padding: 28px 16px 0 16px;
 }
 
 .title {
@@ -28,6 +26,17 @@
 }
 
 .buttonwrapper {
+  width: 100%;
   display: flex;
-  gap: 4px;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 16px;
+}
+
+.buttonwrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.packagepreviewwrapper {
+  padding: 4px 16px 28px 16px;
 }

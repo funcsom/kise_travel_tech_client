@@ -30,3 +30,8 @@ const MyCarousel = ({ elems }) => {
 };
 
 export default MyCarousel;
+
+// usage :
+// <MyCarousel
+// elems={[carouselitem, carouselitem2, carouselitem, carouselitem2]}
+// />

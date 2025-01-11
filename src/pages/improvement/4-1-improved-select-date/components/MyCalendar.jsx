@@ -38,7 +38,7 @@ const MyCalendar = ({ value, onChangeDate }) => {
   };
 
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
       <Calendar
         calendarType="gregory"
         value={value}
@@ -50,7 +50,27 @@ const MyCalendar = ({ value, onChangeDate }) => {
         prevLabel={null}
         next2Label={null}
         prev2Label={null}
+        showFixedNumberOfWeeks={true} // 추가
       />
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          padding: "4px",
+          gap: "4px",
+          font: "var(--font-c2-m)",
+          color: "var(--color-label-alternative)",
+        }}
+      >
+        <div
+          style={{
+            width: "12px",
+            height: "12px",
+            backgroundColor: "var(--color-fill-disable)",
+          }}
+        ></div>
+        <div>마감</div>
+      </div>
     </div>
   );
 };

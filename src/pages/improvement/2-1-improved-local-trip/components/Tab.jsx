@@ -7,7 +7,7 @@ const Tab = ({ changeLocal, selectedLocal }) => {
     <div className={styles.Tab}>
       <TabItem
         text="수도권"
-        onClickTabItem={() => changeLocal("capital")}
+        // onClickTabItem={() => changeLocal("capital")}
         type={selectedLocal === "capital" && "active"}
       />
       <TabItem
@@ -17,22 +17,22 @@ const Tab = ({ changeLocal, selectedLocal }) => {
       />
       <TabItem
         text="충청권"
-        onClickTabItem={() => changeLocal("chungcheong")}
+        // onClickTabItem={() => changeLocal("chungcheong")}
         type={selectedLocal === "chungcheong" && "active"}
       />
       <TabItem
         text="경상권"
-        onClickTabItem={() => changeLocal("gyeongsang")}
+        // onClickTabItem={() => changeLocal("gyeongsang")}
         type={selectedLocal === "gyeongsang" && "active"}
       />
       <TabItem
         text="전라권"
-        onClickTabItem={() => changeLocal("jeolla")}
+        // onClickTabItem={() => changeLocal("jeolla")}
         type={selectedLocal === "jeolla" && "active"}
       />
       <TabItem
         text="제주권"
-        onClickTabItem={() => changeLocal("jeju")}
+        // onClickTabItem={() => changeLocal("jeju")}
         type={selectedLocal === "jeju" && "active"}
       />
     </div>

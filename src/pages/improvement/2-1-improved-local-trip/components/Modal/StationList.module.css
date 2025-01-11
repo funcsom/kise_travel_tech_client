@@ -1,7 +1,7 @@
 .StationList {
   font: var(--font-b3-no-b);
   color: var(--color-label-normal);
-  padding: 12px 12px 12px 16px;
+  padding: 8px 12px 8px 16px;
   border-bottom: 1px solid var(--color-line-assistive);
   background-color: var(--color-background-normal-normal);
   display: flex;

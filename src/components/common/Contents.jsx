@@ -1,16 +1,7 @@
+import styles from "./Contents.module.css";
+
 const Contents = ({ children }) => {
-  return (
-    <div
-      style={{
-        minHeight: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        position: "relative",
-      }}
-    >
-      {children}
-    </div>
-  );
+  return <div className={styles.Contents}>{children}</div>;
 };
 
 export default Contents;

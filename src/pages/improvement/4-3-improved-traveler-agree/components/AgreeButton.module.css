@@ -8,4 +8,5 @@
   font: var(--font-b2-no-m);
   border-radius: 4px;
   align-items: center;
+  color: var(--color-label-normal);
 }

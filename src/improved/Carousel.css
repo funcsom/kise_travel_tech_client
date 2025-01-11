@@ -1,6 +1,11 @@
 .swiper {
   position: relative;
-  overflow: visible;
+  overflow-x: auto;
+  padding: 0 16px;
+}
+
+.swiper::-webkit-scrollbar {
+  display: none;
 }
 
 .swiper-pagination {

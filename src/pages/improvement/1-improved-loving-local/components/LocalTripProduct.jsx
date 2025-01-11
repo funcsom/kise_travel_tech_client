@@ -64,7 +64,9 @@ const LocalTripProduct = (props) => {
           />
         </div>
       </div>
-      <PackagePreview selectedLocal={selectedLocal} />
+      <div className={styles.packagepreviewwrapper}>
+        <PackagePreview selectedLocal={selectedLocal} />
+      </div>
     </div>
   );
 };

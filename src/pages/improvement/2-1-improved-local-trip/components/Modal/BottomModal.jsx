@@ -15,6 +15,7 @@ const BottomModal = ({
   selectedStation,
   setSelectedStation,
   setIsOpenModal,
+  deleteStation,
 }) => {
   const [cityCodeList, setCityCodeList] = useState();
   const [selectedCityCode, setSelectedCityCode] = useState(11);
@@ -56,13 +57,9 @@ const BottomModal = ({
 
   const addStation = (node) => {
     // 기존에 존재하는 node이면 추가 안하도록 처리
-    if (!selectedStation.some((station) => station === node)) {
+    if (!selectedStation.some((station) => station === `${node}역`)) {
       setSelectedStation([...selectedStation, node]);
     }
-  };
-
-  const deleteStation = (node) => {
-    setSelectedStation(selectedStation.filter((station) => station !== node));
   };
 
   return (
@@ -70,10 +67,10 @@ const BottomModal = ({
       <div className={styles.alert}>
         <header className={styles.header}>
           {/* 리셋 버튼 */}
-          <button onClick={() => setSelectedStation([])}>
-            <img src={resetbutton} alt="" />
+          <button>
+            <img src="" alt="" />
           </button>
-          <span>지역</span>
+          <span>출발역 선택</span>
 
           {/* x 버튼 */}
           <button onClick={() => setIsOpenModal(false)}>
@@ -98,9 +95,12 @@ const BottomModal = ({
             {stationList?.map((station, index) => (
               <StationList
                 key={index}
-                text={station.nodename}
+                text={`${station.nodename}역`}
                 addStation={addStation}
-                type={selectedStation.includes(station.nodename) && "selected"}
+                type={
+                  selectedStation.includes(`${station.nodename}역`) &&
+                  "selected"
+                }
               />
             ))}
           </main>
@@ -108,7 +108,16 @@ const BottomModal = ({
 
         {/* 선택한 출발역 리스트 나열 (좌우스크롤) */}
         <div className={styles.selectedlist}>
-          <div className={styles.selectedlistheader}>선택한 출발역</div>
+          <div className={styles.selectedlistheader}>
+            <div>선택한 출발역</div>
+            <div>
+              {/* 리셋 버튼 */}
+              <button onClick={() => setSelectedStation([])}>
+                <img src={resetbutton} alt="" />
+              </button>
+            </div>
+          </div>
+
           <div className={styles.selectedlistlist}>
             {selectedStation.map(
               (node, index) => (
@@ -123,7 +132,13 @@ const BottomModal = ({
 
         {/* 선택완료 버튼 */}
         <div style={{ display: "flex" }}>
-          <Button type="primary" state="default" size="large" shape="box">
+          <Button
+            type="primary"
+            state="default"
+            size="large"
+            shape="box"
+            onClickButton={() => setIsOpenModal(false)}
+          >
             선택완료
           </Button>
         </div>

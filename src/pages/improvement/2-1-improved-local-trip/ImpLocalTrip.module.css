@@ -4,7 +4,47 @@
   gap: 16px;
 }
 
+.carouselwrapper {
+  /* 여기서는 위아래 padding만 줄 수 있도록 */
+}
+
 .selectedstationwrapper {
   display: flex;
   gap: 8px;
+}
+
+.selectedstationwrapper::-webkit-scrollbar {
+  display: none;
+}
+
+.selectlocalbutton {
+  padding: 6px 12px 6px 16px;
+  gap: 2px;
+  border-radius: 0 50px 50px 0;
+  font: var(--font-b3-no-m);
+  background-color: var(--static-white);
+  border: 1px solid var(--color-line-assistive);
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  box-shadow: 0px 0px 8px 0px rgba(120, 127, 131, 0.2);
+  position: relative;
+}
+
+.selectedlistlist {
+  width: 100%;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.selectedlistlist::-webkit-scrollbar {
+  display: none;
+}
+
+.bottomlistwrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px 16px 16px;
 }

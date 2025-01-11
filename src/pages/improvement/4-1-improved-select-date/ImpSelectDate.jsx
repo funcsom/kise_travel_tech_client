@@ -11,6 +11,7 @@ import Footer from "../../../improved/Footer";
 import Button from "../../../improved/Button";
 
 import iconprev from "../../../assets/icon/icon_previous.svg";
+import feb from "../../../assets/image/improved/calendar/feb.png";
 
 const week = ["일", "월", "화", "수", "목", "금", "토"];
 
@@ -42,9 +43,19 @@ const ImpSelectDate = () => {
         imageLeft={iconprev}
         handleClickLeft={handlePrev}
       />
-      <main style={{ padding: "40px 20px" }}>
+
+      <main
+        style={{
+          padding: "40px 20px",
+          display: "flex",
+          flexDirection: "column",
+          gap: "40px",
+        }}
+      >
         <MyCalendar value={selectedDate} onChangeDate={handleDateChange} />
+        <img src={feb} alt="" />
       </main>
+
       <Footer>
         <div style={{ display: "flex" }}>
           <Button
