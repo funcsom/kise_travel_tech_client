@@ -2,3 +2,7 @@
   display: flex;
   gap: 16px;
 }
+
+.react-stars [tabindex="0"] {
+  display: flex;
+}

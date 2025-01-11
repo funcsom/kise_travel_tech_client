@@ -5,9 +5,7 @@ import starfull from "../../../../assets/icon/improved/star_full.svg";
 import starhalf from "../../../../assets/icon/improved/star_half.svg";
 import "./BigStars.css";
 
-const BigStars = ({ clicked }) => {
-  const [rating, setRating] = useState(0); // Default rating is 1 out of 5
-
+const BigStars = ({ setIsClicked, rating, setRating }) => {
   const properties = {
     size: 36,
     count: 5,
@@ -19,12 +17,8 @@ const BigStars = ({ clicked }) => {
     halfIcon: <img src={starhalf} alt="empty star" />,
     filledIcon: <img src={starfull} alt="empty star" />,
     onChange: (newRating) => {
-      clicked();
-      if (rating === newRating) {
-        setRating(newRating - 0.5);
-      } else {
-        setRating(newRating);
-      }
+      setIsClicked(true);
+      setRating(newRating);
     },
   };
 
