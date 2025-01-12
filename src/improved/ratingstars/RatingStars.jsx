@@ -6,7 +6,6 @@ import starhalf from "../../assets/icon/improved/star_half.svg";
 
 import smallstarempty from "../../assets/icon/improved/star_small_empty.svg";
 import smallstarfull from "../../assets/icon/improved/star_small_full.svg";
-import { useEffect } from "react";
 
 export const RatingStarsBig = ({ setIsClickedBigStar, rating, setRating }) => {
   const onClickStar = (props) => {
