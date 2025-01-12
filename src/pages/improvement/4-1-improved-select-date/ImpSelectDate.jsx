@@ -1,3 +1,4 @@
+import styles from "./ImpSelectDate.module.css";
 import { ImpUserContext } from "../../../App";
 
 import { useState, useContext } from "react";
@@ -50,7 +51,15 @@ const ImpSelectDate = () => {
         imageLeft={iconprev}
         handleClickLeft={handlePrev}
       />
-
+      <div className={styles.yoil}>
+        <div className={`${styles.item} ${styles.sunday}`}>일</div>
+        <div className={styles.item}>월</div>
+        <div className={styles.item}>화</div>
+        <div className={styles.item}>수</div>
+        <div className={styles.item}>목</div>
+        <div className={styles.item}>금</div>
+        <div className={`${styles.item} ${styles.saturday}`}>토</div>
+      </div>
       <main
         style={{
           padding: "40px 20px",
