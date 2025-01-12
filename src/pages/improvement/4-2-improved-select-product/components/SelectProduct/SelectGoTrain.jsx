@@ -14,7 +14,6 @@ const SelectGoTrain = ({
   setStep,
   onChangeGoTrainGrade,
   currentTrainGrade,
-  onChangeGoTrainPrice,
   selectGoTrain,
   onClickChangeBtn,
   preselectedInfo,
@@ -28,12 +27,13 @@ const SelectGoTrain = ({
         // console.log("받아온 데이터 =>", data);
         setMyTrainList(filterMyTrainList(data, departStation, arrivalStation));
       });
+    onChangeGoTrainGrade(currentTrainGrade);
   }, []);
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.SelectGoTrain}>
-        <div>
+        <div className={styles.titlewrapper}>
           <div className={styles.title}>가는편을 선택해주세요.</div>
           <div className={styles.subtitle}>1. 25(토), 성인 2인 편도요금</div>
         </div>
@@ -155,20 +155,41 @@ const SelectGoTrain = ({
                 onClickChangeBtn && onClickChangeBtn();
               }
               selectGoTrain([
+                item.id,
                 item.name,
+                item.no,
                 item.stations[0].time,
                 item.stations[1].time,
               ]);
               setStep((prev) => prev + 1);
+              console.log(
+                `selected GoTrain is ... : ${[
+                  item.id,
+                  item.name,
+                  item.no,
+                  item.stations[0].time,
+                  item.stations[1].time,
+                ]}`
+              );
             }}
           >
-            {preselectedInfo === item.name ? (
+            {preselectedInfo === item.id ? (
               <ListItemWrapper type="selected">
-                <TrainListItem trainNo={item.name} trainInfo={item.stations} />
+                <TrainListItem
+                  logo={item.logo}
+                  trainNo={item.name}
+                  no={item.no}
+                  trainInfo={item.stations}
+                />
               </ListItemWrapper>
             ) : (
               <ListItemWrapper type="default">
-                <TrainListItem trainNo={item.name} trainInfo={item.stations} />
+                <TrainListItem
+                  logo={item.logo}
+                  trainNo={item.name}
+                  no={item.no}
+                  trainInfo={item.stations}
+                />
               </ListItemWrapper>
             )}
           </button>

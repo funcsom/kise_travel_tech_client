@@ -13,14 +13,16 @@ import ProductInfo from "./components/ProductInfo";
 import ReserveInfo from "./components/ReserveInfo";
 
 import iconprev from "../../../assets/icon/icon_previous.svg";
-import TotalPrice from "../4-2-improved-select-product/components/TotalPrice";
+import TotalPrice from "./components/TotalPrice";
+
+import styles from "./ImpCompleteProd.module.css";
 
 const ImpCompleteProd = (props) => {
   const { impInfo, setImpInfo } = useContext(ImpUserContext);
   const [isOpenRating, setIsOpenRating] = useState(true);
   const navigate = useNavigate();
 
-  const OpenRating = () => {
+  const closeModal = () => {
     setIsOpenRating(false);
   };
 
@@ -50,7 +52,7 @@ const ImpCompleteProd = (props) => {
 
   return (
     <Contents>
-      {isOpenRating && <RatingComponent openNoti={OpenRating} />}
+      {isOpenRating && <RatingComponent closeModal={closeModal} />}
       <Header
         text="예약인원"
         imageLeft={iconprev}
@@ -58,13 +60,7 @@ const ImpCompleteProd = (props) => {
       />
       <Progressbar nthChild={5} />
       <main>
-        <div
-          style={{
-            padding: "8px 16px 12px 16px",
-            font: "var(--font-t2-b)",
-            color: "var(--color-status-informative)",
-          }}
-        >
+        <div className={styles.top}>
           <div>{`${formattedDateForPay}까지 결제 시`}</div>
           <div>{"예약이 확정됩니다."}</div>
         </div>

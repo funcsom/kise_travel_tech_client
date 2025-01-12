@@ -39,10 +39,15 @@
   background-color: gray;
   overflow: hidden;
   border-radius: 12px;
+  display: flex; /* 추가 */
+  justify-content: center; /* 추가 */
+  align-items: center; /* 추가 */
 }
 
 /* 나의 이것좀 알지... 비효율 */
 .image {
+  width: 100%; /* 추가 */
+  height: 100%; /* 추가 */
   object-fit: cover;
   object-position: center;
 }
@@ -52,6 +57,11 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
 }
 
 .info {
@@ -78,6 +88,22 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+
+.listtitle {
+  display: -webkit-box;
+  line-clamp: 3; /* 원하는 줄 수 */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal; /* nowrap 대신 normal 사용 */
+}
+
+.listsubtitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%; /* 추가 */
 }
 
 .listtitle {

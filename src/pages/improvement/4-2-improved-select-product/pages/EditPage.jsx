@@ -5,68 +5,86 @@ import SelectPackage from "../components/SelectProduct/SelectPackage";
 import { ImpUserContext } from "../../../../App";
 import { useContext, useEffect } from "react";
 
+import styles from "./EditPage.module.css";
+
 // Edit 페이지
-const EditPage = ({ editImpInfo, setStep, onClickChangeBtn }) => {
-  const { impInfo, setImpInfo } = useContext(ImpUserContext);
-
+const EditPage = ({
+  editTypeWhat,
+  setStep,
+  onClickChangeBtn,
+  info,
+  setInfo,
+}) => {
   const onChangeGoTrainGrade = (grade) => {
-    setImpInfo({
-      ...impInfo,
-      goTrain: { ...impInfo.goTrain, trainGrade: grade },
-    });
-  };
-
-  const onChangeComeTrainGrade = (grade) => {
-    setImpInfo({
-      ...impInfo,
-      comeTrain: { ...impInfo.comeTrain, trainGrade: grade },
-    });
-  };
-
-  const onChangeGoTrainPrice = (price) => {
-    setImpInfo({
-      ...impInfo,
-      goTrain: { ...impInfo.goTrain, price: price },
-    });
-  };
-
-  const onChangeComeTrainPrice = (price) => {
-    setImpInfo({
-      ...impInfo,
-      comeTrain: { ...impInfo.comeTrain, price: price },
-    });
-  };
-
-  // props = [trainNo, departtime, arrivaltime]
-  const selectGoTrain = (props) => {
-    setImpInfo({
-      ...impInfo,
+    setInfo({
+      ...info,
       goTrain: {
-        ...impInfo.goTrain,
-        trainNo: props[0],
-        departtime: props[1],
-        arrivaltime: props[2],
+        ...info.goTrain,
+        trainGrade: grade,
+        price: grade === "economy" ? 59800 : 68300,
       },
     });
   };
 
-  // props = [trainNo, departtime, arrivaltime]
-  const selectComeTrain = (props) => {
-    setImpInfo({
-      ...impInfo,
+  const onChangeComeTrainGrade = (grade) => {
+    setInfo({
+      ...info,
       comeTrain: {
-        ...impInfo.comeTrain,
-        trainNo: props[0],
-        departtime: props[1],
-        arrivaltime: props[2],
+        ...info.comeTrain,
+        trainGrade: grade,
+        price: grade === "economy" ? 59800 : 68300,
+      },
+    });
+  };
+
+  const onChangeGoTrainPrice = (price) => {
+    setInfo({
+      ...info,
+      goTrain: { ...info.goTrain, price: price },
+    });
+  };
+
+  const onChangeComeTrainPrice = (price) => {
+    setInfo({
+      ...info,
+      comeTrain: { ...info.comeTrain, price: price },
+    });
+  };
+
+  // props = [id, trainNane, trainNo, departtime, arrivaltime]
+  const selectGoTrain = (props) => {
+    setInfo({
+      ...info,
+      goTrain: {
+        ...info.goTrain,
+        id: props[0],
+        trainName: props[1],
+        trainNo: props[2],
+        departtime: props[3],
+        arrivaltime: props[4],
+      },
+    });
+  };
+
+  // props = [id, trainNane, trainNo, departtime, arrivaltime]
+  const selectComeTrain = (props) => {
+    setInfo({
+      ...info,
+      comeTrain: {
+        ...info.comeTrain,
+        id: props[0],
+        trainName: props[1],
+        trainNo: props[2],
+        departtime: props[3],
+        arrivaltime: props[4],
       },
     });
   };
 
   // props = [name, price]
   const selectPackage = (props) => {
-    setImpInfo({
-      ...impInfo,
+    setInfo({
+      ...info,
       package: { name: props[0], price: props[1] },
     });
   };
@@ -76,39 +94,39 @@ const EditPage = ({ editImpInfo, setStep, onClickChangeBtn }) => {
   }, []);
 
   return (
-    <div>
-      {editImpInfo === "goTrain" && (
+    <div className={styles.EditPage}>
+      {editTypeWhat === "goTrain" && (
         <SelectGoTrain
-          departStation={impInfo.goTrain.departstation}
-          arrivalStation={impInfo.goTrain.arrivalstation}
+          departStation={info.goTrain.departstation}
+          arrivalStation={info.goTrain.arrivalstation}
           setStep={setStep}
           onChangeGoTrainGrade={onChangeGoTrainGrade}
-          currentTrainGrade={impInfo.goTrain.trainGrade}
+          currentTrainGrade={info.goTrain.trainGrade}
           onChangeGoTrainPrice={onChangeGoTrainPrice}
           selectGoTrain={selectGoTrain}
           onClickChangeBtn={onClickChangeBtn}
-          preselectedInfo={impInfo.goTrain.trainNo}
+          preselectedInfo={info.goTrain.id}
         />
       )}
-      {editImpInfo === "comeTrain" && (
+      {editTypeWhat === "comeTrain" && (
         <SelectComeTrain
-          departStation={impInfo.comeTrain.departstation}
-          arrivalStation={impInfo.comeTrain.arrivalstation}
+          departStation={info.comeTrain.departstation}
+          arrivalStation={info.comeTrain.arrivalstation}
           setStep={setStep}
           onChangeComeTrainGrade={onChangeComeTrainGrade}
-          currentTrainGrade={impInfo.comeTrain.trainGrade}
+          currentTrainGrade={info.comeTrain.trainGrade}
           onChangeComeTrainPrice={onChangeComeTrainPrice}
           selectComeTrain={selectComeTrain}
           onClickChangeBtn={onClickChangeBtn}
-          preselectedInfo={impInfo.comeTrain.trainNo}
+          preselectedInfo={info.comeTrain.id}
         />
       )}
-      {editImpInfo === "package" && (
+      {editTypeWhat === "package" && (
         <SelectPackage
           setStep={setStep}
           selectPackage={selectPackage}
           onClickChangeBtn={onClickChangeBtn}
-          preselectedInfo={impInfo.package.name}
+          preselectedInfo={info.package.name}
         />
       )}
     </div>

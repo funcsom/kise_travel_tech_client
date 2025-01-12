@@ -33,7 +33,7 @@ function App() {
     region: "",
     date: "",
     day: "",
-    people: 1,
+    people: 0,
     product: { name: "", price: 0 },
     package: "",
     goTrain: {
@@ -64,24 +64,30 @@ function App() {
     region: "",
     date: "",
     day: "",
-    people: 0,
+    people: 1,
     product: { name: "", price: 0 },
     package: { name: "", price: 0 },
     goTrain: {
+      id: "",
+      // trainNo: "",
+      trainName: "",
       trainNo: "",
       trainGrade: "economy",
-      departstation: "부산",
+      departstation: "청량리",
       departtime: "",
-      arrivalstation: "오송",
+      arrivalstation: "동해",
       arrivaltime: "",
       price: 0,
     },
     comeTrain: {
+      id: "",
+      // trainNo: "",
+      trainName: "",
       trainNo: "",
       trainGrade: "economy",
-      departstation: "오송",
+      departstation: "동해",
       departtime: "",
-      arrivalstation: "부산",
+      arrivalstation: "청량리",
       arrivaltime: "",
       price: 0,
     },
@@ -111,7 +117,7 @@ function App() {
             <Route path="/imp">
               <Route path="lovinglocal" element={<ImpLovingLocal />} />
               <Route path="localtrip/:local" element={<ImpLocalTrip />} />
-              <Route path="seedetail" element={<ImpSeeDetail />} />
+              <Route path="seedetail/:id" element={<ImpSeeDetail />} />
               <Route path="selectpeople" element={<ImpSelectPeople />} />
               <Route path="selectdate" element={<ImpSelectDate />} />
               <Route path="selectproduct" element={<ImpSelectProduct />} />

@@ -1,6 +1,7 @@
 .Toggle {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .title {
@@ -18,4 +19,9 @@
 .buttonwrapper {
   width: 24px;
   height: 24px;
+}
+
+.children {
+  display: flex;
+  flex-direction: column;
 }

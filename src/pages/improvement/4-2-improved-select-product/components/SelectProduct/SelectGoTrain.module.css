@@ -10,6 +10,12 @@
   flex-direction: column;
 }
 
+.titlewrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
 .title {
   font: var(--font-t1-sb);
   color: var(--color-label-normal);

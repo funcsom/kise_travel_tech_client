@@ -18,7 +18,7 @@ const PackagePreview = ({ selectedLocal }) => {
   };
 
   useEffect(() => {
-    fetch("/data/improved/packages.json")
+    fetch("/data/improved/products.json")
       .then((res) => res.json())
       .then((data) => {
         const [filtereditem] = data.filter(

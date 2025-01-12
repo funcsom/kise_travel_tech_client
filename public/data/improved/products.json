@@ -37,7 +37,8 @@
         "title": "2024 동트는 택시",
         "subtitle": "KTX+동해관광택시",
         "price": "43600",
-        "img": "capital-0"
+        "img": "/assets/improved/packages/capital/image/capital-0.png",
+        "imgdetail": "/assets/improved/packages/capital/image/capital-0.png"
       },
       {
         "id": "4",
@@ -45,7 +46,8 @@
         "title": "2025 동트는 택시",
         "subtitle": "KTX+동해관광택시",
         "price": "98700",
-        "img": "capital-1"
+        "img": "/assets/improved/packages/capital/image/capital-1.png",
+        "imgdetail": "/assets/improved/packages/capital/image/capital-0.png"
       },
       {
         "id": "5",
@@ -53,7 +55,8 @@
         "title": "2025 동해 시티투어버스",
         "subtitle": "KTX+동해관광택시",
         "price": "55600",
-        "img": "capital-2"
+        "img": "/assets/improved/packages/capital/image/capital-2.png",
+        "imgdetail": "/assets/improved/packages/capital/image/capital-0.png"
       }
     ]
   },

@@ -1,0 +1,7 @@
+.top {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px 12px 16px;
+  font: var(--font-t2-b);
+  color: var(--color-status-informative);
+}

@@ -1,50 +1,409 @@
 [
   {
-    "id": "0",
-    "name": "KTX 845",
-    "stations": [
-      { "station": "부산", "time": "07:01" },
-      { "station": "울산", "time": "07:23" },
-      { "station": "동대구", "time": "07:48" },
-      { "station": "김천구미", "time": "08:11" },
-      { "station": "대전", "time": "08:35" },
-      { "station": "오송", "time": "08:53" }
-    ]
-  },
-  {
     "id": "1",
-    "name": "KTX 848",
+    "name": "KTX-이음",
+    "logo": "/assets/improved/trainlogo/ktx-connect.svg",
+    "no": "841",
     "stations": [
-      { "station": "부산", "time": "07:58" },
-      { "station": "울산", "time": "08:20" },
-      { "station": "동대구", "time": "08:45" },
-      { "station": "김천구미", "time": "09:08" },
-      { "station": "대전", "time": "09:32" },
-      { "station": "오송", "time": "09:50" }
+      { "station": "청량리", "time": "07:16" },
+      { "station": "상봉", "time": "07:22" },
+      { "station": "양평", "time": "07:46" },
+      { "station": "만종", "time": "08:09" },
+      { "station": "횡성", "time": "08:18" },
+      { "station": "평창", "time": "08:34" },
+      { "station": "진부", "time": "08:43" },
+      { "station": "정동진", "time": "09:11" },
+      { "station": "묵호", "time": "09:32" },
+      { "station": "동해", "time": "09:39" }
     ]
   },
   {
     "id": "2",
-    "name": "KTX 345",
+    "name": "무궁화호",
+    "logo": "/assets/improved/trainlogo/korail.jpg",
+    "no": "1631",
     "stations": [
-      { "station": "오송", "time": "19:30" },
-      { "station": "대전", "time": "19:53" },
-      { "station": "김천구미", "time": "20:15" },
-      { "station": "동대구", "time": "20:38" },
-      { "station": "울산", "time": "21:00" },
-      { "station": "부산", "time": "21:24" }
+      { "station": "청량리", "time": "07:34" },
+      { "station": "덕소", "time": "07:49" },
+      { "station": "양평", "time": "08:08" },
+      { "station": "용문", "time": "08:16" },
+      { "station": "지평", "time": "08:25" },
+      { "station": "석불", "time": "08:30" },
+      { "station": "일신", "time": "08:35" },
+      { "station": "매곡", "time": "08:40" },
+      { "station": "양동", "time": "08:44" },
+      { "station": "삼산", "time": "08:49" },
+      { "station": "서원주", "time": "08:57" },
+      { "station": "원주", "time": "09:05" },
+      { "station": "제천", "time": "09:31" },
+      { "station": "영월", "time": "10:05" },
+      { "station": "예미", "time": "10:25" },
+      { "station": "민둥산", "time": "10:47" },
+      { "station": "사북", "time": "10:56" },
+      { "station": "고한", "time": "11:03" },
+      { "station": "태백", "time": "11:17" },
+      { "station": "동백산", "time": "11:29" },
+      { "station": "도계", "time": "11:45" },
+      { "station": "신기", "time": "12:02" },
+      { "station": "동해", "time": "12:25" }
     ]
   },
   {
     "id": "3",
-    "name": "KTX 348",
+    "name": "무궁화호",
+    "logo": "/assets/improved/trainlogo/korail.jpg",
+    "no": "1633",
     "stations": [
-      { "station": "오송", "time": "20:20" },
-      { "station": "대전", "time": "20:43" },
-      { "station": "김천구미", "time": "21:05" },
-      { "station": "동대구", "time": "21:28" },
-      { "station": "울산", "time": "21:50" },
-      { "station": "부산", "time": "22:15" }
+      { "station": "청량리", "time": "09:57" },
+      { "station": "덕소", "time": "10:12" },
+      { "station": "양평", "time": "10:31" },
+      { "station": "용문", "time": "10:39" },
+      { "station": "지평", "time": "10:48" },
+      { "station": "석불", "time": "10:53" },
+      { "station": "일신", "time": "10:58" },
+      { "station": "매곡", "time": "11:03" },
+      { "station": "양동", "time": "11:07" },
+      { "station": "삼산", "time": "11:12" },
+      { "station": "서원주", "time": "11:20" },
+      { "station": "원주", "time": "11:28" },
+      { "station": "제천", "time": "11:54" },
+      { "station": "영월", "time": "12:28" },
+      { "station": "예미", "time": "12:48" },
+      { "station": "민둥산", "time": "13:10" },
+      { "station": "사북", "time": "13:19" },
+      { "station": "고한", "time": "13:26" },
+      { "station": "태백", "time": "13:40" },
+      { "station": "동백산", "time": "13:52" },
+      { "station": "도계", "time": "14:08" },
+      { "station": "신기", "time": "14:25" },
+      { "station": "동해", "time": "14:48" }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "KTX-이음",
+    "logo": "/assets/improved/trainlogo/ktx-connect.svg",
+    "no": "843",
+    "stations": [
+      { "station": "청량리", "time": "10:59" },
+      { "station": "상봉", "time": "11:05" },
+      { "station": "양평", "time": "11:29" },
+      { "station": "만종", "time": "11:52" },
+      { "station": "횡성", "time": "12:01" },
+      { "station": "평창", "time": "12:17" },
+      { "station": "진부", "time": "12:26" },
+      { "station": "정동진", "time": "12:54" },
+      { "station": "묵호", "time": "13:15" },
+      { "station": "동해", "time": "13:22" }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "무궁화호",
+    "logo": "/assets/improved/trainlogo/korail.jpg",
+    "no": "1635",
+    "stations": [
+      { "station": "청량리", "time": "12:10" },
+      { "station": "덕소", "time": "12:25" },
+      { "station": "양평", "time": "12:44" },
+      { "station": "용문", "time": "12:52" },
+      { "station": "지평", "time": "13:01" },
+      { "station": "석불", "time": "13:06" },
+      { "station": "일신", "time": "13:11" },
+      { "station": "매곡", "time": "13:16" },
+      { "station": "양동", "time": "13:20" },
+      { "station": "삼산", "time": "13:25" },
+      { "station": "서원주", "time": "13:33" },
+      { "station": "원주", "time": "13:41" },
+      { "station": "제천", "time": "14:07" },
+      { "station": "영월", "time": "14:41" },
+      { "station": "예미", "time": "15:01" },
+      { "station": "민둥산", "time": "15:23" },
+      { "station": "사북", "time": "15:32" },
+      { "station": "고한", "time": "15:39" },
+      { "station": "태백", "time": "15:53" },
+      { "station": "동백산", "time": "16:05" },
+      { "station": "도계", "time": "16:21" },
+      { "station": "신기", "time": "16:38" },
+      { "station": "동해", "time": "17:01" }
+    ]
+  },
+  {
+    "id": "6",
+    "name": "KTX-이음",
+    "logo": "/assets/improved/trainlogo/ktx-connect.svg",
+    "no": "845",
+    "stations": [
+      { "station": "청량리", "time": "15:01" },
+      { "station": "상봉", "time": "15:07" },
+      { "station": "양평", "time": "15:31" },
+      { "station": "만종", "time": "15:54" },
+      { "station": "횡성", "time": "16:03" },
+      { "station": "평창", "time": "16:19" },
+      { "station": "진부", "time": "16:28" },
+      { "station": "정동진", "time": "16:56" },
+      { "station": "묵호", "time": "17:17" },
+      { "station": "동해", "time": "17:24" }
+    ]
+  },
+  {
+    "id": "7",
+    "name": "무궁화호",
+    "logo": "/assets/improved/trainlogo/korail.jpg",
+    "no": "1637",
+    "stations": [
+      { "station": "청량리", "time": "17:08" },
+      { "station": "원주", "time": "18:02" },
+      { "station": "제천", "time": "18:26" },
+      { "station": "영월", "time": "18:56" },
+      { "station": "민둥산", "time": "19:35" },
+      { "station": "사북", "time": "19:44" },
+      { "station": "태백", "time": "20:04" },
+      { "station": "도계", "time": "20:30" },
+      { "station": "동해", "time": "21:08" }
+    ]
+  },
+  {
+    "id": "8",
+    "name": "KTX-마음",
+    "logo": "/assets/improved/trainlogo/ktx.svg",
+    "no": "1191",
+    "stations": [
+      { "station": "청량리", "time": "18:20" },
+      { "station": "상봉", "time": "18:26" },
+      { "station": "양평", "time": "18:50" },
+      { "station": "만종", "time": "19:13" },
+      { "station": "횡성", "time": "19:22" },
+      { "station": "평창", "time": "19:38" },
+      { "station": "진부", "time": "19:47" },
+      { "station": "정동진", "time": "20:15" },
+      { "station": "묵호", "time": "20:36" },
+      { "station": "동해", "time": "20:43" }
+    ]
+  },
+  {
+    "id": "9",
+    "name": "무궁화호",
+    "logo": "/assets/improved/trainlogo/korail.jpg",
+    "no": "1634",
+    "stations": [
+      { "station": "청량리", "time": "19:10" },
+      { "station": "덕소", "time": "19:25" },
+      { "station": "양평", "time": "19:44" },
+      { "station": "용문", "time": "19:52" },
+      { "station": "지평", "time": "20:01" },
+      { "station": "석불", "time": "20:06" },
+      { "station": "일신", "time": "20:11" },
+      { "station": "매곡", "time": "20:16" },
+      { "station": "양동", "time": "20:20" },
+      { "station": "삼산", "time": "20:25" },
+      { "station": "서원주", "time": "20:33" },
+      { "station": "원주", "time": "20:41" },
+      { "station": "제천", "time": "21:07" },
+      { "station": "영월", "time": "21:41" },
+      { "station": "예미", "time": "22:01" },
+      { "station": "민둥산", "time": "22:23" },
+      { "station": "사북", "time": "22:32" },
+      { "station": "고한", "time": "22:39" },
+      { "station": "태백", "time": "22:53" },
+      { "station": "동백산", "time": "23:05" },
+      { "station": "도계", "time": "23:21" },
+      { "station": "신기", "time": "23:38" },
+      { "station": "동해", "time": "00:01" }
+    ]
+  },
+  {
+    "id": "10",
+    "name": "KTX-이음",
+    "logo": "/assets/improved/trainlogo/ktx-connect.svg",
+    "no": "849",
+    "stations": [
+      { "station": "청량리", "time": "19:50" },
+      { "station": "상봉", "time": "19:56" },
+      { "station": "양평", "time": "20:20" },
+      { "station": "만종", "time": "20:43" },
+      { "station": "횡성", "time": "20:52" },
+      { "station": "평창", "time": "21:08" },
+      { "station": "진부", "time": "21:17" },
+      { "station": "정동진", "time": "21:45" },
+      { "station": "묵호", "time": "22:06" },
+      { "station": "동해", "time": "22:13" }
+    ]
+  },
+  {
+    "id": "11",
+    "name": "무궁화호",
+    "logo": "/assets/improved/trainlogo/korail.jpg",
+    "no": "1632",
+    "stations": [
+      { "station": "동해", "time": "05:50" },
+      { "station": "도계", "time": "06:28" },
+      { "station": "태백", "time": "06:54" },
+      { "station": "사북", "time": "07:14" },
+      { "station": "민둥산", "time": "07:23" },
+      { "station": "영월", "time": "08:02" },
+      { "station": "제천", "time": "08:32" },
+      { "station": "원주", "time": "08:56" },
+      { "station": "청량리", "time": "09:50" }
+    ]
+  },
+  {
+    "id": "12",
+    "name": "KTX-이음",
+    "logo": "/assets/improved/trainlogo/ktx-connect.svg",
+    "no": "842",
+    "stations": [
+      { "station": "동해", "time": "07:04" },
+      { "station": "묵호", "time": "07:11" },
+      { "station": "정동진", "time": "07:32" },
+      { "station": "진부", "time": "08:00" },
+      { "station": "평창", "time": "08:09" },
+      { "station": "횡성", "time": "08:25" },
+      { "station": "만종", "time": "08:34" },
+      { "station": "양평", "time": "08:57" },
+      { "station": "상봉", "time": "09:21" },
+      { "station": "청량리", "time": "09:27" }
+    ]
+  },
+  {
+    "id": "13",
+    "name": "KTX-마음",
+    "logo": "/assets/improved/trainlogo/ktx.svg",
+    "no": "1192",
+    "stations": [
+      { "station": "동해", "time": "07:43" },
+      { "station": "묵호", "time": "07:50" },
+      { "station": "정동진", "time": "08:11" },
+      { "station": "진부", "time": "08:39" },
+      { "station": "평창", "time": "08:48" },
+      { "station": "횡성", "time": "09:04" },
+      { "station": "만종", "time": "09:13" },
+      { "station": "양평", "time": "09:36" },
+      { "station": "상봉", "time": "10:00" },
+      { "station": "청량리", "time": "10:06" }
+    ]
+  },
+  {
+    "id": "14",
+    "name": "KTX-이음",
+    "logo": "/assets/improved/trainlogo/ktx-connect.svg",
+    "no": "844",
+    "stations": [
+      { "station": "동해", "time": "10:04" },
+      { "station": "묵호", "time": "10:11" },
+      { "station": "정동진", "time": "10:32" },
+      { "station": "진부", "time": "11:00" },
+      { "station": "평창", "time": "11:09" },
+      { "station": "횡성", "time": "11:25" },
+      { "station": "만종", "time": "11:34" },
+      { "station": "양평", "time": "11:57" },
+      { "station": "상봉", "time": "12:21" },
+      { "station": "청량리", "time": "12:27" }
+    ]
+  },
+  {
+    "id": "15",
+    "name": "무궁화호",
+    "logo": "/assets/improved/trainlogo/korail.jpg",
+    "no": "1634",
+    "stations": [
+      { "station": "동해", "time": "12:01" },
+      { "station": "도계", "time": "12:39" },
+      { "station": "태백", "time": "13:05" },
+      { "station": "사북", "time": "13:25" },
+      { "station": "민둥산", "time": "13:34" },
+      { "station": "영월", "time": "14:13" },
+      { "station": "제천", "time": "14:43" },
+      { "station": "원주", "time": "15:07" },
+      { "station": "청량리", "time": "16:01" }
+    ]
+  },
+  {
+    "id": "16",
+    "name": "KTX-이음",
+    "logo": "/assets/improved/trainlogo/ktx-connect.svg",
+    "no": "846",
+    "stations": [
+      { "station": "동해", "time": "14:02" },
+      { "station": "묵호", "time": "14:09" },
+      { "station": "정동진", "time": "14:30" },
+      { "station": "진부", "time": "14:58" },
+      { "station": "평창", "time": "15:07" },
+      { "station": "횡성", "time": "15:23" },
+      { "station": "만종", "time": "15:32" },
+      { "station": "양평", "time": "15:55" },
+      { "station": "상봉", "time": "16:19" },
+      { "station": "청량리", "time": "16:25" }
+    ]
+  },
+  {
+    "id": "17",
+    "name": "무궁화호",
+    "logo": "/assets/improved/trainlogo/korail.jpg",
+    "no": "1636",
+    "stations": [
+      { "station": "동해", "time": "15:21" },
+      { "station": "도계", "time": "15:59" },
+      { "station": "태백", "time": "16:25" },
+      { "station": "사북", "time": "16:45" },
+      { "station": "민둥산", "time": "16:54" },
+      { "station": "영월", "time": "17:33" },
+      { "station": "제천", "time": "18:03" },
+      { "station": "원주", "time": "18:27" },
+      { "station": "청량리", "time": "19:21" }
+    ]
+  },
+  {
+    "id": "18",
+    "name": "무궁화호",
+    "logo": "/assets/improved/trainlogo/korail.jpg",
+    "no": "1638",
+    "stations": [
+      { "station": "동해", "time": "18:14" },
+      { "station": "도계", "time": "18:52" },
+      { "station": "태백", "time": "19:18" },
+      { "station": "사북", "time": "19:38" },
+      { "station": "민둥산", "time": "19:47" },
+      { "station": "영월", "time": "20:26" },
+      { "station": "제천", "time": "20:56" },
+      { "station": "원주", "time": "21:20" },
+      { "station": "청량리", "time": "22:14" }
+    ]
+  },
+  {
+    "id": "19",
+    "name": "KTX-이음",
+    "logo": "/assets/improved/trainlogo/ktx-connect.svg",
+    "no": "848",
+    "stations": [
+      { "station": "동해", "time": "19:04" },
+      { "station": "묵호", "time": "19:11" },
+      { "station": "정동진", "time": "19:32" },
+      { "station": "진부", "time": "20:00" },
+      { "station": "평창", "time": "20:09" },
+      { "station": "횡성", "time": "20:25" },
+      { "station": "만종", "time": "20:34" },
+      { "station": "양평", "time": "20:57" },
+      { "station": "상봉", "time": "21:21" },
+      { "station": "청량리", "time": "21:27" }
+    ]
+  },
+  {
+    "id": "20",
+    "name": "KTX-이음",
+    "logo": "/assets/improved/trainlogo/ktx-connect.svg",
+    "no": "850",
+    "stations": [
+      { "station": "동해", "time": "21:32" },
+      { "station": "묵호", "time": "21:39" },
+      { "station": "정동진", "time": "22:00" },
+      { "station": "진부", "time": "22:28" },
+      { "station": "평창", "time": "22:37" },
+      { "station": "횡성", "time": "22:53" },
+      { "station": "만종", "time": "23:02" },
+      { "station": "양평", "time": "23:25" },
+      { "station": "상봉", "time": "23:49" },
+      { "station": "청량리", "time": "23:55" }
     ]
   }
 ]

@@ -37,6 +37,9 @@ const SelectPackage = ({
               }
               setStep((prev) => prev + 1);
               selectPackage([item.name, item.price]);
+              console.log(
+                `selected Package is ... : ${[item.name, item.price]}`
+              );
             }}
           >
             {preselectedInfo === item.name ? (

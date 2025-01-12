@@ -9,6 +9,8 @@
   background-color: var(--color-background-normal-normal);
   color: var(--color-label-assistive);
   border-bottom: 4px solid var(--color-line-normal);
+  justify-content: center;
+  align-items: center;
 }
 
 .active {

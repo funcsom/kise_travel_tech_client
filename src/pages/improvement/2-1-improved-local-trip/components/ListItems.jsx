@@ -2,9 +2,9 @@ import styles from "./ListItems.module.css";
 
 const formatPrice = (price) => price.toLocaleString("ko-KR");
 
-const ListItems = ({ title, subtitle, price, img }) => {
+const ListItems = ({ title, subtitle, price, img, onClickProduct }) => {
   return (
-    <div className={styles.ListItems}>
+    <div className={styles.ListItems} onClick={onClickProduct}>
       <div className={styles.imagewrapper}>
         <img className={styles.image} src={img} alt="" />
       </div>

@@ -7,123 +7,123 @@ import { ImpUserContext } from "../../../../App";
 import { useContext } from "react";
 import TotalPrice from "../components/TotalPrice";
 
+import styles from "./PrgrPage.module.css";
+
 // Progress 페이지
-const PrgrPage = ({ step, setStep, onClickChangeBtn }) => {
-  const { impInfo, setImpInfo } = useContext(ImpUserContext);
-
+const PrgrPage = ({ step, setStep, onClickChangeBtn, info, setInfo }) => {
   const onChangeGoTrainGrade = (grade) => {
-    setImpInfo({
-      ...impInfo,
-      goTrain: { ...impInfo.goTrain, trainGrade: grade },
-    });
-  };
-
-  const onChangeComeTrainGrade = (grade) => {
-    setImpInfo({
-      ...impInfo,
-      comeTrain: { ...impInfo.comeTrain, trainGrade: grade },
-    });
-  };
-
-  const onChangeGoTrainPrice = (price) => {
-    setImpInfo({
-      ...impInfo,
-      goTrain: { ...impInfo.goTrain, price: price },
-    });
-  };
-
-  const onChangeComeTrainPrice = (price) => {
-    setImpInfo({
-      ...impInfo,
-      comeTrain: { ...impInfo.comeTrain, price: price },
-    });
-  };
-
-  // props = [trainNo, departtime, arrivaltime]
-  const selectGoTrain = (props) => {
-    setImpInfo({
-      ...impInfo,
+    setInfo({
+      ...info,
       goTrain: {
-        ...impInfo.goTrain,
-        trainNo: props[0],
-        departtime: props[1],
-        arrivaltime: props[2],
+        ...info.goTrain,
+        trainGrade: grade,
+        price: grade === "economy" ? 59800 : 68300,
       },
     });
   };
 
-  // props = [trainNo, departtime, arrivaltime]
-  const selectComeTrain = (props) => {
-    setImpInfo({
-      ...impInfo,
+  const onChangeComeTrainGrade = (grade) => {
+    setInfo({
+      ...info,
       comeTrain: {
-        ...impInfo.comeTrain,
-        trainNo: props[0],
-        departtime: props[1],
-        arrivaltime: props[2],
+        ...info.comeTrain,
+        trainGrade: grade,
+        price: grade === "economy" ? 59800 : 68300,
+      },
+    });
+  };
+
+  // props = [id, trainNane, trainNo, departtime, arrivaltime]
+  const selectGoTrain = (props) => {
+    setInfo({
+      ...info,
+      goTrain: {
+        ...info.goTrain,
+        id: props[0],
+        trainName: props[1],
+        trainNo: props[2],
+        departtime: props[3],
+        arrivaltime: props[4],
+      },
+    });
+  };
+
+  // props = [id, trainNane, trainNo, departtime, arrivaltime]
+  const selectComeTrain = (props) => {
+    setInfo({
+      ...info,
+      comeTrain: {
+        ...info.comeTrain,
+        id: props[0],
+        trainName: props[1],
+        trainNo: props[2],
+        departtime: props[3],
+        arrivaltime: props[4],
       },
     });
   };
 
   // props = [name, price]
   const selectPackage = (props) => {
-    setImpInfo({
-      ...impInfo,
+    setInfo({
+      ...info,
       package: { name: props[0], price: props[1] },
     });
   };
 
   return (
-    <div>
-      <div
-        className="selectedzone"
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          padding: "20px 16px 10px 16px",
-          gap: "10px",
-        }}
-      >
+    <div className={styles.PrgrPage}>
+      <div className={styles.selectedzone}>
         {/* 데이터가 있는 것들은 여기서 동적으로 불러올 수 있도록 하기 */}
-        {impInfo.goTrain.trainNo && (
-          <SelectedItem onClickChangeBtn={onClickChangeBtn} info="goTrain" />
+        {info.goTrain.trainNo && (
+          <SelectedItem
+            onClickChangeBtn={onClickChangeBtn}
+            type="goTrain"
+            info={info}
+          />
         )}
-        {impInfo.comeTrain.trainNo && (
-          <SelectedItem onClickChangeBtn={onClickChangeBtn} info="comeTrain" />
+        {info.comeTrain.trainNo && (
+          <SelectedItem
+            onClickChangeBtn={onClickChangeBtn}
+            type="comeTrain"
+            info={info}
+          />
         )}
-        {impInfo.package.name && (
-          <SelectedItem onClickChangeBtn={onClickChangeBtn} info="package" />
+        {info.package.name && (
+          <SelectedItem
+            onClickChangeBtn={onClickChangeBtn}
+            type="package"
+            info={info}
+          />
         )}
       </div>
       {/* step state에 따라서 선택할 정보 고르기 */}
       {step === 1 && (
         <SelectGoTrain
-          departStation={impInfo.goTrain.departstation}
-          arrivalStation={impInfo.goTrain.arrivalstation}
+          departStation={info.goTrain.departstation}
+          arrivalStation={info.goTrain.arrivalstation}
           setStep={setStep}
           onChangeGoTrainGrade={onChangeGoTrainGrade}
-          currentTrainGrade={impInfo.goTrain.trainGrade}
-          onChangeGoTrainPrice={onChangeGoTrainPrice}
+          currentTrainGrade={info.goTrain.trainGrade}
           selectGoTrain={selectGoTrain}
-          preselectedInfo={impInfo.goTrain.trainNo}
+          preselectedInfo={info.goTrain.trainNo}
         />
       )}
       {step === 2 && (
         <SelectComeTrain
-          departStation={impInfo.comeTrain.departstation}
-          arrivalStation={impInfo.comeTrain.arrivalstation}
+          departStation={info.comeTrain.departstation}
+          arrivalStation={info.comeTrain.arrivalstation}
           setStep={setStep}
           onChangeComeTrainGrade={onChangeComeTrainGrade}
-          currentTrainGrade={impInfo.comeTrain.trainGrade}
-          onChangeComeTrainPrice={onChangeComeTrainPrice}
+          currentTrainGrade={info.comeTrain.trainGrade}
           selectComeTrain={selectComeTrain}
-          preselectedInfo={impInfo.comeTrain.trainNo}
+          preselectedInfo={info.comeTrain.trainNo}
         />
       )}
       {step === 3 && (
         <SelectPackage setStep={setStep} selectPackage={selectPackage} />
       )}
-      {step === 4 && <TotalPrice />}
+      {step === 4 && <TotalPrice info={info} />}
     </div>
   );
 };

@@ -11,7 +11,7 @@ const SelectDepartStation = (props) => {
         <SelectBox />
       </div>
       <div className={styles.arrow}>
-        <img src={arrowstation} alt="" />
+        <img src={arrowstation} alt="" width={16} />
       </div>
       <div className={styles.stationwrapper}>
         <div>도착</div>

@@ -14,7 +14,6 @@ const SelectComeTrain = ({
   setStep,
   onChangeComeTrainGrade,
   currentTrainGrade,
-  onChangeComeTrainPrice,
   selectComeTrain,
   onClickChangeBtn,
   preselectedInfo,
@@ -28,10 +27,7 @@ const SelectComeTrain = ({
         // console.log("받아온 데이터 =>", data);
         setMyTrainList(filterMyTrainList(data, departStation, arrivalStation));
       });
-    if (currentTrainGrade === "economy" && preselectedInfo)
-      onChangeComeTrainPrice(59800);
-    else if (currentTrainGrade === "business" && preselectedInfo)
-      onChangeComeTrainPrice(68300);
+    onChangeComeTrainGrade(currentTrainGrade);
   }, []);
 
   return (
@@ -159,20 +155,41 @@ const SelectComeTrain = ({
                 onClickChangeBtn && onClickChangeBtn();
               }
               selectComeTrain([
+                item.id,
                 item.name,
+                item.no,
                 item.stations[0].time,
                 item.stations[1].time,
               ]);
               setStep((prev) => prev + 1);
+              console.log(
+                `selected ComeTrain is ... : ${[
+                  item.id,
+                  item.name,
+                  item.no,
+                  item.stations[0].time,
+                  item.stations[1].time,
+                ]}`
+              );
             }}
           >
-            {preselectedInfo === item.name ? (
+            {preselectedInfo === item.id ? (
               <ListItemWrapper type="selected">
-                <TrainListItem trainNo={item.name} trainInfo={item.stations} />
+                <TrainListItem
+                  logo={item.logo}
+                  trainNo={item.name}
+                  no={item.no}
+                  trainInfo={item.stations}
+                />
               </ListItemWrapper>
             ) : (
               <ListItemWrapper type="default">
-                <TrainListItem trainNo={item.name} trainInfo={item.stations} />
+                <TrainListItem
+                  logo={item.logo}
+                  trainNo={item.name}
+                  no={item.no}
+                  trainInfo={item.stations}
+                />
               </ListItemWrapper>
             )}
           </button>

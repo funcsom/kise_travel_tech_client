@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 20px 16px;
+  color: var(--color-label-normal);
+}
+
+.detailwrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--color-line-normal);
+}
+
+.itemwrapper {
+  display: flex;
+  justify-content: space-between;
+  font: var(--font-b3-no-m);
+}
+
+.totalwrapper {
+  display: flex;
+  justify-content: space-between;
+  font: var(--font-b2-no-b);
+}
+
+.price {
+  color: var(--color-primary-normal);
+}

@@ -1,11 +1,15 @@
+import { useContext } from "react";
 import styles from "./TotalPrice.module.css";
+import { ImpUserContext } from "../../../../App";
 
-const TotalPrice = ({ info }) => {
+const TotalPrice = () => {
+  const { impInfo, setImpInfo } = useContext(ImpUserContext);
+
   // 해당 컴포넌트를 마지막 예약완료 페이지에서도 쓰기 때문에 주의
-  const people = info.people;
-  const goTrainPrice = info.goTrain.price * people;
-  const comeTrainPrice = info.comeTrain.price * people;
-  const packagePrice = info.package.price * people;
+  const people = impInfo.people;
+  const goTrainPrice = impInfo.goTrain.price * people;
+  const comeTrainPrice = impInfo.comeTrain.price * people;
+  const packagePrice = impInfo.package.price * people;
 
   const formatPrice = (price) => price.toLocaleString("ko-KR");
   return (

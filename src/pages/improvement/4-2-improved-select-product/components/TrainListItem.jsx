@@ -9,28 +9,37 @@ function getTimeDifference(time1, time2) {
   const [hours2, minutes2] = time2.split(":").map(Number);
 
   // 첫 번째 시간과 두 번째 시간의 총 분 계산
-  const totalMinutes1 = hours1 * 60 + minutes1;
-  const totalMinutes2 = hours2 * 60 + minutes2;
+  let totalMinutes1 = hours1 * 60 + minutes1;
+  let totalMinutes2 = hours2 * 60 + minutes2;
 
-  // 두 시간의 차이를 절대값으로 계산
-  const differenceInMinutes = Math.abs(totalMinutes2 - totalMinutes1);
+  // 시간1이 시간2보다 큰 경우, 시간2에 24시간(1440분)을 더함
+  if (totalMinutes1 > totalMinutes2) {
+    totalMinutes2 += 24 * 60; // 24시간을 분으로 변환하여 더함
+  }
+
+  // 두 시간의 차이 계산
+  const differenceInMinutes = totalMinutes2 - totalMinutes1;
 
   // 차이를 시간과 분으로 변환
   const hoursDiff = Math.floor(differenceInMinutes / 60);
   const minutesDiff = differenceInMinutes % 60;
 
-  // 결과 반환
-  return `${hoursDiff}:${minutesDiff} 소요`;
+  // 분이 한 자리 수일 경우 앞에 0을 붙여서 반환
+  return `${hoursDiff}:${
+    minutesDiff < 10 ? "0" + minutesDiff : minutesDiff
+  } 소요`;
 }
 
-const TrainListItem = ({ trainNo, Num = "001", trainInfo }) => {
+const TrainListItem = ({ logo, trainNo, no, trainInfo }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.head}>
         <div className={styles.trainnoinfo}>
-          <InfoItem type="logo">Logo</InfoItem>
+          <InfoItem type="logo">
+            <img src={logo} alt="" height={16} />
+          </InfoItem>
           <InfoItem type="num">{trainNo}</InfoItem>
-          <InfoItem type="sub">{Num}</InfoItem>
+          <InfoItem type="sub">{no}</InfoItem>
         </div>
         <InfoItem>20석 남음</InfoItem>
       </div>

@@ -4,14 +4,19 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
 .imagewrapper {
   overflow: hidden;
+  height: 165px;
 }
 
 .image {
+  width: 100%; /* 추가 */
+  height: 100%; /* 추가 */
   object-fit: cover;
+  object-position: center;
 }
 
 .textwrapper {
@@ -37,6 +42,11 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  flex-shrink: 0;
+  width: 164px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .imagesmallwrapper {
@@ -47,7 +57,10 @@
 }
 
 .smallimage {
+  width: 100%; /* 추가 */
+  height: 100%; /* 추가 */
   object-fit: cover;
+  object-position: center;
 }
 
 .smalltextwrapper {
@@ -62,6 +75,15 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
+  width: 100%; /* 추가 */
+}
+
+.smalltitle,
+.smallsubtitle {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  width: 100%; /* 추가 */
 }
 
 .smalltitle {

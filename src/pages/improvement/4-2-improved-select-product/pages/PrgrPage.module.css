@@ -1,0 +1,12 @@
+.PrgrPage {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.selectedzone {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 16px 10px 16px;
+  gap: 10px;
+}

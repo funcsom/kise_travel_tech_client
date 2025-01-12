@@ -21,6 +21,13 @@ const BottomModal = ({
   const [selectedCityCode, setSelectedCityCode] = useState(11);
   const [stationList, setStationList] = useState([]);
 
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   // 도시 코드 목록 가져오기
   useEffect(() => {
     fetch(

@@ -2,9 +2,9 @@ import styles from "./CarouselItems.module.css";
 
 const formatPrice = (price) => price.toLocaleString("ko-KR");
 
-const CarouselItems = ({ img, title, subtitle }) => {
+const CarouselItems = ({ img, title, subtitle, onClickProduct }) => {
   return (
-    <div className={styles.CarouselItems}>
+    <div className={styles.CarouselItems} onClick={onClickProduct}>
       <div className={styles.imagewrapper}>
         <img className={styles.image} src={img} alt="" />
       </div>
@@ -18,9 +18,15 @@ const CarouselItems = ({ img, title, subtitle }) => {
 
 export default CarouselItems;
 
-export const CarouselSmallItems = ({ img, title, subtitle, price }) => {
+export const CarouselSmallItems = ({
+  img,
+  title,
+  subtitle,
+  price,
+  onClickProduct,
+}) => {
   return (
-    <div className={styles.CarouselSmallItems}>
+    <div className={styles.CarouselSmallItems} onClick={onClickProduct}>
       <div className={styles.imagesmallwrapper}>
         <img className={styles.smallimage} src={img} alt="" />
       </div>

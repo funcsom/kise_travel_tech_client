@@ -9,10 +9,11 @@ const Button = ({
   children,
   onClickButton,
 }) => {
+  const nothing = () => {};
   return (
     <button
       className={`${styles.Button} ${styles[rate]} ${styles[type]} ${styles[state]} ${styles[size]} ${styles[shape]}`}
-      onClick={onClickButton}
+      onClick={state === "default" ? onClickButton : nothing}
     >
       {children}
     </button>

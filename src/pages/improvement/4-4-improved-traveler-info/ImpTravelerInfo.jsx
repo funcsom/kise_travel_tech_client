@@ -11,6 +11,7 @@ import ReservatorInfo from "./components/ReservatorInfo";
 import TravelerInfo from "./components/TravelerInfo";
 
 import iconprev from "../../../assets/icon/icon_previous.svg";
+import styles from "./ImpTravelerInfo.module.css";
 
 const ImpTravelerInfo = () => {
   const { impInfo, setImpInfo } = useContext(ImpUserContext);
@@ -34,9 +35,9 @@ const ImpTravelerInfo = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(information);
-  }, [information]);
+  // useEffect(() => {
+  //   console.log(information);
+  // }, [information]);
 
   const handleClickNext = () => {
     if (!information.phone) {
@@ -47,7 +48,7 @@ const ImpTravelerInfo = () => {
       focusOn(emailRef);
     } else if (!information.travelerName) {
       alert("여행자 이름을 입력해주세요.");
-      // travelerName focus
+      focusOn(travelerNameRef);
     } else {
       handleNext();
     }
@@ -79,7 +80,7 @@ const ImpTravelerInfo = () => {
       />
       <Progressbar nthChild={4} />
       <main>
-        <div style={{ padding: "10px 16px" }}>
+        <div className={styles.reservatorinfo}>
           <ReservatorInfo
             information={information}
             setInformation={setInformaton}
@@ -94,7 +95,7 @@ const ImpTravelerInfo = () => {
             backgroundColor: "var(--color-background-normal-alternative)",
           }}
         ></div>
-        <div style={{ padding: "24px 16px" }}>
+        <div className={styles.travelerinfo}>
           <TravelerInfo
             information={information}
             setInformation={setInformaton}

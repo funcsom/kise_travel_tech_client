@@ -7,15 +7,21 @@
 }
 
 .imagewrapper {
-  overflow: hidden;
-  border-radius: 10px;
-  background-color: gray;
   width: 100px;
   height: 100px;
+  background-color: gray;
+  overflow: hidden;
+  border-radius: 12px;
+  display: flex; /* 추가 */
+  justify-content: center; /* 추가 */
+  align-items: center; /* 추가 */
 }
 
-.smallimage {
+.image {
+  width: 100%; /* 추가 */
+  height: 100%; /* 추가 */
   object-fit: cover;
+  object-position: center;
 }
 
 .textwrapper {

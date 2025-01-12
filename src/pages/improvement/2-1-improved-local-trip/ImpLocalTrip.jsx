@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { ImpUserContext } from "../../../App";
+
+import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import Header from "../../../components/Header";
@@ -26,6 +28,7 @@ const ImpLocalTrip = () => {
 
   const navigate = useNavigate();
   const params = useParams();
+  const { impInfo, setImpInfo } = useContext(ImpUserContext);
 
   const changeLocal = (props) => {
     navigate(`/imp/localtrip/${props}`);
@@ -34,6 +37,25 @@ const ImpLocalTrip = () => {
   const deleteStation = (node) => {
     setSelectedStation(selectedStation.filter((station) => station !== node));
   };
+
+  // props로 products id가 들어감
+  const onClickProduct = (props) => {
+    setImpInfo({ ...impInfo, region: params.local });
+    navigate(`/imp/seedetail/${props}`);
+    console.log(`go to ${params.local} product ... ${props}`);
+  };
+
+  useEffect(() => {
+    fetch("/data/improved/products.json")
+      .then((res) => res.json())
+      .then((data) => {
+        const [filtereditem] = data.filter(
+          (item) => item.local === params.local
+        );
+        setPackages(filtereditem.list);
+        console.log(filtereditem.list);
+      });
+  }, [selectedLocal]);
 
   /**
    * 지역별여행 맨 처음에 나오는 Carousel
@@ -49,6 +71,7 @@ const ImpLocalTrip = () => {
       title={i.title}
       subtitle={i.subtitle}
       img={i.img}
+      onClickProduct={() => onClickProduct(i.id)}
     />
   ));
 
@@ -66,6 +89,7 @@ const ImpLocalTrip = () => {
       subtitle={i.subtitle}
       img={i.img}
       price={i.price}
+      onClickProduct={() => onClickProduct(i.id)}
     />
   ));
 
@@ -82,6 +106,7 @@ const ImpLocalTrip = () => {
       subtitle={i.subtitle}
       img={i.img}
       price={i.price}
+      onClickProduct={() => onClickProduct(i.id)}
     />
   ));
 
@@ -98,20 +123,9 @@ const ImpLocalTrip = () => {
       subtitle={i.subtitle}
       img={i.img}
       price={i.price}
+      onClickProduct={() => onClickProduct(i.id)}
     />
   ));
-
-  useEffect(() => {
-    fetch("/data/improved/packages.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const [filtereditem] = data.filter(
-          (item) => item.local === params.local
-        );
-        setPackages(filtereditem.list);
-        console.log(filtereditem.list);
-      });
-  }, [selectedLocal]);
 
   const handlePrev = () => {
     navigate(-1);
@@ -159,7 +173,8 @@ const ImpLocalTrip = () => {
             subtitle="푸른 동해와 함께 시원한 바람을 맞으며 즐겨봐요"
             color="secondaryalternative"
           >
-            <SmallCarousel elems={carouselItems2} />
+            <div className={styles.slideitems}>{carouselItems2}</div>
+            {/* <SmallCarousel elems={carouselItems2} /> */}
           </Section>
         )}
 
@@ -172,7 +187,8 @@ const ImpLocalTrip = () => {
             subtitle="강원도의 문화와 예술을 경험하며 잊지 못할 감동을 만들어봐요"
             color="lightViolet"
           >
-            <SmallCarousel elems={carouselItems3} />
+            <div className={styles.slideitems}>{carouselItems3}</div>
+            {/* <SmallCarousel elems={carouselItems3} /> */}
           </Section>
         )}
 

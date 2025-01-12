@@ -19,7 +19,7 @@ const Toggle = ({ title, children }) => {
           )}
         </button>
       </div>
-      {isOpen && <div>{children}</div>}
+      {isOpen && <div className={styles.children}>{children}</div>}
     </div>
   );
 };

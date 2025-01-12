@@ -1,0 +1,11 @@
+.reservatorinfo {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 16px;
+}
+
+.travelerinfo {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px;
+}

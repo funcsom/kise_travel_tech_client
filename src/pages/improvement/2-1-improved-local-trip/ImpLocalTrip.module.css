@@ -48,3 +48,15 @@
   flex-direction: column;
   padding: 0 16px 16px 16px;
 }
+
+.slideitems {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 0 16px;
+}
+
+.slideitems::-webkit-scrollbar {
+  display: none;
+}

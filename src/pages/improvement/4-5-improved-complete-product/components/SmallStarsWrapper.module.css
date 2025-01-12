@@ -1,6 +1,17 @@
+.smallwrapper {
+  flex-direction: column;
+}
+
+.SmallStars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .wrapper {
   display: flex;
   padding: 10px 16px;
+  flex: 1;
 }
 
 .emptywrapper {
@@ -13,4 +24,5 @@
   justify-content: space-between;
   font: var(--font-b2-no-m);
   color: var(--color-label-alternative);
+  flex: 1;
 }
