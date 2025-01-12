@@ -1,4 +1,4 @@
-import { RatingStarsSmall } from "../../../../improved/ratingstars/ratingstars";
+import { RatingStarsSmall } from "../../../../improved/ratingstars/RatingStarsSmall";
 import styles from "./SmallStarsWrapper.module.css";
 import { useEffect, useState } from "react";
 

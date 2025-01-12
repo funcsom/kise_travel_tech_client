@@ -7,7 +7,7 @@ import iconhandle from "../../../../assets/icon/improved/icon_handle.svg";
 import SmallStarsWrapper from "./SmallStarsWrapper";
 
 import { createClient } from "@supabase/supabase-js";
-import { RatingStarsBig } from "../../../../improved/ratingstars/ratingstars";
+import RatingStarsBig from "../../../../improved/ratingstars/RatingStarsBig";
 
 const supabaseUrl = "https://dmnwlbcyraeorvinztsy.supabase.co";
 const supabaseKey =
