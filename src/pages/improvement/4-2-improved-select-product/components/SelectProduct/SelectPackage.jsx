@@ -10,6 +10,7 @@ const SelectPackage = ({
   selectPackage,
   onClickChangeBtn,
   preselectedInfo,
+  info,
 }) => {
   const [packageList, setPackageList] = useState([]);
 
@@ -25,7 +26,9 @@ const SelectPackage = ({
     <div className={styles.wrapper}>
       <div className={styles.SelectPackage}>
         <div className={styles.title}>패키지를 선택해주세요</div>
-        <div className={styles.subtitle}>1. 25(토), 2인 이용</div>
+        <div className={styles.subtitle}>
+          {`${info.date}(${info.day}), ${info.people}인 이용`}
+        </div>
       </div>
       <div className={styles.packagelistwrapper}>
         {packageList.map((item, index) => (

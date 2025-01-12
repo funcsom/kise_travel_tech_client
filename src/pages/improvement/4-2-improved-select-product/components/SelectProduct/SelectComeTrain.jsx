@@ -17,6 +17,7 @@ const SelectComeTrain = ({
   selectComeTrain,
   onClickChangeBtn,
   preselectedInfo,
+  info,
 }) => {
   const [myTrainList, setMyTrainList] = useState([]);
 
@@ -35,7 +36,9 @@ const SelectComeTrain = ({
       <div className={styles.SelectComeTrain}>
         <div>
           <div className={styles.title}>오는편을 선택해주세요.</div>
-          <div className={styles.subtitle}>1. 25(토), 성인 2인 편도요금</div>
+          <div className={styles.subtitle}>
+            {`${info.date}(${info.day}), 성인 ${info.people}인 편도요금`}
+          </div>
         </div>
         <div className={styles.traingradebtnwrapper}>
           {currentTrainGrade === "economy" ? (

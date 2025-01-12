@@ -107,6 +107,7 @@ const PrgrPage = ({ step, setStep, onClickChangeBtn, info, setInfo }) => {
           currentTrainGrade={info.goTrain.trainGrade}
           selectGoTrain={selectGoTrain}
           preselectedInfo={info.goTrain.trainNo}
+          info={info}
         />
       )}
       {step === 2 && (
@@ -118,10 +119,15 @@ const PrgrPage = ({ step, setStep, onClickChangeBtn, info, setInfo }) => {
           currentTrainGrade={info.comeTrain.trainGrade}
           selectComeTrain={selectComeTrain}
           preselectedInfo={info.comeTrain.trainNo}
+          info={info}
         />
       )}
       {step === 3 && (
-        <SelectPackage setStep={setStep} selectPackage={selectPackage} />
+        <SelectPackage
+          setStep={setStep}
+          selectPackage={selectPackage}
+          info={info}
+        />
       )}
       {step === 4 && <TotalPrice info={info} />}
     </div>
