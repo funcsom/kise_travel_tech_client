@@ -25,7 +25,7 @@ const ProductInfo = ({ impInfo }) => {
             <span className={styles.text}>{`${
               impInfo.goTrain.departstation
             } - ${impInfo.goTrain.arrivalstation} | ${
-              impInfo.goTrain.trainNo
+              impInfo.goTrain.trainName
             } | ${impInfo.people}인 | ${
               translate[impInfo.goTrain.trainGrade]
             }`}</span>
@@ -45,7 +45,7 @@ const ProductInfo = ({ impInfo }) => {
             <span className={styles.text}>{`${
               impInfo.comeTrain.departstation
             } - ${impInfo.comeTrain.arrivalstation} | ${
-              impInfo.comeTrain.trainNo
+              impInfo.comeTrain.trainName
             } | ${impInfo.people}인 | ${
               translate[impInfo.comeTrain.trainGrade]
             }`}</span>

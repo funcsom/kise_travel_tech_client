@@ -2,7 +2,7 @@
   background-color: var(--color-material-dimmer);
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   display: flex;
   justify-content: center;

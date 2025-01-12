@@ -37,6 +37,10 @@ const ImpSeeDetail = (props) => {
   }, []);
 
   const handleNext = () => {
+    setImpInfo({
+      ...impInfo,
+      product: { ...impInfo.product, name: selectedProduct.title },
+    });
     navigate("/imp/selectpeople");
   };
 

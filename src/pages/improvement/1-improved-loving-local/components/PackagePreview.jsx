@@ -1,9 +1,12 @@
+import { ImpUserContext } from "../../../../App";
+
 import styles from "./PackagePreview.module.css";
 import { useNavigate } from "react-router-dom";
 import seemorearrow from "../../../../assets/icon/improved/see_more_arrow.svg";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 const PackagePreview = ({ selectedLocal }) => {
+  const { impInfo, setImpInfo } = useContext(ImpUserContext);
   const navigate = useNavigate();
 
   const [packages, setPackages] = useState([]);
@@ -13,8 +16,14 @@ const PackagePreview = ({ selectedLocal }) => {
     navigate("/imp/localtrip/gangwon");
   };
 
-  const onClickPackage = () => {
-    console.log("클릭한 패키지 상세페이지로 이동합니다.");
+  const onClickProduct = (props) => {
+    if (selectedLocal === "gangwon") {
+      setImpInfo({ ...impInfo, region: selectedLocal });
+      navigate(`/imp/seedetail/${props}`);
+      console.log(`go to ${selectedLocal} product ... ${props}`);
+    } else {
+      console.log("클릭한 패키지 상세페이지로 이동할 수 없습니다.");
+    }
   };
 
   useEffect(() => {
@@ -43,7 +52,7 @@ const PackagePreview = ({ selectedLocal }) => {
           <div
             key={index}
             className={styles.listwrapper}
-            onClick={onClickPackage}
+            onClick={() => onClickProduct(p.id)}
           >
             <div className={styles.imagewrapper}>
               <img src={p.img} alt="" className={styles.image} />
