@@ -6,32 +6,52 @@ import counter_plus_disabled from "../../assets/icon/improved/counter_plus_disab
 
 // state = "default" "disabled"
 // init = {number type}
-const Counter = ({ state, init, handleIncrement, handleDecrement }) => {
+const Counter = ({
+  stateleft,
+  stateright,
+  state,
+  init,
+  handleIncrement,
+  handleDecrement,
+}) => {
   return (
     <div className={styles.Counter}>
       <button
         className={styles.button}
-        onClick={state === "default" ? handleDecrement : undefined}
+        onClick={state !== "disabled" ? handleDecrement : undefined}
       >
-        {state === "default" ? (
-          <img src={counter_minus_default} alt="" />
-        ) : (
+        {state === "disabled" ? (
           <img src={counter_minus_disabled} alt="" />
+        ) : (
+          <img
+            src={
+              stateleft === "default"
+                ? counter_minus_default
+                : counter_minus_disabled
+            }
+            alt=""
+          />
         )}
       </button>
       <span className={styles.number}>{init}</span>
       <button
         className={styles.button}
-        onClick={state === "default" ? handleIncrement : undefined}
+        onClick={state !== "disabled" ? handleIncrement : undefined}
       >
-        {state === "default" ? (
-          <img src={counter_plus_default} alt="" />
-        ) : (
+        {state === "disabled" ? (
           <img src={counter_plus_disabled} alt="" />
+        ) : (
+          <img
+            src={
+              stateright === "default"
+                ? counter_plus_default
+                : counter_plus_disabled
+            }
+            alt=""
+          />
         )}
       </button>
     </div>
   );
 };
-
 export default Counter;

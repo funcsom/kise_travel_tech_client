@@ -17,25 +17,37 @@ import SelectDepartStation from "./components/SelectDepartStation";
 const ImpSelectPeople = () => {
   const { impInfo, setImpInfo } = useContext(ImpUserContext);
   const navigate = useNavigate();
+  const [count, setCount] = useState(impInfo.people);
   const [isNotiOpen, setIsNotiOpen] = useState(false);
+  const [selectStation, setSelectStation] = useState(
+    { goTrain: { departstation: "", arrivalstation: "" } },
+    { goTrain: { departstation: "", arrivalstation: "" } }
+  );
 
   const openNoti = () => {
     setIsNotiOpen((prev) => !prev);
   };
 
   const handleNext = () => {
+    setImpInfo({
+      ...impInfo,
+      people: count,
+      goTrain: {
+        ...impInfo.goTrain,
+        departstation: selectStation.goTrain.departstation,
+        arrivalstation: selectStation.goTrain.arrivalstation,
+      },
+      comeTrain: {
+        ...impInfo.comeTrain,
+        departstation: selectStation.comeTrain.departstation,
+        arrivalstation: selectStation.comeTrain.arrivalstation,
+      },
+    });
     navigate("/imp/selectdate");
   };
 
   const handlePrev = () => {
     navigate(-1);
-  };
-
-  const handlepeople = (count) => {
-    setImpInfo((prevInfo) => ({
-      ...prevInfo,
-      people: count,
-    }));
   };
 
   return (
@@ -46,25 +58,44 @@ const ImpSelectPeople = () => {
         handleClickLeft={handlePrev}
       />
       <main>
-        <SelectDepartStation />
+        <SelectDepartStation
+          selectStation={selectStation}
+          setSelectStation={setSelectStation}
+        />
         <Notification openNoti={openNoti} />
-        <SelectPeopleComp people={impInfo.people} handlepeople={handlepeople} />
+        <SelectPeopleComp
+          count={count}
+          setCount={(newcount) => setCount(newcount)}
+        />
       </main>
       <Footer>
         <div style={{ display: "flex" }}>
-          <DimmedBox lefttext="인원" righttext={`어른 ${impInfo.people}명`} />
+          <DimmedBox lefttext="인원" righttext={`어른 ${count}명`} />
         </div>
         <div style={{ display: "flex" }}>
-          <Button
-            type="primary"
-            state="default"
-            size="large"
-            shape="box"
-            rate="r1"
-            onClickButton={handleNext}
-          >
-            다음
-          </Button>
+          {count && selectStation.goTrain.departstation ? (
+            <Button
+              type="primary"
+              state="default"
+              size="large"
+              shape="box"
+              rate="r1"
+              onClickButton={handleNext}
+            >
+              다음
+            </Button>
+          ) : (
+            <Button
+              type="primary"
+              state="disabled"
+              size="large"
+              shape="box"
+              rate="r1"
+              onClickButton={handleNext}
+            >
+              다음
+            </Button>
+          )}
         </div>
       </Footer>
       {isNotiOpen && <Modal openNoti={openNoti} />}

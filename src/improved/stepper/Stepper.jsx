@@ -9,41 +9,38 @@ const Stepper = ({
   subtitle,
   discription,
   discription2,
-  state,
-  init,
-  handlepeople,
-  minHead = 1,
-  maxHead = 9,
+  count,
+  setCount,
+  state = "default",
+  minHead = 0,
+  maxHead = 40,
 }) => {
-  const [count, setCount] = useState(init);
+  const [leftState, setLeftState] = useState("default");
+  const [rightState, setRightState] = useState("default");
+
+  useEffect(() => {
+    if (count === minHead) setLeftState("disabled");
+    else setLeftState("default");
+
+    if (count === maxHead) setRightState("disabled");
+    else setRightState("default");
+  }, [count, minHead, maxHead]);
 
   const handleDecrement = () => {
-    if (minHead) {
-      if (count > 1) {
-        setCount(count - 1);
-      } else {
-        alert("예약최소인원수입니다.");
-      }
-    } else {
-      if (count > 0) {
-        setCount(count - 1);
-      }
+    if (count > minHead) {
+      setCount(count - 1);
+    } else if (title === "어른") {
+      alert("예약최소인원수입니다.");
     }
   };
 
   const handleIncrement = () => {
-    if (maxHead) {
-      if (count < maxHead) {
-        setCount(count + 1);
-      } else {
-        alert(
-          "10명 이상은 여행센터 혹은 철도고객센터(1588-7788)로 문의하시기 바랍니다."
-        );
-      }
-    } else {
-      if (count >= 0) {
-        setCount(count + 1);
-      }
+    if (count < maxHead) {
+      setCount(count + 1);
+    } else if (title === "어른") {
+      alert(
+        "41명 이상은 여행센터 혹은 철도고객센터(1588-7788)로 문의하시기 바랍니다."
+      );
     }
   };
 
@@ -62,10 +59,12 @@ const Stepper = ({
 
       <div>
         <Counter
+          stateleft={leftState}
+          stateright={rightState}
           state={state}
           init={count}
-          handleDecrement={handleDecrement}
-          handleIncrement={handleIncrement}
+          handleDecrement={title === "어른" ? handleDecrement : undefined}
+          handleIncrement={title === "어른" ? handleIncrement : undefined}
         />
       </div>
     </div>
