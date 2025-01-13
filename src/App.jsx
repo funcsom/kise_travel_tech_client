@@ -106,7 +106,7 @@ function App() {
           <Routes>
             <Route path="/" element={<LovingLocal />} />
             <Route path="/localtrip/:local" element={<LocalTrip />} />
-            <Route path="/seedetail" element={<SeeDetail />} />
+            <Route path="/seedetail/:id" element={<SeeDetail />} />
             <Route path="/selectdate" element={<SelectDate />} />
             <Route path="/selectproduct" element={<SelectProduct />} />
             <Route path="/selectdetail" element={<SelectDetail />} />

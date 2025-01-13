@@ -16,7 +16,7 @@ const CompleteProduct = () => {
   const navigate = useNavigate();
 
   const handleNext = () => {
-    navigate("/imp/lovinglocal");
+    navigate("/");
   };
 
   const handlePrev = () => {

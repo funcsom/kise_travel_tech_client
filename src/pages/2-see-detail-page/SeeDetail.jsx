@@ -1,5 +1,5 @@
 import { useEffect, useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { UserContext } from "../../App";
 
 import Header from "../../components/Header";
@@ -13,6 +13,7 @@ const SeeDetail = () => {
   const { info, setInfo } = useContext(UserContext);
   const [prod, setProd] = useState();
   const navigate = useNavigate();
+  const params = useParams();
 
   // header 뒤로가기 버튼 클릭 시 이전 페이지로 넘어가는 기능
   const handlePrev = () => {
@@ -27,12 +28,23 @@ const SeeDetail = () => {
     fetch(`/data/${info.region}-product.json`)
       .then((res) => res.json())
       .then((data) => {
-        const imgdetail = data.List.filter(
-          (prod) => info.product.name === prod.title
-        );
-        setProd(imgdetail);
+        console.log(data);
+        const [productinfo] = data.List.filter((p) => p.id === params.id);
+
+        if (productinfo) {
+          setProd(productinfo);
+          // console.log(productinfo);
+        } else {
+          const [bestprodinfo] = data.Best.filter((p) => p.id === params.id);
+          setProd(bestprodinfo);
+          // console.log(bestprodinfo);
+        }
       });
   }, []);
+
+  useEffect(() => {
+    console.log(prod?.img);
+  }, [prod]);
 
   return (
     <div
@@ -49,7 +61,8 @@ const SeeDetail = () => {
         handleClickLeft={handlePrev}
       />
       <Body>
-        <img src={prod} alt={prod} />
+        <img src={prod?.img} alt="" />
+        <img src={prod?.imgdetail} alt="" />
       </Body>
       <Footer>
         <div style={{ display: "flex", gap: "7px" }}>

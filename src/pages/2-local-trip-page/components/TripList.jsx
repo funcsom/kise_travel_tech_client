@@ -1,11 +1,11 @@
 import iconcalendar from "../../../assets/icon/icon_calendar.svg";
 
-const TripList = ({ img, title, price, onClickProduct }) => {
+const TripList = ({ img, title, price, onClickProduct, id }) => {
   const formattedNumber = new Intl.NumberFormat("ko-KR").format(price);
 
   return (
     <div
-      onClick={() => onClickProduct([title, price])}
+      onClick={() => onClickProduct([title, price, id])}
       style={{
         display: "flex",
         flexDirection: "column",

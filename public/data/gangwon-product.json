@@ -4,29 +4,113 @@
     {
       "id": "0",
       "title": "[지역사랑-영월군] 당일 - 자유여행상품",
-      "price": "33,300원 ~"
+      "price": "33300",
+      "img": "/assets/original/gangwon/gangwon-0.jpeg",
+      "imgdetail": "/assets/original/gangwon/detail/gangwon-0.jpeg"
     },
     {
       "id": "1",
       "title": "[지역사랑-횡성군] 당일 - 자유여행상품",
-      "price": "25,000원 ~"
+      "price": "25000",
+      "img": "/assets/original/gangwon/gangwon-1.jpeg",
+      "imgdetail": "/assets/original/gangwon/detail/gangwon-1.jpeg"
     }
   ],
   "List": [
     {
-      "id": "0",
-      "title": "( KTX+동해관광택시)2025 동트는 택시(당일)(강원센터)",
-      "price": "81,800원 ~"
-    },
-    {
-      "id": "1",
-      "title": "( 강릉선KTX) 강릉월화 택시투어(당일) (강원센터)",
-      "price": "81,800원 ~"
-    },
-    {
       "id": "2",
+      "title": "( KTX+동해관광택시)2024 동트는 택시(당일)(강원센터)",
+      "price": "81800",
+      "img": "/assets/original/gangwon/gangwon-2.jpeg",
+      "imgdetail": "/assets/original/gangwon/detail/gangwon-2.jpeg"
+    },
+    {
+      "id": "3",
+      "title": "( 강릉선KTX) 강릉월화 택시투어(당일) (강원센터)",
+      "price": "81800",
+      "img": "/assets/original/gangwon/gangwon-3.jpeg",
+      "imgdetail": "/assets/original/gangwon/detail/gangwon-3.jpeg"
+    },
+    {
+      "id": "4",
       "title": "( 강릉선KTX) 낭만의 동해바다&바다버스(당일)(강원센터)",
-      "price": "64,900원 ~"
+      "price": "64900",
+      "img": "/assets/original/gangwon/gangwon-4.jpeg",
+      "imgdetail": "/assets/original/gangwon/detail/gangwon-4.jpeg"
+    }
+  ],
+  "TrainInformation": [
+    {
+      "name": "KTX 845",
+      "startpoint": "서울",
+      "starttime": "07:01",
+      "endpoint": "강원",
+      "endtime": "10:02",
+      "stations": {
+        "destination": [
+          { "station": "서울", "time": "07:01" },
+          { "station": "상봉", "time": "07:23" },
+          { "station": "양평", "time": "07:48" },
+          { "station": "만종", "time": "08:11" },
+          { "station": "횡성", "time": "08:35" },
+          { "station": "평창", "time": "08:53" }
+        ],
+        "origin": [{ "station": "강원", "time": "10:02" }]
+      }
+    },
+    {
+      "name": "KTX 848",
+      "startpoint": "서울",
+      "starttime": "07:58",
+      "endpoint": "강원",
+      "endtime": "10:45",
+      "stations": {
+        "destination": [
+          { "station": "서울", "time": "07:58" },
+          { "station": "상봉", "time": "08:20" },
+          { "station": "양평", "time": "08:45" },
+          { "station": "만종", "time": "09:08" },
+          { "station": "횡성", "time": "09:32" },
+          { "station": "평창", "time": "09:50" }
+        ],
+        "origin": [{ "station": "강원", "time": "10:45" }]
+      }
+    },
+    {
+      "name": "KTX 345",
+      "startpoint": "강원",
+      "starttime": "18:33",
+      "endpoint": "서울",
+      "endtime": "21:24",
+      "stations": {
+        "destination": [
+          { "station": "강원", "time": "21:24" },
+          { "station": "평창", "time": "21:00" },
+          { "station": "횡성", "time": "20:38" },
+          { "station": "만종", "time": "20:15" },
+          { "station": "양평", "time": "19:53" },
+          { "station": "상봉", "time": "19:30" }
+        ],
+        "origin": [{ "station": "강원", "time": "18:33" }]
+      }
+    },
+    {
+      "name": "KTX 348",
+      "startpoint": "강원",
+      "starttime": "19:05",
+      "endpoint": "서울",
+      "endtime": "22:15",
+      "stations": {
+        "destination": [
+          { "station": "강원", "time": "22:15" },
+          { "station": "평창", "time": "21:50" },
+          { "station": "횡성", "time": "21:28" },
+          { "station": "만종", "time": "21:05" },
+          { "station": "양평", "time": "20:43" },
+          { "station": "상봉", "time": "20:20" }
+        ],
+        "origin": [{ "station": "강원", "time": "19:05" }]
+      }
     }
   ]
 }

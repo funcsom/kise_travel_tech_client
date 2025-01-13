@@ -27,7 +27,7 @@ const ImpCompleteProd = (props) => {
   };
 
   const handleNext = () => {
-    navigate("./");
+    navigate("/imp/lovinglocal");
   };
 
   const handlePrev = () => {
