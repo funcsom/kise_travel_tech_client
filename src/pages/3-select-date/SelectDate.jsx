@@ -11,7 +11,7 @@ const SelectDate = () => {
   const { info, setInfo } = useContext(UserContext);
   const navigate = useNavigate();
 
-  const [selectedDate, setSelectedDate] = useState(new Date()); // 상위에서 날짜 상태 관리
+  const [selectedDate, setSelectedDate] = useState(); // 상위에서 날짜 상태 관리
 
   const handleDateChange = (date) => {
     console.log(date);

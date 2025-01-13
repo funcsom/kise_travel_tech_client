@@ -1,56 +1,11 @@
-// import { useState } from "react";
-// import Stepper from "../../../components/common/Stepper";
-
-// const PackageCounting = ({ packageName, onChangePackage }) => {
-//   const [category, setCategory] = useState([
-//     { type: "이용수량", num: 2 },
-//     { type: "이용인원", num: 0 },
-//   ]);
-
-//   const handleCountChange = (index, newCount) => {
-//     const updateCategory = [...category];
-//     updateCategory[index].num = newCount;
-//     setCategory(updateCategory);
-//   };
-
-//   return (
-//     <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-//       <div style={{ display: "flex", alignItems: "center", gap: "24px" }}>
-//         <div style={{ flexShrink: "0" }}>일정</div>
-//         <select name="" id="">
-//           <option value="6hs+4hs_2ppl">{`관광택시6시간+4시간[2인]`}</option>
-//           <option value="6hs+4hs_3ppl">{`관광택시6시간+4시간[3인]`}</option>
-//         </select>
-//       </div>
-//       {category.map((item, index) => (
-//         <div
-//           key={index}
-//           style={{
-//             display: "flex",
-//             alignItems: "center",
-//             justifyContent: "space-between",
-//           }}
-//         >
-//           <div style={{ flexShrink: "0" }}>{item.type}</div>
-//           <Stepper
-//             count={item.num}
-//             onCountChange={(newCount) => handleCountChange(index, newCount)}
-//           />
-//         </div>
-//       ))}
-//     </div>
-//   );
-// };
-
-// export default PackageCounting;
-
 import { useState } from "react";
 import Stepper from "../../../components/common/Stepper";
 
 const PackageCounting = ({ date, packageName, people }) => {
+  let [count, setCount] = useState(people);
   const [category, setCategory] = useState([
-    { type: "이용수량", num: people },
-    { type: "이용인원", num: people },
+    { type: "이용수량", num: count, ableToChange: false },
+    { type: "이용인원", num: count, ableToChange: false },
   ]);
   const [selectedPackage, setSelectedPackage] = useState(packageName); // 초기값 설정
 
@@ -100,10 +55,7 @@ const PackageCounting = ({ date, packageName, people }) => {
           }}
         >
           <div style={{ flexShrink: "0" }}>{item.type}</div>
-          <Stepper
-            count={item.num}
-            onCountChange={(newCount) => handleCountChange(index, newCount)}
-          />
+          <Stepper count={item.num} onCountChange={() => {}} />
         </div>
       ))}
     </div>

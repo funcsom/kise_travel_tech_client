@@ -1,6 +1,8 @@
 import { UserContext } from "../../../App";
 import { useContext } from "react";
 
+import styles from "./Info.module.css";
+
 const Info = () => {
   const { info, setInfo } = useContext(UserContext);
 
@@ -27,36 +29,38 @@ const Info = () => {
   );
 
   return (
-    <div style={{ width: "100%" }}>
-      <div style={rowWrapper}>
-        <div style={styleTitle}>예약번호</div>
-        <div style={styleInfo}>{formattedDateForNum}</div>
+    <div className={styles.info}>
+      <div className={styles.rowwrapper}>
+        <div className={styles.title}>예약번호</div>
+        <div className={styles.infoinfo}>{formattedDateForNum}</div>
       </div>
-      <div style={rowWrapper}>
-        <div style={styleTitle}>상품명</div>
-        <div style={styleInfo}>{info.product.name}</div>
+      <div className={styles.rowwrapper}>
+        <div className={styles.title}>상품명</div>
+        <div className={styles.infoinfo}>{info.product.name}</div>
       </div>
-      <div style={rowWrapper}>
-        <div style={styleTitle}>예약인원</div>
-        <div style={styleInfo}>{info.people}명</div>
+      <div className={styles.rowwrapper}>
+        <div className={styles.title}>예약인원</div>
+        <div className={styles.infoinfo}>{info.people}명</div>
       </div>
-      <div style={rowWrapper}>
-        <div style={styleTitle}>예약자정보</div>
-        <div style={styleInfo}>
+      <div className={styles.rowwrapper}>
+        <div className={`${styles.title} ${styles.bigrowwrapper}`}>
+          예약자정보
+        </div>
+        <div className={styles.infoinfo}>
           <span>{info.reserveName}</span>
           <span>{info.email}</span>
         </div>
       </div>
-      <div style={rowWrapper}>
-        <div style={styleTitle}>예약금액</div>
-        <div style={styleInfo}>{formattedNumber}원</div>
+      <div className={styles.rowwrapper}>
+        <div className={styles.title}>예약금액</div>
+        <div className={styles.infoinfo}>{formattedNumber}원</div>
       </div>
-      <div style={rowWrapper}>
-        <div style={styleTitleLast}>
+      <div className={styles.rowwrapper}>
+        <div className={`${styles.title} ${styles.lasttitle}`}>
           <span>결제기한일</span>
           <span>취소기한일</span>
         </div>
-        <div style={styleInfoLast}>
+        <div className={`${styles.infoinfo} ${styles.infolast}`}>
           <span>{formattedDateForPay}</span>
           <span>{formattedDateForCancle}</span>
         </div>
@@ -64,37 +68,6 @@ const Info = () => {
     </div>
   );
 };
-
-const rowWrapper = {
-  flex: "1",
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "stretch",
-  gap: "16px",
-};
-
-const styleTitle = {
-  width: "92px",
-  height: "100%",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "flex-start",
-  font: "var(--font-orig-b3-sb)",
-  padding: "14px 0",
-  gap: "14px",
-  borderBottom: "1px solid var(--color-gray-500)",
-};
-
-const styleTitleLast = {
-  width: "92px",
-  height: "100%",
-  display: "flex",
-  flexDirection: "column",
-  font: "var(--font-orig-b3-sb)",
-  padding: "14px 0",
-  gap: "14px",
-};
-
 const styleInfo = {
   flex: "1",
   display: "flex",

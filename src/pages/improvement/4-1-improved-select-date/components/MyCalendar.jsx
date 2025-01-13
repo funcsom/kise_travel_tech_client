@@ -38,7 +38,10 @@ const MyCalendar = ({ value, onChangeDate }) => {
   };
 
   return (
-    <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+    <div
+      className="MyCalendar"
+      style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+    >
       <Calendar
         calendarType="gregory"
         value={value}
