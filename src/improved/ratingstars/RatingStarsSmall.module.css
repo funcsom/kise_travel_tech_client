@@ -1,0 +1,6 @@
+.RatingStarsSmall {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  flex-shrink: 0;
+}

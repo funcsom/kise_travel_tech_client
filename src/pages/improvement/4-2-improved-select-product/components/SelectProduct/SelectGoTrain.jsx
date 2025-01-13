@@ -36,9 +36,9 @@ const SelectGoTrain = ({
       <div className={styles.SelectGoTrain}>
         <div className={styles.titlewrapper}>
           <div className={styles.title}>가는편을 선택해주세요.</div>
-          <div
-            className={styles.subtitle}
-          >{`${info.date}(${info.day}), 성인 ${info.people}인 편도요금`}</div>
+          <div className={styles.subtitle}>
+            {`${info.date}(${info.day}), 성인 ${info.people}인 편도요금`}
+          </div>
         </div>
         <div className={styles.traingradebtnwrapper}>
           {currentTrainGrade === "economy" ? (

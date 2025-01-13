@@ -62,9 +62,7 @@ const RatingComponent = ({ closeModal }) => {
       <div className={styles.alert}>
         <div className={styles.headerwrapper}>
           <div className={styles.header}>
-            <div>
-              <img src={iconhandle} alt="" />
-            </div>
+            <img src={iconhandle} alt="" />
             <span>예약 과정이 만족스러웠나요?</span>
           </div>
           <div className={styles.bigstar}>

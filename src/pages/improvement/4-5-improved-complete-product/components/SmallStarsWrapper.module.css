@@ -12,6 +12,7 @@
   display: flex;
   padding: 10px 16px;
   flex: 1;
+  gap: 16px;
 }
 
 .emptywrapper {
@@ -22,7 +23,11 @@
 
 .detailwrapper {
   justify-content: space-between;
-  font: var(--font-b2-no-m);
+  font: var(--font-b3-no-m);
   color: var(--color-label-alternative);
   flex: 1;
+}
+
+.SmallStars {
+  padding: 0 16px;
 }

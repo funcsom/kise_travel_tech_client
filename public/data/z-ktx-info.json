@@ -230,6 +230,7 @@
       { "station": "동해", "time": "22:13" }
     ]
   },
+
   {
     "id": "11",
     "name": "무궁화호",
@@ -237,14 +238,28 @@
     "no": "1632",
     "stations": [
       { "station": "동해", "time": "05:50" },
-      { "station": "도계", "time": "06:28" },
-      { "station": "태백", "time": "06:54" },
-      { "station": "사북", "time": "07:14" },
-      { "station": "민둥산", "time": "07:23" },
-      { "station": "영월", "time": "08:02" },
-      { "station": "제천", "time": "08:32" },
-      { "station": "원주", "time": "08:56" },
-      { "station": "청량리", "time": "09:50" }
+      { "station": "신기", "time": "06:13" },
+      { "station": "도계", "time": "06:30" },
+      { "station": "동백산", "time": "06:46" },
+      { "station": "태백", "time": "06:58" },
+      { "station": "고한", "time": "07:12" },
+      { "station": "사북", "time": "07:19" },
+      { "station": "민둥산", "time": "07:28" },
+      { "station": "예미", "time": "07:50" },
+      { "station": "영월", "time": "08:10" },
+      { "station": "제천", "time": "08:44" },
+      { "station": "원주", "time": "09:10" },
+      { "station": "서원주", "time": "09:18" },
+      { "station": "삼산", "time": "09:26" },
+      { "station": "양동", "time": "09:31" },
+      { "station": "매곡", "time": "09:35" },
+      { "station": "일신", "time": "09:40" },
+      { "station": "석불", "time": "09:45" },
+      { "station": "지평", "time": "09:50" },
+      { "station": "용문", "time": "09:59" },
+      { "station": "양평", "time": "10:07" },
+      { "station": "덕소", "time": "10:26" },
+      { "station": "청량리", "time": "10:41" }
     ]
   },
   {
@@ -308,14 +323,28 @@
     "no": "1634",
     "stations": [
       { "station": "동해", "time": "12:01" },
-      { "station": "도계", "time": "12:39" },
-      { "station": "태백", "time": "13:05" },
-      { "station": "사북", "time": "13:25" },
-      { "station": "민둥산", "time": "13:34" },
-      { "station": "영월", "time": "14:13" },
-      { "station": "제천", "time": "14:43" },
-      { "station": "원주", "time": "15:07" },
-      { "station": "청량리", "time": "16:01" }
+      { "station": "신기", "time": "12:24" },
+      { "station": "도계", "time": "12:41" },
+      { "station": "동백산", "time": "12:57" },
+      { "station": "태백", "time": "13:09" },
+      { "station": "고한", "time": "13:23" },
+      { "station": "사북", "time": "13:30" },
+      { "station": "민둥산", "time": "13:39" },
+      { "station": "예미", "time": "14:01" },
+      { "station": "영월", "time": "14:21" },
+      { "station": "제천", "time": "14:55" },
+      { "station": "원주", "time": "15:21" },
+      { "station": "서원주", "time": "15:29" },
+      { "station": "삼산", "time": "15:37" },
+      { "station": "양동", "time": "15:42" },
+      { "station": "매곡", "time": "15:46" },
+      { "station": "일신", "time": "15:51" },
+      { "station": "석불", "time": "15:56" },
+      { "station": "지평", "time": "16:01" },
+      { "station": "용문", "time": "16:10" },
+      { "station": "양평", "time": "16:18" },
+      { "station": "덕소", "time": "16:37" },
+      { "station": "청량리", "time": "16:52" }
     ]
   },
   {
@@ -343,14 +372,28 @@
     "no": "1636",
     "stations": [
       { "station": "동해", "time": "15:21" },
-      { "station": "도계", "time": "15:59" },
-      { "station": "태백", "time": "16:25" },
-      { "station": "사북", "time": "16:45" },
-      { "station": "민둥산", "time": "16:54" },
-      { "station": "영월", "time": "17:33" },
-      { "station": "제천", "time": "18:03" },
-      { "station": "원주", "time": "18:27" },
-      { "station": "청량리", "time": "19:21" }
+      { "station": "신기", "time": "15:44" },
+      { "station": "도계", "time": "16:01" },
+      { "station": "동백산", "time": "16:17" },
+      { "station": "태백", "time": "16:29" },
+      { "station": "고한", "time": "16:43" },
+      { "station": "사북", "time": "16:50" },
+      { "station": "민둥산", "time": "16:59" },
+      { "station": "예미", "time": "17:21" },
+      { "station": "영월", "time": "17:41" },
+      { "station": "제천", "time": "18:15" },
+      { "station": "원주", "time": "18:41" },
+      { "station": "서원주", "time": "18:49" },
+      { "station": "삼산", "time": "18:57" },
+      { "station": "양동", "time": "19:02" },
+      { "station": "매곡", "time": "19:06" },
+      { "station": "일신", "time": "19:11" },
+      { "station": "석불", "time": "19:16" },
+      { "station": "지평", "time": "19:21" },
+      { "station": "용문", "time": "19:30" },
+      { "station": "양평", "time": "19:38" },
+      { "station": "덕소", "time": "19:57" },
+      { "station": "청량리", "time": "20:12" }
     ]
   },
   {

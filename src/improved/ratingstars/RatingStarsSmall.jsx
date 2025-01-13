@@ -14,22 +14,27 @@ export const RatingStarsSmall = ({ rating, setRating }) => {
       <img
         onClick={() => onClickStar(1)}
         src={rating >= 1 ? smallstarfull : smallstarempty}
+        width={20}
       />
       <img
         onClick={() => onClickStar(2)}
         src={rating >= 2 ? smallstarfull : smallstarempty}
+        width={20}
       />
       <img
         onClick={() => onClickStar(3)}
         src={rating >= 3 ? smallstarfull : smallstarempty}
+        width={20}
       />
       <img
         onClick={() => onClickStar(4)}
         src={rating >= 4 ? smallstarfull : smallstarempty}
+        width={20}
       />
       <img
         onClick={() => onClickStar(5)}
         src={rating >= 5 ? smallstarfull : smallstarempty}
+        width={20}
       />
     </div>
   );
