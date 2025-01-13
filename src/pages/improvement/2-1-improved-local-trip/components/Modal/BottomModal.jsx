@@ -71,7 +71,7 @@ const BottomModal = ({
   // 도시 코드 목록 가져오기
   useEffect(() => {
     fetch(
-      `http://apis.data.go.kr/1613000/TrainInfoService/getCtyCodeList?serviceKey=${serviceKey}&_type=json`
+      `https://apis.data.go.kr/1613000/TrainInfoService/getCtyCodeList?serviceKey=${serviceKey}&_type=json`
     )
       .then((response) => response.json())
       .then((data) => {
@@ -93,7 +93,7 @@ const BottomModal = ({
   // 선택한 도시의 역 목록 가져오기
   useEffect(() => {
     fetch(
-      `http://apis.data.go.kr/1613000/TrainInfoService/getCtyAcctoTrainSttnList?serviceKey=${serviceKey}&numOfRows=60&pageNo=1&_type=json&cityCode=${selectedCityCode}`
+      `https://apis.data.go.kr/1613000/TrainInfoService/getCtyAcctoTrainSttnList?serviceKey=${serviceKey}&numOfRows=60&pageNo=1&_type=json&cityCode=${selectedCityCode}`
     )
       .then((response) => response.json())
       .then((data) => {
