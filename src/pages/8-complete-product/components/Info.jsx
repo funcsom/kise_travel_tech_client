@@ -43,9 +43,7 @@ const Info = () => {
         <div className={styles.infoinfo}>{info.people}명</div>
       </div>
       <div className={styles.rowwrapper}>
-        <div className={`${styles.title} ${styles.bigrowwrapper}`}>
-          예약자정보
-        </div>
+        <div className={styles.title}>예약자정보</div>
         <div className={styles.infoinfo}>
           <span>{info.reserveName}</span>
           <span>{info.email}</span>
