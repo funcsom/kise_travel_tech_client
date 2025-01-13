@@ -146,6 +146,7 @@ const ImpLocalTrip = () => {
         <div className={styles.selectedstationwrapper}>
           <div
             className={styles.selectlocalbutton}
+            id="sort-departure-btn"
             onClick={() => setIsOpenModal(true)}
           >
             <div>출발역 선택</div>
