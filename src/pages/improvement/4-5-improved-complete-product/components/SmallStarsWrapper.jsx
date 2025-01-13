@@ -22,7 +22,7 @@ const SmallStarsWrapper = ({
       {isClickedBigStar ? (
         <div className={styles.SmallStars}>
           <div className={`${styles.wrapper} ${styles.detailwrapper}`}>
-            <div>예약 절차가 복잡하지 않고 쉽게 느껴짐</div>
+            <div>예약 과정이 쉽고 직관적임</div>
             <RatingStarsSmall
               rating={smallRating.star1}
               setRating={(props) => {
@@ -32,7 +32,7 @@ const SmallStarsWrapper = ({
             />
           </div>
           <div className={`${styles.wrapper} ${styles.detailwrapper}`}>
-            <span>각 단계에서 제공되는 정보가 이해하기 쉬웠음</span>
+            <span>KTX 선택 등 상품 선택이 직관적으로 제공되었음</span>
             <RatingStarsSmall
               rating={smallRating.star2}
               setRating={(props) => {
@@ -42,7 +42,7 @@ const SmallStarsWrapper = ({
             />
           </div>
           <div className={`${styles.wrapper} ${styles.detailwrapper}`}>
-            <span>상품을 선택할 때, 가격이 명확히 전달됨</span>
+            <span>상품 가격이 명확하게 제공됨</span>
             <RatingStarsSmall
               rating={smallRating.star3}
               setRating={(props) => {
@@ -52,7 +52,7 @@ const SmallStarsWrapper = ({
             />
           </div>
           <div className={`${styles.wrapper} ${styles.detailwrapper}`}>
-            <span>예약을 끝내는 데 소요된 시간이 적절하다고 느꼈음</span>
+            <span>코레일톡 지역 사랑 여행을 추천하고 싶음</span>
             <RatingStarsSmall
               rating={smallRating.star4}
               setRating={(props) => {
