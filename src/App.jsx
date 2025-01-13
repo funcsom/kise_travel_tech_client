@@ -1,5 +1,5 @@
-import { createContext, useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { createContext, useState, useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
 
 // original pages
 import LovingLocal from "./pages/1-loving-local-page/LovingLocal";
@@ -29,6 +29,17 @@ export const UserContext = createContext();
 export const ImpUserContext = createContext();
 
 function App() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (window.dataLayer) {
+      window.dataLayer.push({
+        event: "pageview",
+        page: location.pathname + location.search,
+      });
+    }
+  }, [location]);
+
   const [info, setInfo] = useState({
     region: "",
     date: "",
