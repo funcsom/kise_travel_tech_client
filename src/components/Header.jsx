@@ -7,11 +7,13 @@ const Header = ({ handleClickLeft, text, imageLeft, handleClickRight }) => {
   };
   return (
     <div className={styles.Header}>
-      <Button
-        handleClick={handleClickLeft}
-        type="headerLeft"
-        image={imageLeft}
-      />
+      <button
+        className={`${styles.Button} ${styles.headerLeft}`}
+        onClick={handleClickLeft}
+        id="previous-btn"
+      >
+        {imageLeft && <img src={imageLeft} alt="icon" />}
+      </button>
       <span>{text}</span>
       <Button handleClick={onClickRight} type="header" />
     </div>
