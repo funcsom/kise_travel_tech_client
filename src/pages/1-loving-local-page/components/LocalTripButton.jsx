@@ -4,7 +4,11 @@ const LocalTripButton = ({ img, text, linkTo }) => {
   const navigate = useNavigate();
 
   const handleGoLocal = () => {
-    navigate(`/localtrip/${linkTo}`);
+    if (linkTo === "gangwon") {
+      navigate(`/localtrip/${linkTo}`);
+    } else {
+      alert("강원권 여행 상품을 선택해주세요");
+    }
   };
 
   return (

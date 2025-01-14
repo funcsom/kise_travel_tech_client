@@ -91,6 +91,7 @@ const ImpCompleteProd = (props) => {
             size="large"
             shape="box"
             rate="r1"
+            onClickButton={handleNext}
           >
             예약확인
           </Button>

@@ -10,10 +10,16 @@ import AgreeButton from "./components/AgreeButton";
 import iconprev from "../../../assets/icon/icon_previous.svg";
 import Button from "../../../improved/Button";
 import Text from "./components/Text";
+import Modal from "./components/Modal";
 
 const ImpTravelerAgree = () => {
   const [isClickAgree, setIsClickAgree] = useState(false);
   const navigate = useNavigate();
+  const [isNotiOpen, setIsNotiOpen] = useState(false);
+
+  const openNoti = () => {
+    setIsNotiOpen((prev) => !prev);
+  };
 
   const handleNext = () => {
     navigate("/imp/travelerinfo");
@@ -21,6 +27,10 @@ const ImpTravelerAgree = () => {
 
   const handlePrev = () => {
     navigate(-1);
+  };
+
+  const handleSelectProduct = () => {
+    openNoti();
   };
 
   const onClickDisabled = () => {
@@ -33,6 +43,7 @@ const ImpTravelerAgree = () => {
 
   return (
     <Contents>
+      {isNotiOpen && <Modal openNoti={openNoti} handlePrev={handlePrev} />}
       <Header
         text="예약인원"
         imageLeft={iconprev}
@@ -57,7 +68,7 @@ const ImpTravelerAgree = () => {
             size="large"
             shape="box"
             rate="r2"
-            onClickButton={handlePrev}
+            onClickButton={handleSelectProduct}
             id="edit-product-option-btn"
           >
             상품 옵션 수정

@@ -9,9 +9,10 @@ const SelectLocal = ({ currentLocal, onChange }) => {
 
   // select 태그에서 변경이 일어날 때 option의 value를 현재 컴포넌트의 local 상태와 상위 컴포넌트의 local 상태 변경
   const onChangeLocal = (e) => {
-    const selectedValue = e.target.value;
-    setLocal(selectedValue);
-    onChange(selectedValue);
+    // const selectedValue = e.target.value;
+    // setLocal(selectedValue);
+    // onChange(selectedValue);
+    alert("강원권 여행 상품을 선택해주세요");
   };
 
   return (

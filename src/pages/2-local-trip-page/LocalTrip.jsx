@@ -25,8 +25,12 @@ const LocalTrip = () => {
 
   // 지역 선택 시, url param이 변경되며 selectedLocal state 변경으로 useEffect 실행되도록 함
   const changeLocal = (props) => {
-    navigate(`/localtrip/${props}`);
-    setSelectedLocal(props);
+    if (props === "gangwon") {
+      navigate(`/localtrip/${props}`);
+      setSelectedLocal(props);
+    } else {
+      alert("강원권 여행 상품을 선택해주세요");
+    }
   };
 
   // 상품 클릭 시 다음 페이지로 넘어가는 기능

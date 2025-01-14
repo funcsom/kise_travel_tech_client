@@ -62,6 +62,34 @@ const SeeDetail = () => {
       />
       <Body>
         <img src={prod?.img} alt="" />
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            font: "var(--font-orig-h1)",
+            gap: "20px",
+          }}
+        >
+          {prod?.title}
+          <div
+            style={{
+              padding: "16px 16px",
+              backgroundColor: "#EBF7E3",
+              display: "flex",
+              flexDirection: "column",
+              gap: "12px",
+            }}
+          >
+            <span>상품코드: F20252309423</span>
+            <span>{`상품가격: ${prod?.price.toLocaleString(
+              "ko-KR"
+            )}원 ~`}</span>
+            <span>판매자: 한국철도공사</span>
+            <span>문의전화:</span>
+            <span>예약최소인원수: 1명</span>
+            <span>예약최대인원수: 4명</span>
+          </div>
+        </div>
         <img src={prod?.imgdetail} alt="" />
       </Body>
       <Footer>
