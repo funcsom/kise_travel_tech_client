@@ -57,7 +57,9 @@
         "position": "carousel1",
         "title": "지역사랑 동해",
         "subtitle": "당일 - 자유여행상품",
-        "img": "/assets/improved/packages/gangwon/image/gangwon-3.jpg"
+        "price": "89000",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-3.jpg",
+        "imgdetail": "/assets/improved/packages/gangwon/imagedetail/gangwon-3.jpg"
       },
       {
         "id": "4",
@@ -73,7 +75,7 @@
         "subtitle": "KTX+동해관광택시",
         "price": "89800",
         "img": "/assets/improved/packages/gangwon/image/gangwon-5.jpg",
-        "imgdetail": "detail/gangwon-5.jpeg"
+        "imgdetail": "/assets/improved/packages/gangwon/imagedetail/gangwon-5.jpg"
       },
       {
         "id": "6",
@@ -90,7 +92,7 @@
         "subtitle": "KTX+동해관광택시",
         "price": "89000",
         "img": "/assets/improved/packages/gangwon/image/gangwon-3.jpg",
-        "imgdetail": "detail/gangwon-3.jpeg"
+        "imgdetail": "/assets/improved/packages/gangwon/imagedetail/gangwon-3.jpg"
       },
       {
         "id": "8",
@@ -115,7 +117,7 @@
         "subtitle": "KTX+동해관광택시",
         "price": "89800",
         "img": "/assets/improved/packages/gangwon/image/gangwon-3.jpg",
-        "imgdetail": "detail/gangwon-3.jpeg"
+        "imgdetail": "/assets/improved/packages/gangwon/imagedetail/gangwon-3.jpg"
       },
       {
         "id": "11",
@@ -132,7 +134,7 @@
         "subtitle": "KTX+동해관광택시",
         "price": "89000",
         "img": "/assets/improved/packages/gangwon/image/gangwon-5.jpg",
-        "imgdetail": "detail/gangwon-5.jpeg"
+        "imgdetail": "/assets/improved/packages/gangwon/imagedetail/gangwon-5.jpg"
       },
       {
         "id": "13",
@@ -157,7 +159,7 @@
         "subtitle": "KTX+동해관광택시",
         "price": "89800",
         "img": "/assets/improved/packages/gangwon/image/gangwon-5.jpg",
-        "imgdetail": "detail/gangwon-5.jpeg"
+        "imgdetail": "/assets/improved/packages/gangwon/imagedetail/gangwon-5.jpg"
       },
       {
         "id": "16",
@@ -174,7 +176,7 @@
         "subtitle": "KTX+동해관광택시",
         "price": "89000",
         "img": "/assets/improved/packages/gangwon/image/gangwon-3.jpg",
-        "imgdetail": "detail/gangwon-3.jpeg"
+        "imgdetail": "/assets/improved/packages/gangwon/imagedetail/gangwon-3.jpg"
       },
       {
         "id": "18",
@@ -198,28 +200,28 @@
     "local": "chungcheong",
     "list": [
       {
-        "id": "3",
+        "id": "0",
         "position": "list1",
-        "title": "2024 동트는 택시",
-        "subtitle": "KTX+동해관광택시",
-        "price": "43600",
-        "img": "capital-0"
+        "title": "충북 무주 덕유산 눈꽃 기차여행",
+        "subtitle": "CJT",
+        "price": "126100",
+        "img": "/assets/improved/packages/chungcheong/image/chungcheong-0.jpg"
       },
       {
-        "id": "4",
+        "id": "1",
         "position": "list1",
-        "title": "2025 동트는 택시",
-        "subtitle": "KTX+동해관광택시",
-        "price": "98700",
-        "img": "capital-1"
+        "title": "대둔산&케이블카 · 구름다리 기차여행",
+        "subtitle": "지구",
+        "price": "89000",
+        "img": "/assets/improved/packages/chungcheong/image/chungcheong-1.jpg"
       },
       {
-        "id": "5",
+        "id": "2",
         "position": "list1",
-        "title": "2025 동해 시티투어버스",
-        "subtitle": "KTX+동해관광택시",
+        "title": "덕유산 · 항적봉 곤도라&무주구천동 계곡 기차여행",
+        "subtitle": "지구",
         "price": "55600",
-        "img": "capital-2"
+        "img": "/assets/improved/packages/chungcheong/image/chungcheong-2.jpg"
       }
     ]
   },
@@ -227,28 +229,28 @@
     "local": "gyeongsang",
     "list": [
       {
-        "id": "3",
+        "id": "0",
         "position": "list1",
-        "title": "2024 동트는 택시",
-        "subtitle": "KTX+동해관광택시",
-        "price": "43600",
-        "img": "capital-0"
+        "title": "레일텔/KTX왕복+라발스호텔",
+        "subtitle": "KTX",
+        "price": "232200",
+        "img": "/assets/improved/packages/gyeongsang/image/gyeongsang-0.jpg"
       },
       {
-        "id": "4",
+        "id": "1",
         "position": "list1",
-        "title": "2025 동트는 택시",
-        "subtitle": "KTX+동해관광택시",
-        "price": "98700",
-        "img": "capital-1"
+        "title": "레일텔/KTX왕복+아바니센트럴부산호텔",
+        "subtitle": "KTX",
+        "price": "258200",
+        "img": "/assets/improved/packages/gyeongsang/image/gyeongsang-1.jpg"
       },
       {
-        "id": "5",
+        "id": "2",
         "position": "list1",
-        "title": "2025 동해 시티투어버스",
-        "subtitle": "KTX+동해관광택시",
-        "price": "55600",
-        "img": "capital-2"
+        "title": "레일텔/KTX왕복+이비스 앰배서더 부산시티호텔",
+        "subtitle": "KTX",
+        "price": "223900",
+        "img": "/assets/improved/packages/gyeongsang/image/gyeongsang-2.jpg"
       }
     ]
   },
@@ -256,28 +258,28 @@
     "local": "jeolla",
     "list": [
       {
-        "id": "3",
+        "id": "0",
         "position": "list1",
-        "title": "2024 동트는 택시",
-        "subtitle": "KTX+동해관광택시",
-        "price": "43600",
-        "img": "capital-0"
+        "title": "전북 새해금빛열차",
+        "subtitle": "CJT",
+        "price": "131600",
+        "img": "/assets/improved/packages/jeolla/image/jeolla-0.jpg"
       },
       {
-        "id": "4",
+        "id": "1",
         "position": "list1",
-        "title": "2025 동트는 택시",
-        "subtitle": "KTX+동해관광택시",
-        "price": "98700",
-        "img": "capital-1"
+        "title": "전남 홍도 흑산도",
+        "subtitle": "KTX",
+        "price": "258200",
+        "img": "/assets/improved/packages/jeolla/image/jeolla-1.jpg"
       },
       {
-        "id": "5",
+        "id": "2",
         "position": "list1",
-        "title": "2025 동해 시티투어버스",
-        "subtitle": "KTX+동해관광택시",
-        "price": "55600",
-        "img": "capital-2"
+        "title": "전남 혹도 흑산도&비금도 도초도",
+        "subtitle": "KTX",
+        "price": "223900",
+        "img": "/assets/improved/packages/jeolla/image/jeolla-2.jpg"
       }
     ]
   },
@@ -285,28 +287,20 @@
     "local": "jeju",
     "list": [
       {
-        "id": "3",
+        "id": "0",
         "position": "list1",
-        "title": "2024 동트는 택시",
-        "subtitle": "KTX+동해관광택시",
-        "price": "43600",
-        "img": "capital-0"
+        "title": "용산->목포->제주도(목포출항 08:45/다인침대)",
+        "subtitle": "레일쉽 목포",
+        "price": "75800",
+        "img": "/assets/improved/packages/jeju/image/jeju-0.jpg"
       },
       {
-        "id": "4",
+        "id": "1",
         "position": "list1",
-        "title": "2025 동트는 택시",
-        "subtitle": "KTX+동해관광택시",
-        "price": "98700",
-        "img": "capital-1"
-      },
-      {
-        "id": "5",
-        "position": "list1",
-        "title": "2025 동해 시티투어버스",
-        "subtitle": "KTX+동해관광택시",
-        "price": "55600",
-        "img": "capital-2"
+        "title": "용산->목포->제주도(야간/목포출항 01:00)",
+        "subtitle": "KTX",
+        "price": "55000",
+        "img": "/assets/improved/packages/jeju/image/jeju-0.jpg"
       }
     ]
   }

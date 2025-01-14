@@ -40,9 +40,11 @@ const ImpLocalTrip = () => {
 
   // props로 products id가 들어감
   const onClickProduct = (props) => {
-    setImpInfo({ ...impInfo, region: params.local });
-    navigate(`/imp/seedetail/${props}`);
-    console.log(`go to ${params.local} product ... ${props}`);
+    if (props === "3" || props == "5") {
+      setImpInfo({ ...impInfo, region: params.local });
+      navigate(`/imp/seedetail/${props}`);
+      console.log(`go to ${params.local} product ... ${props}`);
+    }
   };
 
   useEffect(() => {
@@ -53,8 +55,6 @@ const ImpLocalTrip = () => {
           (item) => item.local === params.local
         );
         setPackages(filtereditem.list);
-        console.log(filtereditem.list);
-        console.log(data);
       });
   }, [selectedLocal]);
 
