@@ -31,9 +31,9 @@ const RatingComponent = ({ closeModal }) => {
   // CTA 버튼 클릭 시, Supabase의 database로 데이터 이동시키는 함수
   async function recordHandeler({ r0, r1, r2, r3, r4 }) {
     const { data, error } = await supabase
-      .from("ut_test_middle")
+      // .from("ut_test_middle")
       // UT 진행 시 활성화시키기
-      // .fron("kise_user_test_result")
+      .from("kise_user_test_result")
       .insert([{ R1: r0, Q1: r1, Q2: r2, Q3: r3, Q4: r4 }]);
   }
 
