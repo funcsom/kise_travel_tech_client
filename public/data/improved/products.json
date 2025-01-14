@@ -32,31 +32,165 @@
     "local": "gangwon",
     "list": [
       {
+        "id": "0",
+        "position": "carousel1",
+        "title": "지역사랑 영월군",
+        "subtitle": "당일 - 자유여행상품",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-0.jpg"
+      },
+      {
+        "id": "1",
+        "position": "carousel1",
+        "title": "지역사랑 정성군",
+        "subtitle": "당일 - 자유여행상품",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-1.jpg"
+      },
+      {
+        "id": "2",
+        "position": "carousel1",
+        "title": "지역사랑 영월군",
+        "subtitle": "1박 2일 - 자유여행상품(KTX 환승)",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-2.jpg"
+      },
+      {
         "id": "3",
-        "position": "list1",
-        "title": "2024 동트는 택시",
-        "subtitle": "KTX+동해관광택시",
-        "price": "43600",
-        "img": "/assets/improved/packages/capital/image/capital-0.png",
-        "imgdetail": "/assets/improved/packages/capital/image/capital-0.png"
+        "position": "carousel1",
+        "title": "지역사랑 동해",
+        "subtitle": "당일 - 자유여행상품",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-3.jpg"
       },
       {
         "id": "4",
-        "position": "list1",
-        "title": "2025 동트는 택시",
-        "subtitle": "KTX+동해관광택시",
-        "price": "98700",
-        "img": "/assets/improved/packages/capital/image/capital-1.png",
-        "imgdetail": "/assets/improved/packages/capital/image/capital-0.png"
+        "position": "carousel1",
+        "title": "지역사랑 태백시",
+        "subtitle": "1박 2일 - 자유여행상품",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-4.jpg"
       },
       {
         "id": "5",
-        "position": "list1",
-        "title": "2025 동해 시티투어버스",
+        "position": "carousel2",
+        "title": "2025 동트는 택시",
         "subtitle": "KTX+동해관광택시",
-        "price": "55600",
-        "img": "/assets/improved/packages/capital/image/capital-2.png",
-        "imgdetail": "/assets/improved/packages/capital/image/capital-0.png"
+        "price": "89800",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-5.jpg",
+        "imgdetail": "detail/gangwon-5.jpeg"
+      },
+      {
+        "id": "6",
+        "position": "carousel2",
+        "title": "활력충전 삼척여행",
+        "subtitle": "KTX+케이블카+스카이워크",
+        "price": "74200",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-6.jpg"
+      },
+      {
+        "id": "7",
+        "position": "carousel2",
+        "title": "택시타고 떠나는 동해바다",
+        "subtitle": "KTX+동해관광택시",
+        "price": "89000",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-3.jpg",
+        "imgdetail": "detail/gangwon-3.jpeg"
+      },
+      {
+        "id": "8",
+        "position": "carousel2",
+        "title": "횡성 핫플레이스 여행",
+        "subtitle": "KTX+농촌체험",
+        "price": "69000",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-7.jpg"
+      },
+      {
+        "id": "9",
+        "position": "carousel2",
+        "title": "슬기로운 강원여행",
+        "subtitle": "KTX+ahshfpdlf",
+        "price": "249000",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-8.jpg"
+      },
+      {
+        "id": "10",
+        "position": "carousel3",
+        "title": "택시타고 떠나는 동해바다",
+        "subtitle": "KTX+동해관광택시",
+        "price": "89800",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-3.jpg",
+        "imgdetail": "detail/gangwon-3.jpeg"
+      },
+      {
+        "id": "11",
+        "position": "carousel3",
+        "title": "정선 화암동굴",
+        "subtitle": "KTX+화암동굴+아라리촌",
+        "price": "109800",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-9.jpg"
+      },
+      {
+        "id": "12",
+        "position": "carousel3",
+        "title": "2025 동트는 택시",
+        "subtitle": "KTX+동해관광택시",
+        "price": "89000",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-5.jpg",
+        "imgdetail": "detail/gangwon-5.jpeg"
+      },
+      {
+        "id": "13",
+        "position": "carousel3",
+        "title": "태백의 교육 역사 관광지",
+        "subtitle": "KTX+박물관+통리탄탄파크",
+        "price": "27400",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-10.jpg"
+      },
+      {
+        "id": "14",
+        "position": "carousel3",
+        "title": "횡성 덕고마을 목화리즈",
+        "subtitle": "KTX+농촌관광+꽃차체험",
+        "price": "52300",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-11.jpg"
+      },
+      {
+        "id": "15",
+        "position": "list1",
+        "title": "2025 동트는 택시",
+        "subtitle": "KTX+동해관광택시",
+        "price": "89800",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-5.jpg",
+        "imgdetail": "detail/gangwon-5.jpeg"
+      },
+      {
+        "id": "16",
+        "position": "list1",
+        "title": "활력충전 삼척여행",
+        "subtitle": "KTX+케이블카+스카이워크",
+        "price": "74200",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-6.jpg"
+      },
+      {
+        "id": "17",
+        "position": "list1",
+        "title": "택시타고 떠나는 동해바다",
+        "subtitle": "KTX+동해관광택시",
+        "price": "89000",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-3.jpg",
+        "imgdetail": "detail/gangwon-3.jpeg"
+      },
+      {
+        "id": "18",
+        "position": "list1",
+        "title": "협곡열차 기차여행",
+        "subtitle": "KTX 이음+협곡열차",
+        "price": "149000",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-11.jpg"
+      },
+      {
+        "id": "19",
+        "position": "list1",
+        "title": "횡성 덕고마을 목화리즈",
+        "subtitle": "KTX+농촌관광+꽃차체험",
+        "price": "52300",
+        "img": "/assets/improved/packages/gangwon/image/gangwon-10.jpg"
       }
     ]
   },

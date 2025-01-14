@@ -54,6 +54,7 @@ const ImpLocalTrip = () => {
         );
         setPackages(filtereditem.list);
         console.log(filtereditem.list);
+        console.log(data);
       });
   }, [selectedLocal]);
 
@@ -61,7 +62,9 @@ const ImpLocalTrip = () => {
    * 지역별여행 맨 처음에 나오는 Carousel
    * position value로 carousel1이 나오는 경우 해당
    */
-  const carouselitems = packages.filter((p) => p.position.includes("list1"));
+  const carouselitems = packages.filter((p) =>
+    p.position.includes("carousel1")
+  );
 
   // 이렇게 하니까 state로 관리가 안되어서 업데이트가 재때재때 안됨 이슈
   // 그래도 어짜피 강원권 하나만 보여주니까 가능
@@ -80,7 +83,9 @@ const ImpLocalTrip = () => {
    * position value로 carousel2이 나오는 경우 해당
    */
   // 수정 필요
-  const carouselitems2 = packages.filter((p) => p.position.includes("list1"));
+  const carouselitems2 = packages.filter((p) =>
+    p.position.includes("carousel2")
+  );
 
   const carouselItems2 = carouselitems2.map((i) => (
     <CarouselSmallItems
@@ -97,7 +102,9 @@ const ImpLocalTrip = () => {
    * 지역별여행 "예술과 문화를 만나는 특별한 하루" Carousel
    * position value로 carousel3이 나오는 경우 해당
    */
-  const carouselitems3 = packages.filter((p) => p.position.includes("list1"));
+  const carouselitems3 = packages.filter((p) =>
+    p.position.includes("carousel3")
+  );
 
   const carouselItems3 = carouselitems3.map((i) => (
     <CarouselSmallItems
@@ -199,7 +206,10 @@ const ImpLocalTrip = () => {
           title="지역사랑여행"
           subtitle="다시 잇는 대한민국! 할인에 즐거움을 더하다"
         >
-          <div className={styles.bottomlistwrapper}>{listItem1}</div>
+          <div className={styles.bottomlistwrapper}>
+            {listItem1}
+            {listItem1}
+          </div>
         </Section>
       </main>
 
