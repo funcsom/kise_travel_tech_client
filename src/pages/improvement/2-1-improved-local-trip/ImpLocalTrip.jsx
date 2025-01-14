@@ -40,7 +40,15 @@ const ImpLocalTrip = () => {
 
   // props로 products id가 들어감
   const onClickProduct = (props) => {
-    if (props === "3" || props == "5") {
+    if (
+      props === "3" ||
+      props == "5" ||
+      props == "7" ||
+      props == "10" ||
+      props == "12" ||
+      props == "15" ||
+      props == "17"
+    ) {
       setImpInfo({ ...impInfo, region: params.local });
       navigate(`/imp/seedetail/${props}`);
       console.log(`go to ${params.local} product ... ${props}`);

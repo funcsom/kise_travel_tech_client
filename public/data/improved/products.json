@@ -54,7 +54,7 @@
       },
       {
         "id": "3",
-        "position": "carousel1",
+        "position": "carousel1 lovinglocal",
         "title": "지역사랑 동해",
         "subtitle": "당일 - 자유여행상품",
         "price": "89000",
@@ -63,14 +63,14 @@
       },
       {
         "id": "4",
-        "position": "carousel1",
+        "position": "carousel1 lovinglocal",
         "title": "지역사랑 태백시",
         "subtitle": "1박 2일 - 자유여행상품",
         "img": "/assets/improved/packages/gangwon/image/gangwon-4.jpg"
       },
       {
         "id": "5",
-        "position": "carousel2",
+        "position": "carousel2 lovinglocal",
         "title": "2025 동트는 택시",
         "subtitle": "KTX+동해관광택시",
         "price": "89800",
