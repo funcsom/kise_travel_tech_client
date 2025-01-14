@@ -42,17 +42,28 @@
 .titlewrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 4px;
 }
 
 .title {
+  display: flex;
+  justify-content: center;
   font: var(--font-b2-re-sb-120);
   color: var(--color-label-alternative);
 }
 
 .subtitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   font: var(--font-b3-re-r-140);
   color: var(--color-label-assistive);
+}
+
+.center {
+  display: flex;
+  justify-content: center;
 }
 
 .buttonwrapper {

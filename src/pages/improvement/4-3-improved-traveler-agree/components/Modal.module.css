@@ -42,17 +42,26 @@
 .titlewrapper {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 4px;
+  justify-content: center;
 }
 
 .title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   font: var(--font-b2-re-sb-120);
   color: var(--color-label-alternative);
 }
 
 .subtitle {
+  display: flex;
+  justify-content: center;
   font: var(--font-b3-re-r-140);
   color: var(--color-label-assistive);
+  text-justify: center;
 }
 
 .buttonwrapper {
