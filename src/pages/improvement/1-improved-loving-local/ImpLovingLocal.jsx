@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Header from "../../../components/Header";
@@ -11,10 +12,10 @@ import Button from "../../../improved/Button";
 import footer from "../../../assets/image/improved/lovinglocal/footer.jpg";
 
 const ImpLovingLocal = () => {
-  const navigate = useNavigate();
+  const [isNotiOpen, setIsNotiOpen] = useState(false);
 
-  const handleNext = () => {
-    navigate("./");
+  const openNoti = () => {
+    setIsNotiOpen((prev) => !prev);
   };
 
   return (
@@ -28,7 +29,7 @@ const ImpLovingLocal = () => {
             backgroundColor: "var(--color-line-alternative)",
           }}
         ></div>
-        <LocalTripProduct />
+        <LocalTripProduct isNotiOpen={isNotiOpen} openNoti={openNoti} />
         <div
           style={{
             height: "6px",

@@ -84,7 +84,7 @@
       "endtime": "21:24",
       "stations": {
         "destination": [
-          { "station": "강원", "time": "21:24" },
+          { "station": "서울", "time": "21:24" },
           { "station": "평창", "time": "21:00" },
           { "station": "횡성", "time": "20:38" },
           { "station": "만종", "time": "20:15" },
@@ -102,7 +102,7 @@
       "endtime": "22:15",
       "stations": {
         "destination": [
-          { "station": "강원", "time": "22:15" },
+          { "station": "서울", "time": "22:15" },
           { "station": "평창", "time": "21:50" },
           { "station": "횡성", "time": "21:28" },
           { "station": "만종", "time": "21:05" },

@@ -4,8 +4,9 @@ import styles from "./PackagePreview.module.css";
 import { useNavigate } from "react-router-dom";
 import seemorearrow from "../../../../assets/icon/improved/see_more_arrow.svg";
 import { useContext, useEffect, useState } from "react";
+import Modal from "./Modal";
 
-const PackagePreview = ({ selectedLocal }) => {
+const PackagePreview = ({ selectedLocal, isNotiOpen, openNoti }) => {
   const { impInfo, setImpInfo } = useContext(ImpUserContext);
   const navigate = useNavigate();
 
@@ -33,6 +34,7 @@ const PackagePreview = ({ selectedLocal }) => {
       }
     } else {
       console.log("클릭한 패키지 상세페이지로 이동할 수 없습니다.");
+      openNoti();
     }
   };
 
@@ -123,6 +125,7 @@ const PackagePreview = ({ selectedLocal }) => {
               </div>
             ))}
       </div>
+      {isNotiOpen && <Modal openNoti={openNoti} />}
     </div>
   );
 };

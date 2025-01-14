@@ -9,7 +9,7 @@ import LocalTripButton from "./LocalTripButton";
 import { useState } from "react";
 import PackagePreview from "./PackagePreview";
 
-const LocalTripProduct = (props) => {
+const LocalTripProduct = ({ isNotiOpen, openNoti }) => {
   const [selectedLocal, setSelectedLocal] = useState("capital");
 
   const clickLocalButton = (props) => {
@@ -66,7 +66,11 @@ const LocalTripProduct = (props) => {
         </div>
       </div>
       <div className={styles.packagepreviewwrapper}>
-        <PackagePreview selectedLocal={selectedLocal} />
+        <PackagePreview
+          selectedLocal={selectedLocal}
+          isNotiOpen={isNotiOpen}
+          openNoti={openNoti}
+        />
       </div>
     </div>
   );
