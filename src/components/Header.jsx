@@ -7,6 +7,7 @@ const Header = ({ handleClickLeft, text, imageLeft, handleClickRight }) => {
   };
   return (
     <div className={styles.Header}>
+      {/* GTM 측정 */}
       <button
         className={`${styles.Button} ${styles.headerLeft}`}
         onClick={handleClickLeft}

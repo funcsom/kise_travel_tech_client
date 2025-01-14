@@ -17,7 +17,8 @@ const LocalTripProduct = (props) => {
   };
 
   return (
-    <div className={styles.LocalTripProduct}>
+    // GTM 측정
+    <div className={styles.LocalTripProduct} id="loving-local-section">
       <div className={styles.topwrapper}>
         <div className={styles.textwrapper}>
           <div className={styles.title}>

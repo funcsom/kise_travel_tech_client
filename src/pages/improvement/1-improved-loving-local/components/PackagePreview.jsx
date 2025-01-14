@@ -43,7 +43,12 @@ const PackagePreview = ({ selectedLocal }) => {
     <div className={styles.PackagePreview}>
       <div className={styles.header}>
         <div>{`#${enToKo[selectedLocal]}권 패키지`}</div>
-        <button className={styles.seemorebtn} onClick={onClickButton}>
+        {/* GTM 측정 */}
+        <button
+          className={styles.seemorebtn}
+          onClick={onClickButton}
+          id="see-more-btn"
+        >
           더보기 <img src={seemorearrow} alt="" />
         </button>
       </div>

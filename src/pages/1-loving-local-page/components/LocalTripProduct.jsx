@@ -9,7 +9,8 @@ import jeju from "../../../assets/image/1-loving-local/jeju.jpeg";
 
 const LocalTripProduct = () => {
   return (
-    <div>
+    // GTM 측정
+    <div id="orig-loving-local-section">
       <Section title="지역별 여행 상품" subtitle="지역별 대표 패키지 여행 상품">
         <div
           style={{

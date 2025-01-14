@@ -50,6 +50,7 @@ const ImpTravelerAgree = () => {
       </main>
       <Footer>
         <div style={{ display: "flex" }}>
+          {/* GTM 측정 */}
           <Button
             type="secondary"
             state="default"
@@ -57,6 +58,7 @@ const ImpTravelerAgree = () => {
             shape="box"
             rate="r2"
             onClickButton={handlePrev}
+            id="edit-product-option-btn"
           >
             상품 옵션 수정
           </Button>
