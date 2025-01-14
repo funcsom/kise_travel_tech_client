@@ -11,7 +11,7 @@ const SelectPeopleComp = ({ count, setCount }) => {
           subtitle="만 13세 이상"
           count={count}
           setCount={setCount}
-          minHead={0}
+          minHead={2}
           maxHead={40}
         />
         <Stepper

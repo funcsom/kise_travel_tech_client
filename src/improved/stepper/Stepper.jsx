@@ -12,7 +12,7 @@ const Stepper = ({
   count,
   setCount,
   state = "default",
-  minHead = 0,
+  minHead = 2,
   maxHead = 40,
 }) => {
   const [leftState, setLeftState] = useState("default");

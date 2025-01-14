@@ -75,7 +75,7 @@ function App() {
     region: "",
     date: "",
     day: "",
-    people: 0,
+    people: 2,
     product: { name: "", price: 0 },
     package: { name: "", price: 0 },
     goTrain: {
