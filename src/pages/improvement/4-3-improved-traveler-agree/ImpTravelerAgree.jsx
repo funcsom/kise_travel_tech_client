@@ -53,7 +53,7 @@ const ImpTravelerAgree = () => {
       <main style={{ padding: "16px" }}>
         <Text />
       </main>
-      <main style={{ padding: "16px" }}>
+      <main style={{ padding: "16px", flex: "1" }}>
         <AgreeButton
           isClickAgree={isClickAgree}
           isClickCheckbox={isClickCheckbox}
