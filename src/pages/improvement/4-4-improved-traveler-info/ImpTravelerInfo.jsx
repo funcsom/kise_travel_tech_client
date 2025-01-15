@@ -74,7 +74,7 @@ const ImpTravelerInfo = () => {
   return (
     <Contents>
       <Header
-        text="예약인원"
+        text="여행자 회원정보"
         imageLeft={iconprev}
         handleClickLeft={handlePrev}
       />

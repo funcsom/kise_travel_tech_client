@@ -53,7 +53,7 @@ const ImpSelectPeople = () => {
   return (
     <Contents>
       <Header
-        text="인원선택"
+        text="출발역 및 인원선택"
         imageLeft={iconprev}
         handleClickLeft={handlePrev}
       />
