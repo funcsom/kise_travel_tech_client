@@ -11,7 +11,17 @@
   gap: 2px;
   background-color: white;
   position: sticky;
-  top: 285px;
+  top: 282px;
+}
+
+.package {
+  padding: 20px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background-color: white;
+  position: relative;
+  top: inherit;
 }
 
 .title {

@@ -74,7 +74,7 @@ const PrgrPage = ({ step, setStep, onClickChangeBtn, info, setInfo }) => {
   return (
     <div className={styles.PrgrPage}>
       {info.goTrain.trainNo && (
-        <div className={styles.selectedzone}>
+        <div className={`${styles.selectedzone} ${styles[`step${step}`]}`}>
           {/* 데이터가 있는 것들은 여기서 동적으로 불러올 수 있도록 하기 */}
           {info.goTrain.trainNo && (
             <SelectedItem

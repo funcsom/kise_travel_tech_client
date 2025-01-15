@@ -18,6 +18,7 @@ const SelectGoTrain = ({
   onClickChangeBtn,
   preselectedInfo,
   info,
+  editTypeWhat,
 }) => {
   const [myTrainList, setMyTrainList] = useState([]);
 
@@ -33,7 +34,7 @@ const SelectGoTrain = ({
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.SelectGoTrain}>
+      <div className={`${styles.SelectGoTrain} ${styles[editTypeWhat]}`}>
         <div className={styles.titlewrapper}>
           <div className={styles.title}>가는편을 선택해주세요.</div>
           <div className={styles.subtitle}>

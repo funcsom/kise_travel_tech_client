@@ -18,6 +18,7 @@ const SelectComeTrain = ({
   onClickChangeBtn,
   preselectedInfo,
   info,
+  editTypeWhat,
 }) => {
   const [myTrainList, setMyTrainList] = useState([]);
 
@@ -33,7 +34,7 @@ const SelectComeTrain = ({
 
   return (
     <div className={styles.wrapper}>
-      <div className={styles.SelectComeTrain}>
+      <div className={`${styles.SelectComeTrain} ${styles[editTypeWhat]}`}>
         <div>
           <div className={styles.title}>오는편을 선택해주세요.</div>
           <div className={styles.subtitle}>

@@ -107,6 +107,7 @@ const EditPage = ({
           onClickChangeBtn={onClickChangeBtn}
           preselectedInfo={info.goTrain.id}
           info={info}
+          editTypeWhat={editTypeWhat}
         />
       )}
       {editTypeWhat === "comeTrain" && (
@@ -121,6 +122,7 @@ const EditPage = ({
           onClickChangeBtn={onClickChangeBtn}
           preselectedInfo={info.comeTrain.id}
           info={info}
+          editTypeWhat={editTypeWhat}
         />
       )}
       {editTypeWhat === "package" && (
@@ -130,6 +132,7 @@ const EditPage = ({
           onClickChangeBtn={onClickChangeBtn}
           preselectedInfo={info.package.name}
           info={info}
+          editTypeWhat={editTypeWhat}
         />
       )}
     </div>

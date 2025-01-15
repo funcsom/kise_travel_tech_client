@@ -11,6 +11,7 @@ const SelectPackage = ({
   onClickChangeBtn,
   preselectedInfo,
   info,
+  editTypeWhat,
 }) => {
   const [packageList, setPackageList] = useState([]);
 
@@ -24,7 +25,7 @@ const SelectPackage = ({
   }, []);
   return (
     <div className={styles.wrapper}>
-      <div className={styles.SelectPackage}>
+      <div className={`${styles.SelectPackage} ${styles[editTypeWhat]}`}>
         <div className={styles.title}>패키지를 선택해주세요</div>
         <div className={styles.subtitle}>
           {`${info.date}(${info.day}), ${info.people}인 이용`}

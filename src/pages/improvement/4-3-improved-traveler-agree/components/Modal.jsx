@@ -31,7 +31,7 @@ const Modal = ({ openNoti, handlePrev }) => {
             state="default"
             size="large"
             shape="box"
-            rate="r2"
+            rate="r1"
             onClickButton={handlePrev}
           >
             다시 상품 선택
@@ -41,7 +41,7 @@ const Modal = ({ openNoti, handlePrev }) => {
             state="default"
             size="large"
             shape="box"
-            rate="r3"
+            rate="r1"
             onClickButton={openNoti}
           >
             확인

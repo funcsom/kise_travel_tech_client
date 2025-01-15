@@ -4,6 +4,7 @@
   gap: 40px;
   padding: 20px 16px;
   color: var(--color-label-normal);
+  position: relative;
 }
 
 .detailwrapper {
@@ -12,6 +13,8 @@
   gap: 19px;
   padding-bottom: 20px;
   border-bottom: 1px solid var(--color-line-normal);
+  /* position: sticky; */
+  /* top: 400px; */
 }
 
 .itemwrapper {
