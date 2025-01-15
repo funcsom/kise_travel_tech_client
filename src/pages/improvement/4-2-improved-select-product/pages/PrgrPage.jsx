@@ -11,29 +11,7 @@ import styles from "./PrgrPage.module.css";
 
 // Progress 페이지
 const PrgrPage = ({ step, setStep, onClickChangeBtn, info, setInfo }) => {
-  const onChangeGoTrainGrade = (grade) => {
-    setInfo({
-      ...info,
-      goTrain: {
-        ...info.goTrain,
-        trainGrade: grade,
-        price: grade === "economy" ? 59800 : 68300,
-      },
-    });
-  };
-
-  const onChangeComeTrainGrade = (grade) => {
-    setInfo({
-      ...info,
-      comeTrain: {
-        ...info.comeTrain,
-        trainGrade: grade,
-        price: grade === "economy" ? 59800 : 68300,
-      },
-    });
-  };
-
-  // props = [id, trainNane, trainNo, departtime, arrivaltime]
+  // props = [id, trainNane, trainNo, departtime, arrivaltime, trainGrade]
   const selectGoTrain = (props) => {
     setInfo({
       ...info,
@@ -44,11 +22,13 @@ const PrgrPage = ({ step, setStep, onClickChangeBtn, info, setInfo }) => {
         trainNo: props[2],
         departtime: props[3],
         arrivaltime: props[4],
+        trainGrade: props[5],
+        price: props[5] === "economy" ? 59800 : 68300,
       },
     });
   };
 
-  // props = [id, trainNane, trainNo, departtime, arrivaltime]
+  // props = [id, trainNane, trainNo, departtime, arrivaltime, trainGrade]
   const selectComeTrain = (props) => {
     setInfo({
       ...info,
@@ -59,6 +39,8 @@ const PrgrPage = ({ step, setStep, onClickChangeBtn, info, setInfo }) => {
         trainNo: props[2],
         departtime: props[3],
         arrivaltime: props[4],
+        trainGrade: props[5],
+        price: props[5] === "economy" ? 59800 : 68300,
       },
     });
   };
@@ -106,7 +88,6 @@ const PrgrPage = ({ step, setStep, onClickChangeBtn, info, setInfo }) => {
           departStation={info.goTrain.departstation}
           arrivalStation={info.goTrain.arrivalstation}
           setStep={setStep}
-          onChangeGoTrainGrade={onChangeGoTrainGrade}
           currentTrainGrade={info.goTrain.trainGrade}
           selectGoTrain={selectGoTrain}
           preselectedInfo={info.goTrain.trainNo}
@@ -118,7 +99,6 @@ const PrgrPage = ({ step, setStep, onClickChangeBtn, info, setInfo }) => {
           departStation={info.comeTrain.departstation}
           arrivalStation={info.comeTrain.arrivalstation}
           setStep={setStep}
-          onChangeComeTrainGrade={onChangeComeTrainGrade}
           currentTrainGrade={info.comeTrain.trainGrade}
           selectComeTrain={selectComeTrain}
           preselectedInfo={info.comeTrain.trainNo}

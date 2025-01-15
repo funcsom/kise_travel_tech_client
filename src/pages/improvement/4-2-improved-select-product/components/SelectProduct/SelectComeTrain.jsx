@@ -12,7 +12,6 @@ const SelectComeTrain = ({
   departStation,
   arrivalStation,
   setStep,
-  onChangeComeTrainGrade,
   currentTrainGrade,
   selectComeTrain,
   onClickChangeBtn,
@@ -21,6 +20,7 @@ const SelectComeTrain = ({
   editTypeWhat,
 }) => {
   const [myTrainList, setMyTrainList] = useState([]);
+  const [trainGrade, setTrainGrade] = useState(currentTrainGrade);
 
   useEffect(() => {
     fetch("/data/z-ktx-info.json")
@@ -29,7 +29,6 @@ const SelectComeTrain = ({
         // console.log("받아온 데이터 =>", data);
         setMyTrainList(filterMyTrainList(data, departStation, arrivalStation));
       });
-    onChangeComeTrainGrade(currentTrainGrade);
   }, []);
 
   return (
@@ -42,11 +41,11 @@ const SelectComeTrain = ({
           </div>
         </div>
         <div className={styles.traingradebtnwrapper}>
-          {currentTrainGrade === "economy" ? (
+          {trainGrade === "economy" ? (
             <TrainGradeBtn
               type="selected"
               onClickBtn={() => {
-                onChangeComeTrainGrade("economy");
+                setTrainGrade("economy");
               }}
             >
               <span>일반실</span>
@@ -72,7 +71,7 @@ const SelectComeTrain = ({
             <TrainGradeBtn
               type="default"
               onClickBtn={() => {
-                onChangeComeTrainGrade("economy");
+                setTrainGrade("economy");
               }}
             >
               <span>일반실</span>
@@ -95,11 +94,11 @@ const SelectComeTrain = ({
               </span>
             </TrainGradeBtn>
           )}
-          {currentTrainGrade === "business" ? (
+          {trainGrade === "business" ? (
             <TrainGradeBtn
               type="selected"
               onClickBtn={() => {
-                onChangeComeTrainGrade("business");
+                setTrainGrade("business");
               }}
             >
               <span>특실</span>
@@ -125,7 +124,7 @@ const SelectComeTrain = ({
             <TrainGradeBtn
               type="default"
               onClickBtn={() => {
-                onChangeComeTrainGrade("business");
+                setTrainGrade("business");
               }}
             >
               <span>특실</span>
@@ -164,6 +163,7 @@ const SelectComeTrain = ({
                 item.no,
                 item.stations[0].time,
                 item.stations[1].time,
+                trainGrade,
               ]);
               setStep((prev) => prev + 1);
               console.log(
@@ -173,6 +173,7 @@ const SelectComeTrain = ({
                   item.no,
                   item.stations[0].time,
                   item.stations[1].time,
+                  trainGrade,
                 ]}`
               );
             }}

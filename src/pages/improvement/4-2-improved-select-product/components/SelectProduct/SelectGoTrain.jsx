@@ -12,7 +12,6 @@ const SelectGoTrain = ({
   departStation,
   arrivalStation,
   setStep,
-  onChangeGoTrainGrade,
   currentTrainGrade,
   selectGoTrain,
   onClickChangeBtn,
@@ -21,6 +20,7 @@ const SelectGoTrain = ({
   editTypeWhat,
 }) => {
   const [myTrainList, setMyTrainList] = useState([]);
+  const [trainGrade, setTrainGrade] = useState(currentTrainGrade);
 
   useEffect(() => {
     fetch("/data/z-ktx-info.json")
@@ -29,7 +29,7 @@ const SelectGoTrain = ({
         // console.log("받아온 데이터 =>", data);
         setMyTrainList(filterMyTrainList(data, departStation, arrivalStation));
       });
-    onChangeGoTrainGrade(currentTrainGrade);
+    // onChangeGoTrainGrade(currentTrainGrade);
   }, []);
 
   return (
@@ -42,11 +42,11 @@ const SelectGoTrain = ({
           </div>
         </div>
         <div className={styles.traingradebtnwrapper}>
-          {currentTrainGrade === "economy" ? (
+          {trainGrade === "economy" ? (
             <TrainGradeBtn
               type="selected"
               onClickBtn={() => {
-                onChangeGoTrainGrade("economy");
+                setTrainGrade("economy");
               }}
             >
               <span>일반실</span>
@@ -72,7 +72,7 @@ const SelectGoTrain = ({
             <TrainGradeBtn
               type="default"
               onClickBtn={() => {
-                onChangeGoTrainGrade("economy");
+                setTrainGrade("economy");
               }}
             >
               <span>일반실</span>
@@ -95,11 +95,11 @@ const SelectGoTrain = ({
               </span>
             </TrainGradeBtn>
           )}
-          {currentTrainGrade === "business" ? (
+          {trainGrade === "business" ? (
             <TrainGradeBtn
               type="selected"
               onClickBtn={() => {
-                onChangeGoTrainGrade("business");
+                setTrainGrade("business");
               }}
             >
               <span>특실</span>
@@ -125,7 +125,7 @@ const SelectGoTrain = ({
             <TrainGradeBtn
               type="default"
               onClickBtn={() => {
-                onChangeGoTrainGrade("business");
+                setTrainGrade("business");
               }}
             >
               <span>특실</span>
@@ -164,6 +164,7 @@ const SelectGoTrain = ({
                 item.no,
                 item.stations[0].time,
                 item.stations[1].time,
+                trainGrade,
               ]);
               setStep((prev) => prev + 1);
               console.log(
@@ -173,6 +174,7 @@ const SelectGoTrain = ({
                   item.no,
                   item.stations[0].time,
                   item.stations[1].time,
+                  trainGrade,
                 ]}`
               );
             }}

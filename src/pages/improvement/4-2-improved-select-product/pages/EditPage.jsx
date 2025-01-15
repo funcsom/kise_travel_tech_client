@@ -15,43 +15,52 @@ const EditPage = ({
   info,
   setInfo,
 }) => {
-  const onChangeGoTrainGrade = (grade) => {
-    setInfo({
-      ...info,
-      goTrain: {
-        ...info.goTrain,
-        trainGrade: grade,
-        price: grade === "economy" ? 59800 : 68300,
-      },
-    });
-  };
+  useEffect(() => {
+    if (editTypeWhat === "goTrain") {
+      setInfo({ ...info, goTrain: { ...info.goTrain, price: "" } });
+    } else if (editTypeWhat === "comeTrain") {
+      setInfo({ ...info, comeTrain: { ...info.comeTrain, price: "" } });
+    } else if (editTypeWhat === "package") {
+      setInfo({ ...info, package: { ...info.package, price: "" } });
+    }
+  }, []);
+  // const onChangeGoTrainGrade = (grade) => {
+  //   setInfo({
+  //     ...info,
+  //     goTrain: {
+  //       ...info.goTrain,
+  //       trainGrade: grade,
+  //       price: grade === "economy" ? 59800 : 68300,
+  //     },
+  //   });
+  // };
 
-  const onChangeComeTrainGrade = (grade) => {
-    setInfo({
-      ...info,
-      comeTrain: {
-        ...info.comeTrain,
-        trainGrade: grade,
-        price: grade === "economy" ? 59800 : 68300,
-      },
-    });
-  };
+  // const onChangeComeTrainGrade = (grade) => {
+  //   setInfo({
+  //     ...info,
+  //     comeTrain: {
+  //       ...info.comeTrain,
+  //       trainGrade: grade,
+  //       price: grade === "economy" ? 59800 : 68300,
+  //     },
+  //   });
+  // };
 
-  const onChangeGoTrainPrice = (price) => {
-    setInfo({
-      ...info,
-      goTrain: { ...info.goTrain, price: price },
-    });
-  };
+  // const onChangeGoTrainPrice = (price) => {
+  //   setInfo({
+  //     ...info,
+  //     goTrain: { ...info.goTrain, price: price },
+  //   });
+  // };
 
-  const onChangeComeTrainPrice = (price) => {
-    setInfo({
-      ...info,
-      comeTrain: { ...info.comeTrain, price: price },
-    });
-  };
+  // const onChangeComeTrainPrice = (price) => {
+  //   setInfo({
+  //     ...info,
+  //     comeTrain: { ...info.comeTrain, price: price },
+  //   });
+  // };
 
-  // props = [id, trainNane, trainNo, departtime, arrivaltime]
+  // props = [id, trainNane, trainNo, departtime, arrivaltime, trainGrade]
   const selectGoTrain = (props) => {
     setInfo({
       ...info,
@@ -62,11 +71,13 @@ const EditPage = ({
         trainNo: props[2],
         departtime: props[3],
         arrivaltime: props[4],
+        trainGrade: props[5],
+        price: props[5] === "economy" ? 59800 : 68300,
       },
     });
   };
 
-  // props = [id, trainNane, trainNo, departtime, arrivaltime]
+  // props = [id, trainNane, trainNo, departtime, arrivaltime, trainGrade]
   const selectComeTrain = (props) => {
     setInfo({
       ...info,
@@ -77,10 +88,11 @@ const EditPage = ({
         trainNo: props[2],
         departtime: props[3],
         arrivaltime: props[4],
+        trainGrade: props[5],
+        price: props[5] === "economy" ? 59800 : 68300,
       },
     });
   };
-
   // props = [name, price]
   const selectPackage = (props) => {
     setInfo({
@@ -100,9 +112,9 @@ const EditPage = ({
           departStation={info.goTrain.departstation}
           arrivalStation={info.goTrain.arrivalstation}
           setStep={setStep}
-          onChangeGoTrainGrade={onChangeGoTrainGrade}
+          // onChangeGoTrainGrade={onChangeGoTrainGrade}
           currentTrainGrade={info.goTrain.trainGrade}
-          onChangeGoTrainPrice={onChangeGoTrainPrice}
+          // onChangeGoTrainPrice={onChangeGoTrainPrice}
           selectGoTrain={selectGoTrain}
           onClickChangeBtn={onClickChangeBtn}
           preselectedInfo={info.goTrain.id}
@@ -115,9 +127,9 @@ const EditPage = ({
           departStation={info.comeTrain.departstation}
           arrivalStation={info.comeTrain.arrivalstation}
           setStep={setStep}
-          onChangeComeTrainGrade={onChangeComeTrainGrade}
+          // onChangeComeTrainGrade={onChangeComeTrainGrade}
           currentTrainGrade={info.comeTrain.trainGrade}
-          onChangeComeTrainPrice={onChangeComeTrainPrice}
+          // onChangeComeTrainPrice={onChangeComeTrainPrice}
           selectComeTrain={selectComeTrain}
           onClickChangeBtn={onClickChangeBtn}
           preselectedInfo={info.comeTrain.id}
