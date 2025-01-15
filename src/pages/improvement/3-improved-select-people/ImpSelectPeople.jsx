@@ -29,21 +29,25 @@ const ImpSelectPeople = () => {
   };
 
   const handleNext = () => {
-    setImpInfo({
-      ...impInfo,
-      people: count,
-      goTrain: {
-        ...impInfo.goTrain,
-        departstation: selectStation.goTrain.departstation,
-        arrivalstation: selectStation.goTrain.arrivalstation,
-      },
-      comeTrain: {
-        ...impInfo.comeTrain,
-        departstation: selectStation.comeTrain.departstation,
-        arrivalstation: selectStation.comeTrain.arrivalstation,
-      },
-    });
-    navigate("/imp/selectdate");
+    if (count && selectStation.goTrain.departstation) {
+      setImpInfo({
+        ...impInfo,
+        people: count,
+        goTrain: {
+          ...impInfo.goTrain,
+          departstation: selectStation.goTrain.departstation,
+          arrivalstation: selectStation.goTrain.arrivalstation,
+        },
+        comeTrain: {
+          ...impInfo.comeTrain,
+          departstation: selectStation.comeTrain.departstation,
+          arrivalstation: selectStation.comeTrain.arrivalstation,
+        },
+      });
+      navigate("/imp/selectdate");
+    } else {
+      alert("출발역을 선택해주세요");
+    }
   };
 
   const handlePrev = () => {
@@ -73,7 +77,17 @@ const ImpSelectPeople = () => {
           <DimmedBox lefttext="인원" righttext={`어른 ${count}명`} />
         </div>
         <div style={{ display: "flex" }}>
-          {count && selectStation.goTrain.departstation ? (
+          <Button
+            type="primary"
+            state="default"
+            size="large"
+            shape="box"
+            rate="r1"
+            onClickButton={handleNext}
+          >
+            다음
+          </Button>
+          {/* {count && selectStation.goTrain.departstation ? (
             <Button
               type="primary"
               state="default"
@@ -95,7 +109,7 @@ const ImpSelectPeople = () => {
             >
               다음
             </Button>
-          )}
+          )} */}
         </div>
       </Footer>
       {isNotiOpen && <Modal openNoti={openNoti} />}
