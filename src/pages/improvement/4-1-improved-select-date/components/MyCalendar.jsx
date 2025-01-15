@@ -70,6 +70,7 @@ const MyCalendar = ({ value, onChangeDate }) => {
             width: "12px",
             height: "12px",
             backgroundColor: "var(--color-fill-disable)",
+            borderRadius: "2px",
           }}
         ></div>
         <div>마감</div>

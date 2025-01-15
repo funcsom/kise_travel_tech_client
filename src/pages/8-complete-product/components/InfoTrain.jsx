@@ -28,7 +28,7 @@ const InfoTrain = () => {
       <div style={rowWrapper}>
         <div style={styleTitle}>객실등급</div>
         <div style={styleInfo}>
-          <span>{info.reserveName}</span>
+          <span>{enToKo[info.goTrain.trainGrade]}</span>
         </div>
       </div>
       <div style={rowWrapper}>
@@ -91,3 +91,5 @@ const styleInfoLast = {
 };
 
 export default InfoTrain;
+
+const enToKo = { economy: "일반실", business: "특실" };

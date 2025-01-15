@@ -54,7 +54,7 @@ const ImpCompleteProd = (props) => {
     <Contents>
       {isOpenRating && <RatingComponent closeModal={closeModal} />}
       <Header
-        text="예약인원"
+        text="예약완료"
         imageLeft={iconprev}
         handleClickLeft={handlePrev}
       />

@@ -17,7 +17,7 @@ const Carousel = ({ elems }) => {
         modules={[Navigation]}
         spaceBetween={20}
         slidesPerView={1}
-        navigation={true}
+        // navigation={true}
       >
         {elems.map((elem, index) => {
           return (

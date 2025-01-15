@@ -5,6 +5,7 @@
   align-items: center;
   padding: 8px 10px 8px 14px;
   font: var(--font-orig-h1);
+  color: var(--color-gray-500);
 }
 
 .openButton {

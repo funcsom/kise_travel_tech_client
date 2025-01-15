@@ -13,9 +13,6 @@ const ReservatorInfo = ({
     <div className={styles.ReservatorInfo}>
       <div className={styles.headerwarpper}>
         <span className={styles.heading}>예약자</span>
-        <span className={styles.text}>
-          변경이 필요한 부분을 선택해 수정하실 수 있습니다.
-        </span>
       </div>
       <div className={styles.inputgroup}>
         <div className={styles.inputWrapper}>

@@ -45,7 +45,7 @@ const ImpTravelerAgree = () => {
     <Contents>
       {isNotiOpen && <Modal openNoti={openNoti} handlePrev={handlePrev} />}
       <Header
-        text="예약인원"
+        text="약관동의"
         imageLeft={iconprev}
         handleClickLeft={handlePrev}
       />
