@@ -105,8 +105,8 @@ function App() {
     reserveName: "홍길동",
     travelerName: "",
     dob: "19970122",
-    phone: "",
-    email: "",
+    phone: "01000000000",
+    email: "teamprojectkise@gmail.com",
     gender: "m",
   });
 

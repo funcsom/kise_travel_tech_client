@@ -43,9 +43,11 @@ const ReservatorInfo = ({
             inputRef={phoneRef} // inputRef로 전달
             value={information.phone}
             onChangeInput={(e) =>
-              setInformation({ ...information, phone: e.target.value })
+              // setInformation({ ...information, phone: e.target.value })
+              cannotchange
             }
             placeholder="'-' 제외하고 입력"
+            disabled={true}
           />
         </div>
         <div className={styles.inputWrapper}>
@@ -55,9 +57,11 @@ const ReservatorInfo = ({
             inputRef={emailRef} // inputRef로 전달
             value={information.email}
             onChangeInput={(e) =>
-              setInformation({ ...information, email: e.target.value })
+              // setInformation({ ...information, email: e.target.value })
+              cannotchange
             }
-            placeholder="jenny.hw0122@gmail.com"
+            // placeholder="jenny.hw0122@gmail.com"
+            disabled={true}
           />
         </div>
       </div>

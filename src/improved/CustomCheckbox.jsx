@@ -6,7 +6,7 @@ const CustomCheckbox = ({ isClickAgree, isClickCheckbox }) => {
       className={styles.CustomCheckbox}
       type="checkbox"
       value={isClickAgree}
-      onChange={isClickCheckbox}
+      // onChange={isClickCheckbox}
     />
   );
 };

@@ -3,10 +3,10 @@ import CustomCheckbox from "../../../../improved/CustomCheckbox";
 
 const AgreeButton = ({ isClickAgree, isClickCheckbox }) => {
   return (
-    <button className={styles.AgreeButton}>
+    <button className={styles.AgreeButton} onClick={isClickCheckbox}>
       <CustomCheckbox
         isClickAgree={isClickAgree}
-        isClickCheckbox={isClickCheckbox}
+        // isClickCheckbox={isClickCheckbox}
       />
       <span>개인정보의 제3자 제공 동의</span>
     </button>

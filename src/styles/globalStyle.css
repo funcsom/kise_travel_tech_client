@@ -315,7 +315,8 @@ body * {
   --color-status-positive: var(--skyblue-50);
 
   /* Material */
-  --color-material-overlay: #2d3d4890;
+  /* --color-material-overlay: #2d3d4890; */
+  --color-material-overlay: rgba(45, 61, 72, 0.9);
   --color-material-dimmer: #00000050;
 }
 
