@@ -14,16 +14,6 @@
   top: 56px;
 }
 
-.package {
-  padding: 20px 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  background-color: white;
-  position: relative;
-  top: inherit;
-}
-
 .title {
   font: var(--font-t1-sb);
   color: var(--color-label-normal);

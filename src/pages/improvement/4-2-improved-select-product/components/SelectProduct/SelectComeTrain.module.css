@@ -14,11 +14,6 @@
   top: 56px;
 }
 
-.comeTrain {
-  position: relative;
-  top: inherit;
-}
-
 .title {
   font: var(--font-t1-sb);
   color: var(--color-label-normal);
