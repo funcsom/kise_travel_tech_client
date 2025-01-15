@@ -24,9 +24,7 @@ const ReservateForm = ({ information, setInformation }) => {
             gap: "11px",
           }}
         >
-          <span style={{ display: "block", font: "var(--font-orig-b3-m)" }}>
-            이름
-          </span>
+          <span style={{ display: "block" }}>이름</span>
           <input
             type="text"
             style={{ width: "150px" }}
