@@ -1,12 +1,21 @@
 import styles from "./AgreeButton.module.css";
-import CustomCheckbox from "../../../../improved/CustomCheckbox";
 
 const AgreeButton = ({ isClickAgree, isClickCheckbox }) => {
   return (
-    <button className={styles.AgreeButton} onClick={isClickCheckbox}>
-      <CustomCheckbox isClickAgree={isClickAgree} />
+    <div
+      className={styles.AgreeButton}
+      onClick={() => {
+        isClickCheckbox();
+        console.log(isClickAgree);
+      }}
+    >
+      <input
+        className={styles.CustomCheckbox}
+        type="checkbox"
+        checked={isClickAgree}
+      />
       <span>개인정보의 제3자 제공 동의</span>
-    </button>
+    </div>
   );
 };
 

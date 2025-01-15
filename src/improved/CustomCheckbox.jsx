@@ -1,12 +1,11 @@
 import styles from "./CustomCheckbox.module.css";
 
-const CustomCheckbox = ({ isClickAgree, isClickCheckbox }) => {
+const CustomCheckbox = ({ isClickAgree }) => {
   return (
     <input
       className={styles.CustomCheckbox}
       type="checkbox"
       value={isClickAgree}
-      onChange={isClickCheckbox}
     />
   );
 };

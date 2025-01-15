@@ -12,6 +12,7 @@ import resetbutton from "../../../../../assets/icon/improved/reset_button.svg";
 const serviceKey = import.meta.env.VITE_ENCODING;
 
 const stationlist = [
+  "서울",
   "청량리",
   "상봉",
   "양평",

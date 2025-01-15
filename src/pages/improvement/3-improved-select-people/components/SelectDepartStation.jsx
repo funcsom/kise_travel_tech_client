@@ -4,6 +4,7 @@ import arrowstation from "../../../../assets/icon/improved/arrow_station.svg";
 import styles from "./SelectDepartStation.module.css";
 
 const stationlist = [
+  "서울",
   "청량리",
   "상봉",
   "양평",
@@ -13,7 +14,6 @@ const stationlist = [
   "진부",
   "정동진",
   "묵호",
-  "동해",
   "덕소",
   "용문",
   "지평",
