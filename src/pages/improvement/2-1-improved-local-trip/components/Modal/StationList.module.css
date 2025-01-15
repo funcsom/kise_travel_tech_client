@@ -1,5 +1,5 @@
 .StationList {
-  font: var(--font-b3-no-b);
+  font: var(--font-b3-no-m);
   color: var(--color-label-normal);
   padding: 8px 12px 8px 16px;
   border-bottom: 1px solid var(--color-line-assistive);
@@ -11,6 +11,6 @@
 }
 
 .selected {
-  font: var(--font-b3-no-sb);
+  font: var(--font-b3-no-m);
   background-color: var(--color-background-normal-emphasis);
 }

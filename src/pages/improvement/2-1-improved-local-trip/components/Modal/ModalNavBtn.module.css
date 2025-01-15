@@ -1,6 +1,6 @@
 .ModalNavBtn {
   padding: 12px 16px;
-  font: var(--font-b3-no-b);
+  font: var(--font-b3-no-m);
   color: var(--color-label-normal);
   background-color: var(--color-background-normal-neutral);
   display: flex;
