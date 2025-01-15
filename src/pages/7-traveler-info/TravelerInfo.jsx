@@ -19,12 +19,12 @@ const TravelerInfo = () => {
   const [checkedIsSame, setCheckedIsSame] = useState(false);
   const { info, setInfo } = useContext(UserContext);
   const [information, setInformaton] = useState({
-    reserveName: "",
-    travelerName: "",
-    dob: "",
-    phone: "",
-    email: "",
-    gender: "m",
+    reserveName: info.reserveName,
+    travelerName: info.travelerName,
+    dob: info.dob,
+    phone: info.phone,
+    email: info.email,
+    gender: info.gender,
   });
   const navigate = useNavigate();
 
@@ -87,7 +87,7 @@ const TravelerInfo = () => {
             <Wrapper>
               <ReservateForm
                 information={information}
-                setInformation={setInformaton}
+                // setInformation={setInformaton}
               />
             </Wrapper>
           </NoneToggleWrapper>

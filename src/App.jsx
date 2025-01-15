@@ -63,11 +63,11 @@ function App() {
       arrivalstation: "",
       arrivaltime: "",
     },
-    reserveName: "",
+    reserveName: "홍길동",
     travelerName: "",
-    dob: "",
-    phone: "",
-    email: "",
+    dob: "19970122",
+    phone: "01000000000",
+    email: "teamprojectkise@gmail.com",
     gender: "m",
   });
 

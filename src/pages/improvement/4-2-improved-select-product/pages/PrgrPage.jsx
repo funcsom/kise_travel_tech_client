@@ -73,30 +73,33 @@ const PrgrPage = ({ step, setStep, onClickChangeBtn, info, setInfo }) => {
 
   return (
     <div className={styles.PrgrPage}>
-      <div className={styles.selectedzone}>
-        {/* 데이터가 있는 것들은 여기서 동적으로 불러올 수 있도록 하기 */}
-        {info.goTrain.trainNo && (
-          <SelectedItem
-            onClickChangeBtn={onClickChangeBtn}
-            type="goTrain"
-            info={info}
-          />
-        )}
-        {info.comeTrain.trainNo && (
-          <SelectedItem
-            onClickChangeBtn={onClickChangeBtn}
-            type="comeTrain"
-            info={info}
-          />
-        )}
-        {info.package.name && (
-          <SelectedItem
-            onClickChangeBtn={onClickChangeBtn}
-            type="package"
-            info={info}
-          />
-        )}
-      </div>
+      {info.goTrain.trainNo && (
+        <div className={styles.selectedzone}>
+          {/* 데이터가 있는 것들은 여기서 동적으로 불러올 수 있도록 하기 */}
+          {info.goTrain.trainNo && (
+            <SelectedItem
+              onClickChangeBtn={onClickChangeBtn}
+              type="goTrain"
+              info={info}
+            />
+          )}
+          {info.comeTrain.trainNo && (
+            <SelectedItem
+              onClickChangeBtn={onClickChangeBtn}
+              type="comeTrain"
+              info={info}
+            />
+          )}
+          {info.package.name && (
+            <SelectedItem
+              onClickChangeBtn={onClickChangeBtn}
+              type="package"
+              info={info}
+            />
+          )}
+        </div>
+      )}
+
       {/* step state에 따라서 선택할 정보 고르기 */}
       {step === 1 && (
         <SelectGoTrain
