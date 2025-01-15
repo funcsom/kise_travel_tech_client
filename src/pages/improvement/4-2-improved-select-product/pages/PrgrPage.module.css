@@ -10,8 +10,8 @@
   flex-direction: column;
   padding: 20px 16px 10px 16px;
   gap: 10px;
-  position: sticky;
-  top: 56px;
+  /* position: sticky; */
+  /* top: 56px; */
   background-color: white;
   z-index: 1;
 }
