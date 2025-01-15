@@ -85,21 +85,21 @@ const RatingComponent = ({ closeModal }) => {
           smallRating={smallRating}
           setSmallRating={setSmallRating}
         />
-      </div>
-      <div className={styles.buttonwrapper}>
-        <Button
-          type="primary"
-          state={complete ? "default" : "disabled"}
-          size="large"
-          shape="box"
-          rate="r1"
-          onClickButton={() => {
-            onClickCTAButton();
-            closeModal();
-          }}
-        >
-          평가하기
-        </Button>
+        <div className={styles.buttonwrapper}>
+          <Button
+            type="primary"
+            state={complete ? "default" : "disabled"}
+            size="large"
+            shape="box"
+            rate="r1"
+            onClickButton={() => {
+              onClickCTAButton();
+              closeModal();
+            }}
+          >
+            평가하기
+          </Button>
+        </div>
       </div>
     </div>
   );

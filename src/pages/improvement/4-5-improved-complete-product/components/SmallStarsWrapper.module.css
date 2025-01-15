@@ -16,6 +16,7 @@
 }
 
 .emptywrapper {
+  flex: 1;
   justify-content: center;
   font: var(--font-b2-no-m);
   color: var(--color-label-assistive);
